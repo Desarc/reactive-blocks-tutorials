@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Exercise7a" 
+    uuid="_4Q4A8YnJEeOCG-kliLDj-Q" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <block name="c0" uuid="_6SkL44nJEeOCG-kliLDj-Q"/>
+    </required>
+</block>

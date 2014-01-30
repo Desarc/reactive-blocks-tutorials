@@ -4,6 +4,9 @@
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_IbY3Aod1EeO_WrxkM_TNdw" name="Exercise1b" classifierBehavior="_Id4xYYd1EeO_WrxkM_TNdw" collaborationRole="_Id70sId1EeO_WrxkM_TNdw">
       <ownedAttribute xmi:id="_Id70sId1EeO_WrxkM_TNdw" name="component"/>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_Id4xYYd1EeO_WrxkM_TNdw" name="Exercise1b" group="_Id9p4Id1EeO_WrxkM_TNdw" partition="_Id9p4Id1EeO_WrxkM_TNdw">
+        <ownedOperation xmi:id="_Exsr8InEEeOCG-kliLDj-Q" name="ds"/>
+        <ownedOperation xmi:id="_FwDxoInEEeOCG-kliLDj-Q" name="message1"/>
+        <ownedOperation xmi:id="_FwDxoYnEEeOCG-kliLDj-Q" name="message2"/>
         <group xmi:type="uml:ActivityPartition" xmi:id="_Id9p4Id1EeO_WrxkM_TNdw" name="component"/>
       </ownedBehavior>
     </packagedElement>

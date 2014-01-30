@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_Miau4InHEeOCG-kliLDj-Q" name="no.ntnu.item.tutorials">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_Miau4YnHEeOCG-kliLDj-Q" name="Exercise6a_completed" classifierBehavior="_Miau44nHEeOCG-kliLDj-Q" collaborationRole="_Miau4onHEeOCG-kliLDj-Q">
+      <ownedAttribute xmi:id="_Miau4onHEeOCG-kliLDj-Q" name="component"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Miau44nHEeOCG-kliLDj-Q" name="Exercise6a_completed" group="_Miau6YnHEeOCG-kliLDj-Q" partition="_Miau6YnHEeOCG-kliLDj-Q" node="_Miau84nHEeOCG-kliLDj-Q _Miau9InHEeOCG-kliLDj-Q _Miau9YnHEeOCG-kliLDj-Q _Miau9onHEeOCG-kliLDj-Q _Miau94nHEeOCG-kliLDj-Q _Miau-InHEeOCG-kliLDj-Q _Miau-onHEeOCG-kliLDj-Q _Miau_InHEeOCG-kliLDj-Q _Miau_YnHEeOCG-kliLDj-Q">
+        <ownedOperation xmi:id="_Miau5InHEeOCG-kliLDj-Q" name="showButtons"/>
+        <ownedOperation xmi:id="_Miau5YnHEeOCG-kliLDj-Q" name="changeColor"/>
+        <ownedOperation xmi:id="_Miau5onHEeOCG-kliLDj-Q" name="Component"/>
+        <ownedOperation xmi:id="_Miau54nHEeOCG-kliLDj-Q" name="showLight"/>
+        <ownedOperation xmi:id="_Miau6InHEeOCG-kliLDj-Q" name="actionPerformed"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau6onHEeOCG-kliLDj-Q" name="e0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau9InHEeOCG-kliLDj-Q" target="_Miau9onHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau64nHEeOCG-kliLDj-Q" name="e1" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau9onHEeOCG-kliLDj-Q" target="_Miau94nHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau7InHEeOCG-kliLDj-Q" name="e3" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau-onHEeOCG-kliLDj-Q" target="_Miau84nHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau7YnHEeOCG-kliLDj-Q" name="e5" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau-InHEeOCG-kliLDj-Q" target="_Miau9YnHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau7onHEeOCG-kliLDj-Q" name="e2" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau84nHEeOCG-kliLDj-Q" target="_Miau_YnHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau74nHEeOCG-kliLDj-Q" name="e4" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau94nHEeOCG-kliLDj-Q" target="_Miau_InHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau8InHEeOCG-kliLDj-Q" name="e6" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau_InHEeOCG-kliLDj-Q" target="_Miau_YnHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau8YnHEeOCG-kliLDj-Q" name="e7" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau_YnHEeOCG-kliLDj-Q" target="_Miau-onHEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Miau8onHEeOCG-kliLDj-Q" name="e8" inPartition="_Miau6YnHEeOCG-kliLDj-Q" source="_Miau_InHEeOCG-kliLDj-Q" target="_Miau-InHEeOCG-kliLDj-Q"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_Miau6YnHEeOCG-kliLDj-Q" name="component" node="_Miau84nHEeOCG-kliLDj-Q _Miau9InHEeOCG-kliLDj-Q _Miau9YnHEeOCG-kliLDj-Q _Miau9onHEeOCG-kliLDj-Q _Miau94nHEeOCG-kliLDj-Q _Miau-InHEeOCG-kliLDj-Q _Miau-onHEeOCG-kliLDj-Q _Miau_InHEeOCG-kliLDj-Q _Miau_YnHEeOCG-kliLDj-Q" edge="_Miau6onHEeOCG-kliLDj-Q _Miau64nHEeOCG-kliLDj-Q _Miau7InHEeOCG-kliLDj-Q _Miau7YnHEeOCG-kliLDj-Q _Miau7onHEeOCG-kliLDj-Q _Miau74nHEeOCG-kliLDj-Q _Miau8InHEeOCG-kliLDj-Q _Miau8YnHEeOCG-kliLDj-Q _Miau8onHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_Miau84nHEeOCG-kliLDj-Q" name="o0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau7onHEeOCG-kliLDj-Q" incoming="_Miau7InHEeOCG-kliLDj-Q" operation="_Miau5YnHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_Miau9InHEeOCG-kliLDj-Q" name="i0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau6onHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_Miau9YnHEeOCG-kliLDj-Q" name="x0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" incoming="_Miau7YnHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_Miau9onHEeOCG-kliLDj-Q" name="o1" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau64nHEeOCG-kliLDj-Q" incoming="_Miau6onHEeOCG-kliLDj-Q" operation="_Miau54nHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_Miau94nHEeOCG-kliLDj-Q" name="o2" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau74nHEeOCG-kliLDj-Q" incoming="_Miau64nHEeOCG-kliLDj-Q" operation="_Miau5InHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_Miau-InHEeOCG-kliLDj-Q" name="r0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau7YnHEeOCG-kliLDj-Q" incoming="_Miau8onHEeOCG-kliLDj-Q">
+          <trigger xmi:id="_Miau-YnHEeOCG-kliLDj-Q" name="EXIT" event="_MiavAInHEeOCG-kliLDj-Q"/>
+        </node>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_Miau-onHEeOCG-kliLDj-Q" name="r1" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau7InHEeOCG-kliLDj-Q" incoming="_Miau8YnHEeOCG-kliLDj-Q">
+          <trigger xmi:id="_Miau-4nHEeOCG-kliLDj-Q" name="CHANGE_COLOR" event="_MiavA4nHEeOCG-kliLDj-Q"/>
+        </node>
+        <node xmi:type="uml:ForkNode" xmi:id="_Miau_InHEeOCG-kliLDj-Q" name="f0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau8InHEeOCG-kliLDj-Q _Miau8onHEeOCG-kliLDj-Q" incoming="_Miau74nHEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_Miau_YnHEeOCG-kliLDj-Q" name="m0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau8YnHEeOCG-kliLDj-Q" incoming="_Miau7onHEeOCG-kliLDj-Q _Miau8InHEeOCG-kliLDj-Q"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_Miau_onHEeOCG-kliLDj-Q" name="EXIT"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_Miau_4nHEeOCG-kliLDj-Q" name="r0"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavAInHEeOCG-kliLDj-Q" name="" signal="_Miau_onHEeOCG-kliLDj-Q"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_MiavAYnHEeOCG-kliLDj-Q" name="CHANGE_COLOR"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavAonHEeOCG-kliLDj-Q" name="r1"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavA4nHEeOCG-kliLDj-Q" name="" signal="_MiavAYnHEeOCG-kliLDj-Q"/>
+    <profileApplication xmi:id="_MiavBInHEeOCG-kliLDj-Q">
+      <eAnnotations xmi:id="_MiavBYnHEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_MiavBonHEeOCG-kliLDj-Q">
+      <eAnnotations xmi:id="_MiavB4nHEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <arctis:system xmi:id="_MiavCInHEeOCG-kliLDj-Q" base_Collaboration="_Miau4YnHEeOCG-kliLDj-Q"/>
+  <arctis:system xmi:id="_MiavCYnHEeOCG-kliLDj-Q" base_Activity="_Miau44nHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavConHEeOCG-kliLDj-Q" x="250" y="220" width="120" height="70" base_Element="_Miau4onHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavC4nHEeOCG-kliLDj-Q" x="180" y="55" width="613" height="54" base_Element="_Miau44nHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavDInHEeOCG-kliLDj-Q" x="180" y="108" width="613" height="415" base_Element="_Miau6YnHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavDYnHEeOCG-kliLDj-Q" x="306" y="450" width="163" height="55" base_Element="_Miau84nHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavDonHEeOCG-kliLDj-Q" x="369" y="117" base_Element="_Miau9InHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavD4nHEeOCG-kliLDj-Q" x="549" y="423" base_Element="_Miau9YnHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavEInHEeOCG-kliLDj-Q" x="306" y="180" width="163" height="55" base_Element="_Miau9onHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavEYnHEeOCG-kliLDj-Q" x="306" y="234" width="163" height="55" base_Element="_Miau94nHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavEonHEeOCG-kliLDj-Q" x="504" y="342" width="127" height="55" base_Element="_Miau-InHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavE4nHEeOCG-kliLDj-Q" x="288" y="396" width="199" height="55" base_Element="_Miau-onHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavFInHEeOCG-kliLDj-Q" x="360" y="306" width="54" height="19" base_Element="_Miau_InHEeOCG-kliLDj-Q" orientation="north"/>
+  <graphics:Shape xmi:id="_MiavFYnHEeOCG-kliLDj-Q" x="369" y="351" width="37" height="37" base_Element="_Miau_YnHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavFonHEeOCG-kliLDj-Q" aux1="-144 0 -144 108  -144 -108 -144 0 " base_Element="_Miau7onHEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_MiavF4nHEeOCG-kliLDj-Q" aux1="180 0 0 -54 " base_Element="_Miau8onHEeOCG-kliLDj-Q"/>
+</xmi:XMI>

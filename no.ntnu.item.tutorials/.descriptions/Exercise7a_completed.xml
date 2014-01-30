@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Exercise7a_completed" 
+    uuid="_1EXWw4nLEeOCG-kliLDj-Q" 
+    status="published" 
+    type="system" 
+    >
+    <required>
+        <block name="c0" uuid="_6SkL44nJEeOCG-kliLDj-Q"/>
+    </required>
+</block>
