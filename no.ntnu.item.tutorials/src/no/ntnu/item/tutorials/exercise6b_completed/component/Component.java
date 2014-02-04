@@ -1,5 +1,7 @@
 package no.ntnu.item.tutorials.exercise6b_completed.component;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,14 +27,14 @@ public class Component extends Block {
 	
 	private JFrame gameFrame;
 	private JButton redDoor, greenDoor, blueDoor, exit;
-	private JLabel messageLabel, victoryLabel, cakeLabel, empty1, empty2;
+	private JLabel messageLabel, victoryLabel, cakeLabel;
 	private String message;
 	private int currentStep;
 	
 	public Component() {
 		message = "Welcome to the door game!";
 		gameFrame = new JFrame("Doors");
-		gameFrame.setBounds(100, 100, 300, 200);
+		gameFrame.setBounds(100, 100, 800, 600);
 		messageLabel = new JLabel(message);
 		redDoor = new JButton(new ImageIcon("../resources/red_door.gif"));
 		redDoor.addActionListener(new RedDoorListener());
@@ -40,53 +42,78 @@ public class Component extends Block {
 		greenDoor.addActionListener(new GreenDoorListener());
 		blueDoor = new JButton(new ImageIcon("../resources/blue_door.gif"));
 		blueDoor.addActionListener(new BlueDoorListener());
-		empty1 = new JLabel(".");
-		empty2 = new JLabel(".");
-		gameFrame.getContentPane().setLayout(new GridLayout(3,2));
-		gameFrame.getContentPane().add(messageLabel);
-		gameFrame.getContentPane().add(empty1);
-		gameFrame.getContentPane().add(empty2);
-		gameFrame.getContentPane().add(redDoor);
-		gameFrame.getContentPane().add(greenDoor);
-		gameFrame.getContentPane().add(blueDoor);
+		gameFrame.getContentPane().setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+		c.gridwidth = 3;
+		c.gridx = 0;
+		c.gridy = 0;
+		gameFrame.getContentPane().add(messageLabel, c);
+		
+		c.gridwidth = 1;
+		c.gridx = 0;
+		c.gridy = 1;
+		gameFrame.getContentPane().add(redDoor, c);
+		
+		c.gridx = 1;
+		gameFrame.getContentPane().add(greenDoor, c);
+		
+		c.gridx = 2;
+		gameFrame.getContentPane().add(blueDoor, c);
 	}
 	
 	public void showDoors1() {
 		currentStep = 1;
+		messageLabel.setText(message);
 		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors2() {
 		currentStep = 2;
+		messageLabel.setText(message);
 		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors3() {
 		currentStep = 3;
+		messageLabel.setText(message);
 		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors4() {
 		currentStep = 4;
+		messageLabel.setText(message);
 		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors5() {
 		currentStep = 5;
+		messageLabel.setText(message);
 		gameFrame.setVisible(true);
 	}
 	
 	public void victory() {
 		gameFrame = new JFrame("Victory!");
-		gameFrame.setBounds(100, 100, 300, 200);
+		gameFrame.setBounds(100, 100, 800, 600);
 		victoryLabel = new JLabel("You win!");
 		cakeLabel = new JLabel(new ImageIcon("../resources/cake.jpg"));
 		exit = new JButton("Exit");
 		exit.addActionListener(new ExitListener());
-		gameFrame.getContentPane().setLayout(new GridLayout(1,3));
-		gameFrame.getContentPane().add(victoryLabel);
-		gameFrame.getContentPane().add(cakeLabel);
-		gameFrame.getContentPane().add(exit);
+		gameFrame.getContentPane().setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+		c.gridwidth = 3;
+		c.gridx = 0;
+		c.gridy = 0;
+		gameFrame.getContentPane().add(victoryLabel, c);
+		
+		c.gridwidth = 1;
+		c.gridx = 1;
+		c.gridy = 1;
+		gameFrame.getContentPane().add(cakeLabel, c);
+		
+		c.gridy = 2;
+		gameFrame.getContentPane().add(exit, c);
 		gameFrame.setVisible(true);
 	}
 	
