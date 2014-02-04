@@ -2,7 +2,6 @@ package no.ntnu.item.tutorials.exercise6b_completed.component;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
