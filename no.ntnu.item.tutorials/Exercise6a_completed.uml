@@ -28,7 +28,7 @@
           <trigger xmi:id="_Miau-YnHEeOCG-kliLDj-Q" name="EXIT" event="_MiavAInHEeOCG-kliLDj-Q"/>
         </node>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_Miau-onHEeOCG-kliLDj-Q" name="r1" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau7InHEeOCG-kliLDj-Q" incoming="_Miau8YnHEeOCG-kliLDj-Q">
-          <trigger xmi:id="_Miau-4nHEeOCG-kliLDj-Q" name="CHANGE_COLOR" event="_MiavA4nHEeOCG-kliLDj-Q"/>
+          <trigger xmi:id="_Kx8Q0I3aEeOlIvrxuCoLJA" name="BUTTON_PRESSED" event="_Kx-GAI3aEeOlIvrxuCoLJA"/>
         </node>
         <node xmi:type="uml:ForkNode" xmi:id="_Miau_InHEeOCG-kliLDj-Q" name="f0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau8InHEeOCG-kliLDj-Q _Miau8onHEeOCG-kliLDj-Q" incoming="_Miau74nHEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:MergeNode" xmi:id="_Miau_YnHEeOCG-kliLDj-Q" name="m0" inPartition="_Miau6YnHEeOCG-kliLDj-Q" outgoing="_Miau8YnHEeOCG-kliLDj-Q" incoming="_Miau7onHEeOCG-kliLDj-Q _Miau8InHEeOCG-kliLDj-Q"/>
@@ -37,9 +37,10 @@
     <packagedElement xmi:type="uml:Signal" xmi:id="_Miau_onHEeOCG-kliLDj-Q" name="EXIT"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_Miau_4nHEeOCG-kliLDj-Q" name="r0"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavAInHEeOCG-kliLDj-Q" name="" signal="_Miau_onHEeOCG-kliLDj-Q"/>
-    <packagedElement xmi:type="uml:Signal" xmi:id="_MiavAYnHEeOCG-kliLDj-Q" name="CHANGE_COLOR"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavAonHEeOCG-kliLDj-Q" name="r1"/>
-    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavA4nHEeOCG-kliLDj-Q" name="" signal="_MiavAYnHEeOCG-kliLDj-Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MiavA4nHEeOCG-kliLDj-Q" name=""/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_Kwp3YI3aEeOlIvrxuCoLJA" name="BUTTON_PRESSED"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_Kx-GAI3aEeOlIvrxuCoLJA" name="" signal="_Kwp3YI3aEeOlIvrxuCoLJA"/>
     <profileApplication xmi:id="_MiavBInHEeOCG-kliLDj-Q">
       <eAnnotations xmi:id="_MiavBYnHEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>

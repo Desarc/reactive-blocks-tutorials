@@ -13,7 +13,7 @@ import no.ntnu.item.arctis.runtime.Block;
 
 public class Component extends Block {
 
-	public static final String CHANGE_COLOR = "CHANGE_COLOR";
+	public static final String BUTTON_PRESSED = "BUTTON_PRESSED";
 	public static final String EXIT = "EXIT";
 	
 	private JFrame lightFrame, buttonFrame;
@@ -62,7 +62,7 @@ public class Component extends Block {
 	class ChangeListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			sendToBlock(CHANGE_COLOR);;
+			sendToBlock(BUTTON_PRESSED);;
         }
 	}
  

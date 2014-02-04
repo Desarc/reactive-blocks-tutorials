@@ -3,11 +3,13 @@
   <uml:Package xmi:id="_IbYP8Id1EeO_WrxkM_TNdw" name="no.ntnu.item.tutorials">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_IbY3Aod1EeO_WrxkM_TNdw" name="Exercise1b" classifierBehavior="_Id4xYYd1EeO_WrxkM_TNdw" collaborationRole="_Id70sId1EeO_WrxkM_TNdw">
       <ownedAttribute xmi:id="_Id70sId1EeO_WrxkM_TNdw" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Id4xYYd1EeO_WrxkM_TNdw" name="Exercise1b" group="_Id9p4Id1EeO_WrxkM_TNdw" partition="_Id9p4Id1EeO_WrxkM_TNdw">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Id4xYYd1EeO_WrxkM_TNdw" name="Exercise1b" group="_Id9p4Id1EeO_WrxkM_TNdw" partition="_Id9p4Id1EeO_WrxkM_TNdw" node="_508PEI3XEeOlIvrxuCoLJA _6-B-EI3XEeOlIvrxuCoLJA">
         <ownedOperation xmi:id="_Exsr8InEEeOCG-kliLDj-Q" name="ds"/>
         <ownedOperation xmi:id="_FwDxoInEEeOCG-kliLDj-Q" name="message1"/>
         <ownedOperation xmi:id="_FwDxoYnEEeOCG-kliLDj-Q" name="message2"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_Id9p4Id1EeO_WrxkM_TNdw" name="component"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_Id9p4Id1EeO_WrxkM_TNdw" name="component" node="_508PEI3XEeOlIvrxuCoLJA _6-B-EI3XEeOlIvrxuCoLJA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_508PEI3XEeOlIvrxuCoLJA" name="o0" inPartition="_Id9p4Id1EeO_WrxkM_TNdw" operation="_FwDxoInEEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_6-B-EI3XEeOlIvrxuCoLJA" name="o1" inPartition="_Id9p4Id1EeO_WrxkM_TNdw" operation="_FwDxoYnEEeOCG-kliLDj-Q"/>
       </ownedBehavior>
     </packagedElement>
     <profileApplication xmi:id="_IbY3AId1EeO_WrxkM_TNdw">
@@ -28,4 +30,6 @@
   <graphics:Shape xmi:id="_Id9C0Id1EeO_WrxkM_TNdw" x="250" y="220" width="120" height="70" base_Element="_Id70sId1EeO_WrxkM_TNdw"/>
   <graphics:Shape xmi:id="_Id-Q8Id1EeO_WrxkM_TNdw" x="180" y="55" width="613" height="54" base_Element="_Id4xYYd1EeO_WrxkM_TNdw"/>
   <graphics:Shape xmi:id="_Id-4AId1EeO_WrxkM_TNdw" x="180" y="108" width="613" height="415" base_Element="_Id9p4Id1EeO_WrxkM_TNdw"/>
+  <graphics:Shape xmi:id="_55FvQI3XEeOlIvrxuCoLJA" x="180" y="396" width="127" height="55" base_Element="_508PEI3XEeOlIvrxuCoLJA"/>
+  <graphics:Shape xmi:id="_6-G2kI3XEeOlIvrxuCoLJA" x="180" y="432" width="127" height="55" base_Element="_6-B-EI3XEeOlIvrxuCoLJA"/>
 </xmi:XMI>

@@ -19,7 +19,7 @@
           <trigger xmi:id="_8HN9MInFEeOCG-kliLDj-Q" name="EXIT" event="_8HOkQInFEeOCG-kliLDj-Q"/>
         </node>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_-N2SgInFEeOCG-kliLDj-Q" name="r1" inPartition="_uF3NMInDEeOCG-kliLDj-Q">
-          <trigger xmi:id="_-N7LAInFEeOCG-kliLDj-Q" name="CHANGE_COLOR" event="_-N8ZIInFEeOCG-kliLDj-Q"/>
+          <trigger xmi:id="_COuSkI3aEeOlIvrxuCoLJA" name="BUTTON_PRESSED" event="_COvgsI3aEeOlIvrxuCoLJA"/>
         </node>
         <node xmi:type="uml:ForkNode" xmi:id="_1OMacInGEeOCG-kliLDj-Q" name="f0" inPartition="_uF3NMInDEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:MergeNode" xmi:id="_QI2DAInHEeOCG-kliLDj-Q" name="m0" inPartition="_uF3NMInDEeOCG-kliLDj-Q"/>
@@ -28,9 +28,10 @@
     <packagedElement xmi:type="uml:Signal" xmi:id="_8F_OIInFEeOCG-kliLDj-Q" name="EXIT"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8HMvEInFEeOCG-kliLDj-Q" name="r0"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8HOkQInFEeOCG-kliLDj-Q" name="" signal="_8F_OIInFEeOCG-kliLDj-Q"/>
-    <packagedElement xmi:type="uml:Signal" xmi:id="_-M86oInFEeOCG-kliLDj-Q" name="CHANGE_COLOR"/>
     <packagedElement xmi:type="uml:SignalEvent" xmi:id="_-N584InFEeOCG-kliLDj-Q" name="r1"/>
-    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_-N8ZIInFEeOCG-kliLDj-Q" name="" signal="_-M86oInFEeOCG-kliLDj-Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_-N8ZIInFEeOCG-kliLDj-Q" name=""/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_CNHJAI3aEeOlIvrxuCoLJA" name="BUTTON_PRESSED"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_COvgsI3aEeOlIvrxuCoLJA" name="" signal="_CNHJAI3aEeOlIvrxuCoLJA"/>
     <profileApplication xmi:id="_uETG8YnDEeOCG-kliLDj-Q">
       <eAnnotations xmi:id="_uETG8onDEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
