@@ -68,4 +68,6 @@
   <graphics:Shape xmi:id="_MD-RuInCEeOCG-kliLDj-Q" x="396" y="288" width="163" height="55" base_Element="_MD-RoYnCEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_VPYRQInCEeOCG-kliLDj-Q" aux1="0 -90 -144 0 " base_Element="_UdorQInCEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_WATX4InCEeOCG-kliLDj-Q" aux1="-144 0 0 90 " base_Element="_USlR0InCEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_AgfrsIqkEeOKJv-R2vsbtA" x="360" y="342" base_Element="_W_b5oInCEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_A8ww8IqkEeOKJv-R2vsbtA" x="486" y="396" base_Element="_Xps-oInCEeOCG-kliLDj-Q"/>
 </xmi:XMI>
