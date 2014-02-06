@@ -3,19 +3,23 @@
   <uml:Package xmi:id="_8_W8gIp9EeOKJv-R2vsbtA" name="no.ntnu.item.tutorials">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_8_W8g4p9EeOKJv-R2vsbtA" name="Exercise2b" classifierBehavior="_9B7vYIp9EeOKJv-R2vsbtA" collaborationRole="_9B_ZwIp9EeOKJv-R2vsbtA">
       <ownedAttribute xmi:id="_9B_ZwIp9EeOKJv-R2vsbtA" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_9B7vYIp9EeOKJv-R2vsbtA" name="Exercise2b" group="_9CB2AIp9EeOKJv-R2vsbtA" partition="_9CB2AIp9EeOKJv-R2vsbtA" node="_qWPP0Ip-EeOKJv-R2vsbtA _rTIC8IqLEeOKJv-R2vsbtA _r7iGwIqLEeOKJv-R2vsbtA _shxAUIqLEeOKJv-R2vsbtA _tQEQwIqLEeOKJv-R2vsbtA">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_9B7vYIp9EeOKJv-R2vsbtA" name="Exercise2b" group="_9CB2AIp9EeOKJv-R2vsbtA" partition="_9CB2AIp9EeOKJv-R2vsbtA" node="_qWPP0Ip-EeOKJv-R2vsbtA _rTIC8IqLEeOKJv-R2vsbtA _r7iGwIqLEeOKJv-R2vsbtA _shxAUIqLEeOKJv-R2vsbtA _tQEQwIqLEeOKJv-R2vsbtA _hEVXsI9BEeOntoBjHOrXwA _iY8aMI9BEeOntoBjHOrXwA">
         <ownedOperation xmi:id="_qWSTIIp-EeOKJv-R2vsbtA" name="setCarGreen"/>
         <ownedOperation xmi:id="_1VfysIp-EeOKJv-R2vsbtA" name="setPedestrianRed"/>
         <ownedOperation xmi:id="_1VhA0Ip-EeOKJv-R2vsbtA" name="setPedestrianGreen"/>
         <ownedOperation xmi:id="_1Vhn4Ip-EeOKJv-R2vsbtA" name="setCarRed"/>
         <ownedOperation xmi:id="_1ViO8Ip-EeOKJv-R2vsbtA" name="setCarYellow"/>
         <ownedOperation xmi:id="_naQT8IqLEeOKJv-R2vsbtA" name="Component"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_9CB2AIp9EeOKJv-R2vsbtA" name="component" node="_qWPP0Ip-EeOKJv-R2vsbtA _rTIC8IqLEeOKJv-R2vsbtA _r7iGwIqLEeOKJv-R2vsbtA _shxAUIqLEeOKJv-R2vsbtA _tQEQwIqLEeOKJv-R2vsbtA"/>
+        <ownedOperation xmi:id="_gOmpkI9BEeOntoBjHOrXwA" name="displayPedestrianLight"/>
+        <ownedOperation xmi:id="_gOn3sI9BEeOntoBjHOrXwA" name="displayCarLight"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_9CB2AIp9EeOKJv-R2vsbtA" name="component" node="_qWPP0Ip-EeOKJv-R2vsbtA _rTIC8IqLEeOKJv-R2vsbtA _r7iGwIqLEeOKJv-R2vsbtA _shxAUIqLEeOKJv-R2vsbtA _tQEQwIqLEeOKJv-R2vsbtA _hEVXsI9BEeOntoBjHOrXwA _iY8aMI9BEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_qWPP0Ip-EeOKJv-R2vsbtA" name="o0" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_qWSTIIp-EeOKJv-R2vsbtA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_rTIC8IqLEeOKJv-R2vsbtA" name="o1" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_1ViO8Ip-EeOKJv-R2vsbtA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_r7iGwIqLEeOKJv-R2vsbtA" name="o2" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_1Vhn4Ip-EeOKJv-R2vsbtA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_shxAUIqLEeOKJv-R2vsbtA" name="o3" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_1VhA0Ip-EeOKJv-R2vsbtA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_tQEQwIqLEeOKJv-R2vsbtA" name="o4" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_1VfysIp-EeOKJv-R2vsbtA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_hEVXsI9BEeOntoBjHOrXwA" name="o5" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_gOn3sI9BEeOntoBjHOrXwA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_iY8aMI9BEeOntoBjHOrXwA" name="o6" inPartition="_9CB2AIp9EeOKJv-R2vsbtA" operation="_gOmpkI9BEeOntoBjHOrXwA"/>
       </ownedBehavior>
     </packagedElement>
     <profileApplication xmi:id="_8_W8gYp9EeOKJv-R2vsbtA">
@@ -41,4 +45,6 @@
   <graphics:Shape xmi:id="_r7qCkIqLEeOKJv-R2vsbtA" x="198" y="378" width="145" height="55" base_Element="_r7iGwIqLEeOKJv-R2vsbtA"/>
   <graphics:Shape xmi:id="_sh-bsIqLEeOKJv-R2vsbtA" x="198" y="414" width="163" height="55" base_Element="_shxAUIqLEeOKJv-R2vsbtA"/>
   <graphics:Shape xmi:id="_tQQeAIqLEeOKJv-R2vsbtA" x="198" y="450" width="163" height="55" base_Element="_tQEQwIqLEeOKJv-R2vsbtA"/>
+  <graphics:Shape xmi:id="_hHCGYI9BEeOntoBjHOrXwA" x="198" y="234" width="145" height="55" base_Element="_hEVXsI9BEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_iZB5wI9BEeOntoBjHOrXwA" x="198" y="270" width="163" height="55" base_Element="_iY8aMI9BEeOntoBjHOrXwA"/>
 </xmi:XMI>

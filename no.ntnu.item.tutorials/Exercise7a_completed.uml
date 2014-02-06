@@ -3,22 +3,20 @@
   <uml:Package xmi:id="_1EXWwInLEeOCG-kliLDj-Q" name="no.ntnu.item.tutorials">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_1EXWwYnLEeOCG-kliLDj-Q" name="Exercise7a_completed" classifierBehavior="_1EXWw4nLEeOCG-kliLDj-Q" collaborationRole="_1EXWwonLEeOCG-kliLDj-Q">
       <ownedAttribute xmi:id="_1EXWwonLEeOCG-kliLDj-Q" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_1EXWw4nLEeOCG-kliLDj-Q" name="Exercise7a_completed" group="_1EXWxYnLEeOCG-kliLDj-Q" partition="_1EXWxYnLEeOCG-kliLDj-Q" node="_1EXWxonLEeOCG-kliLDj-Q _1EXWyonLEeOCG-kliLDj-Q _1EXWy4nLEeOCG-kliLDj-Q _1EXWzInLEeOCG-kliLDj-Q _1EXWzYnLEeOCG-kliLDj-Q">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_1EXWw4nLEeOCG-kliLDj-Q" name="Exercise7a_completed" group="_1EXWxYnLEeOCG-kliLDj-Q" partition="_1EXWxYnLEeOCG-kliLDj-Q" node="_1EXWxonLEeOCG-kliLDj-Q _1EXWyonLEeOCG-kliLDj-Q _1EXWy4nLEeOCG-kliLDj-Q _0RMFwI9PEeOntoBjHOrXwA">
         <ownedOperation xmi:id="_1EXWxInLEeOCG-kliLDj-Q" name="hello"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_4CoesInLEeOCG-kliLDj-Q" name="e0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" source="_1EXWyInLEeOCG-kliLDj-Q" target="_1EXWzYnLEeOCG-kliLDj-Q"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_4OnsQInLEeOCG-kliLDj-Q" name="e1" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" source="_1EXWzYnLEeOCG-kliLDj-Q" target="_1EXWzInLEeOCG-kliLDj-Q"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4dt4MInLEeOCG-kliLDj-Q" name="e2" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" source="_1EXWyonLEeOCG-kliLDj-Q" target="_1EXWx4nLEeOCG-kliLDj-Q"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4q7NwInLEeOCG-kliLDj-Q" name="e3" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" source="_1EXWyYnLEeOCG-kliLDj-Q" target="_1EXWy4nLEeOCG-kliLDj-Q"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_1EXWxYnLEeOCG-kliLDj-Q" name="component" node="_1EXWxonLEeOCG-kliLDj-Q _1EXWx4nLEeOCG-kliLDj-Q _1EXWyInLEeOCG-kliLDj-Q _1EXWyYnLEeOCG-kliLDj-Q _1EXWyonLEeOCG-kliLDj-Q _1EXWy4nLEeOCG-kliLDj-Q _1EXWzInLEeOCG-kliLDj-Q _1EXWzYnLEeOCG-kliLDj-Q" edge="_4CoesInLEeOCG-kliLDj-Q _4OnsQInLEeOCG-kliLDj-Q _4dt4MInLEeOCG-kliLDj-Q _4q7NwInLEeOCG-kliLDj-Q"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_1lsakI9PEeOntoBjHOrXwA" name="e0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" source="_1EXWyInLEeOCG-kliLDj-Q" target="_0RMFwI9PEeOntoBjHOrXwA"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_1EXWxYnLEeOCG-kliLDj-Q" name="component" node="_1EXWxonLEeOCG-kliLDj-Q _1EXWx4nLEeOCG-kliLDj-Q _1EXWyInLEeOCG-kliLDj-Q _1EXWyYnLEeOCG-kliLDj-Q _1EXWyonLEeOCG-kliLDj-Q _1EXWy4nLEeOCG-kliLDj-Q _0RMFwI9PEeOntoBjHOrXwA" edge="_4dt4MInLEeOCG-kliLDj-Q _4q7NwInLEeOCG-kliLDj-Q _1lsakI9PEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallBehaviorAction" xmi:id="_1EXWxonLEeOCG-kliLDj-Q" name="c0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" behavior="_6SkL44nJEeOCG-kliLDj-Q">
           <argument xmi:id="_1EXWx4nLEeOCG-kliLDj-Q" name="start" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" incoming="_4dt4MInLEeOCG-kliLDj-Q"/>
-          <result xmi:id="_1EXWyInLEeOCG-kliLDj-Q" name="run" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" outgoing="_4CoesInLEeOCG-kliLDj-Q"/>
+          <result xmi:id="_1EXWyInLEeOCG-kliLDj-Q" name="run" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" outgoing="_1lsakI9PEeOntoBjHOrXwA"/>
           <result xmi:id="_1EXWyYnLEeOCG-kliLDj-Q" name="done" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" outgoing="_4q7NwInLEeOCG-kliLDj-Q"/>
         </node>
         <node xmi:type="uml:InitialNode" xmi:id="_1EXWyonLEeOCG-kliLDj-Q" name="i0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" outgoing="_4dt4MInLEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_1EXWy4nLEeOCG-kliLDj-Q" name="x0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" incoming="_4q7NwInLEeOCG-kliLDj-Q"/>
-        <node xmi:type="uml:FlowFinalNode" xmi:id="_1EXWzInLEeOCG-kliLDj-Q" name="z0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" incoming="_4OnsQInLEeOCG-kliLDj-Q"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_1EXWzYnLEeOCG-kliLDj-Q" name="o0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" outgoing="_4OnsQInLEeOCG-kliLDj-Q" incoming="_4CoesInLEeOCG-kliLDj-Q" operation="_1EXWxInLEeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_0RMFwI9PEeOntoBjHOrXwA" name="o0" inPartition="_1EXWxYnLEeOCG-kliLDj-Q" incoming="_1lsakI9PEeOntoBjHOrXwA" operation="_1EXWxInLEeOCG-kliLDj-Q"/>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1EXWzonLEeOCG-kliLDj-Q" name="no.ntnu.item.tutorials">
@@ -78,7 +76,6 @@
   <graphics:Shape xmi:id="_1EXW8onLEeOCG-kliLDj-Q" x="324" y="180" width="198" height="144" base_Element="_1EXWxonLEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_1EXW84nLEeOCG-kliLDj-Q" x="351" y="117" base_Element="_1EXWyonLEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_1EXW9InLEeOCG-kliLDj-Q" x="351" y="351" base_Element="_1EXWy4nLEeOCG-kliLDj-Q"/>
-  <graphics:Shape xmi:id="_1EXW9YnLEeOCG-kliLDj-Q" x="675" y="225" base_Element="_1EXWzInLEeOCG-kliLDj-Q"/>
-  <graphics:Shape xmi:id="_1EXW9onLEeOCG-kliLDj-Q" x="540" y="216" width="109" height="55" base_Element="_1EXWzYnLEeOCG-kliLDj-Q"/>
   <arctis:event xmi:id="_QiijIInMEeOCG-kliLDj-Q" base_Transition="_QhL4QInMEeOCG-kliLDj-Q" triggers="_1EXW3InLEeOCG-kliLDj-Q" effects="_1EXW3onLEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_0T2_QI9PEeOntoBjHOrXwA" x="540" y="216" width="127" height="55" base_Element="_0RMFwI9PEeOntoBjHOrXwA"/>
 </xmi:XMI>

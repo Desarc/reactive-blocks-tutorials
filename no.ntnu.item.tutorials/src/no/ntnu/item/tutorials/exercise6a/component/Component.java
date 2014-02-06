@@ -4,11 +4,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
+import utils.TrafficLight;
 import no.ntnu.item.arctis.runtime.Block;
 
 public class Component extends Block {
@@ -16,34 +15,27 @@ public class Component extends Block {
 	public static final String BUTTON_PRESSED = "BUTTON_PRESSED";
 	public static final String EXIT = "EXIT";
 	
-	private JFrame lightFrame, buttonFrame;
-	private JLabel light;
+	private TrafficLight light;
+	private JFrame buttonFrame;
 	private JButton change, exit;
-	private ImageIcon redLight;
-	private ImageIcon greenLight;
 	private boolean alt;
 
 	public void changeColor() {
 		if (alt) {
-			light.setIcon(greenLight);
+			light.setGreen();
 			alt = false;
 		}
 		else {
-			light.setIcon(redLight);
+			light.setRed();
 			alt = true;
 		}
 	}
 
 	public void showLight() {
-		lightFrame = new JFrame("Light");
-		lightFrame.setBounds(100, 100, 200, 200);
-		redLight = new ImageIcon("../resources/red_light.jpg");
-		greenLight = new ImageIcon("../resources/green_light.jpg");
-		light = new JLabel(redLight);
+		light = new TrafficLight();
+		light.setRed();
 		alt = true;
-		lightFrame.getContentPane().setLayout(new GridLayout(1,1));
-		lightFrame.getContentPane().add(light);
-		lightFrame.setVisible(true);
+		light.show();
 	}
 
 	public void showButtons() {

@@ -3,22 +3,26 @@
   <uml:Package xmi:id="_lv2XwImzEeOCG-kliLDj-Q" name="no.ntnu.item.tutorials">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_lv40AImzEeOCG-kliLDj-Q" name="Exercise2a" classifierBehavior="_lz-CwYmzEeOCG-kliLDj-Q" collaborationRole="_l0DiUImzEeOCG-kliLDj-Q">
       <ownedAttribute xmi:id="_l0DiUImzEeOCG-kliLDj-Q" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_lz-CwYmzEeOCG-kliLDj-Q" name="Exercise2a" group="_l0HMsImzEeOCG-kliLDj-Q" partition="_l0HMsImzEeOCG-kliLDj-Q" node="_mjiegImzEeOCG-kliLDj-Q _nV8L0ImzEeOCG-kliLDj-Q _ouONYYmzEeOCG-kliLDj-Q _0q8eEImzEeOCG-kliLDj-Q _GWhH8Im0EeOCG-kliLDj-Q _RUAwQYm0EeOCG-kliLDj-Q">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_lz-CwYmzEeOCG-kliLDj-Q" name="Exercise2a" group="_l0HMsImzEeOCG-kliLDj-Q" partition="_l0HMsImzEeOCG-kliLDj-Q" node="_mjiegImzEeOCG-kliLDj-Q _nV8L0ImzEeOCG-kliLDj-Q _ouONYYmzEeOCG-kliLDj-Q _0q8eEImzEeOCG-kliLDj-Q _GWhH8Im0EeOCG-kliLDj-Q _RUAwQYm0EeOCG-kliLDj-Q _zbeOcI8-EeOntoBjHOrXwA">
         <ownedOperation xmi:id="_0q-TQImzEeOCG-kliLDj-Q" name="set_red"/>
         <ownedOperation xmi:id="_CtADkIm0EeOCG-kliLDj-Q" name="setRed"/>
         <ownedOperation xmi:id="_CtBRsIm0EeOCG-kliLDj-Q" name="Component"/>
         <ownedOperation xmi:id="_CtB4wIm0EeOCG-kliLDj-Q" name="setGreen"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_l0HMsImzEeOCG-kliLDj-Q" name="component" node="_mjiegImzEeOCG-kliLDj-Q _nV8L0ImzEeOCG-kliLDj-Q _ouONYYmzEeOCG-kliLDj-Q _0q8eEImzEeOCG-kliLDj-Q _GWhH8Im0EeOCG-kliLDj-Q _RUAwQYm0EeOCG-kliLDj-Q"/>
+        <ownedOperation xmi:id="_xAYsEI8-EeOntoBjHOrXwA" name="setLightRed"/>
+        <ownedOperation xmi:id="_xAZTII8-EeOntoBjHOrXwA" name="setLightGreen"/>
+        <ownedOperation xmi:id="_xAZ6MI8-EeOntoBjHOrXwA" name="displayLight"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_l0HMsImzEeOCG-kliLDj-Q" name="component" node="_mjiegImzEeOCG-kliLDj-Q _nV8L0ImzEeOCG-kliLDj-Q _ouONYYmzEeOCG-kliLDj-Q _0q8eEImzEeOCG-kliLDj-Q _GWhH8Im0EeOCG-kliLDj-Q _RUAwQYm0EeOCG-kliLDj-Q _zbeOcI8-EeOntoBjHOrXwA"/>
         <node xmi:type="uml:InitialNode" xmi:id="_mjiegImzEeOCG-kliLDj-Q" name="i0" inPartition="_l0HMsImzEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_nV8L0ImzEeOCG-kliLDj-Q" name="x0" inPartition="_l0HMsImzEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_ouONYYmzEeOCG-kliLDj-Q" name="t0" inPartition="_l0HMsImzEeOCG-kliLDj-Q">
           <trigger xmi:id="_ouONYomzEeOCG-kliLDj-Q" name="t0" event="_ouONYImzEeOCG-kliLDj-Q"/>
         </node>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_0q8eEImzEeOCG-kliLDj-Q" name="o0" inPartition="_l0HMsImzEeOCG-kliLDj-Q" operation="_CtADkIm0EeOCG-kliLDj-Q"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_GWhH8Im0EeOCG-kliLDj-Q" name="o1" inPartition="_l0HMsImzEeOCG-kliLDj-Q" operation="_CtB4wIm0EeOCG-kliLDj-Q"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_0q8eEImzEeOCG-kliLDj-Q" name="o0" inPartition="_l0HMsImzEeOCG-kliLDj-Q" operation="_xAYsEI8-EeOntoBjHOrXwA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_GWhH8Im0EeOCG-kliLDj-Q" name="o1" inPartition="_l0HMsImzEeOCG-kliLDj-Q" operation="_xAZTII8-EeOntoBjHOrXwA"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_RUAwQYm0EeOCG-kliLDj-Q" name="t1" inPartition="_l0HMsImzEeOCG-kliLDj-Q">
           <trigger xmi:id="_RUBXUIm0EeOCG-kliLDj-Q" name="t1" event="_RUAwQIm0EeOCG-kliLDj-Q"/>
         </node>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_zbeOcI8-EeOntoBjHOrXwA" name="o2" inPartition="_l0HMsImzEeOCG-kliLDj-Q" operation="_xAZ6MI8-EeOntoBjHOrXwA"/>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:TimeEvent" xmi:id="_ouONYImzEeOCG-kliLDj-Q" name="t0">
@@ -53,6 +57,7 @@
   <graphics:Shape xmi:id="_nWBEUImzEeOCG-kliLDj-Q" x="333" y="441" base_Element="_nV8L0ImzEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_ouViIImzEeOCG-kliLDj-Q" x="207" y="441" width="37" height="37" base_Element="_ouONYYmzEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_0uWXYImzEeOCG-kliLDj-Q" x="180" y="468" width="117" height="55" base_Element="_0q8eEImzEeOCG-kliLDj-Q"/>
-  <graphics:Shape xmi:id="_GWtVMIm0EeOCG-kliLDj-Q" x="288" y="468" width="109" height="55" base_Element="_GWhH8Im0EeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_GWtVMIm0EeOCG-kliLDj-Q" x="288" y="468" width="127" height="55" base_Element="_GWhH8Im0EeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_RUEaoIm0EeOCG-kliLDj-Q" x="243" y="441" width="37" height="37" base_Element="_RUAwQYm0EeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_zegUUI8-EeOntoBjHOrXwA" x="396" y="468" width="127" height="55" base_Element="_zbeOcI8-EeOntoBjHOrXwA"/>
 </xmi:XMI>

@@ -1,54 +1,41 @@
 package no.ntnu.item.tutorials.exercise2b_completed.component;
 
-import java.awt.GridLayout;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
+import utils.PedestrianLight;
+import utils.TrafficLight;
 import no.ntnu.item.arctis.runtime.Block;
 
 public class Component extends Block {
 
-	private JFrame frame;
-	private JLabel carLight, pedestrianLight;
-	private ImageIcon redLightCar, greenLightCar, yellowLightCar;
-	private ImageIcon greenLightPedestrian, redLightPedestrian;
+	private TrafficLight carLight;
+	private PedestrianLight pedLight;
 
-	public Component() {
-		frame = new JFrame("Lights");
-		frame.setBounds(100, 100, 200, 200);
-		redLightCar = new ImageIcon("../resources/red_light.jpg");
-		yellowLightCar = new ImageIcon("../resources/car_yellow.jpg");
-		greenLightCar = new ImageIcon("../resources/green_light.jpg");
-		carLight = new JLabel();
-		frame.getContentPane().setLayout(new GridLayout(2,1));
-		frame.getContentPane().add(carLight);
-		
-		redLightPedestrian = new ImageIcon("../resources/pedestrian_red.jpg");
-		greenLightPedestrian = new ImageIcon("../resources/pedestrian_green.jpg");
-		pedestrianLight = new JLabel();
-		frame.getContentPane().add(pedestrianLight);
-		frame.setVisible(true);
+	public void displayCarLight() {
+		carLight = new TrafficLight();
+		carLight.show();
+	}
+	
+	public void displayPedestrianLight() {
+		pedLight = new PedestrianLight();
+		pedLight.show();
 	}
 	
 	public void setCarGreen() {
-		carLight.setIcon(greenLightCar);
+		carLight.setGreen();
 	}
 
 	public void setCarYellow() {
-		carLight.setIcon(yellowLightCar);
+		carLight.setYellow();
 	}
 	
 	public void setCarRed() {
-		carLight.setIcon(redLightCar);
+		carLight.setRed();
 	}
 	
 	public void setPedestrianGreen() {
-		pedestrianLight.setIcon(greenLightPedestrian);
+		pedLight.setGreen();
 	}
 	
 	public void setPedestrianRed() {
-		pedestrianLight.setIcon(redLightPedestrian);
+		pedLight.setRed();
 	}
 }
