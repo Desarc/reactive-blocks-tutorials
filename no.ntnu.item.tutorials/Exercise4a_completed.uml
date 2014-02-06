@@ -65,4 +65,6 @@
   <graphics:Shape xmi:id="_Tnuo4InAEeOCG-kliLDj-Q" aux1="90 0 -4 -54 " base_Element="_SpI5sInAEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_UlR2QInAEeOCG-kliLDj-Q" aux1="-90 0 0 -54 " base_Element="_S3oosInAEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_gLg5kInAEeOCG-kliLDj-Q" x="360" y="234" width="163" height="55" base_Element="_gLXvoInAEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_AWpXMI5JEeOeevKFdGQHQA" x="360" y="324" base_Element="_tt78wInAEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_AmbfoI5JEeOeevKFdGQHQA" x="486" y="324" base_Element="_uUbVAInAEeOCG-kliLDj-Q"/>
 </xmi:XMI>

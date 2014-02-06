@@ -59,41 +59,43 @@ public class Component extends Block {
 		
 		c.gridx = 2;
 		gameFrame.getContentPane().add(blueDoor, c);
+		
+		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors1() {
 		currentStep = 1;
 		messageLabel.setText(message);
-		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors2() {
 		currentStep = 2;
 		messageLabel.setText(message);
-		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors3() {
 		currentStep = 3;
 		messageLabel.setText(message);
-		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors4() {
 		currentStep = 4;
 		messageLabel.setText(message);
-		gameFrame.setVisible(true);
 	}
 	
 	public void showDoors5() {
 		currentStep = 5;
 		messageLabel.setText(message);
-		gameFrame.setVisible(true);
 	}
 	
 	public void victory() {
-		gameFrame = new JFrame("Victory!");
-		gameFrame.setBounds(100, 100, 800, 600);
+		messageLabel.setVisible(false);
+		redDoor.setVisible(false);
+		blueDoor.setVisible(false);
+		greenDoor.setVisible(false);
+		gameFrame.getContentPane().removeAll();
+		//gameFrame = new JFrame("Victory!");
+		//gameFrame.setBounds(100, 100, 800, 600);
 		victoryLabel = new JLabel("You win!");
 		cakeLabel = new JLabel(new ImageIcon("../resources/cake.jpg"));
 		exit = new JButton("Exit");
@@ -150,7 +152,6 @@ public class Component extends Block {
 			else if (currentStep == 5) {
 				sendToBlock(OPEN_DOOR5, RED);
 			}
-			gameFrame.setVisible(false);
         }
 	}
  
@@ -172,7 +173,6 @@ public class Component extends Block {
 			else if (currentStep == 5) {
 				sendToBlock(OPEN_DOOR5, GREEN);
 			}
-			gameFrame.setVisible(false);
 	    }
 	}
 	
@@ -194,7 +194,6 @@ public class Component extends Block {
 			else if (currentStep == 5) {
 				sendToBlock(OPEN_DOOR5, BLUE);
 			}
-			gameFrame.setVisible(false);
 	    }
 	}
 	

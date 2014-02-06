@@ -6,10 +6,11 @@
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_7A_HY4d0EeO_WrxkM_TNdw" name="Exercise1a" group="_7A_HZod0EeO_WrxkM_TNdw" partition="_7A_HZod0EeO_WrxkM_TNdw" node="_7A_HZ4d0EeO_WrxkM_TNdw _7A_HaId0EeO_WrxkM_TNdw _7A_HaYd0EeO_WrxkM_TNdw">
         <ownedOperation xmi:id="_7A_HZId0EeO_WrxkM_TNdw" name="blink"/>
         <ownedOperation xmi:id="_7A_HZYd0EeO_WrxkM_TNdw" name="hello"/>
+        <ownedOperation xmi:id="_xf1XUI5xEeOs85J5Cplohg" name="helloWorld"/>
         <group xmi:type="uml:ActivityPartition" xmi:id="_7A_HZod0EeO_WrxkM_TNdw" name="component" node="_7A_HZ4d0EeO_WrxkM_TNdw _7A_HaId0EeO_WrxkM_TNdw _7A_HaYd0EeO_WrxkM_TNdw"/>
         <node xmi:type="uml:InitialNode" xmi:id="_7A_HZ4d0EeO_WrxkM_TNdw" name="i0" inPartition="_7A_HZod0EeO_WrxkM_TNdw"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_7A_HaId0EeO_WrxkM_TNdw" name="x0" inPartition="_7A_HZod0EeO_WrxkM_TNdw"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_7A_HaYd0EeO_WrxkM_TNdw" name="o0" inPartition="_7A_HZod0EeO_WrxkM_TNdw" operation="_7A_HZYd0EeO_WrxkM_TNdw"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_7A_HaYd0EeO_WrxkM_TNdw" name="o0" inPartition="_7A_HZod0EeO_WrxkM_TNdw" operation="_xf1XUI5xEeOs85J5Cplohg"/>
       </ownedBehavior>
     </packagedElement>
     <profileApplication xmi:id="_7A_Haod0EeO_WrxkM_TNdw">
