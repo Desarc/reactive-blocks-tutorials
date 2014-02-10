@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_wP4sEJKHEeOl-Iu2G_3qHw" name="no.ntnu.item.tutorials">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_wP4sEZKHEeOl-Iu2G_3qHw" name="Exercise5" classifierBehavior="_wP4sE5KHEeOl-Iu2G_3qHw" collaborationRole="_wP4sEpKHEeOl-Iu2G_3qHw">
+      <ownedAttribute xmi:id="_wP4sEpKHEeOl-Iu2G_3qHw" name="component"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_wP4sE5KHEeOl-Iu2G_3qHw" name="Exercise5" group="_wP4sGZKHEeOl-Iu2G_3qHw" partition="_wP4sGZKHEeOl-Iu2G_3qHw" node="_wP4sGpKHEeOl-Iu2G_3qHw _wP4sG5KHEeOl-Iu2G_3qHw _wP4sHJKHEeOl-Iu2G_3qHw _wP4sHZKHEeOl-Iu2G_3qHw _wP4sH5KHEeOl-Iu2G_3qHw">
+        <ownedOperation xmi:id="_wP4sFJKHEeOl-Iu2G_3qHw" name="showButtons"/>
+        <ownedOperation xmi:id="_wP4sFZKHEeOl-Iu2G_3qHw" name="changeColor"/>
+        <ownedOperation xmi:id="_wP4sFpKHEeOl-Iu2G_3qHw" name="Component"/>
+        <ownedOperation xmi:id="_wP4sF5KHEeOl-Iu2G_3qHw" name="showLight"/>
+        <ownedOperation xmi:id="_wP4sGJKHEeOl-Iu2G_3qHw" name="actionPerformed"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_wP4sGZKHEeOl-Iu2G_3qHw" name="component" node="_wP4sGpKHEeOl-Iu2G_3qHw _wP4sG5KHEeOl-Iu2G_3qHw _wP4sHJKHEeOl-Iu2G_3qHw _wP4sHZKHEeOl-Iu2G_3qHw _wP4sH5KHEeOl-Iu2G_3qHw"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_wP4sGpKHEeOl-Iu2G_3qHw" name="o0" inPartition="_wP4sGZKHEeOl-Iu2G_3qHw" operation="_wP4sFZKHEeOl-Iu2G_3qHw"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_wP4sG5KHEeOl-Iu2G_3qHw" name="o1" inPartition="_wP4sGZKHEeOl-Iu2G_3qHw" operation="_wP4sF5KHEeOl-Iu2G_3qHw"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_wP4sHJKHEeOl-Iu2G_3qHw" name="o2" inPartition="_wP4sGZKHEeOl-Iu2G_3qHw" operation="_wP4sFJKHEeOl-Iu2G_3qHw"/>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_wP4sHZKHEeOl-Iu2G_3qHw" name="r0" inPartition="_wP4sGZKHEeOl-Iu2G_3qHw">
+          <trigger xmi:id="_wP4sHpKHEeOl-Iu2G_3qHw" name="EXIT" event="_wP4sI5KHEeOl-Iu2G_3qHw"/>
+        </node>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_wP4sH5KHEeOl-Iu2G_3qHw" name="r1" inPartition="_wP4sGZKHEeOl-Iu2G_3qHw">
+          <trigger xmi:id="_wP4sIJKHEeOl-Iu2G_3qHw" name="BUTTON_PRESSED" event="_wP4sJ5KHEeOl-Iu2G_3qHw"/>
+        </node>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_wP4sIZKHEeOl-Iu2G_3qHw" name="EXIT"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wP4sIpKHEeOl-Iu2G_3qHw" name="r0"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wP4sI5KHEeOl-Iu2G_3qHw" name="" signal="_wP4sIZKHEeOl-Iu2G_3qHw"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wP4sJJKHEeOl-Iu2G_3qHw" name="r1"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wP4sJZKHEeOl-Iu2G_3qHw" name=""/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_wP4sJpKHEeOl-Iu2G_3qHw" name="BUTTON_PRESSED"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wP4sJ5KHEeOl-Iu2G_3qHw" name="" signal="_wP4sJpKHEeOl-Iu2G_3qHw"/>
+    <profileApplication xmi:id="_wP4sKJKHEeOl-Iu2G_3qHw">
+      <eAnnotations xmi:id="_wP4sKZKHEeOl-Iu2G_3qHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_wP4sKpKHEeOl-Iu2G_3qHw">
+      <eAnnotations xmi:id="_wP4sK5KHEeOl-Iu2G_3qHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <arctis:system xmi:id="_wP4sLJKHEeOl-Iu2G_3qHw" base_Collaboration="_wP4sEZKHEeOl-Iu2G_3qHw"/>
+  <arctis:system xmi:id="_wP4sLZKHEeOl-Iu2G_3qHw" base_Activity="_wP4sE5KHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sLpKHEeOl-Iu2G_3qHw" x="250" y="220" width="120" height="70" base_Element="_wP4sEpKHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sL5KHEeOl-Iu2G_3qHw" x="180" y="55" width="613" height="54" base_Element="_wP4sE5KHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sMJKHEeOl-Iu2G_3qHw" x="180" y="108" width="613" height="415" base_Element="_wP4sGZKHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sMZKHEeOl-Iu2G_3qHw" x="180" y="324" width="163" height="55" base_Element="_wP4sGpKHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sMpKHEeOl-Iu2G_3qHw" x="180" y="252" width="163" height="55" base_Element="_wP4sG5KHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sM5KHEeOl-Iu2G_3qHw" x="180" y="288" width="163" height="55" base_Element="_wP4sHJKHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sNJKHEeOl-Iu2G_3qHw" x="180" y="396" width="127" height="55" base_Element="_wP4sHZKHEeOl-Iu2G_3qHw"/>
+  <graphics:Shape xmi:id="_wP4sNZKHEeOl-Iu2G_3qHw" x="180" y="360" width="199" height="55" base_Element="_wP4sH5KHEeOl-Iu2G_3qHw"/>
+</xmi:XMI>

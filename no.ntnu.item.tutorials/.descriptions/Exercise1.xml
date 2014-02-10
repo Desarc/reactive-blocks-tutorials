@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
     name="Exercise1" 
-    uuid="_7WDAo5JlEeOkRM2VSSZ5Qg" 
-    status="under construction" 
+    uuid="_VOuL05KHEeOl-Iu2G_3qHw" 
+    status="published" 
     type="system" 
     >
+    <required>
+        <package name="no.ntnu.item.tutorials.exercise1.component"/>
+    </required>
 </block>

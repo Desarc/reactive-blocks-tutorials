@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
     name="CoinFlipper" 
-    uuid="_SRBocJKDEeOl-Iu2G_3qHw" 
+    uuid="_OIV_AZKHEeOl-Iu2G_3qHw" 
     status="published" 
     type="block" 
     >
+    <required>
+        <package name="no.ntnu.item.tutorials.coinflipper"/>
+    </required>
 </block>

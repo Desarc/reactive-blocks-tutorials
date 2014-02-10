@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Exercise2_challenge" 
+    uuid="_hyLFU5KHEeOl-Iu2G_3qHw" 
+    status="published" 
+    type="system" 
+    >
+    <required>
+        <package name="no.ntnu.item.tutorials.exercise2_challenge.component"/>
+        <package name="utils"/>
+    </required>
+</block>

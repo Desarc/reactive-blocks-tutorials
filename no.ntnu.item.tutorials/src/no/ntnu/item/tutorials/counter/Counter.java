@@ -13,5 +13,4 @@ public class Counter extends Block {
 	public boolean counterLargeZero() {
 		return counter >= 0;
 	}
-
 }

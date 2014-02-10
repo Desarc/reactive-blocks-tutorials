@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Exercise5" 
+    uuid="_wP4sE5KHEeOl-Iu2G_3qHw" 
+    status="published" 
+    type="system" 
+    >
+    <required>
+        <package name="no.ntnu.item.tutorials.exercise5.component"/>
+        <package name="utils"/>
+    </required>
+</block>
