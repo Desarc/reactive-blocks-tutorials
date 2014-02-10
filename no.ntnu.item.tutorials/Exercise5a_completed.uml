@@ -26,10 +26,10 @@
         </node>
         <node xmi:type="uml:MergeNode" xmi:id="_MD9qnInCEeOCG-kliLDj-Q" name="m0" inPartition="_MD9qlonCEeOCG-kliLDj-Q" outgoing="_RR354InCEeOCG-kliLDj-Q" incoming="_RCEjUInCEeOCG-kliLDj-Q _UdorQInCEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_MD9qnYnCEeOCG-kliLDj-Q" name="o0" inPartition="_MD9qlonCEeOCG-kliLDj-Q" incoming="_RR354InCEeOCG-kliLDj-Q" operation="_MD9qlInCEeOCG-kliLDj-Q">
-          <result xmi:id="_MD-RoInCEeOCG-kliLDj-Q" name="" inPartition="_MD9qlonCEeOCG-kliLDj-Q" outgoing="_SFOCYInCEeOCG-kliLDj-Q" type="_MD-Rp4nCEeOCG-kliLDj-Q"/>
+          <result xmi:id="_MD-RoInCEeOCG-kliLDj-Q" name="" inPartition="_MD9qlonCEeOCG-kliLDj-Q" outgoing="_SFOCYInCEeOCG-kliLDj-Q" type="_r0Z1wJG3EeOkRM2VSSZ5Qg"/>
         </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_MD-RoYnCEeOCG-kliLDj-Q" name="o1" inPartition="_MD9qlonCEeOCG-kliLDj-Q" operation="_MD9qlYnCEeOCG-kliLDj-Q">
-          <argument xmi:id="_MD-RoonCEeOCG-kliLDj-Q" name="number" inPartition="_MD9qlonCEeOCG-kliLDj-Q" incoming="_SFOCYInCEeOCG-kliLDj-Q" type="_MD-Rp4nCEeOCG-kliLDj-Q"/>
+          <argument xmi:id="_MD-RoonCEeOCG-kliLDj-Q" name="number" inPartition="_MD9qlonCEeOCG-kliLDj-Q" incoming="_SFOCYInCEeOCG-kliLDj-Q" type="_r0Z1wJG3EeOkRM2VSSZ5Qg"/>
           <result xmi:id="_MD-Ro4nCEeOCG-kliLDj-Q" name="" inPartition="_MD9qlonCEeOCG-kliLDj-Q" outgoing="_T0wtYInCEeOCG-kliLDj-Q" type="_MD-RqInCEeOCG-kliLDj-Q"/>
         </node>
       </ownedBehavior>
@@ -41,6 +41,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_MD-Rp4nCEeOCG-kliLDj-Q" name="double"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_MD-RqInCEeOCG-kliLDj-Q" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_r0Z1wJG3EeOkRM2VSSZ5Qg" name="int"/>
     <profileApplication xmi:id="_MD-RqYnCEeOCG-kliLDj-Q">
       <eAnnotations xmi:id="_MD-RqonCEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>

@@ -15,10 +15,10 @@
         </node>
         <node xmi:type="uml:MergeNode" xmi:id="_77cu4InBEeOCG-kliLDj-Q" name="m0" inPartition="_z_xRwInBEeOCG-kliLDj-Q"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_FmZxQInCEeOCG-kliLDj-Q" name="o0" inPartition="_z_xRwInBEeOCG-kliLDj-Q" operation="_Fma_YInCEeOCG-kliLDj-Q">
-          <result xmi:id="_Hu5HwYnCEeOCG-kliLDj-Q" name="" inPartition="_z_xRwInBEeOCG-kliLDj-Q" type="_Hu5HwInCEeOCG-kliLDj-Q"/>
+          <result xmi:id="_Hu5HwYnCEeOCG-kliLDj-Q" name="" inPartition="_z_xRwInBEeOCG-kliLDj-Q" type="_5uBQ8JG3EeOkRM2VSSZ5Qg"/>
         </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_JX2poInCEeOCG-kliLDj-Q" name="o1" inPartition="_z_xRwInBEeOCG-kliLDj-Q" operation="_Hu3SkInCEeOCG-kliLDj-Q">
-          <argument xmi:id="_JX7iIInCEeOCG-kliLDj-Q" name="number" inPartition="_z_xRwInBEeOCG-kliLDj-Q" type="_Hu5HwInCEeOCG-kliLDj-Q"/>
+          <argument xmi:id="_JX7iIInCEeOCG-kliLDj-Q" name="number" inPartition="_z_xRwInBEeOCG-kliLDj-Q" type="_5uBQ8JG3EeOkRM2VSSZ5Qg"/>
           <result xmi:id="_JX6UAYnCEeOCG-kliLDj-Q" name="" inPartition="_z_xRwInBEeOCG-kliLDj-Q" type="_JX6UAInCEeOCG-kliLDj-Q"/>
         </node>
       </ownedBehavior>
@@ -30,6 +30,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Hu5HwInCEeOCG-kliLDj-Q" name="double"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_JX6UAInCEeOCG-kliLDj-Q" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_5uBQ8JG3EeOkRM2VSSZ5Qg" name="int"/>
     <profileApplication xmi:id="_z-L9YYnBEeOCG-kliLDj-Q">
       <eAnnotations xmi:id="_z-L9YonBEeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
@@ -53,6 +54,6 @@
   <graphics:Shape xmi:id="_4lKIgInBEeOCG-kliLDj-Q" x="405" y="369" width="37" height="37" base_Element="_4lEB4InBEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_5V_IgInBEeOCG-kliLDj-Q" x="351" y="369" width="37" height="37" base_Element="_5V5o8InBEeOCG-kliLDj-Q"/>
   <graphics:Shape xmi:id="_77fyMInBEeOCG-kliLDj-Q" x="297" y="369" width="37" height="37" base_Element="_77cu4InBEeOCG-kliLDj-Q"/>
-  <graphics:Shape xmi:id="_Fmi7MInCEeOCG-kliLDj-Q" x="180" y="450" width="184" height="55" base_Element="_FmZxQInCEeOCG-kliLDj-Q"/>
-  <graphics:Shape xmi:id="_JX-lcInCEeOCG-kliLDj-Q" x="360" y="450" width="181" height="55" base_Element="_JX2poInCEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_Fmi7MInCEeOCG-kliLDj-Q" x="180" y="396" width="184" height="55" base_Element="_FmZxQInCEeOCG-kliLDj-Q"/>
+  <graphics:Shape xmi:id="_JX-lcInCEeOCG-kliLDj-Q" x="180" y="450" width="181" height="55" base_Element="_JX2poInCEeOCG-kliLDj-Q"/>
 </xmi:XMI>

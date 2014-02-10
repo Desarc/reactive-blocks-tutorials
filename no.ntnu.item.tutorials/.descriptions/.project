@@ -3,4 +3,7 @@
     version="1.0.0" 
     uuid="_HyKLMIgiEeOgw7uKFo_t1A" 
     >
+    <dependencies>
+        <dependency name="com.bitreactive.library.counter" uuid="_gw5scEzzEeG_68vz5_hEdQ" version="1.2.0"/>
+    </dependencies>
 </project>

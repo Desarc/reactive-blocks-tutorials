@@ -4,14 +4,14 @@ import no.ntnu.item.arctis.runtime.Block;
 
 public class Component extends Block {
 
-	public double generateNumber() {
-		double number = Math.random();
+	public int generateNumber() {
+		int number = (int)(Math.random()*200);
 		System.out.println("The number is "+number);
 		return number;
 	}
 
-	public boolean isNumberBig(double number) {
-		if (number < 0.5) return false;
+	public boolean isNumberBig(int number) {
+		if (number < 100) return false;
 		else {
 			System.out.println("Number is big!");
 			return true;

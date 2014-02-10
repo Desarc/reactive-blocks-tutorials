@@ -12,20 +12,21 @@
         <node xmi:type="uml:InitialNode" xmi:id="_yCsocIm-EeOCG-kliLDj-Q" name="i0" inPartition="_xbxLUIm-EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_zF_RcIm-EeOCG-kliLDj-Q" name="x0" inPartition="_xbxLUIm-EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_k-BbwIm_EeOCG-kliLDj-Q" name="o0" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" operation="_k-Cp4Im_EeOCG-kliLDj-Q">
-          <result xmi:id="_xe-a4Im_EeOCG-kliLDj-Q" name="" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" type="_xen1kIm_EeOCG-kliLDj-Q"/>
+          <result xmi:id="_xe-a4Im_EeOCG-kliLDj-Q" name="" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" type="_AL-L0JG4EeOkRM2VSSZ5Qg"/>
         </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_ztPCMIm_EeOCG-kliLDj-Q" name="o1" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" operation="_ztRecIm_EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_1n2UwIm_EeOCG-kliLDj-Q" name="o2" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" operation="_1n3i4Im_EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_7CmtQIm_EeOCG-kliLDj-Q" name="d0" inPartition="_xbxLUIm-EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="__D28MIm_EeOCG-kliLDj-Q" name="x1" inPartition="_xbxLUIm-EeOCG-kliLDj-Q"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_6Xs5oInAEeOCG-kliLDj-Q" name="o3" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" operation="_5REBsInAEeOCG-kliLDj-Q">
-          <argument xmi:id="_6XznUInAEeOCG-kliLDj-Q" name="number" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" type="_xen1kIm_EeOCG-kliLDj-Q"/>
+          <argument xmi:id="_6XznUInAEeOCG-kliLDj-Q" name="number" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" type="_AL-L0JG4EeOkRM2VSSZ5Qg"/>
           <result xmi:id="_6XyZMYnAEeOCG-kliLDj-Q" name="" inPartition="_xbxLUIm-EeOCG-kliLDj-Q" type="_6XyZMInAEeOCG-kliLDj-Q"/>
         </node>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_xen1kIm_EeOCG-kliLDj-Q" name="double"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_6XyZMInAEeOCG-kliLDj-Q" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AL-L0JG4EeOkRM2VSSZ5Qg" name="int"/>
     <profileApplication xmi:id="_xaKBwIm-EeOCG-kliLDj-Q">
       <eAnnotations xmi:id="_xaKBwYm-EeOCG-kliLDj-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>

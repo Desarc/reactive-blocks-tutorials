@@ -3,16 +3,14 @@
   <uml:Package xmi:id="_IKGqkI9IEeOntoBjHOrXwA" name="no.ntnu.item.tutorials2">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_IKGqkY9IEeOntoBjHOrXwA" name="Exercise5" classifierBehavior="_IKGqk49IEeOntoBjHOrXwA" collaborationRole="_IKGqko9IEeOntoBjHOrXwA">
       <ownedAttribute xmi:id="_IKGqko9IEeOntoBjHOrXwA" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_IKGqk49IEeOntoBjHOrXwA" name="Exercise5" group="_IKGqmY9IEeOntoBjHOrXwA" partition="_IKGqmY9IEeOntoBjHOrXwA" node="_IKGqmo9IEeOntoBjHOrXwA _IKGqm49IEeOntoBjHOrXwA _IKGqnI9IEeOntoBjHOrXwA _IKGqnY9IEeOntoBjHOrXwA _IKGqno9IEeOntoBjHOrXwA _IKGqn49IEeOntoBjHOrXwA _IKGqoY9IEeOntoBjHOrXwA _IKGqo49IEeOntoBjHOrXwA _IKGqpI9IEeOntoBjHOrXwA">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_IKGqk49IEeOntoBjHOrXwA" name="Exercise5" group="_IKGqmY9IEeOntoBjHOrXwA" partition="_IKGqmY9IEeOntoBjHOrXwA" node="_IKGqmo9IEeOntoBjHOrXwA _IKGqnY9IEeOntoBjHOrXwA _IKGqno9IEeOntoBjHOrXwA _IKGqn49IEeOntoBjHOrXwA _IKGqoY9IEeOntoBjHOrXwA">
         <ownedOperation xmi:id="_IKGqlI9IEeOntoBjHOrXwA" name="showButtons"/>
         <ownedOperation xmi:id="_IKGqlY9IEeOntoBjHOrXwA" name="changeColor"/>
         <ownedOperation xmi:id="_IKGqlo9IEeOntoBjHOrXwA" name="Component"/>
         <ownedOperation xmi:id="_IKGql49IEeOntoBjHOrXwA" name="showLight"/>
         <ownedOperation xmi:id="_IKGqmI9IEeOntoBjHOrXwA" name="actionPerformed"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_IKGqmY9IEeOntoBjHOrXwA" name="component" node="_IKGqmo9IEeOntoBjHOrXwA _IKGqm49IEeOntoBjHOrXwA _IKGqnI9IEeOntoBjHOrXwA _IKGqnY9IEeOntoBjHOrXwA _IKGqno9IEeOntoBjHOrXwA _IKGqn49IEeOntoBjHOrXwA _IKGqoY9IEeOntoBjHOrXwA _IKGqo49IEeOntoBjHOrXwA _IKGqpI9IEeOntoBjHOrXwA"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_IKGqmY9IEeOntoBjHOrXwA" name="component" node="_IKGqmo9IEeOntoBjHOrXwA _IKGqnY9IEeOntoBjHOrXwA _IKGqno9IEeOntoBjHOrXwA _IKGqn49IEeOntoBjHOrXwA _IKGqoY9IEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_IKGqmo9IEeOntoBjHOrXwA" name="o0" inPartition="_IKGqmY9IEeOntoBjHOrXwA" operation="_IKGqlY9IEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:InitialNode" xmi:id="_IKGqm49IEeOntoBjHOrXwA" name="i0" inPartition="_IKGqmY9IEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="_IKGqnI9IEeOntoBjHOrXwA" name="x0" inPartition="_IKGqmY9IEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_IKGqnY9IEeOntoBjHOrXwA" name="o1" inPartition="_IKGqmY9IEeOntoBjHOrXwA" operation="_IKGql49IEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_IKGqno9IEeOntoBjHOrXwA" name="o2" inPartition="_IKGqmY9IEeOntoBjHOrXwA" operation="_IKGqlI9IEeOntoBjHOrXwA"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_IKGqn49IEeOntoBjHOrXwA" name="r0" inPartition="_IKGqmY9IEeOntoBjHOrXwA">
@@ -21,8 +19,6 @@
         <node xmi:type="uml:AcceptEventAction" xmi:id="_IKGqoY9IEeOntoBjHOrXwA" name="r1" inPartition="_IKGqmY9IEeOntoBjHOrXwA">
           <trigger xmi:id="_IKGqoo9IEeOntoBjHOrXwA" name="BUTTON_PRESSED" event="_IKGqq49IEeOntoBjHOrXwA"/>
         </node>
-        <node xmi:type="uml:ForkNode" xmi:id="_IKGqo49IEeOntoBjHOrXwA" name="f0" inPartition="_IKGqmY9IEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:MergeNode" xmi:id="_IKGqpI9IEeOntoBjHOrXwA" name="m0" inPartition="_IKGqmY9IEeOntoBjHOrXwA"/>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:Signal" xmi:id="_IKGqpY9IEeOntoBjHOrXwA" name="EXIT"/>
@@ -50,13 +46,9 @@
   <graphics:Shape xmi:id="_IKGqso9IEeOntoBjHOrXwA" x="250" y="220" width="120" height="70" base_Element="_IKGqko9IEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_IKGqs49IEeOntoBjHOrXwA" x="180" y="55" width="613" height="54" base_Element="_IKGqk49IEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_IKGqtI9IEeOntoBjHOrXwA" x="180" y="108" width="613" height="415" base_Element="_IKGqmY9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGqtY9IEeOntoBjHOrXwA" x="180" y="468" width="163" height="55" base_Element="_IKGqmo9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGqto9IEeOntoBjHOrXwA" x="207" y="423" base_Element="_IKGqm49IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGqt49IEeOntoBjHOrXwA" x="243" y="423" base_Element="_IKGqnI9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGquI9IEeOntoBjHOrXwA" x="486" y="468" width="163" height="55" base_Element="_IKGqnY9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGquY9IEeOntoBjHOrXwA" x="342" y="468" width="163" height="55" base_Element="_IKGqno9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGquo9IEeOntoBjHOrXwA" x="378" y="414" width="127" height="55" base_Element="_IKGqn49IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGqu49IEeOntoBjHOrXwA" x="504" y="414" width="199" height="55" base_Element="_IKGqoY9IEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_IKGqvI9IEeOntoBjHOrXwA" x="270" y="432" width="54" height="19" base_Element="_IKGqo49IEeOntoBjHOrXwA" orientation="north"/>
-  <graphics:Shape xmi:id="_IKGqvY9IEeOntoBjHOrXwA" x="333" y="423" width="37" height="37" base_Element="_IKGqpI9IEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_IKGqtY9IEeOntoBjHOrXwA" x="180" y="324" width="163" height="55" base_Element="_IKGqmo9IEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_IKGquI9IEeOntoBjHOrXwA" x="180" y="252" width="163" height="55" base_Element="_IKGqnY9IEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_IKGquY9IEeOntoBjHOrXwA" x="180" y="288" width="163" height="55" base_Element="_IKGqno9IEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_IKGquo9IEeOntoBjHOrXwA" x="180" y="396" width="127" height="55" base_Element="_IKGqn49IEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_IKGqu49IEeOntoBjHOrXwA" x="180" y="360" width="199" height="55" base_Element="_IKGqoY9IEeOntoBjHOrXwA"/>
 </xmi:XMI>

@@ -3,7 +3,7 @@
   <uml:Package xmi:id="_DfUlMI9CEeOntoBjHOrXwA" name="no.ntnu.item.tutorials2">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_DfUlMY9CEeOntoBjHOrXwA" name="Exercise2" classifierBehavior="_DfUlM49CEeOntoBjHOrXwA" collaborationRole="_DfUlMo9CEeOntoBjHOrXwA">
       <ownedAttribute xmi:id="_DfUlMo9CEeOntoBjHOrXwA" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_DfUlM49CEeOntoBjHOrXwA" name="Exercise2" group="_DfUlO49CEeOntoBjHOrXwA" partition="_DfUlO49CEeOntoBjHOrXwA" node="_DfUlPI9CEeOntoBjHOrXwA _DfUlPY9CEeOntoBjHOrXwA _DfUlPo9CEeOntoBjHOrXwA _DfUlQI9CEeOntoBjHOrXwA _DfUlQY9CEeOntoBjHOrXwA _DfUlQo9CEeOntoBjHOrXwA _DfUlRI9CEeOntoBjHOrXwA">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_DfUlM49CEeOntoBjHOrXwA" name="Exercise2" group="_DfUlO49CEeOntoBjHOrXwA" partition="_DfUlO49CEeOntoBjHOrXwA" node="_DfUlQI9CEeOntoBjHOrXwA _DfUlQY9CEeOntoBjHOrXwA _DfUlRI9CEeOntoBjHOrXwA">
         <ownedOperation xmi:id="_DfUlNI9CEeOntoBjHOrXwA" name="set_red"/>
         <ownedOperation xmi:id="_DfUlNY9CEeOntoBjHOrXwA" name="setRed"/>
         <ownedOperation xmi:id="_DfUlNo9CEeOntoBjHOrXwA" name="Component"/>
@@ -11,17 +11,9 @@
         <ownedOperation xmi:id="_DfUlOI9CEeOntoBjHOrXwA" name="setLightRed"/>
         <ownedOperation xmi:id="_DfUlOY9CEeOntoBjHOrXwA" name="setLightGreen"/>
         <ownedOperation xmi:id="_DfUlOo9CEeOntoBjHOrXwA" name="displayLight"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_DfUlO49CEeOntoBjHOrXwA" name="component" node="_DfUlPI9CEeOntoBjHOrXwA _DfUlPY9CEeOntoBjHOrXwA _DfUlPo9CEeOntoBjHOrXwA _DfUlQI9CEeOntoBjHOrXwA _DfUlQY9CEeOntoBjHOrXwA _DfUlQo9CEeOntoBjHOrXwA _DfUlRI9CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:InitialNode" xmi:id="_DfUlPI9CEeOntoBjHOrXwA" name="i0" inPartition="_DfUlO49CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="_DfUlPY9CEeOntoBjHOrXwA" name="x0" inPartition="_DfUlO49CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:AcceptEventAction" xmi:id="_DfUlPo9CEeOntoBjHOrXwA" name="t0" inPartition="_DfUlO49CEeOntoBjHOrXwA">
-          <trigger xmi:id="_DfUlP49CEeOntoBjHOrXwA" name="t0" event="_DfUlRY9CEeOntoBjHOrXwA"/>
-        </node>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_DfUlO49CEeOntoBjHOrXwA" name="component" node="_DfUlQI9CEeOntoBjHOrXwA _DfUlQY9CEeOntoBjHOrXwA _DfUlRI9CEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_DfUlQI9CEeOntoBjHOrXwA" name="o0" inPartition="_DfUlO49CEeOntoBjHOrXwA" operation="_DfUlOI9CEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_DfUlQY9CEeOntoBjHOrXwA" name="o1" inPartition="_DfUlO49CEeOntoBjHOrXwA" operation="_DfUlOY9CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:AcceptEventAction" xmi:id="_DfUlQo9CEeOntoBjHOrXwA" name="t1" inPartition="_DfUlO49CEeOntoBjHOrXwA">
-          <trigger xmi:id="_DfUlQ49CEeOntoBjHOrXwA" name="t1" event="_DfUlSI9CEeOntoBjHOrXwA"/>
-        </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_DfUlRI9CEeOntoBjHOrXwA" name="o2" inPartition="_DfUlO49CEeOntoBjHOrXwA" operation="_DfUlOo9CEeOntoBjHOrXwA"/>
       </ownedBehavior>
     </packagedElement>
@@ -53,11 +45,7 @@
   <graphics:Shape xmi:id="_DfUlUY9CEeOntoBjHOrXwA" x="250" y="220" width="120" height="70" base_Element="_DfUlMo9CEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_DfUlUo9CEeOntoBjHOrXwA" x="180" y="55" width="613" height="54" base_Element="_DfUlM49CEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_DfUlU49CEeOntoBjHOrXwA" x="180" y="108" width="613" height="415" base_Element="_DfUlO49CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlVI9CEeOntoBjHOrXwA" x="297" y="441" base_Element="_DfUlPI9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlVY9CEeOntoBjHOrXwA" x="333" y="441" base_Element="_DfUlPY9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlVo9CEeOntoBjHOrXwA" x="207" y="441" width="37" height="37" base_Element="_DfUlPo9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlV49CEeOntoBjHOrXwA" x="180" y="468" width="117" height="55" base_Element="_DfUlQI9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlWI9CEeOntoBjHOrXwA" x="288" y="468" width="127" height="55" base_Element="_DfUlQY9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlWY9CEeOntoBjHOrXwA" x="243" y="441" width="37" height="37" base_Element="_DfUlQo9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_DfUlWo9CEeOntoBjHOrXwA" x="396" y="468" width="127" height="55" base_Element="_DfUlRI9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_DfUlV49CEeOntoBjHOrXwA" x="180" y="396" width="117" height="55" base_Element="_DfUlQI9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_DfUlWI9CEeOntoBjHOrXwA" x="180" y="432" width="127" height="55" base_Element="_DfUlQY9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_DfUlWo9CEeOntoBjHOrXwA" x="180" y="360" width="127" height="55" base_Element="_DfUlRI9CEeOntoBjHOrXwA"/>
 </xmi:XMI>

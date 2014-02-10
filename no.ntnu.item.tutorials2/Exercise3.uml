@@ -3,29 +3,26 @@
   <uml:Package xmi:id="_SXUUMI9CEeOntoBjHOrXwA" name="no.ntnu.item.tutorials2">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_SXUUMY9CEeOntoBjHOrXwA" name="Exercise3" classifierBehavior="_SXUUM49CEeOntoBjHOrXwA" collaborationRole="_SXUUMo9CEeOntoBjHOrXwA">
       <ownedAttribute xmi:id="_SXUUMo9CEeOntoBjHOrXwA" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_SXUUM49CEeOntoBjHOrXwA" name="Exercise3" group="_SXUUOI9CEeOntoBjHOrXwA" partition="_SXUUOI9CEeOntoBjHOrXwA" node="_SXUUOY9CEeOntoBjHOrXwA _SXUUOo9CEeOntoBjHOrXwA _SXUUO49CEeOntoBjHOrXwA _SXUUPY9CEeOntoBjHOrXwA _SXUUPo9CEeOntoBjHOrXwA _SXUUP49CEeOntoBjHOrXwA _SXUUQI9CEeOntoBjHOrXwA _SXUUQY9CEeOntoBjHOrXwA">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_SXUUM49CEeOntoBjHOrXwA" name="Exercise3" group="_SXUUOI9CEeOntoBjHOrXwA" partition="_SXUUOI9CEeOntoBjHOrXwA" node="_SXUUO49CEeOntoBjHOrXwA _SXUUPY9CEeOntoBjHOrXwA _SXUUPo9CEeOntoBjHOrXwA _SXUUQY9CEeOntoBjHOrXwA">
         <ownedOperation xmi:id="_SXUUNI9CEeOntoBjHOrXwA" name="generateNumber"/>
         <ownedOperation xmi:id="_SXUUNY9CEeOntoBjHOrXwA" name="small"/>
         <ownedOperation xmi:id="_SXUUNo9CEeOntoBjHOrXwA" name="big"/>
         <ownedOperation xmi:id="_SXUUN49CEeOntoBjHOrXwA" name="isNumberBig"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_SXUUOI9CEeOntoBjHOrXwA" name="component" node="_SXUUOY9CEeOntoBjHOrXwA _SXUUOo9CEeOntoBjHOrXwA _SXUUO49CEeOntoBjHOrXwA _SXUUPI9CEeOntoBjHOrXwA _SXUUPY9CEeOntoBjHOrXwA _SXUUPo9CEeOntoBjHOrXwA _SXUUP49CEeOntoBjHOrXwA _SXUUQI9CEeOntoBjHOrXwA _SXUUQY9CEeOntoBjHOrXwA _SXUUQo9CEeOntoBjHOrXwA _SXUUQ49CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:InitialNode" xmi:id="_SXUUOY9CEeOntoBjHOrXwA" name="i0" inPartition="_SXUUOI9CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="_SXUUOo9CEeOntoBjHOrXwA" name="x0" inPartition="_SXUUOI9CEeOntoBjHOrXwA"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_SXUUOI9CEeOntoBjHOrXwA" name="component" node="_SXUUO49CEeOntoBjHOrXwA _SXUUPI9CEeOntoBjHOrXwA _SXUUPY9CEeOntoBjHOrXwA _SXUUPo9CEeOntoBjHOrXwA _SXUUQY9CEeOntoBjHOrXwA _SXUUQo9CEeOntoBjHOrXwA _SXUUQ49CEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_SXUUO49CEeOntoBjHOrXwA" name="o0" inPartition="_SXUUOI9CEeOntoBjHOrXwA" operation="_SXUUNI9CEeOntoBjHOrXwA">
-          <result xmi:id="_SXUUPI9CEeOntoBjHOrXwA" name="" inPartition="_SXUUOI9CEeOntoBjHOrXwA" type="_SXUURI9CEeOntoBjHOrXwA"/>
+          <result xmi:id="_SXUUPI9CEeOntoBjHOrXwA" name="" inPartition="_SXUUOI9CEeOntoBjHOrXwA" type="_QutlYJG4EeOkRM2VSSZ5Qg"/>
         </node>
         <node xmi:type="uml:CallOperationAction" xmi:id="_SXUUPY9CEeOntoBjHOrXwA" name="o1" inPartition="_SXUUOI9CEeOntoBjHOrXwA" operation="_SXUUNY9CEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_SXUUPo9CEeOntoBjHOrXwA" name="o2" inPartition="_SXUUOI9CEeOntoBjHOrXwA" operation="_SXUUNo9CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:DecisionNode" xmi:id="_SXUUP49CEeOntoBjHOrXwA" name="d0" inPartition="_SXUUOI9CEeOntoBjHOrXwA"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="_SXUUQI9CEeOntoBjHOrXwA" name="x1" inPartition="_SXUUOI9CEeOntoBjHOrXwA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_SXUUQY9CEeOntoBjHOrXwA" name="o3" inPartition="_SXUUOI9CEeOntoBjHOrXwA" operation="_SXUUN49CEeOntoBjHOrXwA">
-          <argument xmi:id="_SXUUQo9CEeOntoBjHOrXwA" name="number" inPartition="_SXUUOI9CEeOntoBjHOrXwA" type="_SXUURI9CEeOntoBjHOrXwA"/>
+          <argument xmi:id="_SXUUQo9CEeOntoBjHOrXwA" name="number" inPartition="_SXUUOI9CEeOntoBjHOrXwA" type="_QutlYJG4EeOkRM2VSSZ5Qg"/>
           <result xmi:id="_SXUUQ49CEeOntoBjHOrXwA" name="" inPartition="_SXUUOI9CEeOntoBjHOrXwA" type="_SXUURY9CEeOntoBjHOrXwA"/>
         </node>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_SXUURI9CEeOntoBjHOrXwA" name="double"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_SXUURY9CEeOntoBjHOrXwA" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_QutlYJG4EeOkRM2VSSZ5Qg" name="int"/>
     <profileApplication xmi:id="_SXUURo9CEeOntoBjHOrXwA">
       <eAnnotations xmi:id="_SXUUR49CEeOntoBjHOrXwA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
@@ -44,12 +41,8 @@
   <graphics:Shape xmi:id="_SXU7Q49CEeOntoBjHOrXwA" x="250" y="220" width="120" height="70" base_Element="_SXUUMo9CEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_SXU7RI9CEeOntoBjHOrXwA" x="180" y="55" width="613" height="54" base_Element="_SXUUM49CEeOntoBjHOrXwA"/>
   <graphics:Shape xmi:id="_SXU7RY9CEeOntoBjHOrXwA" x="180" y="108" width="613" height="415" base_Element="_SXUUOI9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7Ro9CEeOntoBjHOrXwA" x="207" y="387" base_Element="_SXUUOY9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7R49CEeOntoBjHOrXwA" x="279" y="387" base_Element="_SXUUOo9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7SI9CEeOntoBjHOrXwA" x="198" y="450" width="160" height="55" base_Element="_SXUUO49CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7SY9CEeOntoBjHOrXwA" x="360" y="450" width="134" height="55" base_Element="_SXUUPY9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7So9CEeOntoBjHOrXwA" x="486" y="450" width="127" height="55" base_Element="_SXUUPo9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7S49CEeOntoBjHOrXwA" x="333" y="387" width="37" height="37" base_Element="_SXUUP49CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7TI9CEeOntoBjHOrXwA" x="243" y="387" base_Element="_SXUUQI9CEeOntoBjHOrXwA"/>
-  <graphics:Shape xmi:id="_SXU7TY9CEeOntoBjHOrXwA" x="612" y="450" width="145" height="55" base_Element="_SXUUQY9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_SXU7SI9CEeOntoBjHOrXwA" x="180" y="270" width="160" height="55" base_Element="_SXUUO49CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_SXU7SY9CEeOntoBjHOrXwA" x="180" y="414" width="134" height="55" base_Element="_SXUUPY9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_SXU7So9CEeOntoBjHOrXwA" x="180" y="378" width="127" height="55" base_Element="_SXUUPo9CEeOntoBjHOrXwA"/>
+  <graphics:Shape xmi:id="_SXU7TY9CEeOntoBjHOrXwA" x="180" y="324" width="145" height="55" base_Element="_SXUUQY9CEeOntoBjHOrXwA"/>
 </xmi:XMI>
