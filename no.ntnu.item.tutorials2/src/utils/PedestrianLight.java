@@ -1,5 +1,7 @@
 package utils;
 
+import java.awt.GridLayout;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -7,16 +9,19 @@ import javax.swing.JLabel;
 public class PedestrianLight {
 
 	private JFrame frame;
-	private JLabel light;
+	private JLabel redLightLabel, greenLightLabel;
 	private ImageIcon redLight, greenLight;
 	
 	public PedestrianLight() {
 		frame = new JFrame("Pedestrian lights");
-		frame.setBounds(250, 100, 100, 150);
-		redLight = new ImageIcon("../resources/pedestrian_red.jpg");
-		greenLight= new ImageIcon("../resources/pedestrian_green.jpg");
-		light = new JLabel();
-		frame.getContentPane().add(light);
+		frame.setBounds(250, 100, 100, 300);
+		redLight = new ImageIcon("resources/pedestrian_red.jpg");
+		greenLight= new ImageIcon("resources/pedestrian_green.jpg");
+		redLightLabel = new JLabel();
+		greenLightLabel = new JLabel();
+		frame.getContentPane().setLayout(new GridLayout(2,1));
+		frame.getContentPane().add(redLightLabel);
+		frame.getContentPane().add(greenLightLabel);
 	}
 	
 	public void show() {
@@ -28,10 +33,12 @@ public class PedestrianLight {
 	}
 	
 	public void setGreen() {
-		light.setIcon(greenLight);
+		redLightLabel.setIcon(null);
+		greenLightLabel.setIcon(greenLight);
 	}
 	
 	public void setRed() {
-		light.setIcon(redLight);
+		greenLightLabel.setIcon(null);
+		redLightLabel.setIcon(redLight);
 	}
 }

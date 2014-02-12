@@ -10,6 +10,7 @@
         <ownedOperation xmi:id="_6OYVh5KHEeOl-Iu2G_3qHw" name="printMessage"/>
         <ownedOperation xmi:id="_6OYViJKHEeOl-Iu2G_3qHw" name="actionPerformed"/>
         <ownedOperation xmi:id="_6OYViZKHEeOl-Iu2G_3qHw" name="showButton3"/>
+        <ownedOperation xmi:id="_uAdpAJP5EeOSxJmeD9tAHA" name="Component"/>
         <group xmi:type="uml:ActivityPartition" xmi:id="_6OYVipKHEeOl-Iu2G_3qHw" name="component" node="_6OYVi5KHEeOl-Iu2G_3qHw _6OYVjJKHEeOl-Iu2G_3qHw _6OYVjZKHEeOl-Iu2G_3qHw _6OYVj5KHEeOl-Iu2G_3qHw _6OYVkZKHEeOl-Iu2G_3qHw _6OYVkpKHEeOl-Iu2G_3qHw _6OYVk5KHEeOl-Iu2G_3qHw"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_6OYVi5KHEeOl-Iu2G_3qHw" name="o0" inPartition="_6OYVipKHEeOl-Iu2G_3qHw" operation="_6OYVhJKHEeOl-Iu2G_3qHw"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_6OYVjJKHEeOl-Iu2G_3qHw" name="o1" inPartition="_6OYVipKHEeOl-Iu2G_3qHw" operation="_6OYVhZKHEeOl-Iu2G_3qHw"/>

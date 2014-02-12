@@ -1,14 +1,17 @@
 package no.ntnu.item.tutorials.exercise2.component;
 
-import utils.TrafficLight;
+import utils.PedestrianLight;
 import no.ntnu.item.arctis.runtime.Block;
 
 public class Component extends Block {
 
-	private TrafficLight light;
+	private PedestrianLight light;
+	
+	public Component() {
+		light = new PedestrianLight();
+	}
 
 	public void displayLight() {
-		light = new TrafficLight();
 		light.show();
 	}
 

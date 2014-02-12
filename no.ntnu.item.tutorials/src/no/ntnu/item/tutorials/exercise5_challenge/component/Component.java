@@ -35,11 +35,11 @@ public class Component extends Block {
 		gameFrame = new JFrame("Doors");
 		gameFrame.setBounds(100, 100, 800, 600);
 		messageLabel = new JLabel(message);
-		redDoor = new JButton(new ImageIcon("../resources/red_door.gif"));
+		redDoor = new JButton(new ImageIcon("resources/red_door.gif"));
 		redDoor.addActionListener(new RedDoorListener());
-		greenDoor = new JButton(new ImageIcon("../resources/green_door.gif"));
+		greenDoor = new JButton(new ImageIcon("resources/green_door.gif"));
 		greenDoor.addActionListener(new GreenDoorListener());
-		blueDoor = new JButton(new ImageIcon("../resources/blue_door.gif"));
+		blueDoor = new JButton(new ImageIcon("resources/blue_door.gif"));
 		blueDoor.addActionListener(new BlueDoorListener());
 		gameFrame.getContentPane().setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();

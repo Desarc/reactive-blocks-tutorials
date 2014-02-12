@@ -48,34 +48,34 @@ public class Component extends Block {
 	}
 	
 	public void numberIs1() {
-		System.out.println("The number is 1!");
+		System.out.println("The number must be 1!");
 	}
 	
 	public void numberIs2() {
-		System.out.println("The number is 2!");
+		System.out.println("The number must be 2!");
 	}
 	
 	public void numberIs3() {
-		System.out.println("The number is 3!");
+		System.out.println("The number must be 3!");
 	}
 	
 	public void numberIs4() {
-		System.out.println("The number is 4!");
+		System.out.println("The number must be 4!");
 	}
 	
 	public void numberIs5() {
-		System.out.println("The number is 5!");
+		System.out.println("The number must be 5!");
 	}
 	
 	public void numberIs6() {
-		System.out.println("The number is 6!");
+		System.out.println("The number must be 6!");
 	}
 	
 	public void numberIs7() {
-		System.out.println("The number is 7!");
+		System.out.println("The number must be 7!");
 	}
 	
 	public void numberIs8() {
-		System.out.println("The number is 8!");
+		System.out.println("The number must be 8!");
 	}
 }

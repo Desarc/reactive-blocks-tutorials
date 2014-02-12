@@ -6,6 +6,10 @@
     type="system" 
     >
     <required>
+        <resource path="resources/blue_door.gif"/>
+        <resource path="resources/cake.jpg"/>
+        <resource path="resources/green_door.gif"/>
+        <resource path="resources/red_door.gif"/>
         <package name="no.ntnu.item.tutorials.exercise5_challenge.component"/>
     </required>
 </block>

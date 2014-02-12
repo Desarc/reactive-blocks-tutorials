@@ -9,13 +9,17 @@ public class Component extends Block {
 	private TrafficLight carLight;
 	private PedestrianLight pedLight;
 
-	public void displayCarLight() {
+	public Component() {
 		carLight = new TrafficLight();
+		pedLight = new PedestrianLight();
+	}
+	
+	public void displayCarLight() {
+		
 		carLight.show();
 	}
 	
 	public void displayPedestrianLight() {
-		pedLight = new PedestrianLight();
 		pedLight.show();
 	}
 	

@@ -19,6 +19,19 @@ public class Component extends Block {
 	private JFrame buttonFrame;
 	private JButton change, exit;
 	private boolean alt;
+	
+	public Component() {
+		light = new TrafficLight();
+		buttonFrame = new JFrame("Buttons");
+		buttonFrame.setBounds(300, 100, 200, 200);
+		buttonFrame.getContentPane().setLayout(new GridLayout(2,1));
+		change = new JButton("Change color");
+		change.addActionListener(new ChangeListener());
+		buttonFrame.getContentPane().add(change);
+		exit = new JButton("Exit");
+		exit.addActionListener(new ExitListener());
+		buttonFrame.getContentPane().add(exit);
+	}
 
 	public void changeColor() {
 		if (alt) {
@@ -32,22 +45,12 @@ public class Component extends Block {
 	}
 
 	public void showLight() {
-		light = new TrafficLight();
 		light.setRed();
 		alt = true;
 		light.show();
 	}
 
 	public void showButtons() {
-		buttonFrame = new JFrame("Buttons");
-		buttonFrame.setBounds(300, 100, 200, 200);
-		buttonFrame.getContentPane().setLayout(new GridLayout(2,1));
-		change = new JButton("Change color");
-		change.addActionListener(new ChangeListener());
-		buttonFrame.getContentPane().add(change);
-		exit = new JButton("Exit");
-		exit.addActionListener(new ExitListener());
-		buttonFrame.getContentPane().add(exit);
 		buttonFrame.setVisible(true);	
 	}
 	

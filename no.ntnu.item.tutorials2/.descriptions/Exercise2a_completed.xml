@@ -5,4 +5,9 @@
     status="published" 
     type="system" 
     >
+    <required>
+        <resource path="resources/car_yellow.jpg"/>
+        <resource path="resources/green_light.jpg"/>
+        <resource path="resources/red_light.jpg"/>
+    </required>
 </block>

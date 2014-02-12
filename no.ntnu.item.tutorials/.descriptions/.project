@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
     title="no.ntnu.item.tutorials" 
-    version="1.0.0" 
+    version="1.1.0" 
     uuid="_MX1DoJKHEeOl-Iu2G_3qHw" 
     purpose="Tutorial exercise for TTM4115" 
     >
     <dependencies>
         <dependency name="no.ntnu.item.tutorials2" uuid="_2TMiII9BEeOntoBjHOrXwA" version="1.0.0"/>
+        <dependency name="no.ntnu.item.tutorials2" uuid="_HyKLMIgiEeOgw7uKFo_t1A" version="1.0.0"/>
     </dependencies>
 </project>
