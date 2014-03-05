@@ -9,10 +9,15 @@
         <library path="lib/gdx-backend-lwjgl-natives.jar"/>
         <library path="lib/gdx-backend-lwjgl.jar"/>
         <library path="lib/gdx-natives.jar"/>
+        <library path="lib/gdx-tools.jar"/>
         <library path="lib/gdx.jar"/>
         <resource path="resources/gfx/blue-gem.png"/>
         <resource path="resources/gfx/grass.png"/>
+        <resource path="resources/gfx/kaylee-walk.atlas"/>
+        <resource path="resources/gfx/kaylee-walk.png"/>
         <resource path="resources/gfx/kaylee.png"/>
+        <resource path="resources/gfx/malcolm-walk.atlas"/>
+        <resource path="resources/gfx/malcolm-walk.png"/>
         <resource path="resources/gfx/malcolm.png"/>
         <resource path="resources/gfx/wall-block.png"/>
         <resource path="resources/gfx/wash.png"/>

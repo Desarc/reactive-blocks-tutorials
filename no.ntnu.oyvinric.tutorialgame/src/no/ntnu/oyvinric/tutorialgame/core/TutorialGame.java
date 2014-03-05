@@ -1,10 +1,9 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.CharacterName;
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.Direction;
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.Tile;
+import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
+import no.ntnu.oyvinric.tutorialgame.gui.Tile.Direction;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
@@ -95,7 +94,7 @@ public class TutorialGame implements ApplicationListener {
 	
 	private void updateGame() {
 		for (GameCharacter character : gameCharacters) {
-			if (character.moving) {
+			if (character.tile.getMoving()) {
 				updateCharacterPosition(character);
 			}
 		}
@@ -152,18 +151,18 @@ public class TutorialGame implements ApplicationListener {
 		else if (character.tile.getDirection() == Direction.SOUTH) {
 			character.remainingDistanceY = -Float.MAX_VALUE;
 		}
-		character.moving = true;
+		character.tile.setMoving(true);
 	}
 	
 	public void stopCharacterMovement(GameCharacter character) {
 		character.remainingDistanceX = 0;
 		character.remainingDistanceY = 0;
-		character.moving = false;
+		character.tile.setMoving(false);
 	}
 
 	public void turnCharacterLeft(GameCharacter character) {
 		board.turnCharacterLeft(character.tile);
-		if (character.moving) {
+		if (character.tile.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
 		}
@@ -171,7 +170,7 @@ public class TutorialGame implements ApplicationListener {
 
 	public void turnCharacterRight(GameCharacter character) {
 		board.turnCharacterRight(character.tile);
-		if (character.moving) {
+		if (character.tile.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
 		}
@@ -179,7 +178,7 @@ public class TutorialGame implements ApplicationListener {
 
 	public void turnCharacterAround(GameCharacter character) {
 		board.turnCharacterAround(character.tile);
-		if (character.moving) {
+		if (character.tile.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
 		}
@@ -191,12 +190,11 @@ public class TutorialGame implements ApplicationListener {
 	
 	public class GameCharacter {
 		
-		Tile tile;
-		boolean moving = false;
+		CharacterTile tile;
 		float remainingDistanceX = 0;
 		float remainingDistanceY = 0;
 		
-		public GameCharacter(Tile characterTile) {
+		public GameCharacter(CharacterTile characterTile) {
 			this.tile = characterTile;
 		}
 	}

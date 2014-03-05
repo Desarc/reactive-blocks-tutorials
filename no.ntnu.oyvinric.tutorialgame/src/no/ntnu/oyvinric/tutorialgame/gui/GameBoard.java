@@ -6,13 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
+import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
+import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
@@ -65,13 +67,13 @@ public class GameBoard {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		for (Tile groundTile : groundTiles) {
-			batch.draw(groundTile.image, groundTile.getX(), groundTile.getY(), groundTile.getOriginX(), groundTile.getOriginY(), groundTile.getWidth(), groundTile.getHeight(), 1f, 1f, groundTile.getRotation());
+			batch.draw(groundTile.getImage(), groundTile.getX(), groundTile.getY(), groundTile.getOriginX(), groundTile.getOriginY(), groundTile.getWidth(), groundTile.getHeight(), 1f, 1f, groundTile.getRotation());
 		}
 		for (Tile objectTile : objectTiles) {
-			batch.draw(objectTile.image, objectTile.getX(), objectTile.getY(), objectTile.getOriginX(), objectTile.getOriginY(), objectTile.getWidth(), objectTile.getHeight(), 1f, 1f, objectTile.getRotation());
+			batch.draw(objectTile.getImage(), objectTile.getX(), objectTile.getY(), objectTile.getOriginX(), objectTile.getOriginY(), objectTile.getWidth(), objectTile.getHeight(), 1f, 1f, objectTile.getRotation());
 		}
-		for (Tile characterTile : characterTiles) {
-			batch.draw(characterTile.image, characterTile.getX(), characterTile.getY(), characterTile.getOriginX(), characterTile.getOriginY(), characterTile.getWidth(), characterTile.getHeight(), 1f, 1f, characterTile.getRotation());
+		for (CharacterTile characterTile : characterTiles) {
+			batch.draw(characterTile.getImage(), characterTile.getX(), characterTile.getY(), characterTile.getOriginX(), characterTile.getOriginY(), characterTile.getWidth(), characterTile.getHeight(), 1f, 1f, characterTile.getRotation());
 		}
 		//System.out.println("Player position: "+player.getX()+","+player.getY());
 		batch.end();
@@ -89,17 +91,17 @@ public class GameBoard {
 			groundTiles.add(new Tile(x, y, groundImage));
 		}
 		else if (type == 'M') {
-			malcolm = new CharacterTile(CharacterName.MALCOLM, x, y, malcolmImage, 0, 16);
+			malcolm = new CharacterTile(CharacterName.MALCOLM, x, y, malcolmImage);
 			characterTiles.add(malcolm);
 			groundTiles.add(new Tile(x, y, groundImage));
 		}
 		else if (type == 'K') {
-			kaylee = new CharacterTile(CharacterName.KAYLEE, x, y, kayleeImage, 0, 16);
+			kaylee = new CharacterTile(CharacterName.KAYLEE, x, y, kayleeImage);
 			characterTiles.add(kaylee);
 			groundTiles.add(new Tile(x, y, groundImage));
 		}
 		else if (type == 'W') {
-			wash = new CharacterTile(CharacterName.WASH, x, y, washImage, 0, 16);
+			wash = new CharacterTile(CharacterName.WASH, x, y, washImage);
 			characterTiles.add(wash);
 			groundTiles.add(new Tile(x, y, groundImage));
 		}
@@ -182,152 +184,5 @@ public class GameBoard {
 
 	public void turnCharacterAround(Tile character) {
 		character.rotate(180);
-	}
-	
-	public class Tile {
-		
-		private Rectangle rectangle;
-		private TextureRegion image;
-		private float horizontalAdjustment = 0;
-		private float verticalAdjustment = 0;
-		private float rotation = 0;
-		private float originX = 0;
-		private float originY = 0;
-		private Direction direction = Direction.EAST;
-		
-		public Tile(float x, float y, TextureRegion image) {
-			rectangle = new Rectangle();
-			rectangle.width = tileWidth;
-			rectangle.height = tileHeight;
-			rectangle.x = x;
-			rectangle.y = y;
-			this.image = image;
-		}
-		
-		public Tile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-			rectangle = new Rectangle();
-			rectangle.width = tileWidth;
-			rectangle.height = tileHeight;
-			rectangle.x = x;
-			rectangle.y = y;
-			this.image = image;
-			this.horizontalAdjustment = horizontalAdjustment;
-			this.verticalAdjustment = verticalAdjustment;
-		}
-		
-		public void setPosition(float x, float y) {
-			rectangle.x = x;
-			rectangle.y = y;
-		}
-		
-		public void move(float dx, float dy) {
-			rectangle.x += dx;
-			rectangle.y += dy;
-		}
-		
-		public void alignWithGrid() {
-			rectangle.x = Math.round(rectangle.x / tileWidth)*tileWidth;
-			rectangle.y = Math.round(rectangle.y / tileHeight)*tileHeight;
-		}
-		
-		public void rotate(float angle) {
-			rotation = (rotation+angle)%360;
-			if (rotation == 0) {
-				originX = 0;
-				originY = 0;
-				direction = Direction.EAST;
-			}
-			else if (rotation == 90 || rotation == -270) {
-				originX = tileWidth/2;
-				originY = 0;
-				direction = Direction.NORTH;
-			}
-			else if (rotation == 180 || rotation == -180) {
-				originX = tileWidth/2;
-				originY = 0;
-				direction = Direction.WEST;
-			}
-			else if (rotation == 270 || rotation == -90) {
-				originX = tileWidth/2;
-				originY = 0;
-				direction = Direction.SOUTH;
-			}
-		}
-		
-		public float getX() {
-			return rectangle.x + horizontalAdjustment;
-		}
-		
-		public float getY() {
-			return rectangle.y + verticalAdjustment;
-		}
-		
-		public float getRotation() {
-			return rotation;
-		}
-		
-		public float getWidth() {
-			return rectangle.width;
-		}
-		
-		public float getHeight() {
-			return rectangle.height;
-		}
-		
-		public float getOriginX() {
-			return originX + horizontalAdjustment;
-		}
-		
-		public float getOriginY() {
-			return originY + verticalAdjustment;
-		}
-		
-		public Direction getDirection() {
-			return direction;
-		}
-	}
-	
-	public class CharacterTile extends Tile {
-		
-		private CharacterName name;
-		
-		public CharacterTile(CharacterName name, float x, float y, TextureRegion image) {
-			super(x, y, image);
-			this.name = name;
-		}
-		
-		public CharacterTile(CharacterName name, float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-			super(x, y, image, horizontalAdjustment, verticalAdjustment);
-			this.name = name;
-		}
-		
-		public CharacterName getName() {
-			return name;
-		}
-		
-	}
-	
-	public static enum Direction {
-		NORTH,
-		SOUTH,
-		EAST,
-		WEST
-	}
-	
-	public static enum CharacterName {
-		MALCOLM("Malcolm"),
-		KAYLEE("Kaylee"),
-		WASH("Wash");
-		
-		private final String name;
-		
-		CharacterName(String name) {
-			this.name = name;
-		}
-		
-		public String getValue() {
-			return name;
-		}
-		
 	}
 }
