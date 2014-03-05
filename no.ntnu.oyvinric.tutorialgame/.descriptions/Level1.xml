@@ -15,7 +15,9 @@
         <resource path="resources/gfx/grass.png"/>
         <resource path="resources/gfx/wall-block.png"/>
         <resource path="resources/levels/level1.txt"/>
+        <resource path="resources/levels/level2.txt"/>
         <resource path="resources/sound/drop.wav"/>
-        <resource path="resources/sound/odysseus.mp3"/>
+        <resource path="resources/sound/human_theory.mp3"/>
+        <resource path="resources/sound/rain.mp3"/>
     </required>
 </block>

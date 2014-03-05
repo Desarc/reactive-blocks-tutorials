@@ -8,21 +8,24 @@ import java.io.IOException;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
 
+	public static final float tileHeight = 56f;
+	public static final float tileWidth = 64f;
+	public static final int horizontalLeftLimit = 0;
+	public static final int verticalUpperLimit = 480;
+	
 	TutorialGame parent;
 	
-	Texture wallImage, groundImage, playerImage, goalImage;
-	Sound winSound;
-	Music gameTheme;
+	Texture wallTexture, groundTexture, playerTexture, goalTexture;
+	TextureRegion wallImage, groundImage, playerImage, goalImage;
 	OrthographicCamera camera;
 	SpriteBatch batch;
 	Array<Tile> groundTiles;
@@ -34,21 +37,22 @@ public class GameBoard {
 	
 	public GameBoard(TutorialGame parent, int levelNo) {
 		this.parent = parent;
-		
-		wallImage = new Texture(Gdx.files.internal("resources/gfx/wall-block.png"));
-		groundImage = new Texture(Gdx.files.internal("resources/gfx/grass.png"));
-		playerImage = new Texture(Gdx.files.internal("resources/gfx/boy.png"));
-		goalImage = new Texture(Gdx.files.internal("resources/gfx/blue-gem.png"));
-		winSound = Gdx.audio.newSound(Gdx.files.internal("resources/sound/drop.wav"));
-		gameTheme = Gdx.audio.newMusic(Gdx.files.internal("resources/sound/odysseus.mp3"));
+		wallTexture = new Texture(Gdx.files.internal("resources/gfx/wall-block.png"));
+		wallImage = new TextureRegion(wallTexture);
+		groundTexture = new Texture(Gdx.files.internal("resources/gfx/grass.png"));
+		groundImage = new TextureRegion(groundTexture);
+		playerTexture = new Texture(Gdx.files.internal("resources/gfx/boy.png"));
+		playerImage = new TextureRegion(playerTexture);
+		goalTexture = new Texture(Gdx.files.internal("resources/gfx/blue-gem.png"));
+		goalImage = new TextureRegion(goalTexture);
 		
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
 		camera.update();
 		
 		batch = new SpriteBatch();
+		
 		loadLevel(levelNo);
-		drawLevel();
 		
 	}
 	
@@ -56,12 +60,14 @@ public class GameBoard {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		for (Tile tile : groundTiles) {
-			batch.draw(tile.texture, tile.rectangle.x, tile.rectangle.y);
+			batch.draw(tile.image, tile.getX(), tile.getY());
+			batch.draw(tile.image, tile.getX(), tile.getY(), 0f, 0f, tile.getWidth(), tile.getHeight(), 1f, 1f, tile.getRotation());
 		}
 		for (Tile tile : objectTiles) {
-			batch.draw(tile.texture, tile.rectangle.x, tile.rectangle.y);
+			batch.draw(tile.image, tile.getX(), tile.getY());
 		}
-		batch.draw(player.texture, player.rectangle.x, player.rectangle.y);
+		//System.out.println("Player position: "+player.getX()+","+player.getY());
+		batch.draw(player.image, player.getX(), player.getY(), player.getOriginX(), player.getOriginY(), player.getWidth(), player.getHeight(), 1f, 1f, player.getRotation());
 		batch.end();
 	}
 	
@@ -69,56 +75,38 @@ public class GameBoard {
 		drawLevel();
 	}
 	
-	class Tile {
-		
-		Rectangle rectangle;
-		Texture texture;
-		
-		public Tile(int width, int height, int x, int y, Texture texture ) {
-			rectangle = new Rectangle();
-			rectangle.width = width;
-			rectangle.height = height;
-			rectangle.x = x;
-			rectangle.y = y;
-			this.texture = texture;
-		}
-	}
-	
-	private void createTile(char type, int x, int y) {
+	private void createTile(char type, float x, float y) {
 		if (type == '#') {
-			groundTiles.add(new Tile(wallImage.getWidth(), wallImage.getHeight(), x, y, wallImage));
+			groundTiles.add(new Tile(x, y, wallImage, 0, 10));
 		}
 		else if (type == ' ') {
-			groundTiles.add(new Tile(groundImage.getWidth(), groundImage.getHeight(), x, y, groundImage));
+			groundTiles.add(new Tile(x, y, groundImage));
 		}
 		else if (type == 'p') {
-			player = new Tile(playerImage.getWidth(), playerImage.getHeight(), x, y, playerImage);
-			groundTiles.add(new Tile(groundImage.getWidth(), groundImage.getHeight(), x, y, groundImage));
+			player = new Tile(x, y, playerImage, 0, 16);
+			groundTiles.add(new Tile(x, y, groundImage));
 		}
 		else if (type == 'g') {
-			Tile tile = new Tile(goalImage.getWidth(), goalImage.getHeight(), x, y, goalImage);
+			Tile tile = new Tile(x, y, goalImage);
 			objectTiles.add(tile);
 			goal = tile;
-			groundTiles.add(new Tile(groundImage.getWidth(), groundImage.getHeight(), x, y, groundImage));
+			groundTiles.add(new Tile(x, y, groundImage));
 		}
 	}
-	
 
 	public void loadLevel(int levelNo) {
 		groundTiles = new Array<Tile>();
 		objectTiles = new Array<Tile>();
 		try {
 	    	BufferedReader br = new BufferedReader(new FileReader("resources/levels/level"+levelNo+".txt"));
-	    	int xLim = 0;
-	    	int yLim = 480;
 			int xCount = 0;
 			int yCount = 1;
 			String line;
 			while ((line = br.readLine()) != null) {
 				System.out.println(line);
 				for (Character c : line.toCharArray()) {
-					int xPos = xLim+xCount*64;
-					int yPos = yLim-yCount*64;
+					float xPos = horizontalLeftLimit+xCount*tileWidth;
+					float yPos = verticalUpperLimit-yCount*tileHeight;
 					createTile(c, xPos, yPos);
 					xCount++;
 				}
@@ -134,23 +122,145 @@ public class GameBoard {
 		
 	}
 	
-	
-	public void show() {
-		gameTheme.setLooping(true);
-		//gameTheme.play();
-	}
-	
 	public void cleanUp() {
-		wallImage.dispose();
-		groundImage.dispose();
-		goalImage.dispose();
-		playerImage.dispose();
-		gameTheme.dispose();
-		winSound.dispose();
+		wallTexture.dispose();
+		groundTexture.dispose();
+		goalTexture.dispose();
+		playerTexture.dispose();
 	}
 	
-	public Rectangle getPlayer() {
-		return player.rectangle;
+	public Tile getPlayer() {
+		return player;
+	}
+	
+	public void updatePlayerPosition(float dx, float dy) {
+		player.move(dx, dy);
+	}
+	
+	public void adjustCharacterPosition() {
+		player.alignWithGrid();
+	}
+
+	public void turnPlayerLeft() {
+		player.rotate(90);
+	}
+
+	public void turnPlayerRight() {
+		player.rotate(-90);
+	}
+
+	public void turnPlayerAround() {
+		player.rotate(180);
+	}
+	
+	public class Tile {
+		
+		private Rectangle rectangle;
+		private TextureRegion image;
+		private float horizontalAdjustment = 0;
+		private float verticalAdjustment = 0;
+		private float rotation = 0;
+		private float originX = 0;
+		private float originY = 0;
+		private Direction direction = Direction.EAST;
+		
+		public Tile(float x, float y, TextureRegion image) {
+			rectangle = new Rectangle();
+			rectangle.width = tileWidth;
+			rectangle.height = tileHeight;
+			rectangle.x = x;
+			rectangle.y = y;
+			this.image = image;
+		}
+		
+		public Tile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
+			rectangle = new Rectangle();
+			rectangle.width = tileWidth;
+			rectangle.height = tileHeight;
+			rectangle.x = x;
+			rectangle.y = y;
+			this.image = image;
+			this.horizontalAdjustment = horizontalAdjustment;
+			this.verticalAdjustment = verticalAdjustment;
+		}
+		
+		public void setPosition(float x, float y) {
+			rectangle.x = x;
+			rectangle.y = y;
+		}
+		
+		public void move(float dx, float dy) {
+			rectangle.x += dx;
+			rectangle.y += dy;
+		}
+		
+		public void alignWithGrid() {
+			rectangle.x = Math.round(rectangle.x / tileWidth)*tileWidth;
+			rectangle.y = Math.round(rectangle.y / tileHeight)*tileHeight;
+		}
+		
+		public void rotate(float angle) {
+			rotation = (rotation+angle)%360;
+			if (rotation == 0) {
+				originX = 0;
+				originY = 0;
+				direction = Direction.EAST;
+			}
+			else if (rotation == 90 || rotation == -270) {
+				originX = tileWidth/2;
+				originY = 0;
+				direction = Direction.NORTH;
+			}
+			else if (rotation == 180 || rotation == -180) {
+				originX = tileWidth/2;
+				originY = 0;
+				direction = Direction.WEST;
+			}
+			else if (rotation == 270 || rotation == -90) {
+				originX = tileWidth/2;
+				originY = 0;
+				direction = Direction.SOUTH;
+			}
+		}
+		
+		public float getX() {
+			return rectangle.x + horizontalAdjustment;
+		}
+		
+		public float getY() {
+			return rectangle.y + verticalAdjustment;
+		}
+		
+		public float getRotation() {
+			return rotation;
+		}
+		
+		public float getWidth() {
+			return rectangle.width;
+		}
+		
+		public float getHeight() {
+			return rectangle.height;
+		}
+		
+		public float getOriginX() {
+			return originX + horizontalAdjustment;
+		}
+		
+		public float getOriginY() {
+			return originY + verticalAdjustment;
+		}
+		
+		public Direction getDirection() {
+			return direction;
+		}
+	}
+	
+	public static enum Direction {
+		NORTH,
+		SOUTH,
+		EAST,
+		WEST
 	}
 	
 	
