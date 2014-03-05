@@ -4,13 +4,16 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
+import no.ntnu.oyvinric.tutorialgame.core.TutorialGame.GameCharacter;
 
 public class Component extends Block {
 	
 	TutorialGame game;
+	GameCharacter malcolm;
+	GameCharacter kaylee;
 	
 	public Component() {
-		game = new TutorialGame(2);
+		game = new TutorialGame(3);
 		new LwjglApplication(game, "Level 1", 800, 480, false);
 		try {
 			Thread.sleep(1000);
@@ -18,33 +21,51 @@ public class Component extends Block {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		malcolm = game.getMalcolm();
+		kaylee = game.getKaylee();
 	}
 
-	public void moveForward() {
-		game.movePlayerForward();
-	}
-	
-	public void stepForward() {
-		game.stepForward();
+	public void moveMalcolmForward() {
+		game.moveCharacterForward(malcolm);
 	}
 
-	public void stop() {
-		game.stopPlayerMovement();
+	public void stopMalcolm() {
+		game.stopCharacterMovement(malcolm);
 	}
 	
-	public void turnLeft() {
-		game.turnLeft();
+	public void turnMalcolmLeft() {
+		game.turnCharacterLeft(malcolm);
 	}
 	
-	public void turnRight() {
-		game.turnRight();
+	public void turnMalcolmRight() {
+		game.turnCharacterRight(malcolm);
 	}
 	
-	public void turnAround() {
-		game.turnAround();
+	public void turnMalcolmAround() {
+		game.turnCharacterAround(malcolm);
 	}
 	
-	public void pushButton() {
+	public void moveKayleeForward() {
+		game.moveCharacterForward(kaylee);
+	}
+
+	public void stopKaylee() {
+		game.stopCharacterMovement(kaylee);
+	}
+	
+	public void turnKayleeLeft() {
+		game.turnCharacterLeft(kaylee);
+	}
+	
+	public void turnKayleeRight() {
+		game.turnCharacterRight(kaylee);
+	}
+	
+	public void turnKayleeAround() {
+		game.turnCharacterAround(kaylee);
+	}
+	
+	public void malcolmPushButton() {
 		game.pushButton();
 	}
 

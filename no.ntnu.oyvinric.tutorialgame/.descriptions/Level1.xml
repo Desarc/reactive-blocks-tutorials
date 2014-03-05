@@ -11,11 +11,14 @@
         <library path="lib/gdx-natives.jar"/>
         <library path="lib/gdx.jar"/>
         <resource path="resources/gfx/blue-gem.png"/>
-        <resource path="resources/gfx/boy.png"/>
         <resource path="resources/gfx/grass.png"/>
+        <resource path="resources/gfx/kaylee.png"/>
+        <resource path="resources/gfx/malcolm.png"/>
         <resource path="resources/gfx/wall-block.png"/>
+        <resource path="resources/gfx/wash.png"/>
         <resource path="resources/levels/level1.txt"/>
         <resource path="resources/levels/level2.txt"/>
+        <resource path="resources/levels/level3.txt"/>
         <resource path="resources/sound/drop.wav"/>
         <resource path="resources/sound/human_theory.mp3"/>
         <resource path="resources/sound/rain.mp3"/>

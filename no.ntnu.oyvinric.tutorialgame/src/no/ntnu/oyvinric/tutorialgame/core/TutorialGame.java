@@ -1,13 +1,17 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.Direction;
+import no.ntnu.oyvinric.tutorialgame.gui.GameBoard.Tile;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.utils.Array;
 
 public class TutorialGame implements ApplicationListener {
 
@@ -16,8 +20,8 @@ public class TutorialGame implements ApplicationListener {
 	
 	GameBoard board;
 	int levelNo;
-	float remainingDistanceX = 0;
-	float remainingDistanceY = 0;
+	GameCharacter malcolm, kaylee, wash;
+	Array<GameCharacter> gameCharacters;
 	
 	
 	Sound winSound;
@@ -34,6 +38,22 @@ public class TutorialGame implements ApplicationListener {
 		gameTheme = Gdx.audio.newMusic(Gdx.files.internal("resources/sound/rain.mp3"));
 		
 		board = new GameBoard(this, levelNo);
+		
+		gameCharacters = new Array<GameCharacter>();
+		for (CharacterTile character : board.getCharacterTiles()) {
+			if (character.getName() == CharacterName.MALCOLM) {
+				malcolm = new GameCharacter(character);
+				gameCharacters.add(malcolm);
+			}
+			else if (character.getName() == CharacterName.KAYLEE) {
+				kaylee = new GameCharacter(character);
+				gameCharacters.add(kaylee);
+			}
+			else if (character.getName() == CharacterName.WASH) {
+				wash = new GameCharacter(character);
+				gameCharacters.add(wash);
+			}
+		}
 		
 		gameTheme.setLooping(true);
 		gameTheme.play();
@@ -74,82 +94,123 @@ public class TutorialGame implements ApplicationListener {
 	}
 	
 	private void updateGame() {
-		updatePlayerPosition();
+		for (GameCharacter character : gameCharacters) {
+			if (character.moving) {
+				updateCharacterPosition(character);
+			}
+		}
 	}
 	
-	private void updatePlayerPosition() {
+	private void updateCharacterPosition(GameCharacter character) {
 		float distanceX = 0;
 		float distanceY = 0;
-		if (remainingDistanceX < 0) {
+		if (character.remainingDistanceX < 0) {
 			distanceX = -horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
-			remainingDistanceX = (remainingDistanceX-distanceX > 0) ? 0 : remainingDistanceX-distanceX;
+			character.remainingDistanceX = (character.remainingDistanceX-distanceX > 0) ? 0 : character.remainingDistanceX-distanceX;
 		}
-		else if (remainingDistanceX > 0) {
+		else if (character.remainingDistanceX > 0) {
 			distanceX = horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
-			remainingDistanceX = (remainingDistanceX-distanceX < 0) ? 0 : remainingDistanceX-distanceX;
+			character.remainingDistanceX = (character.remainingDistanceX-distanceX < 0) ? 0 : character.remainingDistanceX-distanceX;
 		}
-		else if (remainingDistanceY < 0) {
+		else if (character.remainingDistanceY < 0) {
 			distanceY = -verticalMoveSpeed*Gdx.graphics.getDeltaTime();
-			remainingDistanceY = (remainingDistanceY-distanceY > 0) ? 0 : remainingDistanceY-distanceY;	
+			character.remainingDistanceY = (character.remainingDistanceY-distanceY > 0) ? 0 : character.remainingDistanceY-distanceY;	
 		}
-		else if (remainingDistanceY > 0) {
+		else if (character.remainingDistanceY > 0) {
 			distanceY = verticalMoveSpeed*Gdx.graphics.getDeltaTime();
-			remainingDistanceY = (remainingDistanceY-distanceY < 0) ? 0 : remainingDistanceY-distanceY;	
+			character.remainingDistanceY = (character.remainingDistanceY-distanceY < 0) ? 0 : character.remainingDistanceY-distanceY;	
 		}
-		board.updatePlayerPosition(distanceX, distanceY);
+		board.updateCharacterPosition(character.tile, distanceX, distanceY);
 	}
 	
-	public void stepForward() {
-		if (board.getPlayer().getDirection() == Direction.EAST) {
-			remainingDistanceX = GameBoard.tileWidth;
+//	public void stepCharacterForward(GameCharacter character) {
+//		if (character.tile.getDirection() == Direction.EAST) {
+//			character.remainingDistanceX = GameBoard.tileWidth;
+//		}
+//		else if (character.tile.getDirection() == Direction.WEST) {
+//			character.remainingDistanceX = -GameBoard.tileWidth;
+//		}
+//		else if (character.tile.getDirection() == Direction.NORTH) {
+//			character.remainingDistanceX = GameBoard.tileHeight;
+//		}
+//		else if (character.tile.getDirection() == Direction.SOUTH) {
+//			character.remainingDistanceX = -GameBoard.tileHeight;
+//		}
+//		character.moving = true;
+//	}
+	
+	public void moveCharacterForward(GameCharacter character) {
+		if (character.tile.getDirection() == Direction.EAST) {
+			character.remainingDistanceX = Float.MAX_VALUE;
 		}
-		else if (board.getPlayer().getDirection() == Direction.WEST) {
-			remainingDistanceX = -GameBoard.tileWidth;
+		else if (character.tile.getDirection() == Direction.WEST) {
+			character.remainingDistanceX = -Float.MAX_VALUE;
 		}
-		else if (board.getPlayer().getDirection() == Direction.NORTH) {
-			remainingDistanceX = GameBoard.tileHeight;
+		else if (character.tile.getDirection() == Direction.NORTH) {
+			character.remainingDistanceY = Float.MAX_VALUE;
 		}
-		else if (board.getPlayer().getDirection() == Direction.SOUTH) {
-			remainingDistanceX = -GameBoard.tileHeight;
+		else if (character.tile.getDirection() == Direction.SOUTH) {
+			character.remainingDistanceY = -Float.MAX_VALUE;
 		}
+		character.moving = true;
 	}
 	
-	public void movePlayerForward() {
-		if (board.getPlayer().getDirection() == Direction.EAST) {
-			remainingDistanceX = Float.MAX_VALUE;
-		}
-		else if (board.getPlayer().getDirection() == Direction.WEST) {
-			remainingDistanceX = -Float.MAX_VALUE;
-		}
-		else if (board.getPlayer().getDirection() == Direction.NORTH) {
-			remainingDistanceY = Float.MAX_VALUE;
-		}
-		else if (board.getPlayer().getDirection() == Direction.SOUTH) {
-			remainingDistanceY = -Float.MAX_VALUE;
-		}
-	}
-	
-	public void stopPlayerMovement() {
-		remainingDistanceX = 0;
-		remainingDistanceY = 0;
-		//board.adjustCharacterPosition();
+	public void stopCharacterMovement(GameCharacter character) {
+		character.remainingDistanceX = 0;
+		character.remainingDistanceY = 0;
+		character.moving = false;
 	}
 
-	public void turnLeft() {
-		board.turnPlayerLeft();
+	public void turnCharacterLeft(GameCharacter character) {
+		board.turnCharacterLeft(character.tile);
+		if (character.moving) {
+			stopCharacterMovement(character);
+			moveCharacterForward(character);
+		}
 	}
 
-	public void turnRight() {
-		board.turnPlayerRight();
+	public void turnCharacterRight(GameCharacter character) {
+		board.turnCharacterRight(character.tile);
+		if (character.moving) {
+			stopCharacterMovement(character);
+			moveCharacterForward(character);
+		}
 	}
 
-	public void turnAround() {
-		board.turnPlayerAround();
+	public void turnCharacterAround(GameCharacter character) {
+		board.turnCharacterAround(character.tile);
+		if (character.moving) {
+			stopCharacterMovement(character);
+			moveCharacterForward(character);
+		}
 	}
 
 	public void pushButton() {
 		// TODO Auto-generated method stub
+	}
+	
+	public class GameCharacter {
 		
+		Tile tile;
+		boolean moving = false;
+		float remainingDistanceX = 0;
+		float remainingDistanceY = 0;
+		
+		public GameCharacter(Tile characterTile) {
+			this.tile = characterTile;
+		}
+	}
+
+	public GameCharacter getMalcolm() {
+		return malcolm;
+	}
+	
+	public GameCharacter getKaylee() {
+		return kaylee;
+	}
+	
+	public GameCharacter getWash() {
+		return wash;
 	}
 
 }
