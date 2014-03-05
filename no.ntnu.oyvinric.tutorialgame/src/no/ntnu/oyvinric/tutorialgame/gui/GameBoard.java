@@ -12,9 +12,8 @@ import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
@@ -26,8 +25,7 @@ public class GameBoard {
 
 	TutorialGame parent;
 	
-	Texture wallTexture, groundTexture, malcolmTexture, kayleeTexture, washTexture, goalTexture;
-	TextureRegion wallImage, groundImage, malcolmImage, kayleeImage, washImage, goalImage;
+	TextureAtlas environmentTextures;
 	OrthographicCamera camera;
 	SpriteBatch batch;
 	Array<Tile> groundTiles;
@@ -40,18 +38,8 @@ public class GameBoard {
 	
 	public GameBoard(TutorialGame parent, int levelNo) {
 		this.parent = parent;
-		wallTexture = new Texture(Gdx.files.internal("resources/gfx/wall-block.png"));
-		wallImage = new TextureRegion(wallTexture);
-		groundTexture = new Texture(Gdx.files.internal("resources/gfx/grass.png"));
-		groundImage = new TextureRegion(groundTexture);
-		malcolmTexture = new Texture(Gdx.files.internal("resources/gfx/malcolm.png"));
-		malcolmImage = new TextureRegion(malcolmTexture);
-		kayleeTexture = new Texture(Gdx.files.internal("resources/gfx/kaylee.png"));
-		kayleeImage = new TextureRegion(kayleeTexture);
-		washTexture = new Texture(Gdx.files.internal("resources/gfx/wash.png"));
-		washImage = new TextureRegion(washTexture);
-		goalTexture = new Texture(Gdx.files.internal("resources/gfx/blue-gem.png"));
-		goalImage = new TextureRegion(goalTexture);
+		
+		environmentTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/environment.atlas"));
 		
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
@@ -85,31 +73,30 @@ public class GameBoard {
 	
 	private void createTile(char type, float x, float y) {
 		if (type == '#') {
-			groundTiles.add(new Tile(x, y, wallImage, 0, 10));
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("wall-block-tall"), 0, -25));
 		}
 		else if (type == ' ') {
-			groundTiles.add(new Tile(x, y, groundImage));
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
 		}
 		else if (type == 'M') {
-			malcolm = new CharacterTile(CharacterName.MALCOLM, x, y, malcolmImage);
+			malcolm = new CharacterTile(CharacterName.MALCOLM, x, y);
 			characterTiles.add(malcolm);
-			groundTiles.add(new Tile(x, y, groundImage));
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
 		}
 		else if (type == 'K') {
-			kaylee = new CharacterTile(CharacterName.KAYLEE, x, y, kayleeImage);
+			kaylee = new CharacterTile(CharacterName.KAYLEE, x, y);
 			characterTiles.add(kaylee);
-			groundTiles.add(new Tile(x, y, groundImage));
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
 		}
 		else if (type == 'W') {
-			wash = new CharacterTile(CharacterName.WASH, x, y, washImage);
+			wash = new CharacterTile(CharacterName.WASH, x, y);
 			characterTiles.add(wash);
-			groundTiles.add(new Tile(x, y, groundImage));
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
 		}
 		else if (type == 'g') {
-			Tile tile = new Tile(x, y, goalImage);
-			objectTiles.add(tile);
-			goal = tile;
-			groundTiles.add(new Tile(x, y, groundImage));
+			goal = new Tile(x, y, environmentTextures.findRegion("star"));
+			objectTiles.add(goal);
+			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
 		}
 	}
 
@@ -142,12 +129,7 @@ public class GameBoard {
 	}
 	
 	public void cleanUp() {
-		wallTexture.dispose();
-		groundTexture.dispose();
-		goalTexture.dispose();
-		malcolmTexture.dispose();
-		kayleeTexture.dispose();
-		washTexture.dispose();
+		environmentTextures.dispose();
 	}
 	
 	public CharacterTile getMalcolm() {
@@ -166,23 +148,23 @@ public class GameBoard {
 		return characterTiles;
 	}
 	
-	public void updateCharacterPosition(Tile character, float dx, float dy) {
+	public void updateCharacterPosition(CharacterTile character, float dx, float dy) {
 		character.move(dx, dy);
 	}
 	
-	public void adjustCharacterPosition(Tile character) {
+	public void adjustCharacterPosition(CharacterTile character) {
 		character.alignWithGrid();
 	}
 
-	public void turnCharacterLeft(Tile character) {
+	public void turnCharacterLeft(CharacterTile character) {
 		character.rotate(90);
 	}
 
-	public void turnCharacterRight(Tile character) {
+	public void turnCharacterRight(CharacterTile character) {
 		character.rotate(-90);
 	}
 
-	public void turnCharacterAround(Tile character) {
+	public void turnCharacterAround(CharacterTile character) {
 		character.rotate(180);
 	}
 }

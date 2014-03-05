@@ -14,10 +14,28 @@ public class Tile {
 	private float originY = 0;
 	protected Direction direction = Direction.EAST;
 	
-	public Tile(float x, float y, TextureRegion image) {
+	public Tile(float x, float y) {
 		rectangle = new Rectangle();
 		rectangle.width = GameBoard.tileWidth;
 		rectangle.height = GameBoard.tileHeight;
+		rectangle.x = x;
+		rectangle.y = y;
+	}
+	
+	public Tile(float x, float y, int horizontalAdjustment, int verticalAdjustment) {
+		rectangle = new Rectangle();
+		rectangle.width = GameBoard.tileWidth;
+		rectangle.height = GameBoard.tileHeight;
+		rectangle.x = x;
+		rectangle.y = y;
+		this.horizontalAdjustment = horizontalAdjustment;
+		this.verticalAdjustment = verticalAdjustment;
+	}
+	
+	public Tile(float x, float y, TextureRegion image) {
+		rectangle = new Rectangle();
+		rectangle.width = image.getRegionWidth();
+		rectangle.height = image.getRegionHeight();
 		rectangle.x = x;
 		rectangle.y = y;
 		this.image = image;
@@ -25,8 +43,8 @@ public class Tile {
 	
 	public Tile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
 		rectangle = new Rectangle();
-		rectangle.width = GameBoard.tileWidth;
-		rectangle.height = GameBoard.tileHeight;
+		rectangle.width = image.getRegionWidth();
+		rectangle.height = image.getRegionHeight();
 		rectangle.x = x;
 		rectangle.y = y;
 		this.image = image;
@@ -46,7 +64,7 @@ public class Tile {
 	
 	public void alignWithGrid() {
 		rectangle.x = Math.round(rectangle.x / GameBoard.tileWidth)*GameBoard.tileWidth;
-		rectangle.y = Math.round(rectangle.y / GameBoard.tileHeight)*GameBoard.tileHeight;
+		rectangle.y = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-rectangle.y) / GameBoard.tileHeight)*GameBoard.tileHeight);
 	}
 	
 	public void rotate(float angle) {

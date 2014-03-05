@@ -158,6 +158,7 @@ public class TutorialGame implements ApplicationListener {
 		character.remainingDistanceX = 0;
 		character.remainingDistanceY = 0;
 		character.tile.setMoving(false);
+		board.adjustCharacterPosition(character.tile);
 	}
 
 	public void turnCharacterLeft(GameCharacter character) {

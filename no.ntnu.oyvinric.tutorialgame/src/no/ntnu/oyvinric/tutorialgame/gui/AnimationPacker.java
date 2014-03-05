@@ -5,6 +5,6 @@ import com.badlogic.gdx.tools.imagepacker.TexturePacker2;
 public class AnimationPacker {
 
 	public static void main(String[] args) {
-		TexturePacker2.process("resources/gfx/malcolm", "resources/gfx", "malcolm-walk");
+		TexturePacker2.process("resources/gfx/environment", "resources/gfx", "environment");
 	}
 }

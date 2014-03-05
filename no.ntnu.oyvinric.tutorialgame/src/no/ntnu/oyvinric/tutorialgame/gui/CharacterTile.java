@@ -7,7 +7,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class CharacterTile extends Tile {
 	
-	final float animationSpeed = 0.25f;
+	final float horizontalAnimationDelay = 0.25f;
+	final float verticalAnimationDelay = 0.375f;
 	
 	private CharacterName name;
 	private boolean moving = false;
@@ -22,14 +23,14 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile(CharacterName name, float x, float y, TextureRegion image) {
-		super(x, y, image);
+	public CharacterTile(CharacterName name, float x, float y) {
+		super(x, y);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(CharacterName name, float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-		super(x, y, image, horizontalAdjustment, verticalAdjustment);
+	public CharacterTile(CharacterName name, float x, float y, int horizontalAdjustment, int verticalAdjustment) {
+		super(x, y, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}
@@ -40,22 +41,24 @@ public class CharacterTile extends Tile {
 		walkNorthFrames = new TextureRegion[2];
 		walkNorthFrames[0] = animationTextures.findRegion("north1");
 		walkNorthFrames[1] = animationTextures.findRegion("north2");
-		walkNorthAnimation = new Animation(animationSpeed, walkNorthFrames);
+		walkNorthAnimation = new Animation(verticalAnimationDelay, walkNorthFrames);
 		
 		walkSouthFrames = new TextureRegion[2];
 		walkSouthFrames[0] = animationTextures.findRegion("south1");
 		walkSouthFrames[1] = animationTextures.findRegion("south2");
-		walkSouthAnimation = new Animation(animationSpeed, walkSouthFrames);
+		walkSouthAnimation = new Animation(verticalAnimationDelay, walkSouthFrames);
 		
 		walkWestFrames = new TextureRegion[2];
 		walkWestFrames[0] = animationTextures.findRegion("west1");
 		walkWestFrames[1] = animationTextures.findRegion("west2");
-		walkWestAnimation = new Animation(animationSpeed, walkWestFrames);
+		walkWestAnimation = new Animation(horizontalAnimationDelay, walkWestFrames);
 		
 		walkEastFrames = new TextureRegion[2];
 		walkEastFrames[0] = animationTextures.findRegion("east1");
 		walkEastFrames[1] = animationTextures.findRegion("east2");
-		walkEastAnimation = new Animation(animationSpeed, walkEastFrames);
+		walkEastAnimation = new Animation(horizontalAnimationDelay, walkEastFrames);
+		
+		image = walkEastFrames[0];
 	}
 	
 	public void rotate(float angle) {

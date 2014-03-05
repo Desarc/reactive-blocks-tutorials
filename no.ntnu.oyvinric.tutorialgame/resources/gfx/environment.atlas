@@ -1,0 +1,68 @@
+
+environment.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+chest-closed
+  rotate: false
+  xy: 2, 262
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+chest-open
+  rotate: false
+  xy: 2, 132
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+door-closed
+  rotate: false
+  xy: 68, 262
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+door-open
+  rotate: false
+  xy: 2, 2
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+grass
+  rotate: false
+  xy: 68, 132
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+key
+  rotate: false
+  xy: 134, 262
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 68, 2
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+wall-block
+  rotate: false
+  xy: 134, 2
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+wall-block-tall
+  rotate: false
+  xy: 134, 132
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
