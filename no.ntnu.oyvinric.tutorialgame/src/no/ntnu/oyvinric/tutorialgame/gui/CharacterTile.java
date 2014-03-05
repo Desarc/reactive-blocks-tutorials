@@ -36,7 +36,7 @@ public class CharacterTile extends Tile {
 	}
 	
 	private void loadAnimation(CharacterName name) {
-		animationTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/"+name.getValue()+"-walk.atlas"));
+		animationTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/"+name.getValue()+".atlas"));
 		
 		walkNorthFrames = new TextureRegion[2];
 		walkNorthFrames[0] = animationTextures.findRegion("north1");
