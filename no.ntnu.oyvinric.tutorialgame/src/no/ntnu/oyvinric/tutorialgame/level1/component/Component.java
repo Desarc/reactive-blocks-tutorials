@@ -13,7 +13,7 @@ public class Component extends Block {
 	GameCharacter kaylee;
 	
 	public Component() {
-		game = new TutorialGame(3);
+		game = new TutorialGame(2);
 		new LwjglApplication(game, "Level 1", 800, 480, false);
 		try {
 			Thread.sleep(1000);
@@ -67,6 +67,9 @@ public class Component extends Block {
 	
 	public void malcolmPushButton() {
 		game.pushButton();
+	}
+
+	public void doNothing() {
 	}
 
 }

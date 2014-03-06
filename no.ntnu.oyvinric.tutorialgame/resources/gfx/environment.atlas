@@ -3,66 +3,157 @@ environment.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+brown-block
+  rotate: false
+  xy: 2, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
 chest-closed
   rotate: false
-  xy: 2, 262
-  size: 64, 128
-  orig: 64, 128
+  xy: 36, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 chest-open
   rotate: false
-  xy: 2, 132
-  size: 64, 128
-  orig: 64, 128
+  xy: 70, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+dirt-block
+  rotate: false
+  xy: 104, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 door-closed
   rotate: false
-  xy: 68, 262
-  size: 64, 128
-  orig: 64, 128
+  xy: 138, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 door-open
   rotate: false
-  xy: 2, 2
-  size: 64, 128
-  orig: 64, 128
+  xy: 172, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 grass
   rotate: false
-  xy: 68, 132
-  size: 64, 128
-  orig: 64, 128
+  xy: 206, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 key
   rotate: false
-  xy: 134, 262
-  size: 64, 128
-  orig: 64, 128
+  xy: 240, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+plain-block
+  rotate: false
+  xy: 274, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-east
+  rotate: false
+  xy: 308, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-north
+  rotate: false
+  xy: 342, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-south
+  rotate: false
+  xy: 376, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-west
+  rotate: false
+  xy: 410, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+selector-kaylee
+  rotate: false
+  xy: 444, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+selector-malcolm
+  rotate: false
+  xy: 478, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+selector-wash
+  rotate: false
+  xy: 512, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 star
   rotate: false
-  xy: 68, 2
-  size: 64, 128
-  orig: 64, 128
+  xy: 546, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+stone-block
+  rotate: false
+  xy: 614, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+stone-block-tall
+  rotate: false
+  xy: 580, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 wall-block
   rotate: false
-  xy: 134, 2
-  size: 64, 128
-  orig: 64, 128
+  xy: 682, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1
 wall-block-tall
   rotate: false
-  xy: 134, 132
-  size: 64, 128
-  orig: 64, 128
+  xy: 648, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wood-block
+  rotate: false
+  xy: 716, 2
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1

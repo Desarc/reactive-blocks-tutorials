@@ -1,35 +1,35 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.maps.MapLayers;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
 
-	public static final float tileHeight = 56f;
-	public static final float tileWidth = 64f;
+	public static final float tileHeight = 13f;
+	public static final float tileWidth = 32f;
+	public static final float stackingHeight = 26f;
 	public static final int horizontalLeftLimit = 0;
-	public static final int verticalUpperLimit = 480;
-
+	public static final int verticalUpperLimit = 460;
 	TutorialGame parent;
 	
-	TextureAtlas environmentTextures;
+//	TextureAtlas environmentTextures;
+//	TextureAtlas objectTextures;
 	OrthographicCamera camera;
+	TiledMap levelMap;
+	IsometricTiledMapRenderer renderer;
 	SpriteBatch batch;
-	Array<Tile> groundTiles;
-	Array<Tile> objectTiles;
 	CharacterTile malcolm, kaylee, wash;
 	Array<CharacterTile> characterTiles;
 	Tile goal;
@@ -39,7 +39,8 @@ public class GameBoard {
 	public GameBoard(TutorialGame parent, int levelNo) {
 		this.parent = parent;
 		
-		environmentTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/environment.atlas"));
+//		environmentTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/environment.atlas"));
+//		objectTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/objects.atlas"));
 		
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
@@ -51,19 +52,60 @@ public class GameBoard {
 		
 	}
 	
+	public void loadLevel(int levelNo) {
+		levelMap = new TmxMapLoader().load("resources/levels/level"+levelNo+".tmx");
+		characterTiles = new Array<CharacterTile>();
+		
+		MapLayers layers = levelMap.getLayers();
+		TiledMapTileLayer tiledLayer;
+		Cell cell;
+		for (int i = 0; i < layers.getCount(); i++) {
+			tiledLayer = (TiledMapTileLayer)layers.get(i);
+			for (int j = 0; j < tiledLayer.getWidth(); j++) {
+				for (int k = 0; k < tiledLayer.getHeight(); k++) {
+					cell = tiledLayer.getCell(j, k);
+					if (cell != null) {
+						String type = (String)cell.getTile().getProperties().get("type");
+						if (type != null && type.equals("character")) {
+							String name = (String)cell.getTile().getProperties().get("name");
+							if (name.equals("malcolm")) {
+								malcolm = new CharacterTile(CharacterName.MALCOLM, horizontalLeftLimit+j*tileWidth, verticalUpperLimit-(k-1)*tileHeight-(layers.getCount()-i)*stackingHeight, i);
+								characterTiles.add(malcolm);
+							}
+							else if (name.equals("kaylee")) {
+								kaylee = new CharacterTile(CharacterName.KAYLEE, horizontalLeftLimit+j*tileWidth, verticalUpperLimit-(k-1)*tileHeight-(layers.getCount()-i)*stackingHeight, i);
+								characterTiles.add(kaylee);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	private void drawLevel() {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
-		for (Tile groundTile : groundTiles) {
-			batch.draw(groundTile.getImage(), groundTile.getX(), groundTile.getY(), groundTile.getOriginX(), groundTile.getOriginY(), groundTile.getWidth(), groundTile.getHeight(), 1f, 1f, groundTile.getRotation());
+		
+		MapLayers layers = levelMap.getLayers();
+		TiledMapTileLayer tiledLayer;
+		Cell cell;
+		for (int i = 0; i < layers.getCount(); i++) {
+			tiledLayer = (TiledMapTileLayer)layers.get(i);
+			for (int j = 0; j < tiledLayer.getWidth(); j++) {
+				for (int k = 0; k < tiledLayer.getHeight(); k++) {
+					cell = tiledLayer.getCell(j, k);
+					if (cell != null) {
+						batch.draw(cell.getTile().getTextureRegion(), horizontalLeftLimit+j*tileWidth, verticalUpperLimit-k*tileHeight-(layers.getCount()-i)*stackingHeight);
+					}
+				}
+			}
 		}
-		for (Tile objectTile : objectTiles) {
-			batch.draw(objectTile.getImage(), objectTile.getX(), objectTile.getY(), objectTile.getOriginX(), objectTile.getOriginY(), objectTile.getWidth(), objectTile.getHeight(), 1f, 1f, objectTile.getRotation());
+		
+		for (CharacterTile character : characterTiles) {
+			batch.draw(character.getImage(), character.getX(), character.getY(), character.getOriginX(), character.getOriginY(), character.getWidth(), character.getHeight(), character.getScaleFactor(), character.getScaleFactor(), character.getRotation());
 		}
-		for (CharacterTile characterTile : characterTiles) {
-			batch.draw(characterTile.getImage(), characterTile.getX(), characterTile.getY(), characterTile.getOriginX(), characterTile.getOriginY(), characterTile.getWidth(), characterTile.getHeight(), 1f, 1f, characterTile.getRotation());
-		}
-		//System.out.println("Player position: "+player.getX()+","+player.getY());
+		
 		batch.end();
 	}
 	
@@ -71,65 +113,8 @@ public class GameBoard {
 		drawLevel();
 	}
 	
-	private void createTile(char type, float x, float y) {
-		if (type == '#') {
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("wall-block-tall"), 0, -25));
-		}
-		else if (type == ' ') {
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
-		}
-		else if (type == 'M') {
-			malcolm = new CharacterTile(CharacterName.MALCOLM, x, y);
-			characterTiles.add(malcolm);
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
-		}
-		else if (type == 'K') {
-			kaylee = new CharacterTile(CharacterName.KAYLEE, x, y);
-			characterTiles.add(kaylee);
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
-		}
-		else if (type == 'W') {
-			wash = new CharacterTile(CharacterName.WASH, x, y);
-			characterTiles.add(wash);
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
-		}
-		else if (type == 'g') {
-			goal = new Tile(x, y, environmentTextures.findRegion("star"));
-			objectTiles.add(goal);
-			groundTiles.add(new Tile(x, y, environmentTextures.findRegion("grass"), 0, -25));
-		}
-	}
-
-	public void loadLevel(int levelNo) {
-		groundTiles = new Array<Tile>();
-		objectTiles = new Array<Tile>();
-		characterTiles = new Array<CharacterTile>();
-		try {
-	    	BufferedReader br = new BufferedReader(new FileReader("resources/levels/level"+levelNo+".txt"));
-			int xCount = 0;
-			int yCount = 1;
-			String line;
-			while ((line = br.readLine()) != null) {
-				System.out.println(line);
-				for (Character c : line.toCharArray()) {
-					float xPos = horizontalLeftLimit+xCount*tileWidth;
-					float yPos = verticalUpperLimit-yCount*tileHeight;
-					createTile(c, xPos, yPos);
-					xCount++;
-				}
-				xCount = 0;
-				yCount++;
-			}
-			br.close();
-		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
-	}
-	
 	public void cleanUp() {
-		environmentTextures.dispose();
+//		environmentTextures.dispose();
 	}
 	
 	public CharacterTile getMalcolm() {
@@ -153,7 +138,7 @@ public class GameBoard {
 	}
 	
 	public void adjustCharacterPosition(CharacterTile character) {
-		character.alignWithGrid();
+		//character.alignWithGrid();
 	}
 
 	public void turnCharacterLeft(CharacterTile character) {

@@ -23,14 +23,14 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile(CharacterName name, float x, float y) {
-		super(x, y);
+	public CharacterTile(CharacterName name, float x, float y, float z) {
+		super(x, y, z);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(CharacterName name, float x, float y, int horizontalAdjustment, int verticalAdjustment) {
-		super(x, y, horizontalAdjustment, verticalAdjustment);
+	public CharacterTile(CharacterName name, float x, float y, float z, int horizontalAdjustment, int verticalAdjustment) {
+		super(x, y, z, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}
@@ -58,7 +58,7 @@ public class CharacterTile extends Tile {
 		walkEastFrames[1] = animationTextures.findRegion("east2");
 		walkEastAnimation = new Animation(horizontalAnimationDelay, walkEastFrames);
 		
-		image = walkEastFrames[0];
+		image = walkEastFrames[1];
 	}
 	
 	public void rotate(float angle) {
@@ -80,6 +80,16 @@ public class CharacterTile extends Tile {
 			image = walkSouthFrames[1];
 		}
 	}
+	
+	public void move(float dx, float dy) {
+		positionX += dx;
+		positionY += dy;
+	}
+	
+//	public void alignWithGrid() {
+//		positionX = Math.round(positionX / GameBoard.tileWidth)*GameBoard.tileWidth;
+//		positionY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-positionY) / GameBoard.tileHeight)*GameBoard.tileHeight);
+//	}
 	
 	public float getRotation() {
 		return 0;
@@ -106,7 +116,6 @@ public class CharacterTile extends Tile {
 		else {
 			return image;
 		}
-		
 	}
 	
 	public boolean getMoving() {

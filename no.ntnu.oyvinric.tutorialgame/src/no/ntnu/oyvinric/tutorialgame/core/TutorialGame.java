@@ -15,7 +15,7 @@ import com.badlogic.gdx.utils.Array;
 public class TutorialGame implements ApplicationListener {
 
 	final float horizontalMoveSpeed = GameBoard.tileWidth*2;
-	final float verticalMoveSpeed = GameBoard.tileHeight*2;
+	final float verticalMoveSpeed = GameBoard.tileHeight*4;
 	
 	GameBoard board;
 	int levelNo;

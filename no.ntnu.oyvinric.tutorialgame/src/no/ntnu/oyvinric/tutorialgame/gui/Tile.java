@@ -1,70 +1,73 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Rectangle;
 
-public class Tile {
+public abstract class Tile {
 	
-	protected Rectangle rectangle;
 	protected TextureRegion image;
-	private float horizontalAdjustment = 0;
-	private float verticalAdjustment = 0;
-	protected float rotation = 0;
-	private float originX = 0;
-	private float originY = 0;
+	private float horizontalAdjustment = 0f;
+	private float verticalAdjustment = 0f;
+	protected float rotation = 0f;
+	private float originX = 0f;
+	private float originY = 0f;
+	protected float positionX;
+	protected float positionY;
+	protected float positionZ;
+	private float scaleFactor = 1f;
 	protected Direction direction = Direction.EAST;
 	
-	public Tile(float x, float y) {
-		rectangle = new Rectangle();
-		rectangle.width = GameBoard.tileWidth;
-		rectangle.height = GameBoard.tileHeight;
-		rectangle.x = x;
-		rectangle.y = y;
+	public Tile(float x, float y, float z) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
 	}
 	
-	public Tile(float x, float y, int horizontalAdjustment, int verticalAdjustment) {
-		rectangle = new Rectangle();
-		rectangle.width = GameBoard.tileWidth;
-		rectangle.height = GameBoard.tileHeight;
-		rectangle.x = x;
-		rectangle.y = y;
+	public Tile(float x, float y, float z, int horizontalAdjustment, int verticalAdjustment) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 	}
 	
-	public Tile(float x, float y, TextureRegion image) {
-		rectangle = new Rectangle();
-		rectangle.width = image.getRegionWidth();
-		rectangle.height = image.getRegionHeight();
-		rectangle.x = x;
-		rectangle.y = y;
+	public Tile(int x, int y, int z, TextureRegion image) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
 		this.image = image;
 	}
 	
-	public Tile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-		rectangle = new Rectangle();
-		rectangle.width = image.getRegionWidth();
-		rectangle.height = image.getRegionHeight();
-		rectangle.x = x;
-		rectangle.y = y;
+	public Tile(int x, int y, int z, TextureRegion image, float scaleFactor) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
+		this.image = image;
+		this.scaleFactor = scaleFactor;
+	}
+	
+	public Tile(int x, int y, int z, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
 		this.image = image;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 	}
 	
-	public void setPosition(float x, float y) {
-		rectangle.x = x;
-		rectangle.y = y;
+	public Tile(int x, int y, int z, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
+		this.image = image;
+		this.horizontalAdjustment = horizontalAdjustment;
+		this.verticalAdjustment = verticalAdjustment;
+		this.scaleFactor = scaleFactor;
 	}
 	
-	public void move(float dx, float dy) {
-		rectangle.x += dx;
-		rectangle.y += dy;
-	}
-	
-	public void alignWithGrid() {
-		rectangle.x = Math.round(rectangle.x / GameBoard.tileWidth)*GameBoard.tileWidth;
-		rectangle.y = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-rectangle.y) / GameBoard.tileHeight)*GameBoard.tileHeight);
+	public void setPosition(int x, int y, int z) {
+		positionX = x;
+		positionY = y;
+		positionZ = z;
 	}
 	
 	public void rotate(float angle) {
@@ -96,11 +99,15 @@ public class Tile {
 	}
 	
 	public float getX() {
-		return rectangle.x + horizontalAdjustment;
+		return positionX + horizontalAdjustment;
 	}
 	
 	public float getY() {
-		return rectangle.y + verticalAdjustment;
+		return positionY + verticalAdjustment;
+	}
+	
+	public float getZ() {
+		return positionZ;
 	}
 	
 	public float getRotation() {
@@ -108,11 +115,11 @@ public class Tile {
 	}
 	
 	public float getWidth() {
-		return rectangle.width;
+		return image.getRegionWidth();
 	}
 	
 	public float getHeight() {
-		return rectangle.height;
+		return image.getRegionHeight();
 	}
 	
 	public float getOriginX() {
@@ -125,6 +132,10 @@ public class Tile {
 	
 	public Direction getDirection() {
 		return direction;
+	}
+	
+	public float getScaleFactor() {
+		return scaleFactor;
 	}
 	
 	public static enum Direction {

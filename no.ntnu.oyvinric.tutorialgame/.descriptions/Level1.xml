@@ -15,10 +15,13 @@
         <resource path="resources/gfx/environment.png"/>
         <resource path="resources/gfx/kaylee.atlas"/>
         <resource path="resources/gfx/kaylee.png"/>
-        <resource path="resources/gfx/malcolm-walk.atlas"/>
         <resource path="resources/gfx/malcolm.atlas"/>
         <resource path="resources/gfx/malcolm.png"/>
+        <resource path="resources/gfx/objects.atlas"/>
+        <resource path="resources/gfx/objects.png"/>
+        <resource path="resources/levels/level1.tmx"/>
         <resource path="resources/levels/level1.txt"/>
+        <resource path="resources/levels/level2.tmx"/>
         <resource path="resources/levels/level2.txt"/>
         <resource path="resources/levels/level3.txt"/>
         <resource path="resources/sound/drop.wav"/>
