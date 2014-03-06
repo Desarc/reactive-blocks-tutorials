@@ -17,11 +17,13 @@ import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
 
+	public static final int windowWidth = 800;
+	public static final int windowHeight = 480;
 	public static final float tileHeight = 13f;
 	public static final float tileWidth = 32f;
 	public static final float stackingHeight = 26f;
 	public static final int horizontalLeftLimit = 0;
-	public static final int verticalUpperLimit = 460;
+	public static final int verticalUpperLimit = windowHeight+30;
 	TutorialGame parent;
 	
 //	TextureAtlas environmentTextures;
@@ -43,7 +45,7 @@ public class GameBoard {
 //		objectTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/objects.atlas"));
 		
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 800, 480);
+		camera.setToOrtho(false, windowWidth, windowHeight);
 		camera.update();
 		
 		batch = new SpriteBatch();
@@ -75,6 +77,10 @@ public class GameBoard {
 							else if (name.equals("kaylee")) {
 								kaylee = new CharacterTile(CharacterName.KAYLEE, horizontalLeftLimit+j*tileWidth, verticalUpperLimit-(k-1)*tileHeight-(layers.getCount()-i)*stackingHeight, i);
 								characterTiles.add(kaylee);
+							}
+							else if (name.equals("wash")) {
+								wash = new CharacterTile(CharacterName.WASH, horizontalLeftLimit+j*tileWidth, verticalUpperLimit-(k-1)*tileHeight-(layers.getCount()-i)*stackingHeight, i);
+								characterTiles.add(wash);
 							}
 						}
 					}

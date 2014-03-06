@@ -12,62 +12,62 @@ public abstract class Tile {
 	private float originY = 0f;
 	protected float positionX;
 	protected float positionY;
-	protected float positionZ;
+	protected int layer;
 	private float scaleFactor = 1f;
 	protected Direction direction = Direction.EAST;
 	
-	public Tile(float x, float y, float z) {
+	public Tile(float x, float y, int layer) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 	}
 	
-	public Tile(float x, float y, float z, int horizontalAdjustment, int verticalAdjustment) {
+	public Tile(float x, float y, int layer, int horizontalAdjustment, int verticalAdjustment) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 	}
 	
-	public Tile(int x, int y, int z, TextureRegion image) {
+	public Tile(int x, int y, int layer, TextureRegion image) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 		this.image = image;
 	}
 	
-	public Tile(int x, int y, int z, TextureRegion image, float scaleFactor) {
+	public Tile(int x, int y, int layer, TextureRegion image, float scaleFactor) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 		this.image = image;
 		this.scaleFactor = scaleFactor;
 	}
 	
-	public Tile(int x, int y, int z, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
+	public Tile(int x, int y, int layer, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 		this.image = image;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 	}
 	
-	public Tile(int x, int y, int z, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
+	public Tile(int x, int y, int layer, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 		this.image = image;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		this.scaleFactor = scaleFactor;
 	}
 	
-	public void setPosition(int x, int y, int z) {
+	public void setPosition(int x, int y, int layer) {
 		positionX = x;
 		positionY = y;
-		positionZ = z;
+		this.layer = layer;
 	}
 	
 	public void rotate(float angle) {
@@ -106,8 +106,8 @@ public abstract class Tile {
 		return positionY + verticalAdjustment;
 	}
 	
-	public float getZ() {
-		return positionZ;
+	public int getLayer() {
+		return layer;
 	}
 	
 	public float getRotation() {

@@ -23,14 +23,14 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile(CharacterName name, float x, float y, float z) {
-		super(x, y, z);
+	public CharacterTile(CharacterName name, float x, float y, int layer) {
+		super(x, y, layer);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(CharacterName name, float x, float y, float z, int horizontalAdjustment, int verticalAdjustment) {
-		super(x, y, z, horizontalAdjustment, verticalAdjustment);
+	public CharacterTile(CharacterName name, float x, float y, int layer, int horizontalAdjustment, int verticalAdjustment) {
+		super(x, y, layer, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}

@@ -1,4 +1,4 @@
-package no.ntnu.oyvinric.tutorialgame.level1.component;
+package no.ntnu.oyvinric.tutorialgame.level2.component;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
@@ -8,13 +8,13 @@ import no.ntnu.oyvinric.tutorialgame.core.TutorialGame.GameCharacter;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 
 public class Component extends Block {
-	
+
 	TutorialGame game;
 	GameCharacter malcolm;
 	GameCharacter kaylee;
 	
 	public Component() {
-		game = new TutorialGame(2);
+		game = new TutorialGame(3);
 		new LwjglApplication(game, "Level 1", GameBoard.windowWidth, GameBoard.windowHeight, false);
 		try {
 			Thread.sleep(1000);
@@ -72,5 +72,5 @@ public class Component extends Block {
 
 	public void doNothing() {
 	}
-
+	
 }

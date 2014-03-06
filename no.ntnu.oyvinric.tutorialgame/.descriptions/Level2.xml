@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
-    name="Level1" 
-    uuid="_DgdvsKMBEeOi0qk96zTZcg" 
+    name="Level2" 
+    uuid="_NSzBIKTdEeOq9fN8YFvhlA" 
     status="under construction" 
     type="system" 
     >
     <required>
         <library path="lib/gdx-backend-lwjgl-natives.jar"/>
+        <library path="lib/gdx-backend-lwjgl-sources.jar"/>
         <library path="lib/gdx-backend-lwjgl.jar"/>
         <library path="lib/gdx-natives.jar"/>
+        <library path="lib/gdx-sources.jar"/>
         <library path="lib/gdx-tools.jar"/>
         <library path="lib/gdx.jar"/>
         <resource path="resources/gfx/environment.atlas"/>
@@ -20,11 +22,8 @@
         <resource path="resources/gfx/objects.atlas"/>
         <resource path="resources/gfx/objects.png"/>
         <resource path="resources/levels/level1.tmx"/>
-        <resource path="resources/levels/level1.txt"/>
         <resource path="resources/levels/level2.tmx"/>
-        <resource path="resources/levels/level2.txt"/>
         <resource path="resources/levels/level3.tmx"/>
-        <resource path="resources/levels/level3.txt"/>
         <resource path="resources/sound/drop.wav"/>
         <resource path="resources/sound/human_theory.mp3"/>
         <resource path="resources/sound/rain.mp3"/>
