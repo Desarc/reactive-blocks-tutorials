@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public abstract class Tile {
 	
 	protected TextureRegion image;
+	private float width = 0f;
+	private float height = 0f;
 	private float horizontalAdjustment = 0f;
 	private float verticalAdjustment = 0f;
 	protected float rotation = 0f;
@@ -15,6 +17,12 @@ public abstract class Tile {
 	protected int layer;
 	private float scaleFactor = 1f;
 	protected Direction direction = Direction.EAST;
+	
+	public Tile() {
+		positionX = 0f;
+		positionY = 0f;
+		layer = 0;
+	}
 	
 	public Tile(float x, float y, int layer) {
 		positionX = x;
@@ -30,11 +38,22 @@ public abstract class Tile {
 		this.verticalAdjustment = verticalAdjustment;
 	}
 	
+	public Tile(TextureRegion image) {
+		positionX = 0f;
+		positionY = 0f;
+		this.layer = 0;
+		this.image = image;
+		this.width = image.getRegionWidth();
+		this.height = image.getRegionHeight();
+	}
+	
 	public Tile(int x, int y, int layer, TextureRegion image) {
 		positionX = x;
 		positionY = y;
 		this.layer = layer;
 		this.image = image;
+		this.width = image.getRegionWidth();
+		this.height = image.getRegionHeight();
 	}
 	
 	public Tile(int x, int y, int layer, TextureRegion image, float scaleFactor) {
@@ -42,6 +61,8 @@ public abstract class Tile {
 		positionY = y;
 		this.layer = layer;
 		this.image = image;
+		this.width = image.getRegionWidth();
+		this.height = image.getRegionHeight();
 		this.scaleFactor = scaleFactor;
 	}
 	
@@ -50,6 +71,8 @@ public abstract class Tile {
 		positionY = y;
 		this.layer = layer;
 		this.image = image;
+		this.width = image.getRegionWidth();
+		this.height = image.getRegionHeight();
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 	}
@@ -59,12 +82,14 @@ public abstract class Tile {
 		positionY = y;
 		this.layer = layer;
 		this.image = image;
+		this.width = image.getRegionWidth();
+		this.height = image.getRegionHeight();
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		this.scaleFactor = scaleFactor;
 	}
 	
-	public void setPosition(int x, int y, int layer) {
+	public void setPosition(float x, float y, int layer) {
 		positionX = x;
 		positionY = y;
 		this.layer = layer;
@@ -115,11 +140,11 @@ public abstract class Tile {
 	}
 	
 	public float getWidth() {
-		return image.getRegionWidth();
+		return width;
 	}
 	
 	public float getHeight() {
-		return image.getRegionHeight();
+		return height;
 	}
 	
 	public float getOriginX() {

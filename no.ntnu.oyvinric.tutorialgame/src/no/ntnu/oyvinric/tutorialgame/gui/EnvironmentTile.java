@@ -4,12 +4,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class EnvironmentTile extends Tile {
 	
-	public EnvironmentTile(int x, int y, int z) {
-		super(x, y, z);
-		// TODO Auto-generated constructor stub
-	}
-
 	private boolean obstacle;
+	
+	public EnvironmentTile(TextureRegion image) {
+		super(image);
+	}
 	
 //	public EnvironmentTile(float x, float y, TextureRegion image) {
 //		super(x, y, image);

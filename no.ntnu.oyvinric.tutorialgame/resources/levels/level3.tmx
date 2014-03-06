@@ -4,13 +4,31 @@
   <image source="../gfx/environment.png" width="1024" height="128"/>
   <tile id="1">
    <properties>
-    <property name="name" value="chest"/>
+    <property name="name" value="chest-closed"/>
     <property name="type" value="object"/>
    </properties>
   </tile>
   <tile id="4">
    <properties>
-    <property name="name" value="door"/>
+    <property name="name" value="door-closed"/>
+    <property name="type" value="object"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="name" value="grass"/>
+    <property name="type" value="environment"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="name" value="key-gold"/>
+    <property name="type" value="object"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="name" value="key-red"/>
     <property name="type" value="object"/>
    </properties>
   </tile>
@@ -24,6 +42,18 @@
    <properties>
     <property name="name" value="star"/>
     <property name="type" value="object"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="name" value="stone-block"/>
+    <property name="type" value="environment"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="name" value="wood-block"/>
+    <property name="type" value="environment"/>
    </properties>
   </tile>
  </tileset>
