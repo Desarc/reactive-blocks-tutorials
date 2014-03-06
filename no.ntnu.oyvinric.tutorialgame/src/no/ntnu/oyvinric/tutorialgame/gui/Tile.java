@@ -1,5 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
+import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public abstract class Tile {
@@ -12,87 +14,70 @@ public abstract class Tile {
 	protected float rotation = 0f;
 	private float originX = 0f;
 	private float originY = 0f;
-	protected float positionX;
-	protected float positionY;
-	protected int layer;
+	protected float coordsX;
+	protected float coordsY;
+	protected GridPosition gridPosition;
 	private float scaleFactor = 1f;
 	protected Direction direction = Direction.EAST;
 	
-	public Tile() {
-		positionX = 0f;
-		positionY = 0f;
-		layer = 0;
+	public Tile(GridPosition gridPosition) {
+		this.gridPosition = gridPosition;
+		updateCoordinates();
 	}
 	
-	public Tile(float x, float y, int layer) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
-	}
-	
-	public Tile(float x, float y, int layer, int horizontalAdjustment, int verticalAdjustment) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
+	public Tile(GridPosition gridPosition, int horizontalAdjustment, int verticalAdjustment) {
+		this.gridPosition = gridPosition;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
+		updateCoordinates();
 	}
 	
-	public Tile(TextureRegion image) {
-		positionX = 0f;
-		positionY = 0f;
-		this.layer = 0;
+	public Tile(GridPosition gridPosition, TextureRegion image) {
+		this.gridPosition = gridPosition;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
+		updateCoordinates();
 	}
 	
-	public Tile(int x, int y, int layer, TextureRegion image) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
-		this.image = image;
-		this.width = image.getRegionWidth();
-		this.height = image.getRegionHeight();
-	}
-	
-	public Tile(int x, int y, int layer, TextureRegion image, float scaleFactor) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
+	public Tile(GridPosition gridPosition, TextureRegion image, float scaleFactor) {
+		this.gridPosition = gridPosition;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
 		this.scaleFactor = scaleFactor;
+		updateCoordinates();
 	}
 	
-	public Tile(int x, int y, int layer, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
+	public Tile(GridPosition gridPosition, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
+		this.gridPosition = gridPosition;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
+		updateCoordinates();
 	}
 	
-	public Tile(int x, int y, int layer, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
+	public Tile(GridPosition gridPosition, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
+		this.gridPosition = gridPosition;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		this.scaleFactor = scaleFactor;
+		updateCoordinates();
 	}
 	
-	public void setPosition(float x, float y, int layer) {
-		positionX = x;
-		positionY = y;
-		this.layer = layer;
+	public void setGridPosition(GridPosition gridPosition) {
+		this.gridPosition = gridPosition;
+		updateCoordinates();
+	}
+	
+	protected void updateCoordinates() {
+		coordsX = GameBoard.horizontalLeftLimit+gridPosition.getX()*GameBoard.tileWidth;
+		coordsY = GameBoard.verticalUpperLimit-gridPosition.getY()*GameBoard.tileHeight;
 	}
 	
 	public void rotate(float angle) {
@@ -124,15 +109,15 @@ public abstract class Tile {
 	}
 	
 	public float getX() {
-		return positionX + horizontalAdjustment;
+		return coordsX + horizontalAdjustment;
 	}
 	
 	public float getY() {
-		return positionY + verticalAdjustment;
+		return coordsY + verticalAdjustment;
 	}
 	
-	public int getLayer() {
-		return layer;
+	public GridPosition getGridPosition() {
+		return gridPosition;
 	}
 	
 	public float getRotation() {

@@ -1,13 +1,15 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
+import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class EnvironmentTile extends Tile {
 	
 	private boolean obstacle;
 	
-	public EnvironmentTile(TextureRegion image) {
-		super(image);
+	public EnvironmentTile(GridPosition gridPosition, TextureRegion image) {
+		super(gridPosition, image);
 	}
 	
 //	public EnvironmentTile(float x, float y, TextureRegion image) {

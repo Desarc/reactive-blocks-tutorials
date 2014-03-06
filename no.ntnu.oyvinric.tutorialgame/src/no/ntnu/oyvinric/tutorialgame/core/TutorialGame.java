@@ -18,6 +18,7 @@ public class TutorialGame implements ApplicationListener {
 	final float verticalMoveSpeed = GameBoard.tileHeight*4;
 	
 	GameBoard board;
+	Level level;
 	int levelNo;
 	GameCharacter malcolm, kaylee, wash;
 	Array<GameCharacter> gameCharacters;
@@ -33,13 +34,12 @@ public class TutorialGame implements ApplicationListener {
 	@Override
 	public void create() {
 		
-		winSound = Gdx.audio.newSound(Gdx.files.internal("resources/sound/drop.wav"));
-		gameTheme = Gdx.audio.newMusic(Gdx.files.internal("resources/sound/rain.mp3"));
+		level = new Level(levelNo);
 		
-		board = new GameBoard(this, levelNo);
+		board = new GameBoard(this, level);
 		
 		gameCharacters = new Array<GameCharacter>();
-		for (CharacterTile character : board.getCharacterTiles()) {
+		for (CharacterTile character : level.getCharacterTiles()) {
 			if (character.getName() == CharacterName.MALCOLM) {
 				malcolm = new GameCharacter(character);
 				gameCharacters.add(malcolm);
@@ -54,6 +54,8 @@ public class TutorialGame implements ApplicationListener {
 			}
 		}
 		
+		winSound = Gdx.audio.newSound(Gdx.files.internal("resources/sound/drop.wav"));
+		gameTheme = Gdx.audio.newMusic(Gdx.files.internal("resources/sound/rain.mp3"));
 		gameTheme.setLooping(true);
 		gameTheme.play();
 	}

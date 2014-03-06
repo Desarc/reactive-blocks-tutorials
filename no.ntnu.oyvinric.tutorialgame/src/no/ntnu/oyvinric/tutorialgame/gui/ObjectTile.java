@@ -1,11 +1,13 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
+import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class ObjectTile extends Tile {
 	
-	public ObjectTile(int x, int y, int z) {
-		super(x, y, z);
+	public ObjectTile(GridPosition gridPosition) {
+		super(gridPosition);
 		// TODO Auto-generated constructor stub
 	}
 

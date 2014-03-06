@@ -1,5 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
+import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -23,20 +25,14 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile(CharacterName name) {
-		super();
+	public CharacterTile( GridPosition gridPosition, CharacterName name) {
+		super(gridPosition);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(CharacterName name, float x, float y, int layer) {
-		super(x, y, layer);
-		this.name = name;
-		loadAnimation(name);
-	}
-	
-	public CharacterTile(CharacterName name, float x, float y, int layer, int horizontalAdjustment, int verticalAdjustment) {
-		super(x, y, layer, horizontalAdjustment, verticalAdjustment);
+	public CharacterTile(GridPosition gridPosition, CharacterName name, int horizontalAdjustment, int verticalAdjustment) {
+		super(gridPosition, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}
@@ -88,8 +84,8 @@ public class CharacterTile extends Tile {
 	}
 	
 	public void move(float dx, float dy) {
-		positionX += dx;
-		positionY += dy;
+		coordsX += dx;
+		coordsY += dy;
 	}
 	
 //	public void alignWithGrid() {
