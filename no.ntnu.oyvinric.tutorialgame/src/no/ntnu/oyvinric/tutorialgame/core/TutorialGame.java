@@ -1,5 +1,9 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
+import level.GameLevel;
+import level.Level1;
+import level.Level2;
+import level.Level3;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
@@ -18,8 +22,8 @@ public class TutorialGame implements ApplicationListener {
 	final float verticalMoveSpeed = GameBoard.tileHeight*4;
 	
 	GameBoard board;
-	Level level;
-	int levelNo;
+	GameLevel level;
+	int levelNumber;
 	GameCharacter malcolm, kaylee, wash;
 	Array<GameCharacter> gameCharacters;
 	
@@ -27,14 +31,24 @@ public class TutorialGame implements ApplicationListener {
 	Sound winSound;
 	Music gameTheme;
 	
-	public TutorialGame(int levelNo) {
-		this.levelNo = levelNo;
+	public TutorialGame(int levelNumber) {
+		this.levelNumber = levelNumber;
 	}
 	
 	@Override
 	public void create() {
 		
-		level = new Level(levelNo);
+		switch(levelNumber) {
+		case(1):
+			level = new Level1();
+			break;
+		case(2):
+			level = new Level2();
+			break;
+		case(3):
+			level = new Level3();
+			break;
+		}
 		
 		board = new GameBoard(this, level);
 		
@@ -90,8 +104,6 @@ public class TutorialGame implements ApplicationListener {
 	public void dispose() {
 		gameTheme.dispose();
 		winSound.dispose();
-		
-		board.cleanUp();
 	}
 	
 	private void updateGame() {

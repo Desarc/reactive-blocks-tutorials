@@ -14,7 +14,7 @@ public class Component extends Block {
 	GameCharacter kaylee;
 	
 	public Component() {
-		game = new TutorialGame(2);
+		game = new TutorialGame(1);
 		new LwjglApplication(game, "Level 1", GameBoard.windowWidth, GameBoard.windowHeight, false);
 		try {
 			Thread.sleep(1000);

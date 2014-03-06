@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+import level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 

@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import no.ntnu.oyvinric.tutorialgame.core.Level;
+import level.GameLevel;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.gui.Tile;
@@ -16,16 +16,16 @@ public class GameBoard {
 	public static final float tileHeight = 13f;
 	public static final float tileWidth = 32f;
 	public static final float stackingHeight = 0f;
-	public static final int horizontalLeftLimit = 0;
-	public static final int verticalUpperLimit = windowHeight-20;
+	public static final int horizontalLeftLimit = 20;
+	public static final int verticalUpperLimit = windowHeight-40;
 	
 	private TutorialGame parent;
-	private Level level;
+	private GameLevel level;
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	private boolean active = true;
 	
-	public GameBoard(TutorialGame parent, Level level) {
+	public GameBoard(TutorialGame parent, GameLevel level) {
 		this.parent = parent;
 		this.level = level;
 
@@ -55,10 +55,6 @@ public class GameBoard {
 	
 	public void redraw() {
 		drawLevel();
-	}
-	
-	public void cleanUp() {
-//		environmentTextures.dispose();
 	}
 	
 	public void updateCharacterPosition(CharacterTile character, float dx, float dy) {

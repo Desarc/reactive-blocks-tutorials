@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+import level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -25,7 +25,7 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile( GridPosition gridPosition, CharacterName name) {
+	public CharacterTile(GridPosition gridPosition, CharacterName name) {
 		super(gridPosition);
 		this.name = name;
 		loadAnimation(name);
@@ -86,12 +86,18 @@ public class CharacterTile extends Tile {
 	public void move(float dx, float dy) {
 		coordsX += dx;
 		coordsY += dy;
+		updateGridPosition();
 	}
 	
 //	public void alignWithGrid() {
 //		positionX = Math.round(positionX / GameBoard.tileWidth)*GameBoard.tileWidth;
 //		positionY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-positionY) / GameBoard.tileHeight)*GameBoard.tileHeight);
 //	}
+	
+	private void updateGridPosition() {
+		gridPosition.setX(Math.round((GameBoard.horizontalLeftLimit+coordsX) / GameBoard.tileWidth));
+		gridPosition.setY(Math.round((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight));
+	}
 	
 	public float getRotation() {
 		return 0;
@@ -102,6 +108,7 @@ public class CharacterTile extends Tile {
 	}
 	
 	public TextureRegion getImage() {
+		System.out.println("requesting character image");
 		stateTime += Gdx.graphics.getDeltaTime();
 		if (direction == Direction.EAST && moving) {
 			return walkEastAnimation.getKeyFrame(stateTime, true);

@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import no.ntnu.oyvinric.tutorialgame.core.Level.GridPosition;
+import level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
@@ -77,7 +77,7 @@ public abstract class Tile {
 	
 	protected void updateCoordinates() {
 		coordsX = GameBoard.horizontalLeftLimit+gridPosition.getX()*GameBoard.tileWidth;
-		coordsY = GameBoard.verticalUpperLimit-gridPosition.getY()*GameBoard.tileHeight;
+		coordsY = GameBoard.verticalUpperLimit-gridPosition.getY()*GameBoard.tileHeight-gridPosition.getZ();
 	}
 	
 	public void rotate(float angle) {
