@@ -1,30 +1,37 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
-import items.GameObject;
-import items.GameObject.ItemType;
-import tile.CharacterTile;
-import tile.CharacterTile.CharacterName;
-import tile.Tile.Direction;
-import level.GameLevel;
-import level.Level1;
-import level.Level2;
-import level.Level3;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.gui.UserInterface;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject.ItemType;
+import no.ntnu.oyvinric.tutorialgame.item.Key;
+import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
+import no.ntnu.oyvinric.tutorialgame.level.Level1;
+import no.ntnu.oyvinric.tutorialgame.level.Level2;
+import no.ntnu.oyvinric.tutorialgame.level.Level3;
+import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
+import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.tile.Tile.Direction;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.Array;
 
 public class TutorialGame implements ApplicationListener {
 
+	public static final int windowWidth = 800;
+	public static final int windowHeight = 600;
+	
 	final float horizontalMoveSpeed = GameBoard.tileWidth*2;
 	final float verticalMoveSpeed = GameBoard.tileHeight*4;
 	
 	private GameBoard board;
 	private GameLevel level;
+	private UserInterface userInterface;
 	private int levelNumber;
 	private CharacterTile malcolm, kaylee, wash;
 	private Array<CharacterTile> gameCharacters;
@@ -32,9 +39,9 @@ public class TutorialGame implements ApplicationListener {
 	private Sound winSound;
 	private Music gameTheme;
 	
-	private int totalStars;
+	private int totalStars = 0;
 	private int collectedStars = 0;
-	private boolean levelCompleted = false;
+	//private boolean levelCompleted = false;
 	
 	public TutorialGame(int levelNumber) {
 		this.levelNumber = levelNumber;
@@ -57,6 +64,7 @@ public class TutorialGame implements ApplicationListener {
 		
 		totalStars = level.getNumberOfStars();
 		board = new GameBoard(level);
+		userInterface = new UserInterface(level.getUserInterfaceConfiguration());
 		
 		gameCharacters = new Array<CharacterTile>();
 		for (CharacterTile character : level.getCharacterTiles()) {
@@ -88,10 +96,11 @@ public class TutorialGame implements ApplicationListener {
 
 	@Override
 	public void render() {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClearColor(Color.GRAY.r, Color.GRAY.g, Color.GRAY.b, Color.GRAY.a);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		updateGame();
-		board.redraw();
+		board.draw();
+		userInterface.draw();
 	}
 
 	@Override
@@ -110,6 +119,9 @@ public class TutorialGame implements ApplicationListener {
 	public void dispose() {
 		gameTheme.dispose();
 		winSound.dispose();
+		level.cleanUp();
+		board.cleanUp();
+		userInterface.cleanUp();
 	}
 	
 	private void updateGame() {
@@ -200,10 +212,15 @@ public class TutorialGame implements ApplicationListener {
 		if (item.getType() == ItemType.STAR) {
 			System.out.println("Picked up a star!");
 			collectedStars++;
+			userInterface.updateStarCounter(collectedStars);
 			if (collectedStars == totalStars) {
 				System.out.println("Level completed!");
-				levelCompleted = true;
+				//levelCompleted = true;
 			}
+		}
+		else if (item.getType() == ItemType.KEY) {
+			level.keyFound((Key)item);
+			userInterface.keyFound((Key)item);
 		}
 	}
 

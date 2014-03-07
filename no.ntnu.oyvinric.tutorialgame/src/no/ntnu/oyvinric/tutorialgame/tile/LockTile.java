@@ -1,8 +1,8 @@
-package tile;
+package no.ntnu.oyvinric.tutorialgame.tile;
 
-import items.GameObject;
-import items.Key.KeyColor;
-import level.GameLevel.GridPosition;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
+import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 

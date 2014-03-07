@@ -1,8 +1,9 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import tile.CharacterTile;
-import tile.Tile;
-import level.GameLevel;
+import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
+import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
+import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
+import no.ntnu.oyvinric.tutorialgame.tile.Tile;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,16 +11,15 @@ import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
 
-	public static final int windowWidth = 600;
-	public static final int windowHeight = 480;
+	public static final int windowHeight = TutorialGame.windowHeight;
+	public static final int windowWidth = TutorialGame.windowWidth-UserInterface.windowWidth;
 	public static final float tileHeight = 13f;
 	public static final float tileWidth = 32f;
 	public static final float stackingHeight = 0f;
 	public static final int horizontalLeftLimit = 20;
-	public static final int verticalUpperLimit = windowHeight-40;
+	public static final int verticalUpperLimit = TutorialGame.windowHeight-40;
 	
 	private GameLevel level;
-	private UserInterface userInterface;
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	
@@ -27,13 +27,13 @@ public class GameBoard {
 		this.level = level;
 
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, windowWidth, windowHeight);
+		camera.setToOrtho(false, TutorialGame.windowWidth, TutorialGame.windowHeight);
 		camera.update();
 		
 		batch = new SpriteBatch();
 	}
 	
-	private void drawLevel() {
+	public void draw() {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		
@@ -56,8 +56,8 @@ public class GameBoard {
 		batch.end();
 	}
 	
-	public void redraw() {
-		drawLevel();
+	public void cleanUp() {
+		
 	}
 
 }

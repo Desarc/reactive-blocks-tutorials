@@ -1,17 +1,18 @@
-package level;
+package no.ntnu.oyvinric.tutorialgame.level;
 
-import items.GameObject;
-import items.Key;
-import items.Key.KeyColor;
-import tile.CharacterTile;
-import tile.ChestTile;
-import tile.LockTile;
-import tile.TerrainTile;
-import tile.StarTile;
-import tile.Tile;
-import tile.CharacterTile.CharacterName;
-import tile.Tile.Direction;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
+import no.ntnu.oyvinric.tutorialgame.item.Key;
+import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
+import no.ntnu.oyvinric.tutorialgame.tile.ChestTile;
+import no.ntnu.oyvinric.tutorialgame.tile.LockTile;
+import no.ntnu.oyvinric.tutorialgame.tile.StarTile;
+import no.ntnu.oyvinric.tutorialgame.tile.TerrainTile;
+import no.ntnu.oyvinric.tutorialgame.tile.Tile;
+import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.tile.Tile.Direction;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -41,6 +42,8 @@ public abstract class GameLevel {
 	}
 	
 	public abstract int getLevelNumber();
+	
+	public abstract UserInterfaceConfiguration getUserInterfaceConfiguration();
 	
 	public void loadLevel(int levelNumber) {
 		levelMap = new TmxMapLoader().load("resources/levels/level"+levelNumber+".tmx");
@@ -228,7 +231,6 @@ public abstract class GameLevel {
 	}
 	
 	public GameObject pickUp(CharacterTile character) {
-		//System.out.println(character.getGridPosition().getX()+","+character.getGridPosition().getY()+","+character.getGridPosition().getZ());
 		Tile interactingTile = getTile(character.getGridPosition());
 		return interactingTile.interact();
 	}
@@ -237,9 +239,22 @@ public abstract class GameLevel {
 		return starTiles.size;
 	}
 	
+	public void keyFound(Key key) {
+		for (LockTile lock : lockTiles) {
+			if (key.getColor() == lock.getColor()) {
+				lock.setKeyAvailable(true);
+			}
+		}
+	}
+	
 //	public void adjustCharacterPosition(CharacterTile character) {
 //		character.alignWithGrid();
 //	}
+	
+	public void cleanUp() {
+		gameTextures.dispose();
+		levelMap.dispose();
+	}
 	
 	public class GridPosition {
 		

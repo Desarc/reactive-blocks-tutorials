@@ -1,4 +1,4 @@
-package items;
+package no.ntnu.oyvinric.tutorialgame.item;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
