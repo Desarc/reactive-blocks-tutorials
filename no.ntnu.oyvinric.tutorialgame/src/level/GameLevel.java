@@ -132,37 +132,39 @@ public abstract class GameLevel {
 	
 	public boolean tileCanMove(Tile tile, Direction direction, float dx, float dy) {
 		if (tile.getDirection() == Direction.WEST) {
-			if (tile.getX()-dx <= GameBoard.horizontalLeftLimit) {
+			if (tile.getCoordsX()-dx <= GameBoard.horizontalLeftLimit) {
 				return false;
 			}
-			Tile nextTile = getTile(tile.getX()-dx, tile.getY(), tile.getGridPosition().getZ());
+			Tile nextTile = getTile(tile.getCoordsX()-dx, tile.getCoordsY(), tile.getGridPosition().getZ());
 			if (nextTile.getType() == null || !nextTile.isObstacle()) {
 				return true;
 			}
 		}
 		else if (tile.getDirection() == Direction.EAST) {
-			if (tile.getX()+dx+GameBoard.tileWidth >= GameBoard.horizontalLeftLimit+GameBoard.tileWidth*(levelWidth+1)) {
+			if (tile.getCoordsX()+dx+GameBoard.tileWidth >= GameBoard.horizontalLeftLimit+GameBoard.tileWidth*levelWidth) {
 				return false;
 			}
-			Tile nextTile = getTile(tile.getX()+dx+GameBoard.tileWidth, tile.getY(), tile.getGridPosition().getZ());
+			Tile nextTile = getTile(tile.getCoordsX()+dx+GameBoard.tileWidth, tile.getCoordsY(), tile.getGridPosition().getZ());
+			System.out.println(nextTile.getType());
+			System.out.println(nextTile.getGridPosition().getX()+","+nextTile.getGridPosition().getY()+","+nextTile.getGridPosition().getZ());
 			if (nextTile.getType() == null || !nextTile.isObstacle()) {
 				return true;
 			}
 		}
 		else if (tile.getDirection() == Direction.SOUTH) {
-			if (tile.getY()-dy <= GameBoard.horizontalLeftLimit-GameBoard.tileHeight*(levelHeight)+1) {
+			if (tile.getCoordsY()-dy <= GameBoard.horizontalLeftLimit-GameBoard.tileHeight*levelHeight) {
 				return false;
 			}
-			Tile enteringTile = getTile(tile.getX(), tile.getY()-dy, tile.getGridPosition().getZ());
+			Tile enteringTile = getTile(tile.getCoordsX(), tile.getCoordsY()-dy, tile.getGridPosition().getZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				
 			}
 		}
 		else if (tile.getDirection() == Direction.NORTH) {
-			if (tile.getY()+dy+GameBoard.tileHeight >= GameBoard.verticalUpperLimit) {
+			if (tile.getCoordsY()+dy+GameBoard.tileHeight >= GameBoard.verticalUpperLimit) {
 				return false;
 			}
-			Tile enteringTile = getTile(tile.getX()+dx, tile.getY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
+			Tile enteringTile = getTile(tile.getCoordsX()+dx, tile.getCoordsY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				
 			}

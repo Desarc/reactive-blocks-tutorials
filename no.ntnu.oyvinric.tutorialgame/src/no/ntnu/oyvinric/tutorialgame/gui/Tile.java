@@ -118,11 +118,11 @@ public abstract class Tile {
 		return image;
 	}
 	
-	public float getX() {
+	public float getCoordsX() {
 		return coordsX + horizontalAdjustment;
 	}
 	
-	public float getY() {
+	public float getCoordsY() {
 		return coordsY + verticalAdjustment;
 	}
 	

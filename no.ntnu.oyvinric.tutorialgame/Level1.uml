@@ -27,12 +27,12 @@
         <ownedOperation xmi:id="_9hgNUKQFEeOq9fN8YFvhlA" name="stopKaylee"/>
         <ownedOperation xmi:id="_9hg0YKQFEeOq9fN8YFvhlA" name="turnMalcolmRight"/>
         <ownedOperation xmi:id="_asKqQKTCEeOq9fN8YFvhlA" name="doNothing"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_ncFIoKVVEeOq9fN8YFvhlA" name="e0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" source="_md77MKMtEeOzGvIy1okCrA" target="_kdJ5YKVVEeOq9fN8YFvhlA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_nkLUsKVVEeOq9fN8YFvhlA" name="e1" inPartition="_DhJFIKMBEeOi0qk96zTZcg" source="_kdJ5YKVVEeOq9fN8YFvhlA" target="_mczc8aVVEeOq9fN8YFvhlA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_npboIKVVEeOq9fN8YFvhlA" name="e2" inPartition="_DhJFIKMBEeOi0qk96zTZcg" source="_mczc8aVVEeOq9fN8YFvhlA" target="_li3kQKVVEeOq9fN8YFvhlA"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_DhJFIKMBEeOi0qk96zTZcg" name="component" node="_md77MKMtEeOzGvIy1okCrA _kdJ5YKVVEeOq9fN8YFvhlA _li3kQKVVEeOq9fN8YFvhlA _mczc8aVVEeOq9fN8YFvhlA" edge="_ncFIoKVVEeOq9fN8YFvhlA _nkLUsKVVEeOq9fN8YFvhlA _npboIKVVEeOq9fN8YFvhlA"/>
-        <node xmi:type="uml:InitialNode" xmi:id="_md77MKMtEeOzGvIy1okCrA" name="i0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" outgoing="_ncFIoKVVEeOq9fN8YFvhlA"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_kdJ5YKVVEeOq9fN8YFvhlA" name="o0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" outgoing="_nkLUsKVVEeOq9fN8YFvhlA" incoming="_ncFIoKVVEeOq9fN8YFvhlA" operation="_9hfmQKQFEeOq9fN8YFvhlA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Zz0yUKWZEeOq9fN8YFvhlA" name="e0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" source="_md77MKMtEeOzGvIy1okCrA" target="_kdJ5YKVVEeOq9fN8YFvhlA"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_DhJFIKMBEeOi0qk96zTZcg" name="component" node="_md77MKMtEeOzGvIy1okCrA _kdJ5YKVVEeOq9fN8YFvhlA _li3kQKVVEeOq9fN8YFvhlA _mczc8aVVEeOq9fN8YFvhlA" edge="_nkLUsKVVEeOq9fN8YFvhlA _npboIKVVEeOq9fN8YFvhlA _Zz0yUKWZEeOq9fN8YFvhlA"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_md77MKMtEeOzGvIy1okCrA" name="i0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" outgoing="_Zz0yUKWZEeOq9fN8YFvhlA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_kdJ5YKVVEeOq9fN8YFvhlA" name="o0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" outgoing="_nkLUsKVVEeOq9fN8YFvhlA" incoming="_Zz0yUKWZEeOq9fN8YFvhlA" operation="_9hfmQKQFEeOq9fN8YFvhlA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_li3kQKVVEeOq9fN8YFvhlA" name="o1" inPartition="_DhJFIKMBEeOi0qk96zTZcg" incoming="_npboIKVVEeOq9fN8YFvhlA" operation="_9hb74KQFEeOq9fN8YFvhlA"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_mczc8aVVEeOq9fN8YFvhlA" name="t0" inPartition="_DhJFIKMBEeOi0qk96zTZcg" outgoing="_npboIKVVEeOq9fN8YFvhlA" incoming="_nkLUsKVVEeOq9fN8YFvhlA">
           <trigger xmi:id="_mczc8qVVEeOq9fN8YFvhlA" name="t0" event="_mczc8KVVEeOq9fN8YFvhlA"/>
@@ -125,8 +125,8 @@
       </when>
     </packagedElement>
     <packagedElement xmi:type="uml:TimeEvent" xmi:id="_mczc8KVVEeOq9fN8YFvhlA" name="t0">
-      <when xmi:id="_oeCU4KVVEeOq9fN8YFvhlA" name="t0">
-        <expr xmi:type="uml:LiteralString" xmi:id="_oeC78KVVEeOq9fN8YFvhlA" name="t0" value="3000"/>
+      <when xmi:id="_ct4vsKWZEeOq9fN8YFvhlA" name="t0">
+        <expr xmi:type="uml:LiteralString" xmi:id="_ct4vsaWZEeOq9fN8YFvhlA" name="t0" value="3000"/>
       </when>
     </packagedElement>
     <profileApplication xmi:id="_DTqp0KMBEeOi0qk96zTZcg">
@@ -148,7 +148,7 @@
   <graphics:Shape xmi:id="_DhKTQKMBEeOi0qk96zTZcg" x="180" y="55" width="613" height="54" base_Element="_DgdvsKMBEeOi0qk96zTZcg"/>
   <graphics:Shape xmi:id="_DhLhYKMBEeOi0qk96zTZcg" x="180" y="108" width="613" height="577" base_Element="_DhJFIKMBEeOi0qk96zTZcg"/>
   <graphics:Shape xmi:id="_meAzsKMtEeOzGvIy1okCrA" x="441" y="153" base_Element="_md77MKMtEeOzGvIy1okCrA"/>
-  <graphics:Shape xmi:id="_kfwhcKVVEeOq9fN8YFvhlA" x="360" y="198" width="199" height="55" base_Element="_kdJ5YKVVEeOq9fN8YFvhlA"/>
+  <graphics:Shape xmi:id="_kfwhcKVVEeOq9fN8YFvhlA" x="360" y="216" width="199" height="55" base_Element="_kdJ5YKVVEeOq9fN8YFvhlA"/>
   <graphics:Shape xmi:id="_li9q4KVVEeOq9fN8YFvhlA" x="360" y="306" width="199" height="55" base_Element="_li3kQKVVEeOq9fN8YFvhlA"/>
   <graphics:Shape xmi:id="_mc1SIKVVEeOq9fN8YFvhlA" x="441" y="261" width="37" height="37" base_Element="_mczc8aVVEeOq9fN8YFvhlA"/>
 </xmi:XMI>

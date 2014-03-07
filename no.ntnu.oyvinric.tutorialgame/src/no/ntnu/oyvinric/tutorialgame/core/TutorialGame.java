@@ -7,7 +7,6 @@ import level.Level3;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 import no.ntnu.oyvinric.tutorialgame.gui.Tile.Direction;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -125,9 +124,6 @@ public class TutorialGame implements ApplicationListener {
 		}
 		else if (character.getDirection() == Direction.EAST) {
 			distanceX = horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
-//			System.out.println(enteringTile.getGridPosition().getX()+","+enteringTile.getGridPosition().getY()+","+enteringTile.getGridPosition().getZ());
-//			System.out.println(enteringTile.getType());
-//			System.out.println(enteringTile);
 			if (level.tileCanMove(character, Direction.EAST, distanceX, distanceY)) {
 				board.updateCharacterPosition(character, distanceX, distanceY);
 			}

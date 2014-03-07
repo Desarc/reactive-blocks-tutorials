@@ -40,7 +40,7 @@ public class GameBoard {
 			for (Array<Tile> gridRow : gridLayer) {
 				for (Tile tile : gridRow) {
 					if (tile.type != Tile.EMPTY) {
-						batch.draw(tile.getImage(), tile.getX(), tile.getY(), tile.getOriginX(), tile.getOriginY(), tile.getWidth(), tile.getHeight(), tile.getScaleFactor(), tile.getScaleFactor(), tile.getRotation());
+						batch.draw(tile.getImage(), tile.getCoordsX(), tile.getCoordsY(), tile.getOriginX(), tile.getOriginY(), tile.getWidth(), tile.getHeight(), tile.getScaleFactor(), tile.getScaleFactor(), tile.getRotation());
 					}
 				}
 			}
@@ -50,7 +50,7 @@ public class GameBoard {
 		
 		batch.begin();
 		for (CharacterTile tile : level.getCharacterTiles()) {
-			batch.draw(tile.getImage(), tile.getX(), tile.getY());
+			batch.draw(tile.getImage(), tile.getCoordsX(), tile.getCoordsY());
 		}
 		batch.end();
 	}
