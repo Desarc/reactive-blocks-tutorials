@@ -18,18 +18,6 @@ public class EnvironmentTile extends Tile {
 		}
 	}
 	
-//	public EnvironmentTile(float x, float y, TextureRegion image) {
-//		super(x, y, image);
-//	}
-//	
-//	public EnvironmentTile(float x, float y, TextureRegion image, float scaleFactor) {
-//		super(x, y, image, scaleFactor);
-//	}
-//	
-//	public EnvironmentTile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-//		super(x, y, image, horizontalAdjustment, verticalAdjustment);
-//	}
-	
 	public enum EnvironmentType {
 		GRASS("grass"),
 		WALL("wall-block"),

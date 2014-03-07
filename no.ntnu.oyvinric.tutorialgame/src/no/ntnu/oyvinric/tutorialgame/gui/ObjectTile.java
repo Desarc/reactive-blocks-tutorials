@@ -11,18 +11,7 @@ public class ObjectTile extends Tile {
 	public ObjectTile(GridPosition gridPosition, String type, TextureRegion image) {
 		super(gridPosition, type, image);
 	}
-//	
-//	public ObjectTile(float x, float y, TextureRegion image, float scaleFactor) {
-//		super(x, y, image, scaleFactor);
-//	}
-//	
-//	public ObjectTile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
-//		super(x, y, image, horizontalAdjustment, verticalAdjustment);
-//	}
-//	
-//	public ObjectTile(float x, float y, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
-//		super(x, y, image, horizontalAdjustment, verticalAdjustment, scaleFactor);
-//	}
+
 
 	public enum ObjectType {
 		CHEST_CLOSED("chest-closed"),

@@ -19,6 +19,7 @@ public class GameBoard {
 	public static final int verticalUpperLimit = windowHeight-40;
 	
 	private GameLevel level;
+	private UserInterface userInterface;
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	

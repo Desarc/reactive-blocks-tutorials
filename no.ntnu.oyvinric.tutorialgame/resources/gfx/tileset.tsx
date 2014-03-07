@@ -5,6 +5,12 @@
   <terrain name="New Terrain" tile="-1"/>
  </terraintypes>
  <tile id="0" terrain=",,,0"/>
+ <tile id="1">
+  <properties>
+   <property name="name" value="grass"/>
+   <property name="type" value="environment"/>
+  </properties>
+ </tile>
  <tile id="2">
   <properties>
    <property name="name" value="lever-left"/>
@@ -20,6 +26,12 @@
  <tile id="4">
   <properties>
    <property name="name" value="lock-yellow"/>
+   <property name="type" value="environment"/>
+  </properties>
+ </tile>
+ <tile id="9">
+  <properties>
+   <property name="name" value="wood-block"/>
    <property name="type" value="environment"/>
   </properties>
  </tile>
@@ -62,6 +74,12 @@
  <tile id="22">
   <properties>
    <property name="name" value="selector"/>
+   <property name="type" value="environment"/>
+  </properties>
+ </tile>
+ <tile id="23">
+  <properties>
+   <property name="name" value="stone-block"/>
    <property name="type" value="environment"/>
   </properties>
  </tile>

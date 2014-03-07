@@ -108,7 +108,6 @@ public class CharacterTile extends Tile {
 	}
 	
 	public TextureRegion getImage() {
-		//System.out.println("requesting character image");
 		stateTime += Gdx.graphics.getDeltaTime();
 		if (direction == Direction.EAST && moving) {
 			return walkEastAnimation.getKeyFrame(stateTime, true);
