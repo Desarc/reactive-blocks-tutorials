@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public class LockTile extends Tile {
 	
 	private KeyColor color;
-	private boolean locked;
+	private boolean locked = true;
 	private TextureRegion unlockedImage;
 	private boolean keyAvailable = false;
 

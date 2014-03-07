@@ -90,26 +90,24 @@ public abstract class GameLevel {
 								}
 							}
 							else if (type.equals("terrain")) {
-								//String name = (String)cell.getTile().getProperties().get("name");
-								//tile = new TerrainTile(gridPosition, name, objectTextures.findRegion(name));
 								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
 							}
 							else if (type.equals("star")) {
 								tile = new StarTile(gridPosition, type, gameTextures.findRegion(type));
 								starTiles.add((StarTile)tile);
 							}
-							else if (type.equals("chest-closed")) {
+							else if (type.equals("chest")) {
 								KeyColor keyColor = determineKeyColor(gridPosition);
 								tile = new ChestTile(gridPosition, "chest", gameTextures.findRegion("chest-open"), gameTextures.findRegion("chest-closed"), new Key(keyColor, gameTextures.findRegion("key-"+keyColor.value())));
 								chestTiles.add((ChestTile)tile);
 							}
 							else if (type.equals("lock")) {
 								String color = (String)cell.getTile().getProperties().get("color");
-								tile = new LockTile(gridPosition, type, gameTextures.findRegion(type+"-"+color), gameTextures.findRegion(type+"-"+color+"-unlocked"), KeyColor.valueOf(color));
+								tile = new LockTile(gridPosition, type, gameTextures.findRegion(type+"-"+color), gameTextures.findRegion(type+"-"+color+"-unlocked"), KeyColor.valueOf(color.toUpperCase()));
 								lockTiles.add((LockTile)tile);
 							}
 							else {
-								tile = new TerrainTile(gridPosition, type, gameTextures.findRegion("grass"));
+								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
 							}
 							
 						}
@@ -178,16 +176,16 @@ public abstract class GameLevel {
 			}
 			Tile enteringTile = getTile(tile.getCoordsX(), tile.getCoordsY()-dy, tile.getGridPosition().getZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
-				
+				return true;
 			}
 		}
 		else if (tile.getDirection() == Direction.NORTH) {
 			if (tile.getCoordsY()+dy+GameBoard.tileHeight >= GameBoard.verticalUpperLimit) {
 				return false;
 			}
-			Tile enteringTile = getTile(tile.getCoordsX()+dx, tile.getCoordsY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
+			Tile enteringTile = getTile(tile.getCoordsX()+dy, tile.getCoordsY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
-				
+				return true;
 			}
 		}
 		return false;
@@ -222,15 +220,15 @@ public abstract class GameLevel {
 		int x = character.getGridPosition().getX();
 		int y = character.getGridPosition().getY();
 		int z = character.getGridPosition().getZ();
-		if (character.getDirection() == Direction.EAST) x++;
-		else if (character.getDirection() == Direction.WEST) x--;
-		else if (character.getDirection() == Direction.NORTH) y--;
-		else if (character.getDirection() == Direction.SOUTH) y++;
+		if (character.getDirection() == Direction.EAST) x += 2;
+		else if (character.getDirection() == Direction.WEST) x -= 2;
+		else if (character.getDirection() == Direction.NORTH) y -= 2;
+		else if (character.getDirection() == Direction.SOUTH) y += 2;
 		Tile interactingTile = getTile(new GridPosition(x, y, z));
 		return interactingTile.interact();
 	}
 	
-	public GameObject pickUp(CharacterTile character) {
+	public GameObject characterPickUp(CharacterTile character) {
 		Tile interactingTile = getTile(character.getGridPosition());
 		return interactingTile.interact();
 	}
@@ -246,10 +244,6 @@ public abstract class GameLevel {
 			}
 		}
 	}
-	
-//	public void adjustCharacterPosition(CharacterTile character) {
-//		character.alignWithGrid();
-//	}
 	
 	public void cleanUp() {
 		gameTextures.dispose();

@@ -21,7 +21,6 @@ public abstract class Icon {
 	}
 	
 	public void updatePosition() {
-		System.out.println(position.getX()+","+position.getY());
 		drawable.setPosition(position.getX(), position.getY());
 	}
 	

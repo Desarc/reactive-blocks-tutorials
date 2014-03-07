@@ -17,6 +17,7 @@ public class ChestTile extends Tile {
 		this.content = content;
 		this.openImage = openImage;
 		this.closedImage = closedImage;
+		obstacle = true;
 	}
 
 	@Override

@@ -48,28 +48,34 @@ public class UserInterface {
 			blueKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-blue-disabled")), new Image(userInterfaceTextures.findRegion("key-blue")), KeyColor.BLUE);
 			blueKey.setActive(true);
 			stage.addActor(blueKey.getDrawable());
+			elementCount++;
 		}
 		if (configuration.yellowKeyActive) {
 			yellowKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-yellow-disabled")), new Image(userInterfaceTextures.findRegion("key-yellow")), KeyColor.YELLOW);
 			yellowKey.setActive(true);
 			stage.addActor(yellowKey.getDrawable());
+			elementCount++;
 		}
 		if (configuration.redKeyActive) {
 			redKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-red-disabled")), new Image(userInterfaceTextures.findRegion("key-red")), KeyColor.RED);
 			redKey.setActive(true);
 			stage.addActor(redKey.getDrawable());
+			elementCount++;
 		}
 		if (configuration.greenKeyActive) {
 			greenKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-green-disabled")), new Image(userInterfaceTextures.findRegion("key-green")), KeyColor.GREEN);
 			greenKey.setActive(true);
 			stage.addActor(greenKey.getDrawable());
+			elementCount++;
 		}
 		if (configuration.starActive) {
 			star = new StarIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("star")));
 			star.setActive(true);
 			stage.addActor(star.getDrawable());
+			elementCount++;
 			starCounter = new CounterIcon(new UserInterfacePosition(iconWidth*elementCount, 0), 0, configuration.starCount);
 			stage.addActor(starCounter.getDrawable());
+			elementCount++;
 		}
 	}
 	

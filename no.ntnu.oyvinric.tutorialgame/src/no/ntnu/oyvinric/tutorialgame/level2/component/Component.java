@@ -4,17 +4,19 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
+import no.ntnu.oyvinric.tutorialgame.item.Key;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject.ItemType;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 public class Component extends Block {
 
 	TutorialGame game;
 	CharacterTile malcolm;
-	CharacterTile kaylee;
 	
 	public Component() {
 		game = new TutorialGame(2);
-		new LwjglApplication(game, "Level 1", TutorialGame.windowWidth, TutorialGame.windowHeight, false);
+		new LwjglApplication(game, "Level 2", TutorialGame.windowWidth, TutorialGame.windowHeight, false);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -22,54 +24,40 @@ public class Component extends Block {
 			e.printStackTrace();
 		}
 		malcolm = game.getMalcolm();
-		kaylee = game.getKaylee();
 	}
 
-	public void moveMalcolmForward() {
+	public void moveForward() {
 		game.moveCharacterForward(malcolm);
 	}
 
-	public void stopMalcolm() {
+	public void stop() {
 		game.stopCharacterMovement(malcolm);
 	}
 	
-	public void turnMalcolmLeft() {
+	public void turnLeft() {
 		game.turnCharacterLeft(malcolm);
 	}
 	
-	public void turnMalcolmRight() {
+	public void turnRight() {
 		game.turnCharacterRight(malcolm);
 	}
 	
-	public void turnMalcolmAround() {
+	public void turnAround() {
 		game.turnCharacterAround(malcolm);
 	}
 	
-	public void moveKayleeForward() {
-		game.moveCharacterForward(kaylee);
-	}
-
-	public void stopKaylee() {
-		game.stopCharacterMovement(kaylee);
-	}
-	
-	public void turnKayleeLeft() {
-		game.turnCharacterLeft(kaylee);
+	public String interact() {
+		GameObject item = game.characterInteract(malcolm);
+		if (item != null) {
+			if (item.getType() == ItemType.KEY) {
+				return ((Key)item).getColor().value();
+			}
+		}
+		return "";
 	}
 	
-	public void turnKayleeRight() {
-		game.turnCharacterRight(kaylee);
-	}
-	
-	public void turnKayleeAround() {
-		game.turnCharacterAround(kaylee);
-	}
-	
-	public void malcolmPushButton() {
-		game.pushButton();
-	}
-
-	public void doNothing() {
+	public void pickUp() {
+		game.pickUp(malcolm);
 	}
 	
 }

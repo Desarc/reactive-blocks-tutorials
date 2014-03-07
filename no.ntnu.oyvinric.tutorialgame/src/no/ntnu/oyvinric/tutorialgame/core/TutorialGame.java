@@ -167,7 +167,6 @@ public class TutorialGame implements ApplicationListener {
 	
 	public void stopCharacterMovement(CharacterTile character) {
 		character.setMoving(false);
-		//level.adjustCharacterPosition(character);
 	}
 
 	public void turnCharacterLeft(CharacterTile character) {
@@ -194,15 +193,16 @@ public class TutorialGame implements ApplicationListener {
 		}
 	}
 	
-	public void characterInteract(CharacterTile character) {
+	public GameObject characterInteract(CharacterTile character) {
 		GameObject item = level.characterInteraction(character);
 		if (item != null) {
 			handleItem(item);
 		}
+		return item;
 	}
 	
 	public void pickUp(CharacterTile character) {
-		GameObject item = level.pickUp(character);
+		GameObject item = level.characterPickUp(character);
 		if (item != null) {
 			handleItem(item);
 		}
@@ -219,6 +219,7 @@ public class TutorialGame implements ApplicationListener {
 			}
 		}
 		else if (item.getType() == ItemType.KEY) {
+			System.out.println("Found a "+((Key)item).getColor().value()+" key!");
 			level.keyFound((Key)item);
 			userInterface.keyFound((Key)item);
 		}
