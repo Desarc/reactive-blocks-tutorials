@@ -5,56 +5,112 @@ filter: Nearest,Nearest
 repeat: none
 Keyboard_White_Mouse_Right
   rotate: false
-  xy: 2, 2
+  xy: 2, 36
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
+hud_keyBlue
+  rotate: false
+  xy: 912, 198
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyBlue_disabled
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyGreem_disabled
+  rotate: false
+  xy: 68, 68
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyGreen
+  rotate: false
+  xy: 912, 164
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyRed
+  rotate: false
+  xy: 946, 198
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyRed_disabled
+  rotate: false
+  xy: 102, 68
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyYellow
+  rotate: false
+  xy: 912, 130
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hud_keyYellow_disabled
+  rotate: false
+  xy: 946, 164
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 key
   rotate: false
-  xy: 2, 68
+  xy: 2, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 lever
   rotate: false
-  xy: 132, 68
+  xy: 132, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 locked-chest
   rotate: false
-  xy: 262, 68
+  xy: 262, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 locked-fortress
   rotate: false
-  xy: 392, 68
+  xy: 392, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 nothing-to-say
   rotate: false
-  xy: 522, 68
+  xy: 522, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 run
   rotate: false
-  xy: 652, 68
+  xy: 652, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 staryu
   rotate: false
-  xy: 782, 68
+  xy: 782, 102
   size: 128, 128
   orig: 128, 128
   offset: 0, 0

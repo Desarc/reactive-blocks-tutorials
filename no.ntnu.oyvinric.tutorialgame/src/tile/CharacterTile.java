@@ -1,5 +1,7 @@
-package no.ntnu.oyvinric.tutorialgame.gui;
+package tile;
 
+import items.GameObject;
+import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 import level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.Gdx;
@@ -94,8 +96,8 @@ public class CharacterTile extends Tile {
 //		positionY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-positionY) / GameBoard.tileHeight)*GameBoard.tileHeight);
 //	}
 	
-	private void updateGridPosition() {
-		gridPosition.setX(Math.round((GameBoard.horizontalLeftLimit+coordsX) / GameBoard.tileWidth));
+	public void updateGridPosition() {
+		gridPosition.setX(Math.round((GameBoard.horizontalLeftLimit+coordsX) / GameBoard.tileWidth)-1);
 		gridPosition.setY(Math.round((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight));
 	}
 	
@@ -148,6 +150,12 @@ public class CharacterTile extends Tile {
 		public String getValue() {
 			return name;
 		}
+	}
+
+	@Override
+	public GameObject interact() {
+		System.out.println("Can't interact with another character!");
+		return null;
 	}
 	
 }

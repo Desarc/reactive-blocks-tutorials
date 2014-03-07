@@ -1,8 +1,8 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
+import tile.CharacterTile;
+import tile.Tile;
 import level.GameLevel;
-import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,7 +10,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
 
-	public static final int windowWidth = 800;
+	public static final int windowWidth = 600;
 	public static final int windowHeight = 480;
 	public static final float tileHeight = 13f;
 	public static final float tileWidth = 32f;
@@ -40,7 +40,7 @@ public class GameBoard {
 		for (Array<Array<Tile>> gridLayer : level.getLevelGrid()) {
 			for (Array<Tile> gridRow : gridLayer) {
 				for (Tile tile : gridRow) {
-					if (tile.type != Tile.EMPTY) {
+					if (tile.getType() != Tile.EMPTY) {
 						batch.draw(tile.getImage(), tile.getCoordsX(), tile.getCoordsY(), tile.getOriginX(), tile.getOriginY(), tile.getWidth(), tile.getHeight(), tile.getScaleFactor(), tile.getScaleFactor(), tile.getRotation());
 					}
 				}
@@ -58,26 +58,6 @@ public class GameBoard {
 	
 	public void redraw() {
 		drawLevel();
-	}
-	
-	public void updateCharacterPosition(CharacterTile character, float dx, float dy) {
-		character.move(dx, dy);
-	}
-	
-	public void adjustCharacterPosition(CharacterTile character) {
-		//character.alignWithGrid();
-	}
-
-	public void turnCharacterLeft(CharacterTile character) {
-		character.rotate(90);
-	}
-
-	public void turnCharacterRight(CharacterTile character) {
-		character.rotate(-90);
-	}
-
-	public void turnCharacterAround(CharacterTile character) {
-		character.rotate(180);
 	}
 
 }

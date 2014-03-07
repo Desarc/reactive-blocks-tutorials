@@ -1,13 +1,15 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
+import items.GameObject;
+import items.GameObject.ItemType;
+import tile.CharacterTile;
+import tile.CharacterTile.CharacterName;
+import tile.Tile.Direction;
 import level.GameLevel;
 import level.Level1;
 import level.Level2;
 import level.Level3;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
-import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
-import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.gui.Tile.Direction;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
@@ -21,14 +23,18 @@ public class TutorialGame implements ApplicationListener {
 	final float horizontalMoveSpeed = GameBoard.tileWidth*2;
 	final float verticalMoveSpeed = GameBoard.tileHeight*4;
 	
-	GameBoard board;
-	GameLevel level;
-	int levelNumber;
-	CharacterTile malcolm, kaylee, wash;
-	Array<CharacterTile> gameCharacters;
+	private GameBoard board;
+	private GameLevel level;
+	private int levelNumber;
+	private CharacterTile malcolm, kaylee, wash;
+	private Array<CharacterTile> gameCharacters;
 	
-	Sound winSound;
-	Music gameTheme;
+	private Sound winSound;
+	private Music gameTheme;
+	
+	private int totalStars;
+	private int collectedStars = 0;
+	private boolean levelCompleted = false;
 	
 	public TutorialGame(int levelNumber) {
 		this.levelNumber = levelNumber;
@@ -49,6 +55,7 @@ public class TutorialGame implements ApplicationListener {
 			break;
 		}
 		
+		totalStars = level.getNumberOfStars();
 		board = new GameBoard(level);
 		
 		gameCharacters = new Array<CharacterTile>();
@@ -81,7 +88,7 @@ public class TutorialGame implements ApplicationListener {
 
 	@Override
 	public void render() {
-		Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		updateGame();
 		board.redraw();
@@ -119,25 +126,25 @@ public class TutorialGame implements ApplicationListener {
 		if (character.getDirection() == Direction.WEST) {
 			distanceX = -horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
-				board.updateCharacterPosition(character, distanceX, distanceY);
+				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.EAST) {
 			distanceX = horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.EAST, distanceX, distanceY)) {
-				board.updateCharacterPosition(character, distanceX, distanceY);
+				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.SOUTH) {
 			distanceY = -verticalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
-				board.updateCharacterPosition(character, distanceX, distanceY);
+				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.NORTH) {
 			distanceY = verticalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
-				board.updateCharacterPosition(character, distanceX, distanceY);
+				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 	}
@@ -148,11 +155,11 @@ public class TutorialGame implements ApplicationListener {
 	
 	public void stopCharacterMovement(CharacterTile character) {
 		character.setMoving(false);
-		board.adjustCharacterPosition(character);
+		//level.adjustCharacterPosition(character);
 	}
 
 	public void turnCharacterLeft(CharacterTile character) {
-		board.turnCharacterLeft(character);
+		character.rotate(90);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
@@ -160,7 +167,7 @@ public class TutorialGame implements ApplicationListener {
 	}
 
 	public void turnCharacterRight(CharacterTile character) {
-		board.turnCharacterRight(character);
+		character.rotate(-90);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
@@ -168,10 +175,35 @@ public class TutorialGame implements ApplicationListener {
 	}
 
 	public void turnCharacterAround(CharacterTile character) {
-		board.turnCharacterAround(character);
+		character.rotate(180);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
 			moveCharacterForward(character);
+		}
+	}
+	
+	public void characterInteract(CharacterTile character) {
+		GameObject item = level.characterInteraction(character);
+		if (item != null) {
+			handleItem(item);
+		}
+	}
+	
+	public void pickUp(CharacterTile character) {
+		GameObject item = level.pickUp(character);
+		if (item != null) {
+			handleItem(item);
+		}
+	}
+	
+	private void handleItem(GameObject item) {
+		if (item.getType() == ItemType.STAR) {
+			System.out.println("Picked up a star!");
+			collectedStars++;
+			if (collectedStars == totalStars) {
+				System.out.println("Level completed!");
+				levelCompleted = true;
+			}
 		}
 	}
 

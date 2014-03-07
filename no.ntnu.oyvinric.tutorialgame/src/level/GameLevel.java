@@ -1,12 +1,17 @@
 package level;
 
-import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.gui.EnvironmentTile;
+import items.GameObject;
+import items.Key;
+import items.Key.KeyColor;
+import tile.CharacterTile;
+import tile.ChestTile;
+import tile.LockTile;
+import tile.TerrainTile;
+import tile.StarTile;
+import tile.Tile;
+import tile.CharacterTile.CharacterName;
+import tile.Tile.Direction;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
-import no.ntnu.oyvinric.tutorialgame.gui.ObjectTile;
-import no.ntnu.oyvinric.tutorialgame.gui.Tile;
-import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile.CharacterName;
-import no.ntnu.oyvinric.tutorialgame.gui.Tile.Direction;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -19,18 +24,18 @@ import com.badlogic.gdx.utils.Array;
 
 public abstract class GameLevel {
 	
-	private TextureAtlas environmentTextures, objectTextures;
+	private TextureAtlas gameTextures;
 	protected TiledMap levelMap;
 	protected int levelWidth, levelHeight, levelLayers;
 	protected CharacterTile malcolm, kaylee, wash;
-	protected Array<CharacterTile> characterTiles;
-	protected Array<ObjectTile> objectTiles;
 	protected Array<Array<Array<Tile>>> levelGrid;
-	protected Array<ObjectTile> stars;
+	protected Array<CharacterTile> characterTiles;
+	protected Array<StarTile> starTiles;
+	protected Array<ChestTile> chestTiles;
+	protected Array<LockTile> lockTiles;
 	
 	public GameLevel() {
-		environmentTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/environment.atlas"));
-		objectTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/objects.atlas"));
+		gameTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/game-tiles.atlas"));
 		
 		loadLevel(getLevelNumber());
 	}
@@ -39,9 +44,11 @@ public abstract class GameLevel {
 	
 	public void loadLevel(int levelNumber) {
 		levelMap = new TmxMapLoader().load("resources/levels/level"+levelNumber+".tmx");
-		characterTiles = new Array<CharacterTile>();
-		objectTiles = new Array<ObjectTile>();
 		levelGrid = new Array<Array<Array<Tile>>>();
+		characterTiles = new Array<CharacterTile>();
+		starTiles = new Array<StarTile>();
+		chestTiles = new Array<ChestTile>();
+		lockTiles = new Array<LockTile>();
 		
 		MapLayers mapLayers = levelMap.getLayers();
 		levelLayers = mapLayers.getCount();
@@ -79,26 +86,37 @@ public abstract class GameLevel {
 									characterTiles.add(wash);
 								}
 							}
-							else if (type.equals("object")) {
-								String name = (String)cell.getTile().getProperties().get("name");
-								tile = new ObjectTile(gridPosition, name, objectTextures.findRegion(name));
+							else if (type.equals("terrain")) {
+								//String name = (String)cell.getTile().getProperties().get("name");
+								//tile = new TerrainTile(gridPosition, name, objectTextures.findRegion(name));
+								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
 							}
-							else if (type.equals("environment")) {
-								String name = (String)cell.getTile().getProperties().get("name");
-								tile = new EnvironmentTile(gridPosition, name, environmentTextures.findRegion(name));
+							else if (type.equals("star")) {
+								tile = new StarTile(gridPosition, type, gameTextures.findRegion(type));
+								starTiles.add((StarTile)tile);
+							}
+							else if (type.equals("chest-closed")) {
+								KeyColor keyColor = determineKeyColor(gridPosition);
+								tile = new ChestTile(gridPosition, "chest", gameTextures.findRegion("chest-open"), gameTextures.findRegion("chest-closed"), new Key(keyColor, gameTextures.findRegion("key-"+keyColor.value())));
+								chestTiles.add((ChestTile)tile);
+							}
+							else if (type.equals("lock")) {
+								String color = (String)cell.getTile().getProperties().get("color");
+								tile = new LockTile(gridPosition, type, gameTextures.findRegion(type+"-"+color), gameTextures.findRegion(type+"-"+color+"-unlocked"), KeyColor.valueOf(color));
+								lockTiles.add((LockTile)tile);
 							}
 							else {
-								tile = new EnvironmentTile(gridPosition, type, environmentTextures.findRegion("grass"));
+								tile = new TerrainTile(gridPosition, type, gameTextures.findRegion("grass"));
 							}
 							
 						}
 						else {
-							tile = new EnvironmentTile(gridPosition, null, cell.getTile().getTextureRegion());
+							tile = new TerrainTile(gridPosition, null, cell.getTile().getTextureRegion());
 						}
 						gridRow.add(tile);
 					}
 					else {
-						Tile tile = new EnvironmentTile(gridPosition, Tile.EMPTY);
+						Tile tile = new TerrainTile(gridPosition, Tile.EMPTY);
 						gridRow.add(tile);
 					}
 				}
@@ -107,6 +125,8 @@ public abstract class GameLevel {
 			levelGrid.add(gridLayer);
 		}
 	}
+	
+	protected abstract KeyColor determineKeyColor(GridPosition position);
 	
 	public GridPosition findGridPosition(float coordsX, float coordsY, int z) {
 		int x = (int)((coordsX-GameBoard.horizontalLeftLimit) / GameBoard.tileWidth);
@@ -145,8 +165,6 @@ public abstract class GameLevel {
 				return false;
 			}
 			Tile nextTile = getTile(tile.getCoordsX()+dx+GameBoard.tileWidth, tile.getCoordsY(), tile.getGridPosition().getZ());
-			System.out.println(nextTile.getType());
-			System.out.println(nextTile.getGridPosition().getX()+","+nextTile.getGridPosition().getY()+","+nextTile.getGridPosition().getZ());
 			if (nextTile.getType() == null || !nextTile.isObstacle()) {
 				return true;
 			}
@@ -192,11 +210,42 @@ public abstract class GameLevel {
 		return characterTiles;
 	}
 	
+	public void updateCharacterPosition(CharacterTile character, float dx, float dy) {
+		character.move(dx, dy);
+		character.updateGridPosition();
+	}
+	
+	public GameObject characterInteraction(CharacterTile character) {
+		int x = character.getGridPosition().getX();
+		int y = character.getGridPosition().getY();
+		int z = character.getGridPosition().getZ();
+		if (character.getDirection() == Direction.EAST) x++;
+		else if (character.getDirection() == Direction.WEST) x--;
+		else if (character.getDirection() == Direction.NORTH) y--;
+		else if (character.getDirection() == Direction.SOUTH) y++;
+		Tile interactingTile = getTile(new GridPosition(x, y, z));
+		return interactingTile.interact();
+	}
+	
+	public GameObject pickUp(CharacterTile character) {
+		//System.out.println(character.getGridPosition().getX()+","+character.getGridPosition().getY()+","+character.getGridPosition().getZ());
+		Tile interactingTile = getTile(character.getGridPosition());
+		return interactingTile.interact();
+	}
+	
+	public int getNumberOfStars() {
+		return starTiles.size;
+	}
+	
+//	public void adjustCharacterPosition(CharacterTile character) {
+//		character.alignWithGrid();
+//	}
+	
 	public class GridPosition {
 		
-		int x;
-		int y;
-		int z;
+		private int x;
+		private int y;
+		private int z;
 		
 		public GridPosition(int x, int y, int z) {
 			this.x = x;
@@ -229,5 +278,5 @@ public abstract class GameLevel {
 		}
 		
 	}
-	
+
 }

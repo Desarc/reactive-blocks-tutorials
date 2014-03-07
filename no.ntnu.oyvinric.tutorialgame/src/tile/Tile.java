@@ -1,5 +1,7 @@
-package no.ntnu.oyvinric.tutorialgame.gui;
+package tile;
 
+import items.GameObject;
+import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 import level.GameLevel.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -79,6 +81,8 @@ public abstract class Tile {
 		this.scaleFactor = scaleFactor;
 		updateCoordinates();
 	}
+	
+	public abstract GameObject interact();
 	
 	public void setGridPosition(GridPosition gridPosition) {
 		this.gridPosition = gridPosition;
