@@ -23,7 +23,7 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_XWLxoKTdEeOq9fN8YFvhlA" name="e3" inPartition="_NS35oKTdEeOq9fN8YFvhlA" source="_Uq0-oKTdEeOq9fN8YFvhlA" target="_WAslYKTdEeOq9fN8YFvhlA"/>
         <group xmi:type="uml:ActivityPartition" xmi:id="_NS35oKTdEeOq9fN8YFvhlA" name="component" node="_RfWhIKTdEeOq9fN8YFvhlA _SgQkgKTdEeOq9fN8YFvhlA _T4Xm8KTdEeOq9fN8YFvhlA _Uq0-oKTdEeOq9fN8YFvhlA _WAslYKTdEeOq9fN8YFvhlA" edge="_W86WAKTdEeOq9fN8YFvhlA _XGIjcKTdEeOq9fN8YFvhlA _XNmdYKTdEeOq9fN8YFvhlA _XWLxoKTdEeOq9fN8YFvhlA"/>
         <node xmi:type="uml:InitialNode" xmi:id="_RfWhIKTdEeOq9fN8YFvhlA" name="i0" inPartition="_NS35oKTdEeOq9fN8YFvhlA" outgoing="_W86WAKTdEeOq9fN8YFvhlA"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_SgQkgKTdEeOq9fN8YFvhlA" name="o0" inPartition="_NS35oKTdEeOq9fN8YFvhlA" outgoing="_XGIjcKTdEeOq9fN8YFvhlA" incoming="_W86WAKTdEeOq9fN8YFvhlA" operation="_Q9PSkaTdEeOq9fN8YFvhlA"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_SgQkgKTdEeOq9fN8YFvhlA" name="o0" inPartition="_NS35oKTdEeOq9fN8YFvhlA" outgoing="_XGIjcKTdEeOq9fN8YFvhlA" incoming="_W86WAKTdEeOq9fN8YFvhlA" operation="_Q9LBIKTdEeOq9fN8YFvhlA"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_T4Xm8KTdEeOq9fN8YFvhlA" name="o1" inPartition="_NS35oKTdEeOq9fN8YFvhlA" outgoing="_XNmdYKTdEeOq9fN8YFvhlA" incoming="_XGIjcKTdEeOq9fN8YFvhlA" operation="_Q9OEcaTdEeOq9fN8YFvhlA"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_Uq0-oKTdEeOq9fN8YFvhlA" name="t0" inPartition="_NS35oKTdEeOq9fN8YFvhlA" outgoing="_XWLxoKTdEeOq9fN8YFvhlA" incoming="_XNmdYKTdEeOq9fN8YFvhlA">
           <trigger xmi:id="_Uq0-oaTdEeOq9fN8YFvhlA" name="t0" event="_Uq0XkKTdEeOq9fN8YFvhlA"/>
@@ -32,8 +32,8 @@
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:TimeEvent" xmi:id="_Uq0XkKTdEeOq9fN8YFvhlA" name="t0">
-      <when xmi:id="_xr7O8KTgEeOq9fN8YFvhlA" name="t0">
-        <expr xmi:type="uml:LiteralString" xmi:id="_xr72AKTgEeOq9fN8YFvhlA" name="t0" value="1000"/>
+      <when xmi:id="_FUA2IKVgEeOq9fN8YFvhlA" name="t0">
+        <expr xmi:type="uml:LiteralString" xmi:id="_FUA2IaVgEeOq9fN8YFvhlA" name="t0" value="2500"/>
       </when>
     </packagedElement>
     <profileApplication xmi:id="_NQbpoKTdEeOq9fN8YFvhlA">

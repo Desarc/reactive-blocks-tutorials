@@ -6,15 +6,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class ObjectTile extends Tile {
 	
-	public ObjectTile(GridPosition gridPosition) {
-		super(gridPosition);
-	}
-
 	private boolean movable;
 
-//	public ObjectTile(float x, float y, TextureRegion image) {
-//		super(x, y, image);
-//	}
+	public ObjectTile(GridPosition gridPosition, String type, TextureRegion image) {
+		super(gridPosition, type, image);
+	}
 //	
 //	public ObjectTile(float x, float y, TextureRegion image, float scaleFactor) {
 //		super(x, y, image, scaleFactor);

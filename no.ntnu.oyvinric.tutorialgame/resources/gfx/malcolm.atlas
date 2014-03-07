@@ -12,56 +12,49 @@ east1
   index: -1
 east2
   rotate: false
-  xy: 36, 68
+  xy: 36, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-malcolm
-  rotate: false
-  xy: 2, 36
-  size: 32, 64
-  orig: 32, 64
-  offset: 0, 0
-  index: -1
 north1
   rotate: false
-  xy: 36, 34
+  xy: 70, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 north2
   rotate: false
-  xy: 70, 68
+  xy: 104, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 south1
   rotate: false
-  xy: 70, 34
+  xy: 138, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 south2
   rotate: false
-  xy: 104, 68
+  xy: 172, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 west1
   rotate: false
-  xy: 104, 34
+  xy: 206, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 west2
   rotate: false
-  xy: 138, 68
+  xy: 240, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0

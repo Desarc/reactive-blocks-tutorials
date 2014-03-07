@@ -25,14 +25,14 @@ public class CharacterTile extends Tile {
 	Animation walkEastAnimation;
 	Animation walkWestAnimation;
 	
-	public CharacterTile(GridPosition gridPosition, CharacterName name) {
-		super(gridPosition);
+	public CharacterTile(GridPosition gridPosition, String type, CharacterName name) {
+		super(gridPosition, type);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(GridPosition gridPosition, CharacterName name, int horizontalAdjustment, int verticalAdjustment) {
-		super(gridPosition, horizontalAdjustment, verticalAdjustment);
+	public CharacterTile(GridPosition gridPosition, String type, CharacterName name, float horizontalAdjustment, float verticalAdjustment) {
+		super(gridPosition, type, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}
@@ -108,7 +108,7 @@ public class CharacterTile extends Tile {
 	}
 	
 	public TextureRegion getImage() {
-		System.out.println("requesting character image");
+		//System.out.println("requesting character image");
 		stateTime += Gdx.graphics.getDeltaTime();
 		if (direction == Direction.EAST && moving) {
 			return walkEastAnimation.getKeyFrame(stateTime, true);

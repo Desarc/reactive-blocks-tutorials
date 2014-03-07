@@ -4,14 +4,14 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 import no.ntnu.item.arctis.runtime.Block;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
-import no.ntnu.oyvinric.tutorialgame.core.TutorialGame.GameCharacter;
+import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 
 public class Component extends Block {
 
 	TutorialGame game;
-	GameCharacter malcolm;
-	GameCharacter kaylee;
+	CharacterTile malcolm;
+	CharacterTile kaylee;
 	
 	public Component() {
 		game = new TutorialGame(2);

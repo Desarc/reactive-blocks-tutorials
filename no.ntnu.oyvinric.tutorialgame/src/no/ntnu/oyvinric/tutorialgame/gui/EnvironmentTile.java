@@ -5,11 +5,17 @@ import level.GameLevel.GridPosition;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class EnvironmentTile extends Tile {
+		
+	public EnvironmentTile(GridPosition gridPosition, String type, TextureRegion image) {
+		super(gridPosition, type, image);
+		obstacle = true;
+	}
 	
-	private boolean obstacle;
-	
-	public EnvironmentTile(GridPosition gridPosition, TextureRegion image) {
-		super(gridPosition, image);
+	public EnvironmentTile(GridPosition gridPosition, String type) {
+		super(gridPosition, type);
+		if (!type.equals(EMPTY)) {
+			obstacle = true;			
+		}
 	}
 	
 //	public EnvironmentTile(float x, float y, TextureRegion image) {
@@ -42,10 +48,6 @@ public class EnvironmentTile extends Tile {
 		public String getValue() {
 			return type;
 		}
-	}
-	
-	public boolean isObstacle() {
-		return obstacle;
 	}
 	
 }

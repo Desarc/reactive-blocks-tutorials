@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public abstract class Tile {
 	
+	public static final String EMPTY = "empty";
+	
 	protected TextureRegion image;
 	private float width = 0f;
 	private float height = 0f;
@@ -19,29 +21,35 @@ public abstract class Tile {
 	protected GridPosition gridPosition;
 	private float scaleFactor = 1f;
 	protected Direction direction = Direction.EAST;
+	protected boolean obstacle = false;
+	protected String type;
 	
-	public Tile(GridPosition gridPosition) {
+	public Tile(GridPosition gridPosition, String type) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		updateCoordinates();
 	}
 	
-	public Tile(GridPosition gridPosition, int horizontalAdjustment, int verticalAdjustment) {
+	public Tile(GridPosition gridPosition, String type, float horizontalAdjustment, float verticalAdjustment) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		updateCoordinates();
 	}
 	
-	public Tile(GridPosition gridPosition, TextureRegion image) {
+	public Tile(GridPosition gridPosition, String type, TextureRegion image) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
 		updateCoordinates();
 	}
 	
-	public Tile(GridPosition gridPosition, TextureRegion image, float scaleFactor) {
+	public Tile(GridPosition gridPosition, String type, TextureRegion image, float scaleFactor) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
@@ -49,8 +57,9 @@ public abstract class Tile {
 		updateCoordinates();
 	}
 	
-	public Tile(GridPosition gridPosition, TextureRegion image, int horizontalAdjustment, int verticalAdjustment) {
+	public Tile(GridPosition gridPosition, String type, TextureRegion image, float horizontalAdjustment, float verticalAdjustment) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
@@ -59,8 +68,9 @@ public abstract class Tile {
 		updateCoordinates();
 	}
 	
-	public Tile(GridPosition gridPosition, TextureRegion image, int horizontalAdjustment, int verticalAdjustment, float scaleFactor) {
+	public Tile(GridPosition gridPosition, String type, TextureRegion image, float horizontalAdjustment, float verticalAdjustment, float scaleFactor) {
 		this.gridPosition = gridPosition;
+		this.type = type;
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
@@ -146,6 +156,14 @@ public abstract class Tile {
 	
 	public float getScaleFactor() {
 		return scaleFactor;
+	}
+	
+	public boolean isObstacle() {
+		return obstacle;
+	}
+	
+	public String getType() {
+		return type;
 	}
 	
 	public static enum Direction {

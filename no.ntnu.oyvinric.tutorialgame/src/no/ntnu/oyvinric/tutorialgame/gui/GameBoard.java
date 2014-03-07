@@ -1,7 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
 import level.GameLevel;
-import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 import no.ntnu.oyvinric.tutorialgame.gui.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.gui.Tile;
 
@@ -19,14 +18,11 @@ public class GameBoard {
 	public static final int horizontalLeftLimit = 20;
 	public static final int verticalUpperLimit = windowHeight-40;
 	
-	private TutorialGame parent;
 	private GameLevel level;
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
-	private boolean active = true;
 	
-	public GameBoard(TutorialGame parent, GameLevel level) {
-		this.parent = parent;
+	public GameBoard(GameLevel level) {
 		this.level = level;
 
 		camera = new OrthographicCamera();
@@ -36,8 +32,6 @@ public class GameBoard {
 		batch = new SpriteBatch();
 	}
 	
-	
-	
 	private void drawLevel() {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
@@ -45,11 +39,19 @@ public class GameBoard {
 		for (Array<Array<Tile>> gridLayer : level.getLevelGrid()) {
 			for (Array<Tile> gridRow : gridLayer) {
 				for (Tile tile : gridRow) {
-					batch.draw(tile.getImage(), tile.getX(), tile.getY(), tile.getOriginX(), tile.getOriginY(), tile.getWidth(), tile.getHeight(), tile.getScaleFactor(), tile.getScaleFactor(), tile.getRotation());
+					if (tile.type != Tile.EMPTY) {
+						batch.draw(tile.getImage(), tile.getX(), tile.getY(), tile.getOriginX(), tile.getOriginY(), tile.getWidth(), tile.getHeight(), tile.getScaleFactor(), tile.getScaleFactor(), tile.getRotation());
+					}
 				}
 			}
 		}
 		
+		batch.end();
+		
+		batch.begin();
+		for (CharacterTile tile : level.getCharacterTiles()) {
+			batch.draw(tile.getImage(), tile.getX(), tile.getY());
+		}
 		batch.end();
 	}
 	
