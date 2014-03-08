@@ -2,12 +2,13 @@ package no.ntnu.oyvinric.tutorialgame.icon;
 
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
 
-public abstract class Icon {
+public abstract class Icon extends Actor {
 
 	private Widget drawable;
-	private UserInterfacePosition position;
+	protected UserInterfacePosition position;
 	protected boolean active = false;
 	
 	public Icon(UserInterfacePosition position) {

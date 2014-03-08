@@ -45,27 +45,27 @@ public class UserInterface {
 	private void handleConfiguration() {
 		int elementCount = 0;
 		if (configuration.blueKeyActive) {
-			blueKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-blue-disabled")), new Image(userInterfaceTextures.findRegion("key-blue")), KeyColor.BLUE);
+			blueKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-blue-disabled"), userInterfaceTextures.findRegion("key-blue"), KeyColor.BLUE);
 			blueKey.setActive(true);
-			stage.addActor(blueKey.getDrawable());
+			stage.addActor(blueKey);
 			elementCount++;
 		}
 		if (configuration.yellowKeyActive) {
-			yellowKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-yellow-disabled")), new Image(userInterfaceTextures.findRegion("key-yellow")), KeyColor.YELLOW);
+			yellowKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-yellow-disabled"), userInterfaceTextures.findRegion("key-yellow"), KeyColor.YELLOW);
 			yellowKey.setActive(true);
-			stage.addActor(yellowKey.getDrawable());
+			stage.addActor(yellowKey);
 			elementCount++;
 		}
 		if (configuration.redKeyActive) {
-			redKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-red-disabled")), new Image(userInterfaceTextures.findRegion("key-red")), KeyColor.RED);
+			redKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-red-disabled"), userInterfaceTextures.findRegion("key-red"), KeyColor.RED);
 			redKey.setActive(true);
-			stage.addActor(redKey.getDrawable());
+			stage.addActor(redKey);
 			elementCount++;
 		}
 		if (configuration.greenKeyActive) {
-			greenKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("key-green-disabled")), new Image(userInterfaceTextures.findRegion("key-green")), KeyColor.GREEN);
+			greenKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-green-disabled"), userInterfaceTextures.findRegion("key-green"), KeyColor.GREEN);
 			greenKey.setActive(true);
-			stage.addActor(greenKey.getDrawable());
+			stage.addActor(greenKey);
 			elementCount++;
 		}
 		if (configuration.starActive) {
@@ -80,7 +80,6 @@ public class UserInterface {
 	}
 	
 	public void draw() {
-		stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
 		stage.draw();
 	}
 	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
-    name="Level2" 
-    uuid="_NSzBIKTdEeOq9fN8YFvhlA" 
+    name="Level3" 
+    uuid="_V2Iyg6ZOEeOq9fN8YFvhlA" 
     status="under construction" 
     type="system" 
     >
@@ -23,7 +23,7 @@
         <resource path="resources/gfx/tileset.tsx"/>
         <resource path="resources/gfx/user-interface.atlas"/>
         <resource path="resources/gfx/user-interface.png"/>
-        <resource path="resources/levels/level2.tmx"/>
+        <resource path="resources/levels/level3.tmx"/>
         <resource path="resources/sound/drop.wav"/>
         <resource path="resources/sound/human_theory.mp3"/>
         <resource path="resources/sound/rain.mp3"/>

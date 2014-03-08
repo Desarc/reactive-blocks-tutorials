@@ -1,0 +1,19 @@
+
+misc.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+SpeechBubble
+  rotate: false
+  xy: 2, 132
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+hello
+  rotate: false
+  xy: 2, 2
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1

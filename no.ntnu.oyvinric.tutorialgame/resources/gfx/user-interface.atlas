@@ -3,107 +3,58 @@ user-interface.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-icon-chest
-  rotate: false
-  xy: 2, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-key
-  rotate: false
-  xy: 132, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-lever
-  rotate: false
-  xy: 262, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-lock
-  rotate: false
-  xy: 392, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-run
-  rotate: false
-  xy: 522, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-speech
-  rotate: false
-  xy: 652, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
-icon-star
-  rotate: false
-  xy: 782, 102
-  size: 128, 128
-  orig: 128, 128
-  offset: 0, 0
-  index: -1
 key-blue
-  rotate: false
-  xy: 2, 2
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-key-blue-disabled
-  rotate: false
-  xy: 912, 198
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-key-green
-  rotate: false
-  xy: 912, 164
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-key-green-disabled
   rotate: false
   xy: 68, 68
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-key-red
+key-blue-disabled
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+key-green
+  rotate: false
+  xy: 136, 68
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+key-green-disabled
   rotate: false
   xy: 102, 68
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
+key-red
+  rotate: false
+  xy: 204, 68
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 key-red-disabled
   rotate: false
-  xy: 946, 198
+  xy: 170, 68
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-yellow
   rotate: false
-  xy: 946, 164
+  xy: 70, 34
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-yellow-disabled
   rotate: false
-  xy: 912, 130
+  xy: 36, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -117,7 +68,7 @@ right-click
   index: -1
 star
   rotate: false
-  xy: 980, 198
+  xy: 104, 34
   size: 32, 32
   orig: 32, 32
   offset: 0, 0

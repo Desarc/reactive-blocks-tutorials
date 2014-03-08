@@ -25,7 +25,7 @@ public class Level1 extends GameLevel {
 	@Override
 	public UserInterfaceConfiguration getUserInterfaceConfiguration() {
 		UserInterfaceConfiguration configuration = new UserInterfaceConfiguration();
-		configuration.starActive = true;
+		configuration.starActive = false;
 		return configuration;
 	}
 

@@ -5,8 +5,10 @@ import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.tile.Tile;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Array;
 
 public class GameBoard {
@@ -23,8 +25,15 @@ public class GameBoard {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	
+	private TextureAtlas miscTextures;
+	private Array<GraphicsObject> miscObjects;
+	
+	
 	public GameBoard(GameLevel level) {
 		this.level = level;
+		
+		miscTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/misc.atlas"));
+		miscObjects = new Array<GraphicsObject>();
 
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, TutorialGame.windowWidth, TutorialGame.windowHeight);
@@ -50,14 +59,26 @@ public class GameBoard {
 		batch.end();
 		
 		batch.begin();
+		
 		for (CharacterTile tile : level.getCharacterTiles()) {
 			batch.draw(tile.getImage(), tile.getCoordsX(), tile.getCoordsY());
 		}
+		for (GraphicsObject object : miscObjects) {
+			batch.draw(object.getImage(), object.getX(), object.getY());
+		}
+		
 		batch.end();
 	}
 	
+	public void characterSpeak(float coordsX, float coordsY, String message) {
+		if (message.equals("Hello World!")) {
+			GraphicsObject helloWorld = new GraphicsObject(coordsX+27, coordsY+37, miscTextures.findRegion("hello"));
+			miscObjects.add(helloWorld);
+		}
+	}
+	
 	public void cleanUp() {
-		
+		miscTextures.dispose();
 	}
 
 }

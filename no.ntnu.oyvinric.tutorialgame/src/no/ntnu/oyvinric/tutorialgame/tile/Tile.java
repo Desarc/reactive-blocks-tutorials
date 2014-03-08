@@ -130,6 +130,18 @@ public abstract class Tile {
 		return coordsY + verticalAdjustment;
 	}
 	
+	public int getGridX() {
+		return gridPosition.getX();
+	}
+	
+	public int getGridY() {
+		return gridPosition.getY();
+	}
+	
+	public int getGridZ() {
+		return gridPosition.getZ();
+	}
+	
 	public GridPosition getGridPosition() {
 		return gridPosition;
 	}

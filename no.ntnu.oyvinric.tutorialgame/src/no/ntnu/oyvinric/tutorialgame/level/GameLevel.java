@@ -109,7 +109,6 @@ public abstract class GameLevel {
 							else {
 								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
 							}
-							
 						}
 						else {
 							tile = new TerrainTile(gridPosition, null, cell.getTile().getTextureRegion());
@@ -184,6 +183,7 @@ public abstract class GameLevel {
 				return false;
 			}
 			Tile enteringTile = getTile(tile.getCoordsX()+dy, tile.getCoordsY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
+			//System.out.println(enteringTile.getGridX()+","+enteringTile.getGridY()+","+enteringTile.getGridZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				return true;
 			}

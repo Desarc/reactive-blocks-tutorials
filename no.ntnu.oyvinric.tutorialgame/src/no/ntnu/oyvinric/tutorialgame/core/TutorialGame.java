@@ -162,6 +162,7 @@ public class TutorialGame implements ApplicationListener {
 	}
 	
 	public void moveCharacterForward(CharacterTile character) {
+		character.alignWithGrid();
 		character.setMoving(true);
 	}
 	
@@ -170,6 +171,7 @@ public class TutorialGame implements ApplicationListener {
 	}
 
 	public void turnCharacterLeft(CharacterTile character) {
+		character.alignWithGrid();
 		character.rotate(90);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
@@ -178,6 +180,7 @@ public class TutorialGame implements ApplicationListener {
 	}
 
 	public void turnCharacterRight(CharacterTile character) {
+		character.alignWithGrid();
 		character.rotate(-90);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
@@ -186,6 +189,7 @@ public class TutorialGame implements ApplicationListener {
 	}
 
 	public void turnCharacterAround(CharacterTile character) {
+		character.alignWithGrid();
 		character.rotate(180);
 		if (character.getMoving()) {
 			stopCharacterMovement(character);
@@ -239,6 +243,11 @@ public class TutorialGame implements ApplicationListener {
 	
 	public CharacterTile getWash() {
 		return wash;
+	}
+
+	public void characterSpeak(CharacterTile character, String message) {
+		character.setDirection(Direction.SOUTH);
+		board.characterSpeak(character.getCoordsX(), character.getCoordsY(), message);
 	}
 
 }

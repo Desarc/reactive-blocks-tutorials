@@ -17,15 +17,15 @@ public class CharacterTile extends Tile {
 	private CharacterName name;
 	private boolean moving = false;
 	private float stateTime = 0;
-	TextureAtlas animationTextures;
-	TextureRegion[] walkNorthFrames;
-	TextureRegion[] walkSouthFrames;
-	TextureRegion[] walkEastFrames;
-	TextureRegion[] walkWestFrames;
-	Animation walkNorthAnimation;
-	Animation walkSouthAnimation;
-	Animation walkEastAnimation;
-	Animation walkWestAnimation;
+	private TextureAtlas animationTextures;
+	private TextureRegion[] walkNorthFrames;
+	private TextureRegion[] walkSouthFrames;
+	private TextureRegion[] walkEastFrames;
+	private TextureRegion[] walkWestFrames;
+	private Animation walkNorthAnimation;
+	private Animation walkSouthAnimation;
+	private Animation walkEastAnimation;
+	private Animation walkWestAnimation;
 	
 	public CharacterTile(GridPosition gridPosition, String type, CharacterName name) {
 		super(gridPosition, type);
@@ -68,20 +68,36 @@ public class CharacterTile extends Tile {
 	public void rotate(float angle) {
 		rotation = (rotation+angle)%360;
 		if (rotation == 0) {
-			direction = Direction.EAST;
-			image = walkEastFrames[1];
+			setDirection(Direction.EAST);
 		}
 		else if (rotation == 90 || rotation == -270) {
-			direction = Direction.NORTH;
-			image = walkNorthFrames[1];
+			setDirection(Direction.NORTH);
 		}
 		else if (rotation == 180 || rotation == -180) {
-			direction = Direction.WEST;
-			image = walkWestFrames[1];
+			setDirection(Direction.WEST);
 		}
 		else if (rotation == 270 || rotation == -90) {
-			direction = Direction.SOUTH;
+			setDirection(Direction.SOUTH);
+		}
+	}
+	
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+		if (direction == Direction.EAST) {
+			image = walkEastFrames[1];
+			rotation = 0;
+		}
+		else if (direction == Direction.NORTH) {
+			image = walkNorthFrames[1];
+			rotation = 90;
+		}
+		else if (direction == Direction.WEST) {
+			image = walkWestFrames[1];
+			rotation = 180;
+		}
+		else if (direction == Direction.SOUTH) {
 			image = walkSouthFrames[1];
+			rotation = 270;
 		}
 	}
 	
@@ -91,10 +107,10 @@ public class CharacterTile extends Tile {
 		updateGridPosition();
 	}
 	
-//	public void alignWithGrid() {
-//		positionX = Math.round(positionX / GameBoard.tileWidth)*GameBoard.tileWidth;
-//		positionY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-positionY) / GameBoard.tileHeight)*GameBoard.tileHeight);
-//	}
+	public void alignWithGrid() {
+		coordsX = GameBoard.horizontalLeftLimit+(Math.round((coordsX-GameBoard.horizontalLeftLimit) / GameBoard.tileWidth)*GameBoard.tileWidth);
+		coordsY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight)*GameBoard.tileHeight);
+	}
 	
 	public void updateGridPosition() {
 		gridPosition.setX(Math.round((GameBoard.horizontalLeftLimit+coordsX) / GameBoard.tileWidth)-1);

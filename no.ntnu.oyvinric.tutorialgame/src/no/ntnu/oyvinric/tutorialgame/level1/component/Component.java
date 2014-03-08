@@ -23,20 +23,8 @@ public class Component extends Block {
 		malcolm = game.getMalcolm();
 	}
 
-	public void moveForward() {
-		game.moveCharacterForward(malcolm);
-	}
-
-	public void stop() {
-		game.stopCharacterMovement(malcolm);
-	}
-	
-	public void pickUp() {
-		game.pickUp(malcolm);
-	}
-	
-	public void doNothing() {
-		
+	public void sayHello() {
+		game.characterSpeak(malcolm, "Hello World!");
 	}
 
 }

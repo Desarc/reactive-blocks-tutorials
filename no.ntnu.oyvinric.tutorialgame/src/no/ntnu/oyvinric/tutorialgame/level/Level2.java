@@ -12,16 +12,12 @@ public class Level2 extends GameLevel {
 
 	@Override
 	protected KeyColor determineKeyColor(GridPosition position) {
-		int rand = (int)(Math.random()*2);
-		if (rand == 0) return KeyColor.BLUE;
-		else return KeyColor.YELLOW;
+		return null;
 	}
 
 	@Override
 	public UserInterfaceConfiguration getUserInterfaceConfiguration() {
 		UserInterfaceConfiguration configuration = new UserInterfaceConfiguration();
-		configuration.blueKeyActive = true;
-		configuration.yellowKeyActive = true;
 		configuration.starActive = true;
 		configuration.starCount = 1;
 		return configuration;
