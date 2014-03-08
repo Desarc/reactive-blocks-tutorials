@@ -9,6 +9,7 @@ import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
 import no.ntnu.oyvinric.tutorialgame.level.Level1;
 import no.ntnu.oyvinric.tutorialgame.level.Level2;
 import no.ntnu.oyvinric.tutorialgame.level.Level3;
+import no.ntnu.oyvinric.tutorialgame.level.Level4;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.tile.Tile.Direction;
@@ -59,6 +60,9 @@ public class TutorialGame implements ApplicationListener {
 			break;
 		case(3):
 			level = new Level3();
+			break;
+		case(4):
+			level = new Level4();
 			break;
 		}
 		
