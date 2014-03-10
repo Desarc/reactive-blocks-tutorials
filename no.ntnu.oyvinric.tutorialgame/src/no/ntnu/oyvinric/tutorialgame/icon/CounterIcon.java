@@ -1,5 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.icon;
 
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
 
 import com.badlogic.gdx.graphics.Color;
@@ -17,8 +18,8 @@ public class CounterIcon extends Icon {
 		super(position);
 		LabelStyle style = new LabelStyle(new BitmapFont(), Color.LIGHT_GRAY);
 		counterLabel = new Label(initialCount+"/"+totalCount, style);
-		counterLabel.setWidth(32);
-		counterLabel.setHeight(32);
+		counterLabel.setWidth(Constants.visualTileWidth);
+		counterLabel.setHeight(Constants.visualTileHeight);
 		setDrawable(counterLabel);
 		this.count = initialCount;
 		this.totalCount = totalCount;

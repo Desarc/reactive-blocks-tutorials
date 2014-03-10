@@ -1,8 +1,9 @@
 package no.ntnu.oyvinric.tutorialgame.tile;
 
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Star;
-import no.ntnu.oyvinric.tutorialgame.level.GameLevel.GridPosition;
+import no.ntnu.oyvinric.tutorialgame.level.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
@@ -14,7 +15,7 @@ public class StarTile extends Tile {
 
 	@Override
 	public GameObject interact() {
-		this.type = Tile.EMPTY;
+		this.type = Constants.EMPTY_TILE;
 		return new Star(image);
 	}
 

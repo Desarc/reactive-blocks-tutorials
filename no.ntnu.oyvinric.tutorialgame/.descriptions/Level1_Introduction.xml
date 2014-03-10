@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Level1_Introduction" 
+    uuid="_TVoOEabREeO2WbVcHIewmQ" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <library path="lib/gdx-backend-lwjgl-natives.jar"/>
+        <library path="lib/gdx-backend-lwjgl-sources.jar"/>
+        <library path="lib/gdx-backend-lwjgl.jar"/>
+        <library path="lib/gdx-natives.jar"/>
+        <library path="lib/gdx-sources.jar"/>
+        <library path="lib/gdx-tools.jar"/>
+        <library path="lib/gdx.jar"/>
+        <resource path="resources/gfx/intro-level1.atlas"/>
+        <resource path="resources/gfx/intro-level1.png"/>
+        <resource path="resources/gfx/intro.atlas"/>
+        <resource path="resources/gfx/intro.png"/>
+        <resource path="resources/intro/level1.properties"/>
+    </required>
+</block>

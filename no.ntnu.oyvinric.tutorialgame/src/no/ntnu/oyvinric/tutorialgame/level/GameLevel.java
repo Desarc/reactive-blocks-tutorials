@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.level;
 
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
@@ -36,7 +36,7 @@ public abstract class GameLevel {
 	protected Array<LockTile> lockTiles;
 	
 	public GameLevel() {
-		gameTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/game-tiles.atlas"));
+		gameTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"game-tiles.atlas"));
 		
 		loadLevel(getLevelNumber());
 	}
@@ -46,7 +46,7 @@ public abstract class GameLevel {
 	public abstract UserInterfaceConfiguration getUserInterfaceConfiguration();
 	
 	public void loadLevel(int levelNumber) {
-		levelMap = new TmxMapLoader().load("resources/levels/level"+levelNumber+".tmx");
+		levelMap = new TmxMapLoader().load(Constants.LEVEL_PATH+"level"+levelNumber+".tmx");
 		levelGrid = new Array<Array<Array<Tile>>>();
 		characterTiles = new Array<CharacterTile>();
 		starTiles = new Array<StarTile>();
@@ -116,7 +116,7 @@ public abstract class GameLevel {
 						gridRow.add(tile);
 					}
 					else {
-						Tile tile = new TerrainTile(gridPosition, Tile.EMPTY);
+						Tile tile = new TerrainTile(gridPosition, Constants.EMPTY_TILE);
 						gridRow.add(tile);
 					}
 				}
@@ -129,8 +129,8 @@ public abstract class GameLevel {
 	protected abstract KeyColor determineKeyColor(GridPosition position);
 	
 	public GridPosition findGridPosition(float coordsX, float coordsY, int z) {
-		int x = (int)((coordsX-GameBoard.horizontalLeftLimit) / GameBoard.tileWidth);
-		int y = (int)((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight);
+		int x = (int)((coordsX-Constants.gameBoardHorizontalLeftLimit) / Constants.tileWidth);
+		int y = (int)((Constants.gameBoardVerticalUpperLimit-coordsY) / Constants.tileHeight);
 		return new GridPosition(x, y, z);
 	}
 	
@@ -152,7 +152,7 @@ public abstract class GameLevel {
 	
 	public boolean tileCanMove(Tile tile, Direction direction, float dx, float dy) {
 		if (tile.getDirection() == Direction.WEST) {
-			if (tile.getCoordsX()-dx <= GameBoard.horizontalLeftLimit) {
+			if (tile.getCoordsX()-dx <= Constants.gameBoardHorizontalLeftLimit) {
 				return false;
 			}
 			Tile nextTile = getTile(tile.getCoordsX()-dx, tile.getCoordsY(), tile.getGridPosition().getZ());
@@ -161,16 +161,16 @@ public abstract class GameLevel {
 			}
 		}
 		else if (tile.getDirection() == Direction.EAST) {
-			if (tile.getCoordsX()+dx+GameBoard.tileWidth >= GameBoard.horizontalLeftLimit+GameBoard.tileWidth*levelWidth) {
+			if (tile.getCoordsX()+dx+Constants.tileWidth >= Constants.gameBoardHorizontalLeftLimit+Constants.tileWidth*levelWidth) {
 				return false;
 			}
-			Tile nextTile = getTile(tile.getCoordsX()+dx+GameBoard.tileWidth, tile.getCoordsY(), tile.getGridPosition().getZ());
+			Tile nextTile = getTile(tile.getCoordsX()+dx+Constants.tileWidth, tile.getCoordsY(), tile.getGridPosition().getZ());
 			if (nextTile.getType() == null || !nextTile.isObstacle()) {
 				return true;
 			}
 		}
 		else if (tile.getDirection() == Direction.SOUTH) {
-			if (tile.getCoordsY()-dy <= GameBoard.horizontalLeftLimit-GameBoard.tileHeight*levelHeight) {
+			if (tile.getCoordsY()-dy <= Constants.gameBoardVerticalUpperLimit-Constants.tileHeight*levelHeight) {
 				return false;
 			}
 			Tile enteringTile = getTile(tile.getCoordsX(), tile.getCoordsY()-dy, tile.getGridPosition().getZ());
@@ -179,10 +179,10 @@ public abstract class GameLevel {
 			}
 		}
 		else if (tile.getDirection() == Direction.NORTH) {
-			if (tile.getCoordsY()+dy+GameBoard.tileHeight >= GameBoard.verticalUpperLimit) {
+			if (tile.getCoordsY()+dy+Constants.tileHeight >= Constants.gameBoardVerticalUpperLimit) {
 				return false;
 			}
-			Tile enteringTile = getTile(tile.getCoordsX()+dy, tile.getCoordsY()+dy+GameBoard.tileHeight, tile.getGridPosition().getZ());
+			Tile enteringTile = getTile(tile.getCoordsX()+dy, tile.getCoordsY()+dy+Constants.tileHeight, tile.getGridPosition().getZ());
 			//System.out.println(enteringTile.getGridX()+","+enteringTile.getGridY()+","+enteringTile.getGridZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				return true;
@@ -250,42 +250,5 @@ public abstract class GameLevel {
 		levelMap.dispose();
 	}
 	
-	public class GridPosition {
-		
-		private int x;
-		private int y;
-		private int z;
-		
-		public GridPosition(int x, int y, int z) {
-			this.x = x;
-			this.y = y;
-			this.z = z;
-		}
-		
-		public int getX() {
-			return x;
-		}
-
-		public void setX(int x) {
-			this.x = x;
-		}
-
-		public int getY() {
-			return y;
-		}
-
-		public void setY(int y) {
-			this.y = y;
-		}
-
-		public int getZ() {
-			return z;
-		}
-
-		public void setZ(int z) {
-			this.z = z;
-		}
-		
-	}
 
 }

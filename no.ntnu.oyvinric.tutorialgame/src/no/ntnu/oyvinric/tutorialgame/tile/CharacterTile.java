@@ -1,8 +1,8 @@
 package no.ntnu.oyvinric.tutorialgame.tile;
 
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
-import no.ntnu.oyvinric.tutorialgame.level.GameLevel.GridPosition;
+import no.ntnu.oyvinric.tutorialgame.level.GridPosition;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -40,7 +40,7 @@ public class CharacterTile extends Tile {
 	}
 	
 	private void loadAnimation(CharacterName name) {
-		animationTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/"+name.getValue()+".atlas"));
+		animationTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+name.getValue()+".atlas"));
 		
 		walkNorthFrames = new TextureRegion[2];
 		walkNorthFrames[0] = animationTextures.findRegion("north1");
@@ -108,13 +108,13 @@ public class CharacterTile extends Tile {
 	}
 	
 	public void alignWithGrid() {
-		coordsX = GameBoard.horizontalLeftLimit+(Math.round((coordsX-GameBoard.horizontalLeftLimit) / GameBoard.tileWidth)*GameBoard.tileWidth);
-		coordsY = GameBoard.verticalUpperLimit-(Math.round((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight)*GameBoard.tileHeight);
+		coordsX = Constants.gameBoardHorizontalLeftLimit+(Math.round((coordsX-Constants.gameBoardHorizontalLeftLimit) / Constants.tileWidth)*Constants.tileWidth);
+		coordsY = Constants.gameBoardVerticalUpperLimit-(Math.round((Constants.gameBoardVerticalUpperLimit-coordsY) / Constants.tileHeight)*Constants.tileHeight);
 	}
 	
 	public void updateGridPosition() {
-		gridPosition.setX(Math.round((GameBoard.horizontalLeftLimit+coordsX) / GameBoard.tileWidth)-1);
-		gridPosition.setY(Math.round((GameBoard.verticalUpperLimit-coordsY) / GameBoard.tileHeight));
+		gridPosition.setX(Math.round((coordsX-Constants.gameBoardHorizontalLeftLimit) / Constants.tileWidth));
+		gridPosition.setY(Math.round((Constants.gameBoardVerticalUpperLimit-coordsY) / Constants.tileHeight));
 	}
 	
 	public float getRotation() {

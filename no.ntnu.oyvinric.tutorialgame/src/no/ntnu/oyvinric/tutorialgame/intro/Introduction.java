@@ -1,12 +1,45 @@
 package no.ntnu.oyvinric.tutorialgame.intro;
 
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
+
 import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class Introduction implements ApplicationListener {
+	
+	private int levelNumber;
+	private IntroConfiguration configuration;
+	
+	private Stage stage;
+	private IntroAnimation animation;
+	
+	
+	public Introduction(int levelNumber) {
+		this.levelNumber = levelNumber;
+	}
+	
+	private static void adjustActorPosition(Actor actor) {
+		actor.setPosition(actor.getX(), Constants.introductionWindowHeight-actor.getY());
+	}
 
 	@Override
 	public void create() {
-		// TODO Auto-generated method stub
+		
+		stage = new Stage();
+		
+		configuration = new IntroConfiguration(levelNumber);
+		
+		for (Actor actor : configuration.getActors()) {
+			adjustActorPosition(actor);
+			stage.addActor(actor);
+		}
+		
+		animation = configuration.getAnimation();
+		animation.play();
 		
 	}
 
@@ -18,8 +51,10 @@ public class Introduction implements ApplicationListener {
 
 	@Override
 	public void render() {
-		// TODO Auto-generated method stub
-		
+		Gdx.gl.glClearColor(Color.WHITE.r, Color.WHITE.g, Color.WHITE.b, Color.WHITE.a);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		stage.act(Gdx.graphics.getDeltaTime());
+		stage.draw();
 	}
 
 	@Override
@@ -36,8 +71,7 @@ public class Introduction implements ApplicationListener {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-		
+		stage.dispose();
 	}
 
 }

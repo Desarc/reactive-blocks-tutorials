@@ -24,12 +24,6 @@ import com.badlogic.gdx.utils.Array;
 
 public class TutorialGame implements ApplicationListener {
 
-	public static final int windowWidth = 800;
-	public static final int windowHeight = 600;
-	
-	final float horizontalMoveSpeed = GameBoard.tileWidth*2;
-	final float verticalMoveSpeed = GameBoard.tileHeight*4;
-	
 	private GameBoard board;
 	private GameLevel level;
 	private UserInterface userInterface;
@@ -86,8 +80,8 @@ public class TutorialGame implements ApplicationListener {
 			}
 		}
 		
-		winSound = Gdx.audio.newSound(Gdx.files.internal("resources/sound/drop.wav"));
-		gameTheme = Gdx.audio.newMusic(Gdx.files.internal("resources/sound/rain.mp3"));
+		winSound = Gdx.audio.newSound(Gdx.files.internal(Constants.SOUND_PATH+"drop.wav"));
+		gameTheme = Gdx.audio.newMusic(Gdx.files.internal(Constants.SOUND_PATH+"rain.mp3"));
 		gameTheme.setLooping(true);
 		gameTheme.play();
 	}
@@ -140,25 +134,25 @@ public class TutorialGame implements ApplicationListener {
 		float distanceX = 0;
 		float distanceY = 0;
 		if (character.getDirection() == Direction.WEST) {
-			distanceX = -horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
+			distanceX = -Constants.horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.EAST) {
-			distanceX = horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
+			distanceX = Constants.horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.EAST, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.SOUTH) {
-			distanceY = -verticalMoveSpeed*Gdx.graphics.getDeltaTime();
+			distanceY = -Constants.verticalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.NORTH) {
-			distanceY = verticalMoveSpeed*Gdx.graphics.getDeltaTime();
+			distanceY = Constants.verticalMoveSpeed*Gdx.graphics.getDeltaTime();
 			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}

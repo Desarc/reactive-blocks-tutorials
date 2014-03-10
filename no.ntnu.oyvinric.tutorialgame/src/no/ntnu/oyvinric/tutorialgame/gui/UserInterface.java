@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
-import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.icon.CounterIcon;
 import no.ntnu.oyvinric.tutorialgame.icon.KeyIcon;
 import no.ntnu.oyvinric.tutorialgame.icon.StarIcon;
@@ -15,13 +15,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class UserInterface {
 
-	public static final int windowHeight = TutorialGame.windowHeight;
-	public static final int windowWidth = 200;
-	public static final int iconWidth = 32;
-	public static final int iconHeight = 32;
-	public static final int horizontalLeftLimit = TutorialGame.windowWidth-windowWidth+20;
-	public static final int verticalUpperLimit = TutorialGame.windowHeight-iconHeight-20;	
-	
 	private TextureAtlas userInterfaceTextures;
 	private UserInterfaceConfiguration configuration;
 	private SpriteBatch batch;
@@ -35,9 +28,9 @@ public class UserInterface {
 	public UserInterface(UserInterfaceConfiguration configuration) {
 		this.configuration = configuration;
 		batch = new SpriteBatch();
-		stage = new Stage(TutorialGame.windowWidth, windowHeight, true, batch);
+		stage = new Stage(Constants.mainWindowWidth, Constants.userInterfaceWindowHeight, true, batch);
 		
-		userInterfaceTextures = new TextureAtlas(Gdx.files.internal("resources/gfx/user-interface.atlas"));
+		userInterfaceTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"user-interface.atlas"));
 		
 		handleConfiguration();
 	}
@@ -45,35 +38,35 @@ public class UserInterface {
 	private void handleConfiguration() {
 		int elementCount = 0;
 		if (configuration.blueKeyActive) {
-			blueKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-blue-disabled"), userInterfaceTextures.findRegion("key-blue"), KeyColor.BLUE);
+			blueKey = new KeyIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-blue-disabled"), userInterfaceTextures.findRegion("key-blue"), KeyColor.BLUE);
 			blueKey.setActive(true);
 			stage.addActor(blueKey);
 			elementCount++;
 		}
 		if (configuration.yellowKeyActive) {
-			yellowKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-yellow-disabled"), userInterfaceTextures.findRegion("key-yellow"), KeyColor.YELLOW);
+			yellowKey = new KeyIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-yellow-disabled"), userInterfaceTextures.findRegion("key-yellow"), KeyColor.YELLOW);
 			yellowKey.setActive(true);
 			stage.addActor(yellowKey);
 			elementCount++;
 		}
 		if (configuration.redKeyActive) {
-			redKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-red-disabled"), userInterfaceTextures.findRegion("key-red"), KeyColor.RED);
+			redKey = new KeyIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-red-disabled"), userInterfaceTextures.findRegion("key-red"), KeyColor.RED);
 			redKey.setActive(true);
 			stage.addActor(redKey);
 			elementCount++;
 		}
 		if (configuration.greenKeyActive) {
-			greenKey = new KeyIcon(new UserInterfacePosition(iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-green-disabled"), userInterfaceTextures.findRegion("key-green"), KeyColor.GREEN);
+			greenKey = new KeyIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), userInterfaceTextures.findRegion("key-green-disabled"), userInterfaceTextures.findRegion("key-green"), KeyColor.GREEN);
 			greenKey.setActive(true);
 			stage.addActor(greenKey);
 			elementCount++;
 		}
 		if (configuration.starActive) {
-			star = new StarIcon(new UserInterfacePosition(iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("star")));
+			star = new StarIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), new Image(userInterfaceTextures.findRegion("star")));
 			star.setActive(true);
 			stage.addActor(star.getDrawable());
 			elementCount++;
-			starCounter = new CounterIcon(new UserInterfacePosition(iconWidth*elementCount, 0), 0, configuration.starCount);
+			starCounter = new CounterIcon(new UserInterfacePosition(Constants.iconWidth*elementCount, 0), 0, configuration.starCount);
 			stage.addActor(starCounter.getDrawable());
 			elementCount++;
 		}
@@ -115,8 +108,8 @@ public class UserInterface {
 		private float y;
 		
 		public UserInterfacePosition(float x, float y) {
-			this.x = horizontalLeftLimit + x;
-			this.y = verticalUpperLimit - y;
+			this.x = Constants.userInterfaceHorizontalLeftLimit+ x;
+			this.y = Constants.userInterfaceVerticalUpperLimit - y;
 		}
 		
 		public float getX() {

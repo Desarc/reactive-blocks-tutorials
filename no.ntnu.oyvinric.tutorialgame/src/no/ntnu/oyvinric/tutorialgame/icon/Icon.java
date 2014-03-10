@@ -16,7 +16,7 @@ public abstract class Icon extends Actor {
 	}
 	
 	public Icon(UserInterfacePosition position, Widget drawable) {
-		this.position = position;
+		this(position);
 		this.drawable = drawable;
 		updatePosition();
 	}

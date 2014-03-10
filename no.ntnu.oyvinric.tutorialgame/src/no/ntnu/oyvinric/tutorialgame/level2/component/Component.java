@@ -3,6 +3,7 @@ package no.ntnu.oyvinric.tutorialgame.level2.component;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 import no.ntnu.item.arctis.runtime.Block;
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
@@ -13,7 +14,7 @@ public class Component extends Block {
 	
 	public Component() {
 		game = new TutorialGame(2);
-		new LwjglApplication(game, "Level 2", TutorialGame.windowWidth, TutorialGame.windowHeight, false);
+		new LwjglApplication(game, "Level 2", Constants.mainWindowWidth, Constants.mainWindowHeight, false);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {

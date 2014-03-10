@@ -1,14 +1,12 @@
 package no.ntnu.oyvinric.tutorialgame.tile;
 
-import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
-import no.ntnu.oyvinric.tutorialgame.level.GameLevel.GridPosition;
+import no.ntnu.oyvinric.tutorialgame.level.GridPosition;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public abstract class Tile {
-	
-	public static final String EMPTY = "empty";
 	
 	protected TextureRegion image;
 	private float width = 0f;
@@ -33,16 +31,14 @@ public abstract class Tile {
 	}
 	
 	public Tile(GridPosition gridPosition, String type, float horizontalAdjustment, float verticalAdjustment) {
-		this.gridPosition = gridPosition;
-		this.type = type;
+		this(gridPosition, type);
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		updateCoordinates();
 	}
 	
 	public Tile(GridPosition gridPosition, String type, TextureRegion image) {
-		this.gridPosition = gridPosition;
-		this.type = type;
+		this(gridPosition, type);
 		this.image = image;
 		this.width = image.getRegionWidth();
 		this.height = image.getRegionHeight();
@@ -50,34 +46,20 @@ public abstract class Tile {
 	}
 	
 	public Tile(GridPosition gridPosition, String type, TextureRegion image, float scaleFactor) {
-		this.gridPosition = gridPosition;
-		this.type = type;
-		this.image = image;
-		this.width = image.getRegionWidth();
-		this.height = image.getRegionHeight();
+		this(gridPosition, type, image);
 		this.scaleFactor = scaleFactor;
 		updateCoordinates();
 	}
 	
 	public Tile(GridPosition gridPosition, String type, TextureRegion image, float horizontalAdjustment, float verticalAdjustment) {
-		this.gridPosition = gridPosition;
-		this.type = type;
-		this.image = image;
-		this.width = image.getRegionWidth();
-		this.height = image.getRegionHeight();
+		this(gridPosition, type, image);
 		this.horizontalAdjustment = horizontalAdjustment;
 		this.verticalAdjustment = verticalAdjustment;
 		updateCoordinates();
 	}
 	
 	public Tile(GridPosition gridPosition, String type, TextureRegion image, float horizontalAdjustment, float verticalAdjustment, float scaleFactor) {
-		this.gridPosition = gridPosition;
-		this.type = type;
-		this.image = image;
-		this.width = image.getRegionWidth();
-		this.height = image.getRegionHeight();
-		this.horizontalAdjustment = horizontalAdjustment;
-		this.verticalAdjustment = verticalAdjustment;
+		this(gridPosition, type, image, horizontalAdjustment, verticalAdjustment);
 		this.scaleFactor = scaleFactor;
 		updateCoordinates();
 	}
@@ -90,8 +72,8 @@ public abstract class Tile {
 	}
 	
 	protected void updateCoordinates() {
-		coordsX = GameBoard.horizontalLeftLimit+gridPosition.getX()*GameBoard.tileWidth;
-		coordsY = GameBoard.verticalUpperLimit-gridPosition.getY()*GameBoard.tileHeight-gridPosition.getZ();
+		coordsX = Constants.gameBoardHorizontalLeftLimit+gridPosition.getX()*Constants.tileWidth;
+		coordsY = Constants.gameBoardVerticalUpperLimit-gridPosition.getY()*Constants.tileHeight-gridPosition.getZ();
 	}
 	
 	public void rotate(float angle) {
@@ -102,17 +84,17 @@ public abstract class Tile {
 			direction = Direction.EAST;
 		}
 		else if (rotation == 90 || rotation == -270) {
-			originX = GameBoard.tileWidth/2;
+			originX = Constants.tileWidth/2;
 			originY = 0;
 			direction = Direction.NORTH;
 		}
 		else if (rotation == 180 || rotation == -180) {
-			originX = GameBoard.tileWidth/2;
+			originX = Constants.tileWidth/2;
 			originY = 0;
 			direction = Direction.WEST;
 		}
 		else if (rotation == 270 || rotation == -90) {
-			originX = GameBoard.tileWidth/2;
+			originX = Constants.tileWidth/2;
 			originY = 0;
 			direction = Direction.SOUTH;
 		}
