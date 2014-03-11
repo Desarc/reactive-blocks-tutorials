@@ -6,43 +6,40 @@ import java.util.Properties;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Pixmap.Format;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.SelectBox;
-import com.badlogic.gdx.scenes.scene2d.ui.SelectBox.SelectBoxStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ArrayMap;
 
 public class IntroConfiguration {
 	
-	private Properties configFile; 
-	private TextureAtlas introTextures;
+	private Properties configFile;
 	
-	private float yOffset = 0f;
-	private float xOffset = 0f;
+	final float xPadding = 2f;
+	final float yPadding = 4f;
 	
-	private String[] newConcepts;
+	private float positionY = yPadding;
+	private float positionX = xPadding;
 	
 	private Skin skin;
 	private Label levelHeader;
 	private Label title;
+	private Label tellMeMore;
 	private IntroAnimation animation;
 	private SelectBox moreInfoDropdown;
-	private Array<TextButton> moreInfoButtons;
+	private ArrayMap<String, String> newConcepts;
+	private ArrayMap<String, TextureRegion> moreInfoImages;
+	private Slideshow moreInfoSlideshow;
 	
 	private Array<Actor> actors;
 	
-	public IntroConfiguration(int levelNumber) {
+	public IntroConfiguration(int levelNumber, IntroConfigurationDefault defaultValues) {
 		configFile = new Properties();
 		try {
 			configFile.load(new FileInputStream(Constants.INTRO_CONFIG_PATH+"level"+levelNumber+".properties"));
@@ -50,66 +47,77 @@ public class IntroConfiguration {
 			e.printStackTrace();
 		}
 		
-		introTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"intro.atlas"));
+		skin = defaultValues.getSkin();
 		
 		actors = new Array<Actor>();
-		
-		skin = new Skin();
-
-		skin.add("default", new BitmapFont());
-		
-		Pixmap pixmap = new Pixmap(1, 1, Format.RGBA8888);
-		pixmap.setColor(Color.WHITE);
-		pixmap.fill();
-		skin.add("white", new Texture(pixmap));
-		
-		LabelStyle levelHeaderStyle = new LabelStyle(new BitmapFont(), Color.BLACK);
-		levelHeaderStyle.font.scale(0.7f);
-		skin.add("default", levelHeaderStyle);
-		
-		LabelStyle titleStyle = new LabelStyle(new BitmapFont(), Color.BLACK);
-		titleStyle.font.scale(0.5f);
-		skin.add("default", titleStyle);
-		
-		TextButtonStyle moreInfoButtonStyle = new TextButtonStyle();
-		moreInfoButtonStyle.font = new BitmapFont();
-		moreInfoButtonStyle.fontColor = Color.BLACK;
-		skin.add("default", moreInfoButtonStyle);
-		
-		SelectBoxStyle moreInfoDropdownStyle = new SelectBoxStyle();
-		moreInfoDropdownStyle.font = new BitmapFont();
-		moreInfoDropdownStyle.background = skin.newDrawable("white", Color.LIGHT_GRAY);
-		skin.add("default", moreInfoDropdownStyle);
-		
-		levelHeader = new Label("Level "+levelNumber, skin);
-		yOffset += levelHeader.getHeight();
-		levelHeader.setPosition(xOffset, yOffset);
+				
+		levelHeader = new Label("Level "+levelNumber, skin.get("levelHeader", LabelStyle.class));
+		horizontalCenterAlign(levelHeader);
 		actors.add(levelHeader);
 		
-		title = new Label(configFile.getProperty("title", ""), skin);
-		yOffset += title.getHeight();
-		title.setPosition(xOffset, yOffset);
+		title = new Label(configFile.getProperty("title", ""), skin.get("title", LabelStyle.class));
+		horizontalCenterAlign(title);
 		actors.add(title);
 		
 		animation = new IntroAnimation("intro-level"+levelNumber, 4f);
-		yOffset += animation.getHeight();
-		animation.setPosition(xOffset, yOffset);
+		horizontalCenterAlign(animation);
 		actors.add(animation);
 		
-		moreInfoButtons = new Array<TextButton>();
-		newConcepts = configFile.getProperty("concepts", "").split(",");
-		moreInfoDropdown = new SelectBox(newConcepts, skin);
-		yOffset += moreInfoDropdown.getHeight();
-		moreInfoDropdown.setPosition(xOffset, yOffset);
-//		for (String concept : newConcepts) {
-//			System.out.println(concept);
-//			TextButton button = new TextButton("Tell me more about "+concept, skin);
-//			yOffset += button.getHeight();
-//			button.setPosition(xOffset, yOffset);
-//			button.addAction(new MoreInfoAction(concept));
-//			moreInfoButtons.add(button);
-//			actors.add(button);
-//		}
+		tellMeMore = new Label("Tell me more about: ", skin);
+		horizontalLeftAlign(tellMeMore);
+		actors.add(tellMeMore);
+		
+		newConcepts = new ArrayMap<String, String>();
+		moreInfoImages = new ArrayMap<String, TextureRegion>();
+		String [] concepts = configFile.getProperty("concepts", "").split(",");
+		for (String concept : concepts) {
+			newConcepts.put(concept, configFile.getProperty(concept+"_name", ""));
+		}
+		Array<String> textValues = new Array<String>();
+		for (Object conceptText : newConcepts.values) {
+			if (conceptText != null) {
+				textValues.add((String)conceptText);
+			}
+		}
+		moreInfoDropdown = new SelectBox(textValues.toArray(), skin);
+		alignRightSideOf(tellMeMore, moreInfoDropdown);
+		moreInfoDropdown.addCaptureListener(new EventListener() {
+			
+			@Override
+			public boolean handle(Event event) {
+				moreInfoSlideshow.setCurrentImage(moreInfoDropdown.getSelection());
+				return false;
+			}
+		});
+		actors.add(moreInfoDropdown);
+		
+		for (Object concept : newConcepts.keys) {
+			if (concept != null) {
+				moreInfoImages.put(newConcepts.get((String)concept), skin.getRegion(configFile.getProperty((String)concept+"_image", "")));
+			}
+		}
+		moreInfoSlideshow = new Slideshow(moreInfoImages);
+		horizontalCenterAlign(moreInfoSlideshow);
+		actors.add(moreInfoSlideshow);
+
+	}
+	
+	public void horizontalCenterAlign(Actor actor) {
+		positionX = Constants.introductionWindowWidth/2 - actor.getWidth()/2;
+		positionY += actor.getHeight() + yPadding;
+		actor.setPosition(positionX, positionY);
+	}
+	
+	public void horizontalLeftAlign(Actor actor) {
+		positionX = xPadding;
+		positionY += actor.getHeight() + yPadding;
+		actor.setPosition(positionX, positionY);
+	}
+	
+	public void alignRightSideOf(Actor old, Actor toBeAligned) {
+		positionX = old.getX() + old.getWidth() + xPadding;
+		positionY = old.getY();
+		toBeAligned.setPosition(positionX, positionY);
 	}
 	
 	public Array<Actor> getActors() {
@@ -122,6 +130,10 @@ public class IntroConfiguration {
 	
 	public float getTopOffset() {
 		return levelHeader.getHeight();
+	}
+	
+	public void cleanUp() {
+		animation.cleanUp();
 	}
 	
 	

@@ -3,52 +3,80 @@ intro.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+activityFinalIntro
+  rotate: false
+  xy: 2, 464
+  size: 425, 200
+  orig: 425, 200
+  offset: 0, 0
+  index: -1
+edgesIntro
+  rotate: false
+  xy: 2, 666
+  size: 464, 200
+  orig: 464, 200
+  offset: 0, 0
+  index: -1
 icon-chest
   rotate: false
-  xy: 2, 2
+  xy: 429, 536
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-key
   rotate: false
-  xy: 132, 2
+  xy: 842, 738
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-lever
   rotate: false
-  xy: 262, 2
+  xy: 2, 132
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-lock
   rotate: false
-  xy: 392, 2
+  xy: 290, 334
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-run
   rotate: false
-  xy: 522, 2
+  xy: 559, 536
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-speech
   rotate: false
-  xy: 652, 2
+  xy: 2, 2
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-star
   rotate: false
-  xy: 782, 2
+  xy: 132, 132
   size: 128, 128
   orig: 128, 128
+  offset: 0, 0
+  index: -1
+initialNodesIntro
+  rotate: false
+  xy: 468, 666
+  size: 372, 200
+  orig: 372, 200
+  offset: 0, 0
+  index: -1
+operationsIntro
+  rotate: false
+  xy: 2, 262
+  size: 286, 200
+  orig: 286, 200
   offset: 0, 0
   index: -1

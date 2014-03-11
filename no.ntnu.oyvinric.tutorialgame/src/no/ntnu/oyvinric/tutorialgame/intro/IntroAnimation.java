@@ -54,6 +54,15 @@ public class IntroAnimation extends Actor {
 		return max;
 	}
 	
+	@Override
+	public float getWidth() {
+		float max = 0;
+		for (TextureRegion image : images) {
+			max = (image.getRegionWidth() > max) ? image.getRegionWidth() : max;
+		}
+		return max;
+	}
+	
 	
 	public void play() {
 		playing = true;

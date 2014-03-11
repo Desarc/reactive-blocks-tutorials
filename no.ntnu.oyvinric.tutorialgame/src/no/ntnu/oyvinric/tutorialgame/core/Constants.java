@@ -29,8 +29,8 @@ public class Constants {
 	public static final float horizontalMoveSpeed = tileWidth*2;
 	public static final float verticalMoveSpeed = tileHeight*4;
 	
-	public static final int introductionWindowWidth = 400;
-	public static final int introductionWindowHeight = 600;
+	public static final int introductionWindowWidth = 600;
+	public static final int introductionWindowHeight = 800;
 	
 	public static final String EMPTY_TILE = "empty";
 	
