@@ -15,6 +15,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.List.ListStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane.ScrollPaneStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.SelectBox.SelectBoxStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.SplitPane.SplitPaneStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.Window.WindowStyle;
 
 public class IntroConfigurationDefault {
 	
@@ -40,7 +42,7 @@ public class IntroConfigurationDefault {
 		pixmap.fill();
 		skin.add("white", new Texture(pixmap));
 		
-		LabelStyle defaultStyle = new LabelStyle(new BitmapFont(), Color.BLACK);
+		LabelStyle defaultStyle = new LabelStyle(skin.getFont(DEFAULT), Color.BLACK);
 		skin.add(DEFAULT, defaultStyle);
 		
 		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.GFX_PATH+"fonts/levelHeader.ttf"));
@@ -67,6 +69,15 @@ public class IntroConfigurationDefault {
 		
 		SelectBoxStyle moreInfoDropdownStyle = new SelectBoxStyle(listFont, Color.BLACK, skin.newDrawable("white", Color.WHITE), scrollPaneStyle, listStyle);
 		skin.add(DEFAULT, moreInfoDropdownStyle);
+		
+		WindowStyle windowStyle = new WindowStyle(skin.getFont(DEFAULT), Color.BLACK, skin.newDrawable("white", Color.LIGHT_GRAY));
+		skin.add(DEFAULT, windowStyle);
+		
+		SplitPaneStyle horizontalSplitPaneStyle = new SplitPaneStyle(skin.newDrawable("white", Color.WHITE));
+		skin.add(DEFAULT+"-horizontal", horizontalSplitPaneStyle);
+		
+		SplitPaneStyle verticalSplitPaneStyle = new SplitPaneStyle(skin.newDrawable("white", Color.WHITE));
+		skin.add(DEFAULT+"-vertical", verticalSplitPaneStyle);
 		
 		generator.dispose();
 		

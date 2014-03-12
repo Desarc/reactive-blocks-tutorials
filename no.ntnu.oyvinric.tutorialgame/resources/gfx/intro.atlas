@@ -3,80 +3,211 @@ intro.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-activityFinalIntro
+beginning-down
   rotate: false
-  xy: 2, 464
-  size: 425, 200
-  orig: 425, 200
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
-edgesIntro
+beginning-up
   rotate: false
-  xy: 2, 666
-  size: 464, 200
-  orig: 464, 200
+  xy: 680, 45
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+end-down
+  rotate: false
+  xy: 921, 767
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+end-up
+  rotate: false
+  xy: 810, 175
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-chest
   rotate: false
-  xy: 429, 536
+  xy: 633, 469
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-key
   rotate: false
-  xy: 842, 738
+  xy: 633, 339
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-lever
   rotate: false
-  xy: 2, 132
+  xy: 763, 469
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-lock
   rotate: false
-  xy: 290, 334
+  xy: 763, 339
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-run
   rotate: false
-  xy: 559, 536
+  xy: 680, 209
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-speech
   rotate: false
-  xy: 2, 2
+  xy: 680, 79
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 icon-star
   rotate: false
-  xy: 132, 132
+  xy: 810, 209
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 initialNodesIntro
   rotate: false
-  xy: 468, 666
+  xy: 633, 801
   size: 372, 200
   orig: 372, 200
   offset: 0, 0
   index: -1
+level3map
+  rotate: false
+  xy: 2, 36
+  size: 676, 297
+  orig: 676, 297
+  offset: 0, 0
+  index: -1
+level4map
+  rotate: false
+  xy: 2, 335
+  size: 629, 666
+  orig: 629, 666
+  offset: 0, 0
+  index: -1
+next-down
+  rotate: false
+  xy: 36, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+next-up
+  rotate: false
+  xy: 714, 45
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 operationsIntro
   rotate: false
-  xy: 2, 262
+  xy: 633, 599
   size: 286, 200
   orig: 286, 200
+  offset: 0, 0
+  index: -1
+pause-down
+  rotate: false
+  xy: 921, 733
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+pause-up
+  rotate: false
+  xy: 955, 767
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+play-down
+  rotate: false
+  xy: 810, 141
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+play-up
+  rotate: false
+  xy: 844, 175
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+previous-down
+  rotate: false
+  xy: 70, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+previous-up
+  rotate: false
+  xy: 748, 45
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stop-down
+  rotate: false
+  xy: 921, 699
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stop-up
+  rotate: false
+  xy: 955, 733
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+
+intro2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+activityFinalIntro
+  rotate: false
+  xy: 585, 630
+  size: 425, 200
+  orig: 425, 200
+  offset: 0, 0
+  index: -1
+edgesIntro
+  rotate: false
+  xy: 2, 2
+  size: 464, 200
+  orig: 464, 200
+  offset: 0, 0
+  index: -1
+level1map
+  rotate: false
+  xy: 2, 204
+  size: 580, 289
+  orig: 580, 289
+  offset: 0, 0
+  index: -1
+level2map
+  rotate: false
+  xy: 2, 495
+  size: 581, 335
+  orig: 581, 335
   offset: 0, 0
   index: -1
