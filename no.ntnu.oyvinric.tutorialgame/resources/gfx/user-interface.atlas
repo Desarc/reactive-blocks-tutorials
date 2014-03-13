@@ -3,72 +3,219 @@ user-interface.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+buttonBlue
+  rotate: false
+  xy: 2, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonBlue_pressed
+  rotate: false
+  xy: 74, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonGreen
+  rotate: false
+  xy: 146, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonGreen_pressed
+  rotate: false
+  xy: 218, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonRed
+  rotate: false
+  xy: 290, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonRed_pressed
+  rotate: false
+  xy: 362, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonYellow
+  rotate: false
+  xy: 434, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+buttonYellow_pressed
+  rotate: false
+  xy: 506, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+hud
+  rotate: false
+  xy: 2, 2
+  size: 32, 40
+  orig: 32, 40
+  offset: 0, 0
+  index: 8
+hud
+  rotate: false
+  xy: 788, 75
+  size: 32, 39
+  orig: 32, 39
+  offset: 0, 0
+  index: 7
+hud
+  rotate: false
+  xy: 36, 3
+  size: 32, 39
+  orig: 32, 39
+  offset: 0, 0
+  index: 9
+hud
+  rotate: false
+  xy: 822, 76
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: 2
+hud
+  rotate: false
+  xy: 70, 4
+  size: 30, 38
+  orig: 30, 38
+  offset: 0, 0
+  index: 0
+hud
+  rotate: false
+  xy: 856, 76
+  size: 30, 38
+  orig: 30, 38
+  offset: 0, 0
+  index: 6
+hud
+  rotate: false
+  xy: 102, 4
+  size: 29, 38
+  orig: 29, 38
+  offset: 0, 0
+  index: 4
+hud
+  rotate: false
+  xy: 888, 76
+  size: 28, 38
+  orig: 28, 38
+  offset: 0, 0
+  index: 3
+hud
+  rotate: false
+  xy: 133, 4
+  size: 28, 38
+  orig: 28, 38
+  offset: 0, 0
+  index: 5
+hud
+  rotate: false
+  xy: 367, 5
+  size: 26, 37
+  orig: 26, 37
+  offset: 0, 0
+  index: 1
+hud_x
+  rotate: false
+  xy: 395, 14
+  size: 30, 28
+  orig: 30, 28
+  offset: 0, 0
+  index: -1
 key-blue
   rotate: false
-  xy: 68, 68
+  xy: 163, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-blue-disabled
   rotate: false
-  xy: 2, 2
+  xy: 918, 82
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-green
   rotate: false
-  xy: 136, 68
+  xy: 197, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-green-disabled
   rotate: false
-  xy: 102, 68
+  xy: 952, 82
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-red
   rotate: false
-  xy: 204, 68
+  xy: 231, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-red-disabled
   rotate: false
-  xy: 170, 68
+  xy: 986, 82
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-yellow
   rotate: false
-  xy: 70, 34
+  xy: 299, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 key-yellow-disabled
   rotate: false
-  xy: 36, 2
+  xy: 265, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 right-click
   rotate: false
-  xy: 2, 36
+  xy: 722, 50
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
+springboardDown
+  rotate: false
+  xy: 578, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+springboardUp
+  rotate: false
+  xy: 650, 44
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
 star
   rotate: false
-  xy: 104, 34
+  xy: 333, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0

@@ -24,6 +24,8 @@ public class IntroConfiguration {
 	
 	private Properties configFile;
 	
+	final float animationDelay = 8f;
+	
 	static final float xPadding = 2f;
 	static final float yPadding = 4f;
 	
@@ -64,7 +66,7 @@ public class IntroConfiguration {
 		verticalAlignUnder(title, levelHeader);
 		actors.add(title);
 		
-		animation = new IntroAnimation("intro-level"+levelNumber, 4f, skin);
+		animation = new IntroAnimation("intro-level"+levelNumber, animationDelay, skin);
 		horizontalCenterAlign(animation);
 		verticalAlignUnder(animation, title);
 		actors.add(animation);
@@ -137,7 +139,7 @@ public class IntroConfiguration {
 		verticalAlignUnder(controlButtons, animation);
 		actors.add(controlButtons);
 		
-		goalLabel = new Label("Goals and tips:", skin);
+		goalLabel = new Label("Goals:", skin);
 		horizontalLeftAlign(goalLabel);
 		verticalAlignUnder(goalLabel, controlButtons);
 		actors.add(goalLabel);
@@ -197,7 +199,6 @@ public class IntroConfiguration {
 						String concept = ((ImageTextButton)actor).getText().toString();
 						moreInfoWindow = new Window(concept, skin);
 						moreInfoWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
-						//moreInfoDialog.text(configFile.getProperty(newConcepts.get(concept)+"_text"));
 						moreInfoWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/2);
 						Image infoImage = new Image(skin.getRegion(configFile.getProperty(newConcepts.get(concept)+"_image")));
 						//float scaleFactor = moreInfoWindow.getWidth()/image.getWidth();

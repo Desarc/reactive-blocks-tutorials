@@ -3,10 +3,12 @@ package no.ntnu.oyvinric.tutorialgame.intro;
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
 
@@ -14,6 +16,7 @@ public class IntroAnimation extends Actor {
 
 	private TextureAtlas animationTextures;
 	private Array<TextureRegion> images;
+	private Image background;
 	private int frameNumber = 0;
 	private int maxFrameNumber = 0;
 	private float animationDelay;
@@ -29,11 +32,14 @@ public class IntroAnimation extends Actor {
 		}
 		this.animationDelay = animationDelay;
 		this.maxFrameNumber = images.size-1;
-		
+		background = new Image(skin.getDrawable(Constants.WHITE));
+		background.setColor(0.92f, 0.92f, 0.92f, 1f);
+		background.setSize(getWidth(), getHeight());
 	}
 	
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
+		background.draw(batch, parentAlpha);
 		batch.draw(getImage(), getX(), getY());
 	}
 	
@@ -53,12 +59,21 @@ public class IntroAnimation extends Actor {
 	}
 	
 	@Override
-	public float getHeight() {
-		float max = 0f;
-		for (TextureRegion image : images) {
-			max = (image.getRegionHeight() > max) ? image.getRegionHeight() : max;
-		}
-		return max;
+	public void setX(float x) {
+		super.setX(x);
+		background.setX(x);
+	}
+	
+	@Override
+	public void setY(float y) {
+		super.setY(y);
+		background.setY(y);
+	}
+	
+	@Override
+	public void setPosition(float x, float y) {
+		super.setPosition(x, y);
+		background.setPosition(x, y);
 	}
 	
 	@Override
@@ -70,6 +85,14 @@ public class IntroAnimation extends Actor {
 		return max;
 	}
 	
+	@Override
+	public float getHeight() {
+		float max = 0f;
+		for (TextureRegion image : images) {
+			max = (image.getRegionHeight() > max) ? image.getRegionHeight() : max;
+		}
+		return max;
+	}
 	
 	public void play() {
 		playing = true;
@@ -90,11 +113,17 @@ public class IntroAnimation extends Actor {
 	}
 	
 	public void previousFrame() {
-		frameNumber--;
+		playing = false;
+		if (frameNumber > 0) {
+			frameNumber--;
+		}
 	}
 	
 	public void nextFrame() {
-		frameNumber++;
+		playing = false;
+		if (frameNumber < maxFrameNumber) {
+			frameNumber++;
+		}
 	}
 	
 	
