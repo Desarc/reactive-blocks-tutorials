@@ -14,7 +14,7 @@ public class CharacterTile extends Tile {
 	final float horizontalAnimationDelay = 0.25f;
 	final float verticalAnimationDelay = 0.375f;
 	
-	private CharacterName name;
+	private Constants.CharacterName name;
 	private boolean moving = false;
 	private float stateTime = 0;
 	private TextureAtlas animationTextures;
@@ -27,19 +27,19 @@ public class CharacterTile extends Tile {
 	private Animation walkEastAnimation;
 	private Animation walkWestAnimation;
 	
-	public CharacterTile(GridPosition gridPosition, String type, CharacterName name) {
+	public CharacterTile(GridPosition gridPosition, String type, Constants.CharacterName name) {
 		super(gridPosition, type);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	public CharacterTile(GridPosition gridPosition, String type, CharacterName name, float horizontalAdjustment, float verticalAdjustment) {
+	public CharacterTile(GridPosition gridPosition, String type, Constants.CharacterName name, float horizontalAdjustment, float verticalAdjustment) {
 		super(gridPosition, type, horizontalAdjustment, verticalAdjustment);
 		this.name = name;
 		loadAnimation(name);
 	}
 	
-	private void loadAnimation(CharacterName name) {
+	private void loadAnimation(Constants.CharacterName name) {
 		animationTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+name.getValue()+".atlas"));
 		
 		walkNorthFrames = new TextureRegion[2];
@@ -68,34 +68,34 @@ public class CharacterTile extends Tile {
 	public void rotate(float angle) {
 		rotation = (rotation+angle)%360;
 		if (rotation == 0) {
-			setDirection(Direction.EAST);
+			setDirection(Constants.Direction.EAST);
 		}
 		else if (rotation == 90 || rotation == -270) {
-			setDirection(Direction.NORTH);
+			setDirection(Constants.Direction.NORTH);
 		}
 		else if (rotation == 180 || rotation == -180) {
-			setDirection(Direction.WEST);
+			setDirection(Constants.Direction.WEST);
 		}
 		else if (rotation == 270 || rotation == -90) {
-			setDirection(Direction.SOUTH);
+			setDirection(Constants.Direction.SOUTH);
 		}
 	}
 	
-	public void setDirection(Direction direction) {
+	public void setDirection(Constants.Direction direction) {
 		this.direction = direction;
-		if (direction == Direction.EAST) {
+		if (direction == Constants.Direction.EAST) {
 			image = walkEastFrames[1];
 			rotation = 0;
 		}
-		else if (direction == Direction.NORTH) {
+		else if (direction == Constants.Direction.NORTH) {
 			image = walkNorthFrames[1];
 			rotation = 90;
 		}
-		else if (direction == Direction.WEST) {
+		else if (direction == Constants.Direction.WEST) {
 			image = walkWestFrames[1];
 			rotation = 180;
 		}
-		else if (direction == Direction.SOUTH) {
+		else if (direction == Constants.Direction.SOUTH) {
 			image = walkSouthFrames[1];
 			rotation = 270;
 		}
@@ -121,22 +121,22 @@ public class CharacterTile extends Tile {
 		return 0;
 	}
 	
-	public CharacterName getName() {
+	public Constants.CharacterName getName() {
 		return name;
 	}
 	
 	public TextureRegion getImage() {
 		stateTime += Gdx.graphics.getDeltaTime();
-		if (direction == Direction.EAST && moving) {
+		if (direction == Constants.Direction.EAST && moving) {
 			return walkEastAnimation.getKeyFrame(stateTime, true);
 		}
-		else if (direction == Direction.NORTH && moving) {
+		else if (direction == Constants.Direction.NORTH && moving) {
 			return walkNorthAnimation.getKeyFrame(stateTime, true);
 		}
-		else if (direction == Direction.SOUTH && moving) {
+		else if (direction == Constants.Direction.SOUTH && moving) {
 			return walkSouthAnimation.getKeyFrame(stateTime, true);
 		}
-		else if (direction == Direction.WEST && moving) {
+		else if (direction == Constants.Direction.WEST && moving) {
 			return walkWestAnimation.getKeyFrame(stateTime, true);
 		}
 		else {
@@ -152,22 +152,6 @@ public class CharacterTile extends Tile {
 		this.moving = moving;
 	}
 	
-	public static enum CharacterName {
-		MALCOLM("malcolm"),
-		KAYLEE("kaylee"),
-		WASH("wash");
-		
-		private final String name;
-		
-		CharacterName(String name) {
-			this.name = name;
-		}
-		
-		public String getValue() {
-			return name;
-		}
-	}
-
 	@Override
 	public GameObject interact() {
 		System.out.println("Can't interact with another character!");

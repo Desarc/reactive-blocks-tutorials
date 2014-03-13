@@ -1,18 +1,18 @@
 package no.ntnu.oyvinric.tutorialgame.level;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
-import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.tile.ChestTile;
 import no.ntnu.oyvinric.tutorialgame.tile.LockTile;
 import no.ntnu.oyvinric.tutorialgame.tile.StarTile;
 import no.ntnu.oyvinric.tutorialgame.tile.TerrainTile;
 import no.ntnu.oyvinric.tutorialgame.tile.Tile;
-import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile.CharacterName;
-import no.ntnu.oyvinric.tutorialgame.tile.Tile.Direction;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -28,7 +28,7 @@ public abstract class GameLevel {
 	private TextureAtlas gameTextures;
 	protected TiledMap levelMap;
 	protected int levelWidth, levelHeight, levelLayers;
-	protected CharacterTile malcolm, kaylee, wash;
+	protected CharacterTile malcolm, lisa, andrew;
 	protected Array<Array<Array<Tile>>> levelGrid;
 	protected Array<CharacterTile> characterTiles;
 	protected Array<StarTile> starTiles;
@@ -73,20 +73,20 @@ public abstract class GameLevel {
 						if (type != null) {
 							if (type.equals("character")) {
 								String name = (String)cell.getTile().getProperties().get("name");
-								if (name.equals(CharacterName.MALCOLM.getValue())) {
+								if (name.equals(Constants.CharacterName.MALCOLM.getValue())) {
 									malcolm = new CharacterTile(gridPosition, type, CharacterName.MALCOLM);
 									tile = malcolm;
 									characterTiles.add(malcolm);
 								}
-								else if (name.equals(CharacterName.KAYLEE.getValue())) {
-									kaylee = new CharacterTile(gridPosition, type, CharacterName.KAYLEE);
-									tile = kaylee;
-									characterTiles.add(kaylee);
+								else if (name.equals(CharacterName.LISA.getValue())) {
+									lisa = new CharacterTile(gridPosition, type, CharacterName.LISA);
+									tile = lisa;
+									characterTiles.add(lisa);
 								}
 								else {
-									wash = new CharacterTile(gridPosition, type, CharacterName.WASH);
-									tile = wash;
-									characterTiles.add(wash);
+									andrew = new CharacterTile(gridPosition, type, CharacterName.ANDREW);
+									tile = andrew;
+									characterTiles.add(andrew);
 								}
 							}
 							else if (type.equals("terrain")) {
@@ -199,12 +199,12 @@ public abstract class GameLevel {
 		return malcolm;
 	}
 	
-	public CharacterTile getKaylee() {
-		return kaylee;
+	public CharacterTile getLisa() {
+		return lisa;
 	}
 	
-	public CharacterTile getWash() {
-		return wash;
+	public CharacterTile getAndrew() {
+		return andrew;
 	}
 	
 	public Array<CharacterTile> getCharacterTiles() {
@@ -220,10 +220,10 @@ public abstract class GameLevel {
 		int x = character.getGridPosition().getX();
 		int y = character.getGridPosition().getY();
 		int z = character.getGridPosition().getZ();
-		if (character.getDirection() == Direction.EAST) x += 2;
-		else if (character.getDirection() == Direction.WEST) x -= 2;
-		else if (character.getDirection() == Direction.NORTH) y -= 2;
-		else if (character.getDirection() == Direction.SOUTH) y += 2;
+		if (character.getDirection() == Constants.Direction.EAST) x += 2;
+		else if (character.getDirection() == Constants.Direction.WEST) x -= 2;
+		else if (character.getDirection() == Constants.Direction.NORTH) y -= 2;
+		else if (character.getDirection() == Constants.Direction.SOUTH) y += 2;
 		Tile interactingTile = getTile(new GridPosition(x, y, z));
 		return interactingTile.interact();
 	}

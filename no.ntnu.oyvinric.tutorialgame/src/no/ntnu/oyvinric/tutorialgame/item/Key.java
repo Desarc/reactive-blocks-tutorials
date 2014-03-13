@@ -1,5 +1,8 @@
 package no.ntnu.oyvinric.tutorialgame.item;
 
+import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
+
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Key extends GameObject {
@@ -13,24 +16,5 @@ public class Key extends GameObject {
 	
 	public KeyColor getColor() {
 		return color;
-	}
-
-	
-	
-	public enum KeyColor {
-		BLUE("blue"),
-		YELLOW("yellow"),
-		RED("red"),
-		GREEN("green");
-		
-		private String color;
-		
-		private KeyColor(String color) {
-			this.color = color;
-		}
-		
-		public String value() {
-			return color;
-		}
 	}
 }

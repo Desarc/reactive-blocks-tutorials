@@ -7,7 +7,7 @@ import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.core.TutorialGame;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
-import no.ntnu.oyvinric.tutorialgame.item.GameObject.ItemType;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 public class Component extends Block {

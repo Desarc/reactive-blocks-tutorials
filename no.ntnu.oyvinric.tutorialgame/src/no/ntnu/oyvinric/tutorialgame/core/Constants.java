@@ -43,4 +43,51 @@ public class Constants {
 	public static final String CONCEPTS = "concepts";
 	public static final String BUTTON = "button";
 	
+	public enum ItemType {
+		STAR,
+		KEY;
+	}
+
+	public enum KeyColor {
+		BLUE("blue"),
+		YELLOW("yellow"),
+		RED("red"),
+		GREEN("green");
+		
+		private String color;
+		
+		private KeyColor(String color) {
+			this.color = color;
+		}
+		
+		public String value() {
+			return color;
+		}
+	}
+
+	public static enum CharacterName {
+		MALCOLM("malcolm"),
+		LISA("lisa"),
+		ANDREW("andrew");
+		
+		private final String name;
+		
+		CharacterName(String name) {
+			this.name = name;
+		}
+		
+		public String getValue() {
+			return name;
+		}
+	}
+
+	public static enum Direction {
+		NORTH,
+		SOUTH,
+		EAST,
+		WEST
+	}
+	
 }
+
+

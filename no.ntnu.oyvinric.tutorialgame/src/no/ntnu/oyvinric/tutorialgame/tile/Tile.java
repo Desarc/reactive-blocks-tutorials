@@ -20,7 +20,7 @@ public abstract class Tile {
 	protected float coordsY;
 	protected GridPosition gridPosition;
 	private float scaleFactor = 1f;
-	protected Direction direction = Direction.EAST;
+	protected Constants.Direction direction = Constants.Direction.EAST;
 	protected boolean obstacle = false;
 	protected String type;
 	
@@ -81,22 +81,22 @@ public abstract class Tile {
 		if (rotation == 0) {
 			originX = 0;
 			originY = 0;
-			direction = Direction.EAST;
+			direction = Constants.Direction.EAST;
 		}
 		else if (rotation == 90 || rotation == -270) {
 			originX = Constants.tileWidth/2;
 			originY = 0;
-			direction = Direction.NORTH;
+			direction = Constants.Direction.NORTH;
 		}
 		else if (rotation == 180 || rotation == -180) {
 			originX = Constants.tileWidth/2;
 			originY = 0;
-			direction = Direction.WEST;
+			direction = Constants.Direction.WEST;
 		}
 		else if (rotation == 270 || rotation == -90) {
 			originX = Constants.tileWidth/2;
 			originY = 0;
-			direction = Direction.SOUTH;
+			direction = Constants.Direction.SOUTH;
 		}
 	}
 	
@@ -148,7 +148,7 @@ public abstract class Tile {
 		return originY + verticalAdjustment;
 	}
 	
-	public Direction getDirection() {
+	public Constants.Direction getDirection() {
 		return direction;
 	}
 	
@@ -162,12 +162,5 @@ public abstract class Tile {
 	
 	public String getType() {
 		return type;
-	}
-	
-	public static enum Direction {
-		NORTH,
-		SOUTH,
-		EAST,
-		WEST
 	}
 }

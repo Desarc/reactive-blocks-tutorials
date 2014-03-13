@@ -1,7 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.icon;
 
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
-import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;

@@ -1,9 +1,11 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
+import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterface;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
-import no.ntnu.oyvinric.tutorialgame.item.GameObject.ItemType;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
 import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
 import no.ntnu.oyvinric.tutorialgame.level.Level1;
@@ -11,8 +13,6 @@ import no.ntnu.oyvinric.tutorialgame.level.Level2;
 import no.ntnu.oyvinric.tutorialgame.level.Level3;
 import no.ntnu.oyvinric.tutorialgame.level.Level4;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
-import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile.CharacterName;
-import no.ntnu.oyvinric.tutorialgame.tile.Tile.Direction;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
@@ -28,7 +28,7 @@ public class TutorialGame implements ApplicationListener {
 	private GameLevel level;
 	private UserInterface userInterface;
 	private int levelNumber;
-	private CharacterTile malcolm, kaylee, wash;
+	private CharacterTile malcolm, lisa, andrew;
 	private Array<CharacterTile> gameCharacters;
 	
 	private Sound winSound;
@@ -70,13 +70,13 @@ public class TutorialGame implements ApplicationListener {
 				malcolm = character;
 				gameCharacters.add(malcolm);
 			}
-			else if (character.getName() == CharacterName.KAYLEE) {
-				kaylee = character;
-				gameCharacters.add(kaylee);
+			else if (character.getName() == CharacterName.LISA) {
+				lisa = character;
+				gameCharacters.add(lisa);
 			}
-			else if (character.getName() == CharacterName.WASH) {
-				wash = character;
-				gameCharacters.add(wash);
+			else if (character.getName() == CharacterName.ANDREW) {
+				andrew = character;
+				gameCharacters.add(andrew);
 			}
 		}
 		
@@ -235,12 +235,12 @@ public class TutorialGame implements ApplicationListener {
 		return malcolm;
 	}
 	
-	public CharacterTile getKaylee() {
-		return kaylee;
+	public CharacterTile getLisa() {
+		return lisa;
 	}
 	
-	public CharacterTile getWash() {
-		return wash;
+	public CharacterTile getAndrew() {
+		return andrew;
 	}
 
 	public void characterSpeak(CharacterTile character, String message) {

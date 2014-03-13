@@ -1,7 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.level;
 
 import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
-import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 
 public class Level4 extends GameLevel {
 

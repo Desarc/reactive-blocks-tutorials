@@ -5,7 +5,7 @@ import no.ntnu.oyvinric.tutorialgame.icon.CounterIcon;
 import no.ntnu.oyvinric.tutorialgame.icon.KeyIcon;
 import no.ntnu.oyvinric.tutorialgame.icon.StarIcon;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
-import no.ntnu.oyvinric.tutorialgame.item.Key.KeyColor;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
