@@ -12,7 +12,7 @@ beginning-down
   index: -1
 beginning-up
   rotate: false
-  xy: 680, 45
+  xy: 633, 565
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -26,58 +26,58 @@ end-down
   index: -1
 end-up
   rotate: false
-  xy: 810, 175
+  xy: 36, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-chest
   rotate: false
-  xy: 633, 469
-  size: 128, 128
-  orig: 128, 128
+  xy: 633, 531
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-key
   rotate: false
-  xy: 633, 339
-  size: 128, 128
-  orig: 128, 128
+  xy: 667, 565
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lever
   rotate: false
-  xy: 763, 469
-  size: 128, 128
-  orig: 128, 128
+  xy: 921, 733
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lock
   rotate: false
-  xy: 763, 339
-  size: 128, 128
-  orig: 128, 128
+  xy: 955, 767
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-run
   rotate: false
-  xy: 680, 209
-  size: 128, 128
-  orig: 128, 128
+  xy: 70, 2
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
-icon-speech
+icon-speak
   rotate: false
-  xy: 680, 79
-  size: 128, 128
-  orig: 128, 128
+  xy: 633, 497
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 icon-star
   rotate: false
-  xy: 810, 209
-  size: 128, 128
-  orig: 128, 128
+  xy: 701, 565
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 initialNodesIntro
@@ -103,14 +103,14 @@ level4map
   index: -1
 next-down
   rotate: false
-  xy: 36, 2
+  xy: 667, 531
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 next-up
   rotate: false
-  xy: 714, 45
+  xy: 921, 699
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -124,56 +124,56 @@ operationsIntro
   index: -1
 pause-down
   rotate: false
-  xy: 921, 733
+  xy: 955, 733
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 pause-up
   rotate: false
-  xy: 955, 767
+  xy: 104, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-down
   rotate: false
-  xy: 810, 141
+  xy: 633, 463
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-up
   rotate: false
-  xy: 844, 175
+  xy: 735, 565
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-down
   rotate: false
-  xy: 70, 2
+  xy: 701, 531
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-up
   rotate: false
-  xy: 748, 45
+  xy: 667, 497
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-down
   rotate: false
-  xy: 921, 699
+  xy: 921, 665
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-up
   rotate: false
-  xy: 955, 733
+  xy: 955, 699
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -191,6 +191,13 @@ activityFinalIntro
   offset: 0, 0
   index: -1
 edgesIntro
+  rotate: false
+  xy: 2, 2
+  size: 464, 200
+  orig: 464, 200
+  offset: 0, 0
+  index: -1
+timersIntro
   rotate: false
   xy: 2, 2
   size: 464, 200

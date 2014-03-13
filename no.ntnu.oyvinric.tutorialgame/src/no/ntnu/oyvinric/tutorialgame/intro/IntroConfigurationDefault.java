@@ -10,12 +10,14 @@ import com.badlogic.gdx.graphics.Pixmap.Format;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.List.ListStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane.ScrollPaneStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.SelectBox.SelectBoxStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.SplitPane.SplitPaneStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Window.WindowStyle;
 
 public class IntroConfigurationDefault {
@@ -69,6 +71,14 @@ public class IntroConfigurationDefault {
 		
 		SelectBoxStyle moreInfoDropdownStyle = new SelectBoxStyle(listFont, Color.BLACK, skin.newDrawable("white", Color.WHITE), scrollPaneStyle, listStyle);
 		skin.add(DEFAULT, moreInfoDropdownStyle);
+		
+		TextButtonStyle textButtonStyle = new TextButtonStyle();
+		textButtonStyle.font = skin.getFont(DEFAULT);
+		skin.add(DEFAULT, textButtonStyle);
+		
+		ImageTextButtonStyle imageTextButtonStyle = new ImageTextButtonStyle();
+		imageTextButtonStyle.font = skin.getFont(DEFAULT);
+		skin.add(DEFAULT, imageTextButtonStyle);
 		
 		WindowStyle windowStyle = new WindowStyle(skin.getFont(DEFAULT), Color.BLACK, skin.newDrawable("white", Color.LIGHT_GRAY));
 		skin.add(DEFAULT, windowStyle);

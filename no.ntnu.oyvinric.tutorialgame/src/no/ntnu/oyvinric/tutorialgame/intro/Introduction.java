@@ -35,7 +35,7 @@ public class Introduction implements ApplicationListener {
 		
 		defaultValues = new IntroConfigurationDefault();
 		
-		configuration = new IntroConfiguration(levelNumber, defaultValues);
+		configuration = new IntroConfiguration(levelNumber, defaultValues, stage);
 		
 		for (Actor actor : configuration.getActors()) {
 			adjustActorPosition(actor);
