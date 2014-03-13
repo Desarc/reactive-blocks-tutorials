@@ -33,5 +33,14 @@ public class Constants {
 	public static final int introductionWindowHeight = 800;
 	
 	public static final String EMPTY_TILE = "empty";
+	public static final String DEFAULT = "default";
+	public static final String WHITE = "white";
+	public static final String LIST = "list";
+	public static final String LEVEL_HEADER = "levelHeader";
+	public static final String TITLE = "title";
+	public static final String MAP_HEADER = "mapHeader";
+	public static final String GOALS = "goals";
+	public static final String CONCEPTS = "concepts";
+	public static final String BUTTON = "button";
 	
 }

@@ -13,7 +13,7 @@ public class Introduction implements ApplicationListener {
 	
 	private int levelNumber;
 	private IntroConfiguration configuration;
-	private IntroConfigurationDefault defaultValues;
+	private IntroConfigurationStyles defaultValues;
 	
 	private Stage stage;
 	private IntroAnimation animation;
@@ -33,9 +33,9 @@ public class Introduction implements ApplicationListener {
 		stage = new Stage();
 		Gdx.input.setInputProcessor(stage);
 		
-		defaultValues = new IntroConfigurationDefault();
+		defaultValues = new IntroConfigurationStyles();
 		
-		configuration = new IntroConfiguration(levelNumber, defaultValues, stage);
+		configuration = new IntroConfiguration(levelNumber, defaultValues);
 		
 		for (Actor actor : configuration.getActors()) {
 			adjustActorPosition(actor);

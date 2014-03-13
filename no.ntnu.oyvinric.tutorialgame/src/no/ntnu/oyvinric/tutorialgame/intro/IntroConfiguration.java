@@ -6,21 +6,17 @@ import java.util.Properties;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 
@@ -32,7 +28,6 @@ public class IntroConfiguration {
 	static final float yPadding = 4f;
 	
 	private Skin skin;
-	private Stage stage;
 	private Label levelHeader;
 	private Label title;
 	private Label tellMeMore;
@@ -47,8 +42,7 @@ public class IntroConfiguration {
 	
 	private Array<Actor> actors;
 	
-	public IntroConfiguration(int levelNumber, IntroConfigurationDefault defaultValues, Stage stage) {
-		this.stage = stage;
+	public IntroConfiguration(int levelNumber, IntroConfigurationStyles defaultValues) {
 		configFile = new Properties();
 		try {
 			configFile.load(new FileInputStream(Constants.INTRO_CONFIG_PATH+"level"+levelNumber+".properties"));
@@ -60,12 +54,12 @@ public class IntroConfiguration {
 		
 		actors = new Array<Actor>();
 				
-		levelHeader = new Label("Level "+levelNumber, skin.get("levelHeader", LabelStyle.class));
+		levelHeader = new Label("Level "+levelNumber, skin.get(Constants.LEVEL_HEADER, LabelStyle.class));
 		horizontalCenterAlign(levelHeader);
 		verticalTopAlign(levelHeader);
 		actors.add(levelHeader);
 		
-		title = new Label(configFile.getProperty("title", ""), skin.get("title", LabelStyle.class));
+		title = new Label(configFile.getProperty(Constants.TITLE, ""), skin.get(Constants.TITLE, LabelStyle.class));
 		horizontalCenterAlign(title);
 		verticalAlignUnder(title, levelHeader);
 		actors.add(title);
@@ -149,7 +143,7 @@ public class IntroConfiguration {
 		actors.add(goalLabel);
 		
 		Array<Image> goalImages = new Array<Image>();
-		goals = configFile.getProperty("goals", "").split(",");
+		goals = configFile.getProperty(Constants.GOALS, "").split(",");
 		for (String goal : goals) {
 			Image goalImage = new Image(skin.getRegion("icon-"+goal));
 			horizontalLeftAlignWithOffset(goalImage, 30);
@@ -170,42 +164,47 @@ public class IntroConfiguration {
 		verticalBottomAlign(map);
 		actors.add(map);
 		
-		mapLabel = new Label("Level map", skin);
+		mapLabel = new Label("Level map", skin.get(Constants.MAP_HEADER, LabelStyle.class));
 		horizontalLeftAlign(mapLabel);
 		verticalAlignOver(mapLabel, map);
 		actors.add(mapLabel);
 		
 		tellMeMore = new Label("Tell me more about... ", skin);
 		horizontalCenterAlignRightSideOf(tellMeMore, map);
-		verticalAlignWith(tellMeMore, mapLabel);
+		verticalAlignWith(tellMeMore, map);
 		actors.add(tellMeMore);
 		
 		newConcepts = new ArrayMap<String, String>();
-		String [] concepts = configFile.getProperty("concepts", "").split(",");
+		String [] concepts = configFile.getProperty(Constants.CONCEPTS, "").split(",");
 		for (String concept : concepts) {
 			newConcepts.put(configFile.getProperty(concept+"_name", ""), concept);
 		}
-		Array<String> textValues = new Array<String>();
-		Array<ImageTextButton> moreInfoButtons = new Array<ImageTextButton>();
-		for (Object conceptText : newConcepts.keys) {
-			if (conceptText != null) {
-				textValues.add((String)conceptText);
-				ImageTextButton moreInfoButton = new ImageTextButton((String)conceptText, skin);
+		VerticalGroup moreInfoButtons = new VerticalGroup();
+		VerticalGroup moreInfoIcons = new VerticalGroup();
+		for (Object concept : newConcepts.keys) {
+			if (concept != null) {
+				String conceptText = (String)concept;
+				Image moreInfoIcon = new Image(skin.getRegion(newConcepts.get(conceptText)));
+				moreInfoIcons.addActor(moreInfoIcon);
+				moreInfoIcons.setWidth((moreInfoIcon.getWidth() > moreInfoIcons.getWidth() ? moreInfoIcon.getWidth() : moreInfoIcons.getWidth()));
+				moreInfoIcons.setHeight(moreInfoIcons.getHeight()+moreInfoIcon.getHeight());
+				
+				ImageTextButton moreInfoButton = new ImageTextButton(conceptText, skin);
 				moreInfoButton.addCaptureListener(new ChangeListener() {
 					
 					@Override
 					public void changed(ChangeEvent event, Actor actor) {
 						String concept = ((ImageTextButton)actor).getText().toString();
 						moreInfoWindow = new Window(concept, skin);
-						moreInfoWindow.padTop(skin.getFont("default").getLineHeight());
+						moreInfoWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
 						//moreInfoDialog.text(configFile.getProperty(newConcepts.get(concept)+"_text"));
 						moreInfoWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/2);
-						Image image = new Image(skin.getRegion(configFile.getProperty(newConcepts.get(concept)+"_image")));
+						Image infoImage = new Image(skin.getRegion(configFile.getProperty(newConcepts.get(concept)+"_image")));
 						//float scaleFactor = moreInfoWindow.getWidth()/image.getWidth();
 						//image.setScale(scaleFactor);
-						moreInfoWindow.add(image);
+						moreInfoWindow.add(infoImage);
 						moreInfoWindow.row();
-						TextButton closeButton = new TextButton("Close", skin);
+						ImageTextButton closeButton = new ImageTextButton("Close", skin);
 						closeButton.addCaptureListener(new ChangeListener() {
 							
 							@Override
@@ -219,12 +218,20 @@ public class IntroConfiguration {
 						event.cancel();
 					}
 				});
-				horizontalCenterAlignRightSideOf(moreInfoButton, map);
-				verticalAlignUnder(moreInfoButton, (moreInfoButtons.size > 0) ? moreInfoButtons.peek() : tellMeMore);
-				moreInfoButtons.add(moreInfoButton);
-				actors.add(moreInfoButton);
+				moreInfoButtons.addActor(moreInfoButton);
+				moreInfoButtons.setWidth((moreInfoButton.getWidth() > moreInfoButtons.getWidth() ? moreInfoButton.getWidth() : moreInfoButtons.getWidth()));
+				moreInfoButtons.setHeight(moreInfoButtons.getHeight()+moreInfoButton.getHeight());
 			}
 		}
+		HorizontalGroup moreInfo = new HorizontalGroup();
+		moreInfo.addActor(moreInfoIcons);
+		moreInfo.addActor(moreInfoButtons);
+		moreInfo.setWidth(moreInfoIcons.getWidth()+moreInfoButtons.getWidth());
+		moreInfo.setHeight(Math.max(moreInfoIcons.getHeight(), moreInfoButtons.getHeight()));
+		horizontalCenterAlignRightSideOf(moreInfo, map);
+		verticalAlignUnder(moreInfo, tellMeMore);
+		actors.add(moreInfo);
+		
 
 	}
 	
@@ -293,7 +300,7 @@ public class IntroConfiguration {
 	}
 	
 	public static void verticalAlignWith(Actor toBeAligned, Actor old) {
-		float y = old.getY();
+		float y = old.getY() - old.getHeight() + toBeAligned.getHeight();
 		toBeAligned.setY(y);
 	}
 	

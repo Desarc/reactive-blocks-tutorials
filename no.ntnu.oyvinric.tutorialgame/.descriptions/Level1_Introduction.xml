@@ -15,7 +15,9 @@
         <library path="lib/gdx-sources.jar"/>
         <library path="lib/gdx-tools.jar"/>
         <library path="lib/gdx.jar"/>
+        <resource path="resources/gfx/fonts/button.ttf"/>
         <resource path="resources/gfx/fonts/levelHeader.ttf"/>
+        <resource path="resources/gfx/fonts/mapHeader.ttf"/>
         <resource path="resources/gfx/fonts/moreInfoList.ttf"/>
         <resource path="resources/gfx/fonts/title.ttf"/>
         <resource path="resources/gfx/intro-level1.atlas"/>

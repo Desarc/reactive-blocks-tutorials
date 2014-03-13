@@ -3,79 +3,135 @@ intro.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+act_final
+  rotate: false
+  xy: 166, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 beginning-down
   rotate: false
-  xy: 2, 2
+  xy: 633, 465
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 beginning-up
   rotate: false
-  xy: 633, 565
+  xy: 699, 531
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 2, 2
+  size: 96, 32
+  orig: 96, 32
+  offset: 0, 0
+  index: -1
+decisions
+  rotate: false
+  xy: 921, 767
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+edges
+  rotate: false
+  xy: 765, 565
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 end-down
   rotate: false
-  xy: 921, 767
+  xy: 921, 699
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 end-up
   rotate: false
-  xy: 36, 2
+  xy: 200, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
+events
+  rotate: false
+  xy: 100, 2
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+flow_breaks
+  rotate: false
+  xy: 633, 431
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+forks
+  rotate: false
+  xy: 633, 499
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
 icon-chest
   rotate: false
-  xy: 633, 531
+  xy: 733, 531
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-key
   rotate: false
-  xy: 667, 565
+  xy: 799, 565
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lever
   rotate: false
-  xy: 921, 733
+  xy: 921, 665
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lock
   rotate: false
-  xy: 955, 767
+  xy: 234, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-run
   rotate: false
-  xy: 70, 2
+  xy: 633, 397
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-speak
   rotate: false
-  xy: 633, 497
+  xy: 767, 531
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-star
   rotate: false
-  xy: 701, 565
+  xy: 833, 565
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+initial
+  rotate: false
+  xy: 921, 631
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -85,6 +141,13 @@ initialNodesIntro
   xy: 633, 801
   size: 372, 200
   orig: 372, 200
+  offset: 0, 0
+  index: -1
+join
+  rotate: false
+  xy: 699, 565
+  size: 64, 32
+  orig: 64, 32
   offset: 0, 0
   index: -1
 level3map
@@ -101,18 +164,46 @@ level4map
   orig: 629, 666
   offset: 0, 0
   index: -1
+local_blocks
+  rotate: false
+  xy: 633, 533
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+merge
+  rotate: false
+  xy: 268, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 next-down
   rotate: false
-  xy: 667, 531
+  xy: 633, 363
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 next-up
   rotate: false
-  xy: 921, 699
+  xy: 801, 531
   size: 32, 32
   orig: 32, 32
+  offset: 0, 0
+  index: -1
+object_flows
+  rotate: false
+  xy: 867, 565
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+operations
+  rotate: false
+  xy: 921, 733
+  size: 64, 32
+  orig: 64, 32
   offset: 0, 0
   index: -1
 operationsIntro
@@ -124,56 +215,63 @@ operationsIntro
   index: -1
 pause-down
   rotate: false
-  xy: 955, 733
+  xy: 302, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 pause-up
   rotate: false
-  xy: 104, 2
+  xy: 835, 531
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-down
   rotate: false
-  xy: 633, 463
+  xy: 336, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-up
   rotate: false
-  xy: 735, 565
+  xy: 370, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-down
   rotate: false
-  xy: 701, 531
+  xy: 404, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-up
   rotate: false
-  xy: 667, 497
+  xy: 438, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-down
   rotate: false
-  xy: 921, 665
+  xy: 472, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-up
   rotate: false
-  xy: 955, 699
+  xy: 506, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+timers
+  rotate: false
+  xy: 540, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
