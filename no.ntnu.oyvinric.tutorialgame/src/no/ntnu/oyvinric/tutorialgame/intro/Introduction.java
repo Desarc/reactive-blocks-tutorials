@@ -23,7 +23,7 @@ public class Introduction implements ApplicationListener {
 		this.levelNumber = levelNumber;
 	}
 	
-	private static void adjustActorPosition(Actor actor) {
+	public static void adjustActorPosition(Actor actor) {
 		actor.setPosition(actor.getX(), Constants.introductionWindowHeight-actor.getY());
 	}
 

@@ -37,6 +37,8 @@ public class IntroConfiguration {
 	private HorizontalGroup controlButtons;
 	private Label goalLabel;
 	private String[] goals;
+	private ImageTextButton tipsButton;
+	private Window tipsWindow;
 	private Label mapLabel;
 	private Image map;
 	private ArrayMap<String, String> newConcepts;
@@ -158,6 +160,40 @@ public class IntroConfiguration {
 			actors.add(goalLabel);
 		}
 		
+		tipsButton = new ImageTextButton("Tips", skin);
+		tipsButton.addCaptureListener(new ChangeListener() {
+			
+			@Override
+			public void changed(ChangeEvent event, Actor actor) {
+				tipsWindow = new Window("Tips", skin);
+				tipsWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
+				tipsWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/4);
+				tipsWindow.setY(Constants.introductionWindowHeight/4 + yPadding);
+				String[] tips = configFile.getProperty("tips", "").split(",");
+				for (String tip : tips) {
+					Label tipLabel = new Label(tip, skin);
+					tipsWindow.add(tipLabel);
+					tipsWindow.row();
+				}
+				ImageTextButton closeButton = new ImageTextButton("Close", skin);
+				closeButton.addCaptureListener(new ChangeListener() {
+					
+					@Override
+					public void changed(ChangeEvent event, Actor actor) {
+						actor.getStage().getActors().removeValue(tipsWindow, true);
+						
+					}
+				});
+				tipsWindow.add(closeButton);
+				actor.getStage().addActor(tipsWindow);
+				event.cancel();
+				
+			}
+		});
+		horizontalRightAlign(tipsButton);
+		verticalAlignWith(tipsButton, goalLabel);
+		actors.add(tipsButton);
+		
 		float splitAmount = 0.70f;
 		map = new Image(skin.getDrawable("level"+levelNumber+"map"));
 		float mapScale = (Constants.introductionWindowWidth*splitAmount)/map.getWidth();
@@ -196,15 +232,17 @@ public class IntroConfiguration {
 					
 					@Override
 					public void changed(ChangeEvent event, Actor actor) {
+						VerticalGroup vGroup = new VerticalGroup();
 						String concept = ((ImageTextButton)actor).getText().toString();
 						moreInfoWindow = new Window(concept, skin);
 						moreInfoWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
 						moreInfoWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/2);
 						Image infoImage = new Image(skin.getRegion(configFile.getProperty(newConcepts.get(concept)+"_image")));
-						//float scaleFactor = moreInfoWindow.getWidth()/image.getWidth();
-						//image.setScale(scaleFactor);
-						moreInfoWindow.add(infoImage);
-						moreInfoWindow.row();
+						float scaleFactor = moreInfoWindow.getWidth()/infoImage.getWidth();
+						infoImage.setScale(scaleFactor);
+						vGroup.addActor(infoImage);
+						//moreInfoWindow.addActor(infoImage);
+						//moreInfoWindow.row();
 						ImageTextButton closeButton = new ImageTextButton("Close", skin);
 						closeButton.addCaptureListener(new ChangeListener() {
 							
@@ -214,7 +252,9 @@ public class IntroConfiguration {
 								
 							}
 						});
-						moreInfoWindow.add(closeButton);
+						//moreInfoWindow.addActor(closeButton);
+						vGroup.addActor(closeButton);
+						moreInfoWindow.add(vGroup);
 						actor.getStage().addActor(moreInfoWindow);
 						event.cancel();
 					}

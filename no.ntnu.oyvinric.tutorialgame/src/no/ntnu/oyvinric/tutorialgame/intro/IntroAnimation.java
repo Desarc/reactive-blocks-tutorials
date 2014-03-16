@@ -3,7 +3,6 @@ package no.ntnu.oyvinric.tutorialgame.intro;
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;

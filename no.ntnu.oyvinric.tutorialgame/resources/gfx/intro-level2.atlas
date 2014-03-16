@@ -3,17 +3,62 @@ intro-level2.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-anim
+2-01
   rotate: false
-  xy: 2, 132
-  size: 256, 256
-  orig: 256, 256
+  xy: 2, 606
+  size: 600, 300
+  orig: 600, 300
   offset: 0, 0
   index: -1
-icon-speech
+2-02
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+2-03
   rotate: false
   xy: 2, 2
-  size: 128, 128
-  orig: 128, 128
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+
+intro-level22.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+2-04
+  rotate: false
+  xy: 2, 606
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+2-05
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+2-06
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+
+intro-level23.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+2-07
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
   offset: 0, 0
   index: -1

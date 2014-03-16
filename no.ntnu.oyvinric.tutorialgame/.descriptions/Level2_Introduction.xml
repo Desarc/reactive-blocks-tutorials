@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <block
-    name="Level1_Introduction" 
-    uuid="_TVoOEabREeO2WbVcHIewmQ" 
+    name="Level2_Introduction" 
+    uuid="_d9rg060yEeOZButxHnoLlg" 
     status="under construction" 
     type="system" 
     >
@@ -20,15 +20,13 @@
         <resource path="resources/gfx/fonts/mapHeader.ttf"/>
         <resource path="resources/gfx/fonts/moreInfoList.ttf"/>
         <resource path="resources/gfx/fonts/title.ttf"/>
-        <resource path="resources/gfx/intro-level1.atlas"/>
-        <resource path="resources/gfx/intro-level1.png"/>
-        <resource path="resources/gfx/intro-level12.png"/>
-        <resource path="resources/gfx/intro-level13.png"/>
-        <resource path="resources/gfx/intro-level14.png"/>
-        <resource path="resources/gfx/intro-level15.png"/>
+        <resource path="resources/gfx/intro-level2.atlas"/>
+        <resource path="resources/gfx/intro-level2.png"/>
+        <resource path="resources/gfx/intro-level22.png"/>
+        <resource path="resources/gfx/intro-level23.png"/>
         <resource path="resources/gfx/intro.atlas"/>
         <resource path="resources/gfx/intro.png"/>
         <resource path="resources/gfx/intro2.png"/>
-        <resource path="resources/intro/level1.properties"/>
+        <resource path="resources/intro/level2.properties"/>
     </required>
 </block>
