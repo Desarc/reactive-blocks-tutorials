@@ -3,21 +3,28 @@
   <uml:Package xmi:id="_RmNtgKrEEeOZButxHnoLlg" name="no.ntnu.oyvinric.tutorialgame">
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_RmZ6wKrEEeOZButxHnoLlg" name="Test" classifierBehavior="_Ru8LsKrEEeOZButxHnoLlg" collaborationRole="_RvMqYKrEEeOZButxHnoLlg">
       <ownedAttribute xmi:id="_RvMqYKrEEeOZButxHnoLlg" name="component"/>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Ru8LsKrEEeOZButxHnoLlg" name="Test" group="_RvPtsKrEEeOZButxHnoLlg" partition="_RvPtsKrEEeOZButxHnoLlg" node="_UBLUEKrEEeOZButxHnoLlg _GYD6YK0yEeOZButxHnoLlg _xmvqwK01EeOZButxHnoLlg _W5fvka02EeOZButxHnoLlg">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Ru8LsKrEEeOZButxHnoLlg" name="Test" group="_RvPtsKrEEeOZButxHnoLlg" partition="_RvPtsKrEEeOZButxHnoLlg" node="_UBLUEKrEEeOZButxHnoLlg _GYD6YK0yEeOZButxHnoLlg _xmvqwK01EeOZButxHnoLlg _W5fvka02EeOZButxHnoLlg _cffiMK1LEeOZButxHnoLlg _GpmiEK1NEeOZButxHnoLlg">
         <ownedOperation xmi:id="_TKdHcKrEEeOZButxHnoLlg" name="moveForward"/>
         <ownedOperation xmi:id="_654XIKrREeOZButxHnoLlg" name="operation1"/>
         <ownedOperation xmi:id="_8zMCIKrREeOZButxHnoLlg" name="operation2"/>
         <ownedOperation xmi:id="_-Lc1kKrREeOZButxHnoLlg" name="operation3"/>
         <ownedOperation xmi:id="_GYFvkK0yEeOZButxHnoLlg" name="pickUp"/>
         <ownedOperation xmi:id="_xmw44K01EeOZButxHnoLlg" name="stop"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_H88NgK0yEeOZButxHnoLlg" name="e0" inPartition="_RvPtsKrEEeOZButxHnoLlg" source="_UBLUEKrEEeOZButxHnoLlg" target="_xmvqwK01EeOZButxHnoLlg"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_RvPtsKrEEeOZButxHnoLlg" name="component" node="_UBLUEKrEEeOZButxHnoLlg _GYD6YK0yEeOZButxHnoLlg _xmvqwK01EeOZButxHnoLlg _W5fvka02EeOZButxHnoLlg" edge="_H88NgK0yEeOZButxHnoLlg"/>
+        <ownedOperation xmi:id="_cfgwUK1LEeOZButxHnoLlg" name="interact"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_H88NgK0yEeOZButxHnoLlg" name="e0" inPartition="_RvPtsKrEEeOZButxHnoLlg" source="_UBLUEKrEEeOZButxHnoLlg" target="_cffiMK1LEeOZButxHnoLlg"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_gASIYK1LEeOZButxHnoLlg" name="e1" inPartition="_RvPtsKrEEeOZButxHnoLlg" source="_eghl0a1LEeOZButxHnoLlg" target="_GpmiEK1NEeOZButxHnoLlg"/>
+        <edge xmi:type="uml:ObjectFlow" xmi:id="_lL2OUK1LEeOZButxHnoLlg" name="e2" inPartition="_RvPtsKrEEeOZButxHnoLlg" source="_GpmiEK1NEeOZButxHnoLlg" target="_xmvqwK01EeOZButxHnoLlg"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_RvPtsKrEEeOZButxHnoLlg" name="component" node="_UBLUEKrEEeOZButxHnoLlg _GYD6YK0yEeOZButxHnoLlg _xmvqwK01EeOZButxHnoLlg _W5fvka02EeOZButxHnoLlg _cffiMK1LEeOZButxHnoLlg _eghl0a1LEeOZButxHnoLlg _GpmiEK1NEeOZButxHnoLlg" edge="_H88NgK0yEeOZButxHnoLlg _gASIYK1LEeOZButxHnoLlg _lL2OUK1LEeOZButxHnoLlg"/>
         <node xmi:type="uml:InitialNode" xmi:id="_UBLUEKrEEeOZButxHnoLlg" name="i0" inPartition="_RvPtsKrEEeOZButxHnoLlg" outgoing="_H88NgK0yEeOZButxHnoLlg"/>
         <node xmi:type="uml:CallOperationAction" xmi:id="_GYD6YK0yEeOZButxHnoLlg" name="o0" inPartition="_RvPtsKrEEeOZButxHnoLlg" operation="_GYFvkK0yEeOZButxHnoLlg"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_xmvqwK01EeOZButxHnoLlg" name="o1" inPartition="_RvPtsKrEEeOZButxHnoLlg" incoming="_H88NgK0yEeOZButxHnoLlg" operation="_xmw44K01EeOZButxHnoLlg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_xmvqwK01EeOZButxHnoLlg" name="o1" inPartition="_RvPtsKrEEeOZButxHnoLlg" incoming="_lL2OUK1LEeOZButxHnoLlg" operation="_xmw44K01EeOZButxHnoLlg"/>
         <node xmi:type="uml:AcceptEventAction" xmi:id="_W5fvka02EeOZButxHnoLlg" name="t0" inPartition="_RvPtsKrEEeOZButxHnoLlg">
           <trigger xmi:id="_W5fvkq02EeOZButxHnoLlg" name="t0" event="_W5fvkK02EeOZButxHnoLlg"/>
         </node>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_cffiMK1LEeOZButxHnoLlg" name="o2" inPartition="_RvPtsKrEEeOZButxHnoLlg" incoming="_H88NgK0yEeOZButxHnoLlg" operation="_cfgwUK1LEeOZButxHnoLlg">
+          <result xmi:id="_eghl0a1LEeOZButxHnoLlg" name="" inPartition="_RvPtsKrEEeOZButxHnoLlg" outgoing="_gASIYK1LEeOZButxHnoLlg" type="_eghl0K1LEeOZButxHnoLlg"/>
+        </node>
+        <node xmi:type="uml:DecisionNode" xmi:id="_GpmiEK1NEeOZButxHnoLlg" name="d0" inPartition="_RvPtsKrEEeOZButxHnoLlg" outgoing="_lL2OUK1LEeOZButxHnoLlg" incoming="_gASIYK1LEeOZButxHnoLlg"/>
       </ownedBehavior>
     </packagedElement>
     <packagedElement xmi:type="uml:TimeEvent" xmi:id="_6PnuoKrQEeOZButxHnoLlg" name="t0">
@@ -30,6 +37,7 @@
         <expr xmi:type="uml:LiteralString" xmi:id="_W5hkwK02EeOZButxHnoLlg" name="t0" value="1000"/>
       </when>
     </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_eghl0K1LEeOZButxHnoLlg" name="java.lang.String"/>
     <profileApplication xmi:id="_RmSmAKrEEeOZButxHnoLlg">
       <eAnnotations xmi:id="_RmW3cKrEEeOZButxHnoLlg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
@@ -49,7 +57,9 @@
   <graphics:Shape xmi:id="_RvQUwKrEEeOZButxHnoLlg" x="180" y="55" width="613" height="54" base_Element="_Ru8LsKrEEeOZButxHnoLlg"/>
   <graphics:Shape xmi:id="_RvRi4KrEEeOZButxHnoLlg" x="180" y="108" width="613" height="415" base_Element="_RvPtsKrEEeOZButxHnoLlg"/>
   <graphics:Shape xmi:id="_UBO-cKrEEeOZButxHnoLlg" x="441" y="207" base_Element="_UBLUEKrEEeOZButxHnoLlg"/>
-  <graphics:Shape xmi:id="_GcBNUK0yEeOZButxHnoLlg" x="594" y="270" width="199" height="55" base_Element="_GYD6YK0yEeOZButxHnoLlg"/>
-  <graphics:Shape xmi:id="_xnAJcK01EeOZButxHnoLlg" x="360" y="270" width="199" height="55" base_Element="_xmvqwK01EeOZButxHnoLlg"/>
-  <graphics:Shape xmi:id="_W5iL0K02EeOZButxHnoLlg" x="502" y="392" base_Element="_W5fvka02EeOZButxHnoLlg"/>
+  <graphics:Shape xmi:id="_GcBNUK0yEeOZButxHnoLlg" x="216" y="162" width="199" height="55" base_Element="_GYD6YK0yEeOZButxHnoLlg"/>
+  <graphics:Shape xmi:id="_xnAJcK01EeOZButxHnoLlg" x="216" y="378" width="199" height="55" base_Element="_xmvqwK01EeOZButxHnoLlg"/>
+  <graphics:Shape xmi:id="_W5iL0K02EeOZButxHnoLlg" x="297" y="315" width="37" height="37" base_Element="_W5fvka02EeOZButxHnoLlg"/>
+  <graphics:Shape xmi:id="_cg86wK1LEeOZButxHnoLlg" x="360" y="252" width="199" height="55" base_Element="_cffiMK1LEeOZButxHnoLlg"/>
+  <graphics:Shape xmi:id="_GpoXQK1NEeOZButxHnoLlg" x="441" y="333" width="37" height="37" base_Element="_GpmiEK1NEeOZButxHnoLlg"/>
 </xmi:XMI>

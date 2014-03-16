@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block
+    name="Level4_Introduction" 
+    uuid="_Cjd7g60_EeOZButxHnoLlg" 
+    status="under construction" 
+    type="system" 
+    >
+    <required>
+        <library path="lib/gdx-backend-lwjgl-natives.jar"/>
+        <library path="lib/gdx-backend-lwjgl-sources.jar"/>
+        <library path="lib/gdx-backend-lwjgl.jar"/>
+        <library path="lib/gdx-freetype-natives.jar"/>
+        <library path="lib/gdx-freetype.jar"/>
+        <library path="lib/gdx-natives.jar"/>
+        <library path="lib/gdx-sources.jar"/>
+        <library path="lib/gdx-tools.jar"/>
+        <library path="lib/gdx.jar"/>
+        <resource path="resources/gfx/fonts/button.ttf"/>
+        <resource path="resources/gfx/fonts/levelHeader.ttf"/>
+        <resource path="resources/gfx/fonts/mapHeader.ttf"/>
+        <resource path="resources/gfx/fonts/moreInfoList.ttf"/>
+        <resource path="resources/gfx/fonts/title.ttf"/>
+        <resource path="resources/gfx/intro-level-04.atlas"/>
+        <resource path="resources/gfx/intro-level-04.png"/>
+        <resource path="resources/gfx/intro-level-042.png"/>
+        <resource path="resources/gfx/intro-level-043.png"/>
+        <resource path="resources/gfx/intro.atlas"/>
+        <resource path="resources/gfx/intro.png"/>
+        <resource path="resources/gfx/intro2.png"/>
+        <resource path="resources/intro/level4.properties"/>
+    </required>
+</block>

@@ -22,4 +22,8 @@ public class Component extends Block {
 	public void stop() {
 	}
 
+	public String interact() {
+		return "";
+	}
+
 }

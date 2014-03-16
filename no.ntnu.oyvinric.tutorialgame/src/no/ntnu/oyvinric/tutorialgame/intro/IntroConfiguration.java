@@ -68,7 +68,12 @@ public class IntroConfiguration {
 		verticalAlignUnder(title, levelHeader);
 		actors.add(title);
 		
-		animation = new IntroAnimation("intro-level"+levelNumber, animationDelay, skin);
+		if (levelNumber < 10) {
+			animation = new IntroAnimation("intro-level-0"+levelNumber, animationDelay, skin);
+		}
+		else {
+			animation = new IntroAnimation("intro-level-"+levelNumber, animationDelay, skin);			
+		}
 		horizontalCenterAlign(animation);
 		verticalAlignUnder(animation, title);
 		actors.add(animation);
@@ -169,7 +174,7 @@ public class IntroConfiguration {
 				tipsWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
 				tipsWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/4);
 				tipsWindow.setY(Constants.introductionWindowHeight/4 + yPadding);
-				String[] tips = configFile.getProperty("tips", "").split(",");
+				String[] tips = configFile.getProperty("tips", "").split(";");
 				for (String tip : tips) {
 					Label tipLabel = new Label(tip, skin);
 					tipsWindow.add(tipLabel);
@@ -198,6 +203,10 @@ public class IntroConfiguration {
 		map = new Image(skin.getDrawable("level"+levelNumber+"map"));
 		float mapScale = (Constants.introductionWindowWidth*splitAmount)/map.getWidth();
 		map.setSize(map.getWidth()*mapScale, map.getHeight()*mapScale);
+		if (map.getHeight() > Constants.mapMaxHeight) {
+			mapScale = Constants.mapMaxHeight/map.getHeight();
+			map.setSize(map.getWidth()*mapScale, map.getHeight()*mapScale);
+		}
 		horizontalLeftAlign(map);
 		verticalBottomAlign(map);
 		actors.add(map);
@@ -208,7 +217,7 @@ public class IntroConfiguration {
 		actors.add(mapLabel);
 		
 		tellMeMore = new Label("Tell me more about... ", skin);
-		horizontalCenterAlignRightSideOf(tellMeMore, map);
+		horizontalRightAlign(tellMeMore);
 		verticalAlignWith(tellMeMore, map);
 		actors.add(tellMeMore);
 		
@@ -269,7 +278,7 @@ public class IntroConfiguration {
 		moreInfo.addActor(moreInfoButtons);
 		moreInfo.setWidth(moreInfoIcons.getWidth()+moreInfoButtons.getWidth());
 		moreInfo.setHeight(Math.max(moreInfoIcons.getHeight(), moreInfoButtons.getHeight()));
-		horizontalCenterAlignRightSideOf(moreInfo, map);
+		horizontalRightAlign(moreInfo);
 		verticalAlignUnder(moreInfo, tellMeMore);
 		actors.add(moreInfo);
 		

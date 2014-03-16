@@ -31,6 +31,8 @@ public class Constants {
 	
 	public static final int introductionWindowWidth = 600;
 	public static final int introductionWindowHeight = 800;
+	public static final float introAnimationHeight = 300;
+	public static final float mapMaxHeight = 220;
 	
 	public static final String EMPTY_TILE = "empty";
 	public static final String DEFAULT = "default";

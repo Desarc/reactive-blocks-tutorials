@@ -1,0 +1,71 @@
+
+intro-level-04.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+4-01xcf
+  rotate: false
+  xy: 2, 606
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+4-02
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+4-03
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+
+intro-level-042.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+4-04
+  rotate: false
+  xy: 2, 606
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+4-05
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+4-06
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+
+intro-level-043.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+4-07
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+4-08
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1

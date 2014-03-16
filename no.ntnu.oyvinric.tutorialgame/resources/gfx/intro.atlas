@@ -206,7 +206,7 @@ next-up
   orig: 32, 32
   offset: 0, 0
   index: -1
-object_flows
+object_flow
   rotate: false
   xy: 835, 531
   size: 32, 32
@@ -296,6 +296,20 @@ format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 activityFinalInfo
+  rotate: false
+  xy: 585, 630
+  size: 425, 200
+  orig: 425, 200
+  offset: 0, 0
+  index: -1
+objectFlowInfo
+  rotate: false
+  xy: 585, 630
+  size: 425, 200
+  orig: 425, 200
+  offset: 0, 0
+  index: -1
+decisionsInfo
   rotate: false
   xy: 585, 630
   size: 425, 200

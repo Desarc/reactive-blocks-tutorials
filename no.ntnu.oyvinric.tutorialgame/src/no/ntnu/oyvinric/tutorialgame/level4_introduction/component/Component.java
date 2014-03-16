@@ -1,4 +1,4 @@
-package no.ntnu.oyvinric.tutorialgame.level2_introduction.component;
+package no.ntnu.oyvinric.tutorialgame.level4_introduction.component;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
@@ -11,8 +11,8 @@ public class Component extends Block {
 	Introduction intro;
 	
 	public Component() {
-		intro = new Introduction(2);
-		new LwjglApplication(intro, "Level 2 Intro", Constants.introductionWindowWidth, Constants.introductionWindowHeight, false);
+		intro = new Introduction(4);
+		new LwjglApplication(intro, "Level 4 Intro", Constants.introductionWindowWidth, Constants.introductionWindowHeight, false);
 	}
 
 	public void playIntroduction() {

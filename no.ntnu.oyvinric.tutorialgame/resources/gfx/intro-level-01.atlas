@@ -1,5 +1,5 @@
 
-intro-level1.png
+intro-level-01.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -25,7 +25,7 @@ repeat: none
   offset: 0, 0
   index: -1
 
-intro-level12.png
+intro-level-012.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -51,7 +51,7 @@ repeat: none
   offset: 0, 0
   index: -1
 
-intro-level13.png
+intro-level-013.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -77,7 +77,7 @@ repeat: none
   offset: 0, 0
   index: -1
 
-intro-level14.png
+intro-level-014.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
@@ -103,7 +103,7 @@ repeat: none
   offset: 0, 0
   index: -1
 
-intro-level15.png
+intro-level-015.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
