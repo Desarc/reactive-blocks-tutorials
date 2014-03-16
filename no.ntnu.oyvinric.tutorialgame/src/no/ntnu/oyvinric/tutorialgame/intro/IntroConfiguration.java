@@ -10,12 +10,14 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
@@ -26,8 +28,10 @@ public class IntroConfiguration {
 	
 	final float animationDelay = 8f;
 	
-	static final float xPadding = 2f;
+	static final float xPadding = 3f;
 	static final float yPadding = 4f;
+	static final float defaultPadding = 4f;
+	final float mapSplitAmount = 0.70f;
 	
 	private Skin skin;
 	private Label levelHeader;
@@ -36,11 +40,12 @@ public class IntroConfiguration {
 	private IntroAnimation animation;
 	private HorizontalGroup controlButtons;
 	private Label goalLabel;
-	private String[] goals;
+	private String[] goalStrings;
 	private ImageTextButton tipsButton;
 	private Window tipsWindow;
 	private Label mapLabel;
-	private Image map;
+	private ImageButton map;
+	private boolean mapBig;
 	private ArrayMap<String, String> newConcepts;
 	private Window moreInfoWindow;
 	
@@ -151,19 +156,24 @@ public class IntroConfiguration {
 		verticalAlignUnder(goalLabel, controlButtons);
 		actors.add(goalLabel);
 		
-		Array<Image> goalImages = new Array<Image>();
-		goals = configFile.getProperty(Constants.GOALS, "").split(",");
-		for (String goal : goals) {
-			Image goalImage = new Image(skin.getRegion("icon-"+goal));
-			horizontalLeftAlignWithOffset(goalImage, 30);
-			verticalAlignUnder(goalImage, (goalImages.size > 0) ? goalImages.peek() : goalLabel);
-			goalImages.add(goalImage);
-			actors.add(goalImage);
-			Label goalLabel = new Label(configFile.getProperty(goal, ""), skin);
-			horizontalAlignRightSideOf(goalLabel, goalImage);
-			verticalCenterAlignWith(goalLabel, goalImage);
-			actors.add(goalLabel);
+		VerticalGroup goals = new VerticalGroup();
+		goalStrings = configFile.getProperty(Constants.GOALS, "").split(",");
+		for (String goalString : goalStrings) {
+			HorizontalGroup goal = new HorizontalGroup();
+			goal.setSpacing(defaultPadding);
+			Image goalImage = new Image(skin.getRegion("icon-"+goalString));
+			goal.addActor(goalImage);
+			Label goalLabel = new Label(configFile.getProperty(goalString, ""), skin);
+			goal.addActor(goalLabel);
+			goal.setHeight(Math.max(goalImage.getHeight(), goalLabel.getHeight()));
+			goal.setWidth(goalImage.getWidth() + goalLabel.getWidth() + defaultPadding);
+			goals.addActor(goal);
 		}
+		goals.setAlignment(Align.left);
+		goals.setHeight(goals.getChildren().first().getHeight()*goalStrings.length);
+		horizontalLeftAlign(goals);
+		verticalAlignUnder(goals, goalLabel);
+		actors.add(goals);
 		
 		tipsButton = new ImageTextButton("Tips", skin);
 		tipsButton.addCaptureListener(new ChangeListener() {
@@ -172,13 +182,23 @@ public class IntroConfiguration {
 			public void changed(ChangeEvent event, Actor actor) {
 				tipsWindow = new Window("Tips", skin);
 				tipsWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
-				tipsWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/4);
-				tipsWindow.setY(Constants.introductionWindowHeight/4 + yPadding);
-				String[] tips = configFile.getProperty("tips", "").split(";");
-				for (String tip : tips) {
+				
+				VerticalGroup tips = new VerticalGroup();
+				String[] tipsStrings = configFile.getProperty("tips", "").split(";");
+				for (String tip : tipsStrings) {
+					HorizontalGroup line = new HorizontalGroup();
+					Image bulletImageLeft = new Image(skin.getRegion("spanner"));
+					line.addActor(bulletImageLeft);
 					Label tipLabel = new Label(tip, skin);
-					tipsWindow.add(tipLabel);
-					tipsWindow.row();
+					line.addActor(tipLabel);
+					Image bulletImageRight = new Image(skin.getRegion("spanner"));
+					line.addActor(bulletImageRight);
+					line.setSpacing(defaultPadding);
+					tips.addActor(line);
+					line.setWidth(bulletImageLeft.getWidth() + tipLabel.getWidth() + bulletImageRight.getWidth() + defaultPadding*2);
+					line.setHeight(Math.max(bulletImageLeft.getHeight(), tipLabel.getHeight()));
+					tips.setWidth(Math.max(tips.getWidth(), line.getWidth()));
+					tips.setHeight(tips.getHeight() + line.getHeight());
 				}
 				ImageTextButton closeButton = new ImageTextButton("Close", skin);
 				closeButton.addCaptureListener(new ChangeListener() {
@@ -186,10 +206,15 @@ public class IntroConfiguration {
 					@Override
 					public void changed(ChangeEvent event, Actor actor) {
 						actor.getStage().getActors().removeValue(tipsWindow, true);
-						
 					}
 				});
-				tipsWindow.add(closeButton);
+				tips.addActor(closeButton);
+				tips.setHeight(tips.getHeight() + closeButton.getHeight());
+				tips.setSpacing(defaultPadding);
+				tips.setAlignment(Align.left);
+				tipsWindow.add(tips);
+				tipsWindow.setSize(Constants.introductionWindowWidth, tips.getHeight() + tipsWindow.getPadTop() + defaultPadding*(tipsStrings.length+1));
+				tipsWindow.setY(Constants.introductionWindowHeight/2 - tipsWindow.getHeight());
 				actor.getStage().addActor(tipsWindow);
 				event.cancel();
 				
@@ -199,19 +224,45 @@ public class IntroConfiguration {
 		verticalAlignWith(tipsButton, goalLabel);
 		actors.add(tipsButton);
 		
-		float splitAmount = 0.70f;
-		map = new Image(skin.getDrawable("level"+levelNumber+"map"));
-		float mapScale = (Constants.introductionWindowWidth*splitAmount)/map.getWidth();
+		
+		map = new ImageButton(skin.getDrawable("level"+levelNumber+"map"));
+		float mapScale = (Constants.introductionWindowWidth*mapSplitAmount)/map.getWidth();
 		map.setSize(map.getWidth()*mapScale, map.getHeight()*mapScale);
 		if (map.getHeight() > Constants.mapMaxHeight) {
 			mapScale = Constants.mapMaxHeight/map.getHeight();
 			map.setSize(map.getWidth()*mapScale, map.getHeight()*mapScale);
 		}
+		mapBig = false;
+		map.addCaptureListener(new ChangeListener() {
+			
+			@Override
+			public void changed(ChangeEvent event, Actor actor) {
+				if (mapBig) {
+					float scaleFactor = (Constants.introductionWindowWidth*mapSplitAmount)/map.getWidth();
+					map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
+					if (map.getHeight() > Constants.mapMaxHeight) {
+						scaleFactor = Constants.mapMaxHeight/map.getHeight();
+						map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
+					}
+					mapBig = false;
+				}
+				else {
+					float scaleFactor = Constants.introductionWindowWidth/map.getWidth();
+					map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
+					if (map.getHeight() > Constants.introductionWindowHeight) {
+						scaleFactor = Constants.mapMaxHeight/map.getHeight();
+						map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
+					}
+					mapBig = true;
+					actor.getStage().addActor(map);
+				}
+			}
+		});
 		horizontalLeftAlign(map);
 		verticalBottomAlign(map);
 		actors.add(map);
 		
-		mapLabel = new Label("Level map", skin.get(Constants.MAP_HEADER, LabelStyle.class));
+		mapLabel = new Label("Level map (click to zoom)", skin.get(Constants.MAP_HEADER, LabelStyle.class));
 		horizontalLeftAlign(mapLabel);
 		verticalAlignOver(mapLabel, map);
 		actors.add(mapLabel);
@@ -273,9 +324,12 @@ public class IntroConfiguration {
 				moreInfoButtons.setHeight(moreInfoButtons.getHeight()+moreInfoButton.getHeight());
 			}
 		}
+		moreInfoIcons.setSpacing(defaultPadding);
+		moreInfoButtons.setSpacing(defaultPadding);
 		HorizontalGroup moreInfo = new HorizontalGroup();
 		moreInfo.addActor(moreInfoIcons);
 		moreInfo.addActor(moreInfoButtons);
+		moreInfo.setSpacing(defaultPadding);
 		moreInfo.setWidth(moreInfoIcons.getWidth()+moreInfoButtons.getWidth());
 		moreInfo.setHeight(Math.max(moreInfoIcons.getHeight(), moreInfoButtons.getHeight()));
 		horizontalRightAlign(moreInfo);

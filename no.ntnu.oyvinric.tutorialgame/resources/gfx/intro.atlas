@@ -269,23 +269,37 @@ previous-up
   orig: 32, 32
   offset: 0, 0
   index: -1
-stop-down
+spanner
   rotate: false
   xy: 540, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-stop-up
+stop-down
   rotate: false
   xy: 574, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-timers
+stop-up
   rotate: false
   xy: 608, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+timers
+  rotate: false
+  xy: 642, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+wooden-door
+  rotate: false
+  xy: 667, 465
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -309,14 +323,14 @@ objectFlowInfo
   orig: 425, 200
   offset: 0, 0
   index: -1
-decisionsInfo
+activityStepsInfo
   rotate: false
   xy: 585, 630
   size: 425, 200
   orig: 425, 200
   offset: 0, 0
   index: -1
-activityStepsInfo
+decisionsInfo
   rotate: false
   xy: 585, 630
   size: 425, 200

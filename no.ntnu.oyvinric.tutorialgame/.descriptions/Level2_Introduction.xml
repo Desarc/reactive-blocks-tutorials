@@ -20,10 +20,10 @@
         <resource path="resources/gfx/fonts/mapHeader.ttf"/>
         <resource path="resources/gfx/fonts/moreInfoList.ttf"/>
         <resource path="resources/gfx/fonts/title.ttf"/>
-        <resource path="resources/gfx/intro-level2.atlas"/>
-        <resource path="resources/gfx/intro-level2.png"/>
-        <resource path="resources/gfx/intro-level22.png"/>
-        <resource path="resources/gfx/intro-level23.png"/>
+        <resource path="resources/gfx/intro-level-02.atlas"/>
+        <resource path="resources/gfx/intro-level-02.png"/>
+        <resource path="resources/gfx/intro-level-022.png"/>
+        <resource path="resources/gfx/intro-level-023.png"/>
         <resource path="resources/gfx/intro.atlas"/>
         <resource path="resources/gfx/intro.png"/>
         <resource path="resources/gfx/intro2.png"/>
