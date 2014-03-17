@@ -46,12 +46,12 @@ public class Constants {
 	public static final String BUTTON = "button";
 	public static final String LABEL = "label";
 	
-	public enum ItemType {
+	public static enum ItemType {
 		STAR,
 		KEY;
 	}
 
-	public enum KeyColor {
+	public static enum KeyColor {
 		BLUE("blue"),
 		YELLOW("yellow"),
 		RED("red"),
