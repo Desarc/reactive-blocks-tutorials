@@ -41,9 +41,6 @@ public class IntroConfigurationStyles {
 		pixmap.fill();
 		skin.add(Constants.WHITE, new Texture(pixmap));
 		
-		LabelStyle defaultStyle = new LabelStyle(skin.getFont(Constants.DEFAULT), Color.BLACK);
-		skin.add(Constants.DEFAULT, defaultStyle);
-		
 		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.GFX_PATH+"fonts/levelHeader.ttf"));
 		BitmapFont levelHeaderFont = generator.generateFont(20);
 		skin.add(Constants.LEVEL_HEADER, levelHeaderFont);
@@ -61,6 +58,18 @@ public class IntroConfigurationStyles {
 		skin.add(Constants.TITLE, titleFont);
 		LabelStyle titleStyle = new LabelStyle(titleFont, Color.BLACK);
 		skin.add(Constants.TITLE, titleStyle);
+		
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.GFX_PATH+"fonts/defaultLabel.ttf"));
+		BitmapFont labelFont = generator.generateFont(15);
+		skin.add(Constants.LABEL, labelFont);
+		LabelStyle defaultStyle = new LabelStyle(skin.getFont(Constants.LABEL), Color.BLACK);
+		skin.add(Constants.DEFAULT, defaultStyle);
+		
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.GFX_PATH+"fonts/goalsLabel.ttf"));
+		BitmapFont goalsFont = generator.generateFont(15);
+		skin.add(Constants.GOALS, goalsFont);
+		LabelStyle goalsStyle = new LabelStyle(skin.getFont(Constants.GOALS), Color.BLACK);
+		skin.add(Constants.GOALS, goalsStyle);
 		
 		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.GFX_PATH+"fonts/button.ttf"));
 		BitmapFont buttonFont = generator.generateFont(11);
@@ -89,7 +98,7 @@ public class IntroConfigurationStyles {
 		imageTextButtonStyle.downFontColor = Color.LIGHT_GRAY;
 		skin.add(Constants.DEFAULT, imageTextButtonStyle);
 		
-		WindowStyle windowStyle = new WindowStyle(skin.getFont(Constants.DEFAULT), Color.BLACK, skin.newDrawable(Constants.WHITE, Color.LIGHT_GRAY));
+		WindowStyle windowStyle = new WindowStyle(skin.getFont(Constants.LABEL), Color.BLACK, skin.newDrawable(Constants.WHITE, Color.LIGHT_GRAY));
 		skin.add(Constants.DEFAULT, windowStyle);
 		
 		SplitPaneStyle horizontalSplitPaneStyle = new SplitPaneStyle(skin.newDrawable(Constants.WHITE, Color.WHITE));

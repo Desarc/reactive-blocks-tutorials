@@ -44,6 +44,7 @@ public class Constants {
 	public static final String GOALS = "goals";
 	public static final String CONCEPTS = "concepts";
 	public static final String BUTTON = "button";
+	public static final String LABEL = "label";
 	
 	public enum ItemType {
 		STAR,

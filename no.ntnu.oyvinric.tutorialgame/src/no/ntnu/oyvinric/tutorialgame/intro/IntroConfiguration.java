@@ -163,7 +163,7 @@ public class IntroConfiguration {
 			goal.setSpacing(defaultPadding);
 			Image goalImage = new Image(skin.getRegion("icon-"+goalString));
 			goal.addActor(goalImage);
-			Label goalLabel = new Label(configFile.getProperty(goalString, ""), skin);
+			Label goalLabel = new Label(configFile.getProperty(goalString, ""), skin, Constants.GOALS);
 			goal.addActor(goalLabel);
 			goal.setHeight(Math.max(goalImage.getHeight(), goalLabel.getHeight()));
 			goal.setWidth(goalImage.getWidth() + goalLabel.getWidth() + defaultPadding);
@@ -181,7 +181,7 @@ public class IntroConfiguration {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
 				tipsWindow = new Window("Tips", skin);
-				tipsWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
+				tipsWindow.padTop(tipsWindow.getStyle().titleFont.getLineHeight());
 				
 				VerticalGroup tips = new VerticalGroup();
 				String[] tipsStrings = configFile.getProperty("tips", "").split(";");
@@ -189,7 +189,7 @@ public class IntroConfiguration {
 					HorizontalGroup line = new HorizontalGroup();
 					Image bulletImageLeft = new Image(skin.getRegion("spanner"));
 					line.addActor(bulletImageLeft);
-					Label tipLabel = new Label(tip, skin);
+					Label tipLabel = new Label(tip, skin, Constants.GOALS);
 					line.addActor(tipLabel);
 					Image bulletImageRight = new Image(skin.getRegion("spanner"));
 					line.addActor(bulletImageRight);
@@ -211,10 +211,9 @@ public class IntroConfiguration {
 				tips.addActor(closeButton);
 				tips.setHeight(tips.getHeight() + closeButton.getHeight());
 				tips.setSpacing(defaultPadding);
-				tips.setAlignment(Align.left);
 				tipsWindow.add(tips);
 				tipsWindow.setSize(Constants.introductionWindowWidth, tips.getHeight() + tipsWindow.getPadTop() + defaultPadding*(tipsStrings.length+1));
-				tipsWindow.setY(Constants.introductionWindowHeight/2 - tipsWindow.getHeight());
+				tipsWindow.setY(Constants.introductionWindowHeight/2 - tipsWindow.getHeight() + defaultPadding);
 				actor.getStage().addActor(tipsWindow);
 				event.cancel();
 				
@@ -250,7 +249,7 @@ public class IntroConfiguration {
 					float scaleFactor = Constants.introductionWindowWidth/map.getWidth();
 					map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
 					if (map.getHeight() > Constants.introductionWindowHeight) {
-						scaleFactor = Constants.mapMaxHeight/map.getHeight();
+						scaleFactor = Constants.introductionWindowHeight/map.getHeight();
 						map.setSize(map.getWidth()*scaleFactor, map.getHeight()*scaleFactor);
 					}
 					mapBig = true;
@@ -269,7 +268,7 @@ public class IntroConfiguration {
 		
 		tellMeMore = new Label("Tell me more about... ", skin);
 		horizontalRightAlign(tellMeMore);
-		verticalAlignWith(tellMeMore, map);
+		verticalAlignWith(tellMeMore, mapLabel);
 		actors.add(tellMeMore);
 		
 		newConcepts = new ArrayMap<String, String>();
@@ -292,17 +291,16 @@ public class IntroConfiguration {
 					
 					@Override
 					public void changed(ChangeEvent event, Actor actor) {
-						VerticalGroup vGroup = new VerticalGroup();
 						String concept = ((ImageTextButton)actor).getText().toString();
 						moreInfoWindow = new Window(concept, skin);
-						moreInfoWindow.padTop(skin.getFont(Constants.DEFAULT).getLineHeight());
-						moreInfoWindow.setSize(Constants.introductionWindowWidth, Constants.introductionWindowHeight/2);
+						moreInfoWindow.padTop(moreInfoWindow.getStyle().titleFont.getLineHeight());
 						Image infoImage = new Image(skin.getRegion(configFile.getProperty(newConcepts.get(concept)+"_image")));
-						float scaleFactor = moreInfoWindow.getWidth()/infoImage.getWidth();
-						infoImage.setScale(scaleFactor);
-						vGroup.addActor(infoImage);
-						//moreInfoWindow.addActor(infoImage);
-						//moreInfoWindow.row();
+						float scaleFactor = (Constants.introductionWindowWidth - defaultPadding*2)/infoImage.getWidth();
+						infoImage.getDrawable().setMinWidth(infoImage.getWidth()*scaleFactor);
+						infoImage.getDrawable().setMinHeight(infoImage.getHeight()*scaleFactor);
+						infoImage.setSize(infoImage.getWidth()*scaleFactor, infoImage.getHeight()*scaleFactor);
+						moreInfoWindow.add(infoImage);
+						moreInfoWindow.row();
 						ImageTextButton closeButton = new ImageTextButton("Close", skin);
 						closeButton.addCaptureListener(new ChangeListener() {
 							
@@ -312,9 +310,8 @@ public class IntroConfiguration {
 								
 							}
 						});
-						//moreInfoWindow.addActor(closeButton);
-						vGroup.addActor(closeButton);
-						moreInfoWindow.add(vGroup);
+						moreInfoWindow.add(closeButton);
+						moreInfoWindow.setSize(Constants.introductionWindowWidth, moreInfoWindow.getPadTop() + infoImage.getHeight() + closeButton.getHeight());
 						actor.getStage().addActor(moreInfoWindow);
 						event.cancel();
 					}
