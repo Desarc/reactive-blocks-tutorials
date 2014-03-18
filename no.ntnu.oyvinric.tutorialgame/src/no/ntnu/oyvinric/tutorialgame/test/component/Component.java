@@ -26,4 +26,14 @@ public class Component extends Block {
 		return "";
 	}
 
+	public Object objectOperation() {
+		return new Object();
+	}
+
+	public void validValueOp() {
+	}
+
+	public void noValueOp() {
+	}
+
 }

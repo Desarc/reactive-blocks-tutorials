@@ -83,7 +83,7 @@ public class TutorialGame implements ApplicationListener {
 		winSound = Gdx.audio.newSound(Gdx.files.internal(Constants.SOUND_PATH+"drop.wav"));
 		gameTheme = Gdx.audio.newMusic(Gdx.files.internal(Constants.SOUND_PATH+"rain.mp3"));
 		gameTheme.setLooping(true);
-		gameTheme.play();
+		//gameTheme.play();
 	}
 
 	@Override
@@ -199,6 +199,7 @@ public class TutorialGame implements ApplicationListener {
 		GameObject item = level.characterInteraction(character);
 		if (item != null) {
 			handleItem(item);
+			board.itemFound(character.getCoordsX(), character.getCoordsY(), item);
 		}
 		return item;
 	}
@@ -207,6 +208,7 @@ public class TutorialGame implements ApplicationListener {
 		GameObject item = level.characterPickUp(character);
 		if (item != null) {
 			handleItem(item);
+			board.itemFound(character.getCoordsX(), character.getCoordsY(), item);
 		}
 	}
 	

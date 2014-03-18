@@ -1,6 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.gui;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.tile.Tile;
@@ -56,7 +57,9 @@ public class GameBoard {
 			batch.draw(tile.getImage(), tile.getCoordsX(), tile.getCoordsY());
 		}
 		for (GraphicsObject object : miscObjects) {
-			batch.draw(object.getImage(), object.getX(), object.getY());
+			if (object.isActive()) {
+				batch.draw(object.getImage(), object.getX(), object.getY());
+			}
 		}
 		
 		batch.end();
@@ -67,6 +70,15 @@ public class GameBoard {
 			GraphicsObject helloWorld = new GraphicsObject(coordsX+27, coordsY+37, miscTextures.findRegion("hello"));
 			miscObjects.add(helloWorld);
 		}
+	}
+	
+	public void itemFound(float coordsX, float coordsY, GameObject item) {
+		float startX = coordsX;
+		float startY = coordsY+Constants.tileHeight*2;
+		float endX = startX;
+		float endY = startY+Constants.tileHeight*3;
+		MovingGraphicsObject object = new MovingGraphicsObject(startX, startY, endX, endY, 0f, Constants.tileHeight*4, item.getImage(), true);
+		miscObjects.add(object);
 	}
 	
 	public void cleanUp() {

@@ -49,7 +49,7 @@ public class IntroConfiguration {
 	
 	private Array<Actor> actors;
 	
-	public IntroConfiguration(int levelNumber, IntroConfigurationStyles defaultValues) {
+	public IntroConfiguration(int levelNumber, IntroConfigurationStyles styles) {
 		configFile = new Properties();
 		try {
 			configFile.load(new FileInputStream(Constants.INTRO_CONFIG_PATH+"level"+levelNumber+".properties"));
@@ -57,7 +57,7 @@ public class IntroConfiguration {
 			e.printStackTrace();
 		}
 		
-		skin = defaultValues.getSkin();
+		skin = styles.getSkin();
 		
 		actors = new Array<Actor>();
 				

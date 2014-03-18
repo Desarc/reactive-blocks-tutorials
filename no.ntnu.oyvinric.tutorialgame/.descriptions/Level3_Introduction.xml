@@ -27,6 +27,7 @@
         <resource path="resources/gfx/intro.atlas"/>
         <resource path="resources/gfx/intro.png"/>
         <resource path="resources/gfx/intro2.png"/>
+        <resource path="resources/gfx/intro3.png"/>
         <resource path="resources/intro/level3.properties"/>
     </required>
 </block>

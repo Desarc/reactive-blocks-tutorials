@@ -4,9 +4,10 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class GraphicsObject {
 	
-	private float coordsX;
-	private float coordsY;
-	private TextureRegion image;
+	protected float coordsX;
+	protected float coordsY;
+	protected TextureRegion image;
+	protected boolean active = true;
 	
 	public GraphicsObject(float coordsX, float coordsY, TextureRegion image) {
 		this.coordsX = coordsX;
@@ -24,6 +25,10 @@ public class GraphicsObject {
 	
 	public TextureRegion getImage() {
 		return image;
+	}
+	
+	public boolean isActive() {
+		return active;
 	}
 	
 
