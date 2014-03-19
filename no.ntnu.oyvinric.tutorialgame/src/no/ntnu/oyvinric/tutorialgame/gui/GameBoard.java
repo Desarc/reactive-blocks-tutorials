@@ -39,6 +39,8 @@ public class GameBoard {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		
+		batch.draw(miscTextures.findRegion("background3"), 0, 0, Constants.gameBoardWindowWidth, Constants.gameBoardWindowHeight);
+		
 		for (Array<Array<Tile>> gridLayer : level.getLevelGrid()) {
 			for (Array<Tile> gridRow : gridLayer) {
 				for (Tile tile : gridRow) {

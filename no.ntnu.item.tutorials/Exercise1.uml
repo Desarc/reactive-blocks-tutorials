@@ -7,10 +7,12 @@
         <ownedOperation xmi:id="_VOuL1JKHEeOl-Iu2G_3qHw" name="blink"/>
         <ownedOperation xmi:id="_VOuL1ZKHEeOl-Iu2G_3qHw" name="hello"/>
         <ownedOperation xmi:id="_VOuL1pKHEeOl-Iu2G_3qHw" name="helloWorld"/>
-        <group xmi:type="uml:ActivityPartition" xmi:id="_VOuL15KHEeOl-Iu2G_3qHw" name="component" node="_VOuL2JKHEeOl-Iu2G_3qHw _VOuL2ZKHEeOl-Iu2G_3qHw _VOuL2pKHEeOl-Iu2G_3qHw"/>
-        <node xmi:type="uml:InitialNode" xmi:id="_VOuL2JKHEeOl-Iu2G_3qHw" name="i0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="_VOuL2ZKHEeOl-Iu2G_3qHw" name="x0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw"/>
-        <node xmi:type="uml:CallOperationAction" xmi:id="_VOuL2pKHEeOl-Iu2G_3qHw" name="o0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" operation="_VOuL1pKHEeOl-Iu2G_3qHw"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_cY_9oK-FEeORj8koA577AQ" name="e0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" source="_VOuL2JKHEeOl-Iu2G_3qHw" target="_VOuL2pKHEeOl-Iu2G_3qHw"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_cipB0K-FEeORj8koA577AQ" name="e1" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" source="_VOuL2pKHEeOl-Iu2G_3qHw" target="_VOuL2ZKHEeOl-Iu2G_3qHw"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_VOuL15KHEeOl-Iu2G_3qHw" name="component" node="_VOuL2JKHEeOl-Iu2G_3qHw _VOuL2ZKHEeOl-Iu2G_3qHw _VOuL2pKHEeOl-Iu2G_3qHw" edge="_cY_9oK-FEeORj8koA577AQ _cipB0K-FEeORj8koA577AQ"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_VOuL2JKHEeOl-Iu2G_3qHw" name="i0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" outgoing="_cY_9oK-FEeORj8koA577AQ"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_VOuL2ZKHEeOl-Iu2G_3qHw" name="x0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" incoming="_cipB0K-FEeORj8koA577AQ"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_VOuL2pKHEeOl-Iu2G_3qHw" name="o0" inPartition="_VOuL15KHEeOl-Iu2G_3qHw" outgoing="_cipB0K-FEeORj8koA577AQ" incoming="_cY_9oK-FEeORj8koA577AQ" operation="_VOuL1pKHEeOl-Iu2G_3qHw"/>
       </ownedBehavior>
     </packagedElement>
     <profileApplication xmi:id="_VOuL25KHEeOl-Iu2G_3qHw">

@@ -11,7 +11,7 @@ public class TutorialGame {
 	private CharacterTile malcolm;
 
 	public static void main(String[] args) {
-		TutorialGameApplication game = new TutorialGameApplication(1);
+		TutorialGameApplication game = new TutorialGameApplication(4);
 		new LwjglApplication(game, "Level 1", Constants.mainWindowWidth, Constants.mainWindowHeight, false);
 		try {
 			Thread.sleep(2000);
