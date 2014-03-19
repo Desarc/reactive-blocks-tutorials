@@ -1,10 +1,10 @@
 package no.ntnu.oyvinric.tutorialgame.intro;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
+import no.ntnu.oyvinric.tutorialgame.core.TutorialGameApplication;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -52,7 +52,7 @@ public class IntroConfiguration {
 	public IntroConfiguration(int levelNumber, IntroConfigurationStyles styles) {
 		configFile = new Properties();
 		try {
-			configFile.load(new FileInputStream(Constants.INTRO_CONFIG_PATH+"level"+levelNumber+".properties"));
+			configFile.load(TutorialGameApplication.loadFile(Constants.INTRO_CONFIG_PATH+"level"+levelNumber+".properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

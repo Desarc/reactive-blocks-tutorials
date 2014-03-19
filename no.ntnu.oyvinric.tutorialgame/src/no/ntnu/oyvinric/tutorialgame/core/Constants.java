@@ -2,6 +2,7 @@ package no.ntnu.oyvinric.tutorialgame.core;
 
 public class Constants {
 
+	public static final String JAR_PATH = "lib/tutorialgame.jar/";
 	public static final String GFX_PATH = "resources/gfx/";
 	public static final String INTRO_CONFIG_PATH = "resources/intro/";
 	public static final String LEVEL_PATH = "resources/levels/";
