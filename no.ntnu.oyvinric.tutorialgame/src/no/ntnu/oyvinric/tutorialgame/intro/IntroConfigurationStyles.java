@@ -41,41 +41,41 @@ public class IntroConfigurationStyles {
 		pixmap.fill();
 		skin.add(Constants.WHITE, new Texture(pixmap));
 		
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/levelHeader.ttf"));
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"levelHeader.ttf"));
 		BitmapFont levelHeaderFont = generator.generateFont(20);
 		skin.add(Constants.LEVEL_HEADER, levelHeaderFont);
 		LabelStyle levelHeaderStyle = new LabelStyle(levelHeaderFont, Color.BLACK);
 		skin.add(Constants.LEVEL_HEADER, levelHeaderStyle);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/mapHeader.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"mapHeader.ttf"));
 		BitmapFont mapHeaderFont = generator.generateFont(15);
 		skin.add(Constants.MAP_HEADER, mapHeaderFont);
 		LabelStyle mapHeaderStyle = new LabelStyle(mapHeaderFont, Color.BLACK);
 		skin.add(Constants.MAP_HEADER, mapHeaderStyle);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/title.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"title.ttf"));
 		BitmapFont titleFont = generator.generateFont(15);
 		skin.add(Constants.TITLE, titleFont);
 		LabelStyle titleStyle = new LabelStyle(titleFont, Color.BLACK);
 		skin.add(Constants.TITLE, titleStyle);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/defaultLabel.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"defaultLabel.ttf"));
 		BitmapFont labelFont = generator.generateFont(15);
 		skin.add(Constants.LABEL, labelFont);
 		LabelStyle defaultStyle = new LabelStyle(skin.getFont(Constants.LABEL), Color.BLACK);
 		skin.add(Constants.DEFAULT, defaultStyle);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/goalsLabel.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"goalsLabel.ttf"));
 		BitmapFont goalsFont = generator.generateFont(15);
 		skin.add(Constants.GOALS, goalsFont);
 		LabelStyle goalsStyle = new LabelStyle(skin.getFont(Constants.GOALS), Color.BLACK);
 		skin.add(Constants.GOALS, goalsStyle);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/button.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"button.ttf"));
 		BitmapFont buttonFont = generator.generateFont(11);
 		skin.add(Constants.BUTTON, buttonFont);
 		
-		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"fonts/moreInfoList.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.FONT_PATH+"moreInfoList.ttf"));
 		BitmapFont listFont = generator.generateFont(16);
 		skin.add(Constants.LIST, listFont);
 		ListStyle listStyle = new ListStyle(listFont, Color.GRAY, Color.BLACK, skin.newDrawable(Constants.WHITE, Color.LIGHT_GRAY));
