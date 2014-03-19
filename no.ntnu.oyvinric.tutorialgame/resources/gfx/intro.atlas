@@ -5,28 +5,28 @@ filter: Nearest,Nearest
 repeat: none
 act_final
   rotate: false
-  xy: 170, 2
+  xy: 699, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 act_steps
   rotate: false
-  xy: 633, 465
+  xy: 765, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 beginning-down
   rotate: false
-  xy: 699, 531
+  xy: 236, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 beginning-up
   rotate: false
-  xy: 765, 565
+  xy: 633, 835
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -40,126 +40,119 @@ button
   index: -1
 decisions
   rotate: false
-  xy: 921, 767
+  xy: 104, 2
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 edges
   rotate: false
-  xy: 921, 699
+  xy: 699, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 end-down
   rotate: false
-  xy: 204, 2
+  xy: 733, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 end-up
   rotate: false
-  xy: 633, 431
+  xy: 799, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 events
   rotate: false
-  xy: 104, 2
+  xy: 633, 903
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 flow_breaks
   rotate: false
-  xy: 733, 531
+  xy: 270, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 forks
   rotate: false
-  xy: 633, 499
+  xy: 699, 969
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 icon-chest
   rotate: false
-  xy: 799, 565
+  xy: 633, 801
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-key
   rotate: false
-  xy: 921, 665
+  xy: 733, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lever
   rotate: false
-  xy: 238, 2
+  xy: 767, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-lock
   rotate: false
-  xy: 633, 397
+  xy: 833, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-monster
   rotate: false
-  xy: 767, 531
+  xy: 304, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-run
   rotate: false
-  xy: 833, 565
+  xy: 633, 767
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-speak
   rotate: false
-  xy: 921, 631
+  xy: 767, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 icon-star
   rotate: false
-  xy: 272, 2
+  xy: 801, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 initial
   rotate: false
-  xy: 633, 363
+  xy: 867, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-initialNodesInfo
-  rotate: false
-  xy: 633, 801
-  size: 372, 200
-  orig: 372, 200
-  offset: 0, 0
-  index: -1
 join
   rotate: false
-  xy: 699, 565
+  xy: 170, 2
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
@@ -180,126 +173,119 @@ level4map
   index: -1
 local_blocks
   rotate: false
-  xy: 633, 533
+  xy: 633, 937
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 merge
   rotate: false
-  xy: 801, 531
+  xy: 338, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 next-down
   rotate: false
-  xy: 867, 565
+  xy: 633, 733
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 next-up
   rotate: false
-  xy: 306, 2
+  xy: 801, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 object_flow
   rotate: false
-  xy: 835, 531
+  xy: 835, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 operations
   rotate: false
-  xy: 921, 733
+  xy: 633, 869
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
-operationsInfo
-  rotate: false
-  xy: 633, 599
-  size: 286, 200
-  orig: 286, 200
-  offset: 0, 0
-  index: -1
 pause-down
   rotate: false
-  xy: 340, 2
+  xy: 901, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 pause-up
   rotate: false
-  xy: 374, 2
+  xy: 372, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-down
   rotate: false
-  xy: 408, 2
+  xy: 633, 699
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 play-up
   rotate: false
-  xy: 442, 2
+  xy: 835, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-down
   rotate: false
-  xy: 476, 2
+  xy: 869, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 previous-up
   rotate: false
-  xy: 510, 2
+  xy: 935, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 spanner
   rotate: false
-  xy: 544, 2
+  xy: 406, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-down
   rotate: false
-  xy: 578, 2
+  xy: 633, 665
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stop-up
   rotate: false
-  xy: 612, 2
+  xy: 869, 901
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 timers
   rotate: false
-  xy: 646, 2
+  xy: 903, 935
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 wooden-door
   rotate: false
-  xy: 667, 465
+  xy: 969, 969
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
@@ -311,21 +297,26 @@ filter: Nearest,Nearest
 repeat: none
 activityFinalInfo
   rotate: false
-  xy: 468, 2
-  size: 425, 200
-  orig: 425, 200
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
   offset: 0, 0
   index: -1
 activityStepsInfo
   rotate: false
-  xy: 468, 2
-  size: 425, 200
-  orig: 425, 200
+  xy: 2, 404
+  size: 600, 500
+  orig: 600, 500
   offset: 0, 0
   index: -1
+
+intro3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
 decisionsInfo
   rotate: false
-  xy: 2, 606
+  xy: 2, 404
   size: 600, 400
   orig: 600, 400
   offset: 0, 0
@@ -333,26 +324,50 @@ decisionsInfo
 edgesInfo
   rotate: false
   xy: 2, 2
-  size: 464, 200
-  orig: 464, 200
-  offset: 0, 0
-  index: -1
-timersInfo
-  rotate: false
-  xy: 2, 2
-  size: 464, 200
-  orig: 464, 200
-  offset: 0, 0
-  index: -1
-objectFlowInfo
-  rotate: false
-  xy: 2, 204
   size: 600, 400
   orig: 600, 400
   offset: 0, 0
   index: -1
 
-intro3.png
+intro4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+initialNodesInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+objectFlowInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+operationsInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+timersInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro6.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none

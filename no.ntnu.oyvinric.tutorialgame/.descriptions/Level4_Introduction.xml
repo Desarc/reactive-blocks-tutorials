@@ -30,6 +30,9 @@
         <resource path="resources/gfx/intro.png"/>
         <resource path="resources/gfx/intro2.png"/>
         <resource path="resources/gfx/intro3.png"/>
+        <resource path="resources/gfx/intro4.png"/>
+        <resource path="resources/gfx/intro5.png"/>
+        <resource path="resources/gfx/intro6.png"/>
         <resource path="resources/intro/level4.properties"/>
     </required>
 </block>

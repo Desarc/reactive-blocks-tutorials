@@ -36,4 +36,22 @@ public class Component extends Block {
 	public void noValueOp() {
 	}
 
+	public void doSomething() {
+	}
+
+	public boolean multipleParameters(String data, int number) {
+		return true;
+	}
+
+	public Object createObject() {
+		return new Object();
+	}
+
+	public int returnInt() {
+		return 0;
+	}
+
+	public void doSomethingElse() {
+	}
+
 }

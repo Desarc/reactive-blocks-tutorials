@@ -36,7 +36,7 @@ public class TutorialGame implements ApplicationListener {
 	
 	private int totalStars = 0;
 	private int collectedStars = 0;
-	//private boolean levelCompleted = false;
+	private boolean levelCompleted = false;
 	
 	public TutorialGame(int levelNumber) {
 		this.levelNumber = levelNumber;
@@ -214,16 +214,14 @@ public class TutorialGame implements ApplicationListener {
 	
 	private void handleItem(GameObject item) {
 		if (item.getType() == ItemType.STAR) {
-			System.out.println("Picked up a star!");
 			collectedStars++;
 			userInterface.updateStarCounter(collectedStars);
 			if (collectedStars == totalStars) {
 				System.out.println("Level completed!");
-				//levelCompleted = true;
+				levelCompleted = true;
 			}
 		}
 		else if (item.getType() == ItemType.KEY) {
-			System.out.println("Found a "+((Key)item).getColor().value()+" key!");
 			level.keyFound((Key)item);
 			userInterface.keyFound((Key)item);
 		}
