@@ -21,8 +21,6 @@ import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.Array;
@@ -36,8 +34,8 @@ public class TutorialGameApplication implements ApplicationListener {
 	private CharacterTile malcolm, lisa, andrew;
 	private Array<CharacterTile> gameCharacters;
 	
-	private Sound winSound;
-	private Music gameTheme;
+	//private Sound winSound;
+	//private Music gameTheme;
 	
 	private int totalStars = 0;
 	private int collectedStars = 0;
@@ -85,9 +83,9 @@ public class TutorialGameApplication implements ApplicationListener {
 			}
 		}
 		
-		winSound = Gdx.audio.newSound(Gdx.files.internal(Constants.SOUND_PATH+"drop.wav"));
-		gameTheme = Gdx.audio.newMusic(Gdx.files.internal(Constants.SOUND_PATH+"rain.mp3"));
-		gameTheme.setLooping(true);
+		//winSound = Gdx.audio.newSound(Gdx.files.internal(Constants.SOUND_PATH+"drop.wav"));
+		//gameTheme = Gdx.audio.newMusic(Gdx.files.internal(Constants.SOUND_PATH+"rain.mp3"));
+		//gameTheme.setLooping(true);
 		//gameTheme.play();
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 	}
@@ -121,8 +119,8 @@ public class TutorialGameApplication implements ApplicationListener {
 
 	@Override
 	public void dispose() {
-		gameTheme.dispose();
-		winSound.dispose();
+		//gameTheme.dispose();
+		//winSound.dispose();
 		level.cleanUp();
 		board.cleanUp();
 		userInterface.cleanUp();
@@ -223,7 +221,7 @@ public class TutorialGameApplication implements ApplicationListener {
 			collectedStars++;
 			userInterface.updateStarCounter(collectedStars);
 			if (collectedStars == totalStars) {
-				Gdx.app.log("tag?", "Level completed!");
+				Gdx.app.log("Status", "Level completed!");
 				//levelCompleted = true;
 			}
 		}

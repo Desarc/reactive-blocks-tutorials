@@ -1,5 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
+import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
@@ -38,6 +39,34 @@ public class TutorialGame {
 	
 	public void characterSpeak(CharacterTile character, String message) {
 		game.characterSpeak(character, message);
+	}
+	
+	public void moveCharacterForward(CharacterTile character) {
+		game.moveCharacterForward(character);
+	}
+
+	public void stopCharacterMovement(CharacterTile character) {
+		game.stopCharacterMovement(character);
+	}
+	
+	public void turnCharacterLeft(CharacterTile character) {
+		game.turnCharacterLeft(character);
+	}
+	
+	public void turnCharacterRight(CharacterTile character) {
+		game.turnCharacterRight(character);
+	}
+	
+	public void turnCharacterAround(CharacterTile character) {
+		game.turnCharacterAround(character);
+	}
+	
+	public void characterPickUp(CharacterTile character) {
+		game.pickUp(character);
+	}
+	
+	public GameObject characterInteract(CharacterTile character) {
+		return game.characterInteract(character);
 	}
 	
 }
