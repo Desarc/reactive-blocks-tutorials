@@ -23,6 +23,9 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 
 public class TutorialGameApplication implements ApplicationListener {
@@ -33,13 +36,16 @@ public class TutorialGameApplication implements ApplicationListener {
 	private int levelNumber;
 	private CharacterTile malcolm, lisa, andrew;
 	private Array<CharacterTile> gameCharacters;
+	private TextureAtlas fullscreens;
+	private TextureRegion winScreen;
+	private SpriteBatch batch;
 	
 	//private Sound winSound;
 	//private Music gameTheme;
 	
 	private int totalStars = 0;
 	private int collectedStars = 0;
-	//private boolean levelCompleted = false;
+	private boolean levelCompleted = false;
 	
 	public TutorialGameApplication(int levelNumber) {
 		this.levelNumber = levelNumber;
@@ -47,6 +53,11 @@ public class TutorialGameApplication implements ApplicationListener {
 	
 	@Override
 	public void create() {
+		
+		batch = new SpriteBatch();
+		
+		fullscreens = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"fullscreens.atlas"));
+		winScreen = fullscreens.findRegion("win-screen");
 		
 		switch(levelNumber) {
 		case(1):
@@ -101,8 +112,15 @@ public class TutorialGameApplication implements ApplicationListener {
 		Gdx.gl.glClearColor(Color.GRAY.r, Color.GRAY.g, Color.GRAY.b, Color.GRAY.a);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		updateGame();
-		board.draw();
-		userInterface.draw();
+		if (levelCompleted) {
+			batch.begin();
+			batch.draw(winScreen, 0f, 0f);
+			batch.end();
+		}
+		else {
+			board.draw();
+			userInterface.draw();			
+		}
 	}
 
 	@Override
@@ -222,7 +240,7 @@ public class TutorialGameApplication implements ApplicationListener {
 			userInterface.updateStarCounter(collectedStars);
 			if (collectedStars == totalStars) {
 				Gdx.app.log("Status", "Level completed!");
-				//levelCompleted = true;
+				levelCompleted = true;
 			}
 		}
 		else if (item.getType() == ItemType.KEY) {
