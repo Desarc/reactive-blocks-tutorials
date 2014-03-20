@@ -3,6 +3,7 @@ package no.ntnu.oyvinric.tutorialgame.level;
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.WinCondition;
 import no.ntnu.oyvinric.tutorialgame.hud.UserInterfaceConfiguration;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
@@ -44,6 +45,8 @@ public abstract class GameLevel {
 	public abstract int getLevelNumber();
 	
 	public abstract UserInterfaceConfiguration getUserInterfaceConfiguration();
+	
+	public abstract Array<WinCondition> getWinConditions();
 	
 	public void loadLevel(int levelNumber) {
 		levelMap = new TmxMapLoader().load(Constants.LEVEL_PATH+"level"+levelNumber+".tmx");
@@ -183,7 +186,6 @@ public abstract class GameLevel {
 				return false;
 			}
 			Tile enteringTile = getTile(tile.getCoordsX()+dy, tile.getCoordsY()+dy+Constants.tileHeight, tile.getGridPosition().getZ());
-			//System.out.println(enteringTile.getGridX()+","+enteringTile.getGridY()+","+enteringTile.getGridZ());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				return true;
 			}

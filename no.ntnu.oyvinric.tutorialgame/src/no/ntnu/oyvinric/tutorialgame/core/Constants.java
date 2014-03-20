@@ -94,6 +94,11 @@ public class Constants {
 		WEST
 	}
 	
+	public static enum WinCondition {
+		STARS,
+		SPEAK;
+	}
+	
 }
 
 

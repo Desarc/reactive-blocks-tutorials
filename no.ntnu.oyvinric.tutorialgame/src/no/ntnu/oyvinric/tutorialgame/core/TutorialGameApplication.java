@@ -6,7 +6,9 @@ import java.io.InputStream;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
+import no.ntnu.oyvinric.tutorialgame.core.Constants.WinCondition;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
+import no.ntnu.oyvinric.tutorialgame.gui.GrowingAnimation;
 import no.ntnu.oyvinric.tutorialgame.hud.UserInterface;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
@@ -25,8 +27,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ArrayMap;
 
 public class TutorialGameApplication implements ApplicationListener {
 
@@ -37,15 +39,16 @@ public class TutorialGameApplication implements ApplicationListener {
 	private CharacterTile malcolm, lisa, andrew;
 	private Array<CharacterTile> gameCharacters;
 	private TextureAtlas fullscreens;
-	private TextureRegion winScreen;
+	private GrowingAnimation winScreen;
 	private SpriteBatch batch;
 	
 	//private Sound winSound;
 	//private Music gameTheme;
 	
+	private ArrayMap<WinCondition, Boolean> winConditions;
+	
 	private int totalStars = 0;
 	private int collectedStars = 0;
-	private boolean levelCompleted = false;
 	
 	public TutorialGameApplication(int levelNumber) {
 		this.levelNumber = levelNumber;
@@ -57,7 +60,7 @@ public class TutorialGameApplication implements ApplicationListener {
 		batch = new SpriteBatch();
 		
 		fullscreens = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"fullscreens.atlas"));
-		winScreen = fullscreens.findRegion("win-screen");
+		winScreen = new GrowingAnimation(Constants.mainWindowWidth/2, Constants.mainWindowHeight/2, fullscreens.findRegion("win-screen"), 1f, Constants.mainWindowWidth/4, Constants.mainWindowHeight/4, Constants.mainWindowWidth, Constants.mainWindowHeight);
 		
 		switch(levelNumber) {
 		case(1):
@@ -72,6 +75,12 @@ public class TutorialGameApplication implements ApplicationListener {
 		case(4):
 			level = new Level4();
 			break;
+		}
+		
+		winConditions = new ArrayMap<Constants.WinCondition, Boolean>();
+		Array<WinCondition> conditions = level.getWinConditions();
+		for (WinCondition condition : conditions) {
+			winConditions.put(condition, false);
 		}
 		
 		totalStars = level.getNumberOfStars();
@@ -104,7 +113,6 @@ public class TutorialGameApplication implements ApplicationListener {
 	@Override
 	public void resize(int width, int height) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -112,14 +120,13 @@ public class TutorialGameApplication implements ApplicationListener {
 		Gdx.gl.glClearColor(Color.GRAY.r, Color.GRAY.g, Color.GRAY.b, Color.GRAY.a);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		updateGame();
-		if (levelCompleted) {
+		
+		board.draw();
+		userInterface.draw();
+		if (levelCompleted()) {
 			batch.begin();
-			batch.draw(winScreen, 0f, 0f);
+			batch.draw(winScreen.getImage(), winScreen.getX(), winScreen.getY(), winScreen.getWidth(), winScreen.getHeight());
 			batch.end();
-		}
-		else {
-			board.draw();
-			userInterface.draw();			
 		}
 	}
 
@@ -142,6 +149,15 @@ public class TutorialGameApplication implements ApplicationListener {
 		level.cleanUp();
 		board.cleanUp();
 		userInterface.cleanUp();
+	}
+	
+	private boolean levelCompleted() {
+		for (int i = 0; i < winConditions.size; i++) {
+			if (!winConditions.getValueAt(i)) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	private void updateGame() {
@@ -240,7 +256,7 @@ public class TutorialGameApplication implements ApplicationListener {
 			userInterface.updateStarCounter(collectedStars);
 			if (collectedStars == totalStars) {
 				Gdx.app.log("Status", "Level completed!");
-				levelCompleted = true;
+				winConditions.put(WinCondition.STARS, true);
 			}
 		}
 		else if (item.getType() == ItemType.KEY) {
@@ -268,6 +284,7 @@ public class TutorialGameApplication implements ApplicationListener {
 	public void characterSpeak(CharacterTile character, String message) {
 		character.setDirection(Direction.SOUTH);
 		board.characterSpeak(character.getCoordsX(), character.getCoordsY(), message);
+		winConditions.put(WinCondition.SPEAK, true);
 	}
 	
 	public static InputStream loadFile(String filePath) throws FileNotFoundException {

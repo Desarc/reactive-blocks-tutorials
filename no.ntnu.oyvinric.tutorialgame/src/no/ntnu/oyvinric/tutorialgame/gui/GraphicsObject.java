@@ -18,6 +18,11 @@ public class GraphicsObject {
 		this.image = image;
 	}
 	
+	public void setPosition(float x, float y) {
+		this.coordsX = x;
+		this.coordsY = y;
+	}
+	
 	public float getX() {
 		return coordsX;
 	}
