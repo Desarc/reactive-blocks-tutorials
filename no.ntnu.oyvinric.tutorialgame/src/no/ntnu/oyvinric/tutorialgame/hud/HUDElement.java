@@ -1,21 +1,22 @@
-package no.ntnu.oyvinric.tutorialgame.icon;
+package no.ntnu.oyvinric.tutorialgame.hud;
 
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterface.UserInterfacePosition;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
 
-public abstract class Icon extends Actor {
+public abstract class HUDElement extends Actor {
 
 	private Widget drawable;
 	protected UserInterfacePosition position;
 	protected boolean active = false;
 	
-	public Icon(UserInterfacePosition position) {
+	public HUDElement(UserInterfacePosition position) {
 		this.position = position;
 	}
 	
-	public Icon(UserInterfacePosition position, Widget drawable) {
+	public HUDElement(UserInterfacePosition position, Widget drawable) {
 		this(position);
 		this.drawable = drawable;
 		updatePosition();
@@ -36,6 +37,16 @@ public abstract class Icon extends Actor {
 	
 	public Widget getDrawable() {
 		return drawable;
+	}
+	
+	@Override
+	public void draw(SpriteBatch batch, float parentAlpha) {
+		drawable.draw(batch, parentAlpha);
+	}
+	
+	@Override
+	public void setSize(float width, float height) {
+		drawable.setSize(width, height);
 	}
 	
 	public boolean isActive() {

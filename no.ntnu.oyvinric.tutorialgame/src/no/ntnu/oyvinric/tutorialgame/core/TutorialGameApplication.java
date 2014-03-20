@@ -7,7 +7,7 @@ import java.io.InputStream;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
 import no.ntnu.oyvinric.tutorialgame.gui.GameBoard;
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterface;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterface;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
 import no.ntnu.oyvinric.tutorialgame.item.Key;

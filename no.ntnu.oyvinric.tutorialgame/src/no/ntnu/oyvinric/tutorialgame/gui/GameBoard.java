@@ -21,7 +21,6 @@ public class GameBoard {
 	private TextureAtlas miscTextures;
 	private Array<GraphicsObject> miscObjects;
 	
-	
 	public GameBoard(GameLevel level) {
 		this.level = level;
 		

@@ -1,14 +1,14 @@
-package no.ntnu.oyvinric.tutorialgame.icon;
+package no.ntnu.oyvinric.tutorialgame.hud;
 
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterface.UserInterfacePosition;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 
-public class CounterIcon extends Icon {
+public class CounterIcon extends HUDElement {
 
 	private int count;
 	private int totalCount;

@@ -3,7 +3,7 @@ package no.ntnu.oyvinric.tutorialgame.level;
 import no.ntnu.oyvinric.tutorialgame.core.Constants;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterfaceConfiguration;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;

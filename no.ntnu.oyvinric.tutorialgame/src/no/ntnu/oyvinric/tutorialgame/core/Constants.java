@@ -20,8 +20,9 @@ public class Constants {
 	public static final int userInterfaceWindowHeight = mainWindowHeight;
 	public static final float iconWidth = 32f;
 	public static final float iconHeight = 32f;
+	public static final float frameBorderWidth = 24f;
 	public static final float userInterfaceHorizontalLeftLimit = mainWindowWidth-userInterfaceWindowWidth;
-	public static final float userInterfaceVerticalUpperLimit = mainWindowHeight-iconHeight;	
+	public static final float userInterfaceVerticalUpperLimit = mainWindowHeight;	
 	
 	public static final int gameBoardWindowWidth = mainWindowWidth-userInterfaceWindowWidth;
 	public static final int gameBoardWindowHeight = mainWindowHeight;

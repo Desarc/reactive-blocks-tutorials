@@ -1,6 +1,6 @@
 package no.ntnu.oyvinric.tutorialgame.level;
 
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterfaceConfiguration;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterfaceConfiguration;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 
 

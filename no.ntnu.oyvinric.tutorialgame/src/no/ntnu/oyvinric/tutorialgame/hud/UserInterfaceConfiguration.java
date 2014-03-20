@@ -1,4 +1,4 @@
-package no.ntnu.oyvinric.tutorialgame.gui;
+package no.ntnu.oyvinric.tutorialgame.hud;
 
 public class UserInterfaceConfiguration {
 

@@ -1,12 +1,12 @@
-package no.ntnu.oyvinric.tutorialgame.icon;
+package no.ntnu.oyvinric.tutorialgame.hud;
 
-import no.ntnu.oyvinric.tutorialgame.gui.UserInterface.UserInterfacePosition;
+import no.ntnu.oyvinric.tutorialgame.hud.UserInterface.UserInterfacePosition;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class KeyIcon extends Icon {
+public class KeyIcon extends HUDElement {
 
 	private KeyColor color;
 	private TextureRegion image;

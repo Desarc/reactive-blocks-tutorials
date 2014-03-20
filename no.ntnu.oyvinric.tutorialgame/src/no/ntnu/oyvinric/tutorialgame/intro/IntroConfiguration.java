@@ -60,7 +60,7 @@ public class IntroConfiguration {
 		skin = styles.getSkin();
 		
 		actors = new Array<Actor>();
-				
+		
 		levelHeader = new Label("Level "+levelNumber, skin.get(Constants.LEVEL_HEADER, LabelStyle.class));
 		horizontalCenterAlign(levelHeader);
 		verticalTopAlign(levelHeader);
