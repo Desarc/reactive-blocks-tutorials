@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="no.ntnu.item.arctis.ARCTIS_RUNTIME_CONTAINER"/>
+	<classpathentry kind="con" path="no.ntnu.item.arctis.ARCTIS_DEPENDENCIES_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/tutorialgame.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-backend-lwjgl-natives.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-backend-lwjgl.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-natives.jar"/>
+	<classpathentry kind="lib" path="lib/gdx.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-freetype.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-freetype-natives.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
