@@ -3,7 +3,7 @@ intro-level-04.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-4-01xcf
+4-01
   rotate: false
   xy: 2, 606
   size: 600, 300

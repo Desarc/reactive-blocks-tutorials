@@ -18,6 +18,7 @@ import no.ntnu.oyvinric.tutorialgame.level.Level1;
 import no.ntnu.oyvinric.tutorialgame.level.Level2;
 import no.ntnu.oyvinric.tutorialgame.level.Level3;
 import no.ntnu.oyvinric.tutorialgame.level.Level4;
+import no.ntnu.oyvinric.tutorialgame.level.Level5;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 import com.badlogic.gdx.Application;
@@ -75,6 +76,9 @@ public class TutorialGameApplication implements ApplicationListener {
 		case(4):
 			level = new Level4();
 			break;
+		case(5):
+			level = new Level5();
+			break;
 		}
 		
 		winConditions = new ArrayMap<Constants.WinCondition, Boolean>();
@@ -83,9 +87,9 @@ public class TutorialGameApplication implements ApplicationListener {
 			winConditions.put(condition, false);
 		}
 		
-		totalStars = level.getNumberOfStars();
 		board = new GameBoard(level);
 		userInterface = new UserInterface(level.getUserInterfaceConfiguration());
+		totalStars = level.getUserInterfaceConfiguration().starCount;
 		
 		gameCharacters = new Array<CharacterTile>();
 		for (CharacterTile character : level.getCharacterTiles()) {

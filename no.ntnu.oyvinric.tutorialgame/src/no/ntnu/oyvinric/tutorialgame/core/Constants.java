@@ -9,7 +9,7 @@ public class Constants {
 	public static final String LEVEL_PATH = "resources/levels/";
 	public static final String SOUND_PATH = "resources/sound/";
 	
-	public static final int mainWindowWidth = 800;
+	public static final int mainWindowWidth = 1000;
 	public static final int mainWindowHeight = 600;
 	public static final float tileHeight = 13f;
 	public static final float visualTileHeight = 32f;

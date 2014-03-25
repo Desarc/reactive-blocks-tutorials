@@ -23,7 +23,7 @@ public class TutorialGame {
 	
 	public TutorialGameApplication start(int levelNumber) {
 		game = new TutorialGameApplication(levelNumber);
-		new LwjglApplication(game, "Level 1", Constants.mainWindowWidth, Constants.mainWindowHeight, false);
+		new LwjglApplication(game, "Level "+levelNumber, Constants.mainWindowWidth, Constants.mainWindowHeight, false);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
