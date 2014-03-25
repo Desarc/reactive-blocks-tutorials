@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
 
@@ -16,6 +17,8 @@ public class IntroAnimation extends Actor {
 	private TextureAtlas animationTextures;
 	private Array<TextureRegion> images;
 	private Image background;
+	private Label counter;
+	private int count;
 	private int frameNumber = 0;
 	private int maxFrameNumber = 0;
 	private float animationDelay;
@@ -34,12 +37,15 @@ public class IntroAnimation extends Actor {
 		background = new Image(skin.getDrawable(Constants.WHITE));
 		background.setColor(0.92f, 0.92f, 0.92f, 1f);
 		background.setSize(getWidth(), getHeight());
+		count = 1;
+		counter = new Label(count+"/"+images.size, skin);
 	}
 	
 	@Override
 	public void draw(SpriteBatch batch, float parentAlpha) {
 		background.draw(batch, parentAlpha);
 		batch.draw(getImage(), getX(), getY());
+		counter.draw(batch, parentAlpha);
 	}
 	
 	public TextureRegion getImage() {
@@ -61,18 +67,21 @@ public class IntroAnimation extends Actor {
 	public void setX(float x) {
 		super.setX(x);
 		background.setX(x);
+		counter.setX(x);
 	}
 	
 	@Override
 	public void setY(float y) {
 		super.setY(y);
 		background.setY(y);
+		counter.setY(y);
 	}
 	
 	@Override
 	public void setPosition(float x, float y) {
 		super.setPosition(x, y);
 		background.setPosition(x, y);
+		counter.setPosition(x, y);
 	}
 	
 	@Override
@@ -104,17 +113,23 @@ public class IntroAnimation extends Actor {
 	public void beginning() {
 		playing = false;
 		frameNumber = 0;
+		count = 0;
+		setCounter();
 	}
 	
 	public void end() {
 		playing = false;
 		frameNumber = maxFrameNumber;
+		count = maxFrameNumber;
+		setCounter();
 	}
 	
 	public void previousFrame() {
 		playing = false;
 		if (frameNumber > 0) {
 			frameNumber--;
+			count--;
+			setCounter();
 		}
 	}
 	
@@ -122,7 +137,13 @@ public class IntroAnimation extends Actor {
 		playing = false;
 		if (frameNumber < maxFrameNumber) {
 			frameNumber++;
+			count++;
+			setCounter();
 		}
+	}
+	
+	private void setCounter() {
+		counter.setText(count+"/"+images.size);
 	}
 	
 	
