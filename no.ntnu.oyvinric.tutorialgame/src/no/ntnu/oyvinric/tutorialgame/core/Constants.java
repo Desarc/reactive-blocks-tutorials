@@ -10,7 +10,7 @@ public class Constants {
 	public static final String SOUND_PATH = "resources/sound/";
 	
 	public static final int mainWindowWidth = 1000;
-	public static final int mainWindowHeight = 600;
+	public static final int mainWindowHeight = 800;
 	public static final float tileHeight = 13f;
 	public static final float visualTileHeight = 32f;
 	public static final float tileWidth = 32f;
@@ -58,7 +58,9 @@ public class Constants {
 		BLUE("blue"),
 		YELLOW("yellow"),
 		RED("red"),
-		GREEN("green");
+		GREEN("green"),
+		BLACK("black"),
+		WHITE("white");
 		
 		private String color;
 		

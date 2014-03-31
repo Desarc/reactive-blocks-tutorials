@@ -19,6 +19,7 @@ import no.ntnu.oyvinric.tutorialgame.level.Level2;
 import no.ntnu.oyvinric.tutorialgame.level.Level3;
 import no.ntnu.oyvinric.tutorialgame.level.Level4;
 import no.ntnu.oyvinric.tutorialgame.level.Level5;
+import no.ntnu.oyvinric.tutorialgame.level.Level6;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 import com.badlogic.gdx.Application;
@@ -78,6 +79,9 @@ public class TutorialGameApplication implements ApplicationListener {
 			break;
 		case(5):
 			level = new Level5();
+			break;
+		case(6):
+			level = new Level6();
 			break;
 		}
 		
@@ -177,25 +181,25 @@ public class TutorialGameApplication implements ApplicationListener {
 		float distanceY = 0;
 		if (character.getDirection() == Direction.WEST) {
 			distanceX = -Constants.horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
-			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
+			if (level.tileCanMove(character, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.EAST) {
 			distanceX = Constants.horizontalMoveSpeed*Gdx.graphics.getDeltaTime();
-			if (level.tileCanMove(character, Direction.EAST, distanceX, distanceY)) {
+			if (level.tileCanMove(character, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.SOUTH) {
 			distanceY = -Constants.verticalMoveSpeed*Gdx.graphics.getDeltaTime();
-			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
+			if (level.tileCanMove(character, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
 		else if (character.getDirection() == Direction.NORTH) {
 			distanceY = Constants.verticalMoveSpeed*Gdx.graphics.getDeltaTime();
-			if (level.tileCanMove(character, Direction.WEST, distanceX, distanceY)) {
+			if (level.tileCanMove(character, distanceX, distanceY)) {
 				level.updateCharacterPosition(character, distanceX, distanceY);
 			}
 		}
@@ -207,6 +211,7 @@ public class TutorialGameApplication implements ApplicationListener {
 	}
 	
 	public void stopCharacterMovement(CharacterTile character) {
+		character.alignWithGrid();
 		character.setMoving(false);
 	}
 
@@ -238,6 +243,7 @@ public class TutorialGameApplication implements ApplicationListener {
 	}
 	
 	public GameObject characterInteract(CharacterTile character) {
+		character.alignWithGrid();
 		GameObject item = level.characterInteraction(character);
 		if (item != null) {
 			handleItem(item);
@@ -247,6 +253,7 @@ public class TutorialGameApplication implements ApplicationListener {
 	}
 	
 	public void pickUp(CharacterTile character) {
+		character.alignWithGrid();
 		GameObject item = level.characterPickUp(character);
 		if (item != null) {
 			handleItem(item);

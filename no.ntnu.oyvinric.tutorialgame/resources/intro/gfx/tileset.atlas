@@ -1,0 +1,278 @@
+
+tileset.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+brown-block
+  rotate: false
+  xy: 2, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+chest-closed
+  rotate: false
+  xy: 2, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+chest-open
+  rotate: false
+  xy: 36, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+dirt-block
+  rotate: false
+  xy: 2, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+door-closed
+  rotate: false
+  xy: 36, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+door-open
+  rotate: false
+  xy: 70, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+grass
+  rotate: false
+  xy: 36, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+kaylee
+  rotate: false
+  xy: 70, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+key
+  rotate: false
+  xy: 104, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lever-left
+  rotate: false
+  xy: 70, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lever-mid
+  rotate: false
+  xy: 104, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lever-right
+  rotate: false
+  xy: 138, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-black
+  rotate: false
+  xy: 138, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-black-unlocked
+  rotate: false
+  xy: 104, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-blue
+  rotate: false
+  xy: 138, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-blue-unlocked
+  rotate: false
+  xy: 172, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-green
+  rotate: false
+  xy: 206, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-green-unlocked
+  rotate: false
+  xy: 172, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-red
+  rotate: false
+  xy: 206, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-red-unlocked
+  rotate: false
+  xy: 172, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-white
+  rotate: false
+  xy: 206, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-white-unlocked
+  rotate: false
+  xy: 240, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-yellow
+  rotate: false
+  xy: 274, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+lock-yellow-unlocked
+  rotate: false
+  xy: 240, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+malcolm
+  rotate: false
+  xy: 240, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+plain-block
+  rotate: false
+  xy: 274, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-east
+  rotate: false
+  xy: 308, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-north
+  rotate: false
+  xy: 274, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-south
+  rotate: false
+  xy: 308, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+ramp-west
+  rotate: false
+  xy: 342, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+selector
+  rotate: false
+  xy: 308, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 342, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+stone-block
+  rotate: false
+  xy: 342, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+stone-block-tall
+  rotate: false
+  xy: 376, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wall-block
+  rotate: false
+  xy: 410, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wall-block-tall
+  rotate: false
+  xy: 376, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wash
+  rotate: false
+  xy: 376, 2
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wolf
+  rotate: false
+  xy: 410, 68
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+wood-block
+  rotate: false
+  xy: 444, 134
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1

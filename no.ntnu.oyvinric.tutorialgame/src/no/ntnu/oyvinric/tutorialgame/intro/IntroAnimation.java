@@ -54,8 +54,11 @@ public class IntroAnimation extends Actor {
 			if (animationTime > animationDelay) {
 				animationTime = 0f;
 				frameNumber++;
+				count++;
+				setCounter();
 				if (frameNumber > maxFrameNumber) {
 					frameNumber = maxFrameNumber;
+					count = maxFrameNumber+1;
 					playing = false;
 				}
 			}
@@ -113,14 +116,14 @@ public class IntroAnimation extends Actor {
 	public void beginning() {
 		playing = false;
 		frameNumber = 0;
-		count = 0;
+		count = 1;
 		setCounter();
 	}
 	
 	public void end() {
 		playing = false;
 		frameNumber = maxFrameNumber;
-		count = maxFrameNumber;
+		count = maxFrameNumber+1;
 		setCounter();
 	}
 	

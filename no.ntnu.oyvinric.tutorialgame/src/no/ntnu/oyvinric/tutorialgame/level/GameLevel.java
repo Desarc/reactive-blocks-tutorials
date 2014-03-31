@@ -153,7 +153,7 @@ public abstract class GameLevel {
 		return levelGrid.get(tile.getGridPosition().getZ()).get(tile.getGridPosition().getY()).removeValue(tile, false);
 	}
 	
-	public boolean tileCanMove(Tile tile, Direction direction, float dx, float dy) {
+	public boolean tileCanMove(Tile tile, float dx, float dy) {
 		if (tile.getDirection() == Direction.WEST) {
 			if (tile.getCoordsX()-dx <= Constants.gameBoardHorizontalLeftLimit) {
 				return false;
@@ -176,7 +176,8 @@ public abstract class GameLevel {
 			if (tile.getCoordsY()-dy <= Constants.gameBoardVerticalUpperLimit-Constants.tileHeight*levelHeight) {
 				return false;
 			}
-			Tile enteringTile = getTile(tile.getCoordsX(), tile.getCoordsY()-dy, tile.getGridPosition().getZ());
+			Tile enteringTile = getTile(tile.getCoordsX(), tile.getCoordsY()-dy-Constants.tileHeight*2, tile.getGridPosition().getZ());
+			Gdx.app.debug("Entering tile", enteringTile.getType());
 			if (enteringTile.getType() == null || !enteringTile.isObstacle()) {
 				return true;
 			}

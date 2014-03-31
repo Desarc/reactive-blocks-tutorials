@@ -9,14 +9,20 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class StarTile extends Tile {
 	
+	boolean taken = false;
+	
 	public StarTile(GridPosition gridPosition, String type, TextureRegion image) {
 		super(gridPosition, type, image);
 	}
 
 	@Override
 	public GameObject interact() {
-		this.type = Constants.EMPTY_TILE;
-		return new Star(image);
+		if (!taken) {
+			this.type = Constants.EMPTY_TILE;
+			taken = true;
+			return new Star(image);
+		}
+		return null;
 	}
 
 }

@@ -16,7 +16,7 @@ public class Introduction implements ApplicationListener {
 	private IntroConfigurationStyles defaultValues;
 	
 	private Stage stage;
-	private IntroAnimation animation;
+	//private IntroAnimation animation;
 	
 	
 	public Introduction(int levelNumber) {
@@ -42,8 +42,8 @@ public class Introduction implements ApplicationListener {
 			stage.addActor(actor);
 		}
 		
-		animation = configuration.getAnimation();
-		animation.play();
+		//animation = configuration.getAnimation();
+		//animation.play();
 		
 	}
 

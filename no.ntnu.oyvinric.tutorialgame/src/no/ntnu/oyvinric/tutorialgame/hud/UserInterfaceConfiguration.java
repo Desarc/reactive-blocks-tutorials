@@ -6,6 +6,8 @@ public class UserInterfaceConfiguration {
 	public boolean yellowKeyActive = false;
 	public boolean greenKeyActive = false;
 	public boolean redKeyActive = false;
+	public boolean blackKeyActive = false;
+	public boolean whiteKeyActive = false;
 	
 	public boolean starActive = false;
 	public int starCount = 1;

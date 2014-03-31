@@ -1,0 +1,45 @@
+
+intro-level-05.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+5-01
+  rotate: false
+  xy: 2, 606
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+5-02
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+5-03
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+
+intro-level-052.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+5-04
+  rotate: false
+  xy: 2, 304
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
+5-05
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1

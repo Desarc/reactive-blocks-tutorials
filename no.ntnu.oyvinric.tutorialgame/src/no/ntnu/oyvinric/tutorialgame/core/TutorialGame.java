@@ -11,14 +11,25 @@ public class TutorialGame {
 	private CharacterTile malcolm;
 
 	public static void main(String[] args) {
-		TutorialGameApplication game = new TutorialGameApplication(1);
+		TutorialGameApplication game = new TutorialGameApplication(3);
 		new LwjglApplication(game, "Level 1", Constants.mainWindowWidth, Constants.mainWindowHeight, false);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		game.characterSpeak(game.getMalcolm(), "Hello World!");
+		game.moveCharacterForward(game.getMalcolm());
+		try {
+			Thread.sleep(4500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		game.stopCharacterMovement(game.getMalcolm());
+		game.pickUp(game.getMalcolm());
+		game.pickUp(game.getMalcolm());
+		game.pickUp(game.getMalcolm());
+		//game.characterSpeak(game.getMalcolm(), "Hello World!");
 	}
 	
 	public TutorialGameApplication start(int levelNumber) {

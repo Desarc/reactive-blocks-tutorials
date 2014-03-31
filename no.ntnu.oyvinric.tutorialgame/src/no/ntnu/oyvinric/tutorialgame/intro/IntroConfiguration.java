@@ -24,7 +24,7 @@ public class IntroConfiguration {
 	
 	private Properties configFile;
 	
-	final float animationDelay = 10f;
+	final float animationDelay = 15f;
 	
 	static final float xPadding = 3f;
 	static final float yPadding = 4f;

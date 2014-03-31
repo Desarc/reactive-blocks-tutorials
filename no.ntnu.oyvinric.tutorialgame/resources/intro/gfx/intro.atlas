@@ -1,0 +1,406 @@
+
+intro.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+act_final
+  rotate: false
+  xy: 699, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+act_steps
+  rotate: false
+  xy: 765, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+beginning-down
+  rotate: false
+  xy: 236, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+beginning-up
+  rotate: false
+  xy: 633, 835
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 2, 2
+  size: 100, 32
+  orig: 100, 32
+  offset: 0, 0
+  index: -1
+decisions
+  rotate: false
+  xy: 104, 2
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+edges
+  rotate: false
+  xy: 699, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+end-down
+  rotate: false
+  xy: 733, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+end-up
+  rotate: false
+  xy: 799, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+events
+  rotate: false
+  xy: 633, 903
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+flow_breaks
+  rotate: false
+  xy: 270, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+forks
+  rotate: false
+  xy: 699, 969
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+icon-chest
+  rotate: false
+  xy: 633, 801
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-key
+  rotate: false
+  xy: 733, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-lever
+  rotate: false
+  xy: 767, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-lock
+  rotate: false
+  xy: 833, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-monster
+  rotate: false
+  xy: 304, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-run
+  rotate: false
+  xy: 633, 767
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-speak
+  rotate: false
+  xy: 767, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon-star
+  rotate: false
+  xy: 801, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+initial
+  rotate: false
+  xy: 867, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+join
+  rotate: false
+  xy: 170, 2
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+level3map
+  rotate: false
+  xy: 2, 36
+  size: 676, 297
+  orig: 676, 297
+  offset: 0, 0
+  index: -1
+level4map
+  rotate: false
+  xy: 2, 335
+  size: 629, 666
+  orig: 629, 666
+  offset: 0, 0
+  index: -1
+local_blocks
+  rotate: false
+  xy: 633, 937
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+merge
+  rotate: false
+  xy: 338, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+next-down
+  rotate: false
+  xy: 633, 733
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+next-up
+  rotate: false
+  xy: 801, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+object_flow
+  rotate: false
+  xy: 835, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+operations
+  rotate: false
+  xy: 633, 869
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+pause-down
+  rotate: false
+  xy: 901, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+pause-up
+  rotate: false
+  xy: 372, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+play-down
+  rotate: false
+  xy: 633, 699
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+play-up
+  rotate: false
+  xy: 835, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+previous-down
+  rotate: false
+  xy: 869, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+previous-up
+  rotate: false
+  xy: 935, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+spanner
+  rotate: false
+  xy: 406, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stop-down
+  rotate: false
+  xy: 633, 665
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stop-up
+  rotate: false
+  xy: 869, 901
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+timers
+  rotate: false
+  xy: 903, 935
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+wooden-door
+  rotate: false
+  xy: 969, 969
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+
+intro2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+activityStepsInfo
+  rotate: false
+  xy: 2, 413
+  size: 600, 500
+  orig: 600, 500
+  offset: 0, 0
+  index: -1
+level5map
+  rotate: false
+  xy: 2, 2
+  size: 675, 409
+  orig: 675, 409
+  offset: 0, 0
+  index: -1
+
+intro3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+activityFinalInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+decisionsInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+edgesInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+initialNodesInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mergeInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+objectFlowInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro6.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+operationsInfo
+  rotate: false
+  xy: 2, 404
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+timersInfo
+  rotate: false
+  xy: 2, 2
+  size: 600, 400
+  orig: 600, 400
+  offset: 0, 0
+  index: -1
+
+intro7.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+level1map
+  rotate: false
+  xy: 2, 2
+  size: 580, 289
+  orig: 580, 289
+  offset: 0, 0
+  index: -1
+level2map
+  rotate: false
+  xy: 2, 293
+  size: 581, 335
+  orig: 581, 335
+  offset: 0, 0
+  index: -1
