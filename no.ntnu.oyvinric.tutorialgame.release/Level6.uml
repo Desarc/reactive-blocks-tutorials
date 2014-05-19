@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arctis="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphics="http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/arctis/_WFTqUHjGEdyxtoUMycQn9Q/10 pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q http:///schemas/graphics/_gd9EwIuAEdytfOWtpACIqw/6 pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw">
+  <uml:Package xmi:id="_R3to4N-YEeOo1bPAe81OYQ" name="no.ntnu.oyvinric.tutorialgame.release">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_R3to4d-YEeOo1bPAe81OYQ" name="Level6" classifierBehavior="_R3to49-YEeOo1bPAe81OYQ" collaborationRole="_R3to4t-YEeOo1bPAe81OYQ">
+      <ownedAttribute xmi:id="_R3to4t-YEeOo1bPAe81OYQ" name="component"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_R3to49-YEeOo1bPAe81OYQ" name="Level6" group="_R3to-N-YEeOo1bPAe81OYQ" partition="_R3to-N-YEeOo1bPAe81OYQ">
+        <ownedOperation xmi:id="_R3to5N-YEeOo1bPAe81OYQ" name="turnKayleeLeft"/>
+        <ownedOperation xmi:id="_R3to5d-YEeOo1bPAe81OYQ" name="turnMalcolmLeft"/>
+        <ownedOperation xmi:id="_R3to5t-YEeOo1bPAe81OYQ" name="turnKayleeAround"/>
+        <ownedOperation xmi:id="_R3to59-YEeOo1bPAe81OYQ" name="stopMalcolm"/>
+        <ownedOperation xmi:id="_R3to6N-YEeOo1bPAe81OYQ" name="moveKayleeForward"/>
+        <ownedOperation xmi:id="_R3to6d-YEeOo1bPAe81OYQ" name="turnKayleeRight"/>
+        <ownedOperation xmi:id="_R3to6t-YEeOo1bPAe81OYQ" name="malcolmPushButton"/>
+        <ownedOperation xmi:id="_R3to69-YEeOo1bPAe81OYQ" name="turnMalcolmAround"/>
+        <ownedOperation xmi:id="_R3to7N-YEeOo1bPAe81OYQ" name="Component"/>
+        <ownedOperation xmi:id="_R3to7d-YEeOo1bPAe81OYQ" name="moveMalcolmForward"/>
+        <ownedOperation xmi:id="_R3to7t-YEeOo1bPAe81OYQ" name="stopKaylee"/>
+        <ownedOperation xmi:id="_R3to79-YEeOo1bPAe81OYQ" name="doNothing"/>
+        <ownedOperation xmi:id="_R3to8N-YEeOo1bPAe81OYQ" name="turnMalcolmRight"/>
+        <ownedOperation xmi:id="_R3to8d-YEeOo1bPAe81OYQ" name="turnLeft"/>
+        <ownedOperation xmi:id="_R3to8t-YEeOo1bPAe81OYQ" name="stop"/>
+        <ownedOperation xmi:id="_R3to89-YEeOo1bPAe81OYQ" name="pickUp"/>
+        <ownedOperation xmi:id="_R3to9N-YEeOo1bPAe81OYQ" name="moveForward"/>
+        <ownedOperation xmi:id="_R3to9d-YEeOo1bPAe81OYQ" name="turnAround"/>
+        <ownedOperation xmi:id="_R3to9t-YEeOo1bPAe81OYQ" name="interact"/>
+        <ownedOperation xmi:id="_R3to99-YEeOo1bPAe81OYQ" name="turnRight"/>
+        <group xmi:type="uml:ActivityPartition" xmi:id="_R3to-N-YEeOo1bPAe81OYQ" name="component"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpON-YEeOo1bPAe81OYQ" name="t0">
+      <when xmi:id="_R3tpOd-YEeOo1bPAe81OYQ" name="t0">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpOt-YEeOo1bPAe81OYQ" name="t0" value="1500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_R3tpO9-YEeOo1bPAe81OYQ" name="java.lang.String"/>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpPN-YEeOo1bPAe81OYQ" name="t1">
+      <when xmi:id="_R3tpPd-YEeOo1bPAe81OYQ" name="t1">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpPt-YEeOo1bPAe81OYQ" name="t1" value="1500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpP9-YEeOo1bPAe81OYQ" name="t2">
+      <when xmi:id="_R3tpQN-YEeOo1bPAe81OYQ" name="t2">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpQd-YEeOo1bPAe81OYQ" name="t2" value="1500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpQt-YEeOo1bPAe81OYQ" name="t3">
+      <when xmi:id="_R3tpQ9-YEeOo1bPAe81OYQ" name="t3">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpRN-YEeOo1bPAe81OYQ" name="t3" value="2000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpRd-YEeOo1bPAe81OYQ" name="t4">
+      <when xmi:id="_R3tpRt-YEeOo1bPAe81OYQ" name="t4">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpR9-YEeOo1bPAe81OYQ" name="t4" value="3000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpSN-YEeOo1bPAe81OYQ" name="t5">
+      <when xmi:id="_R3tpSd-YEeOo1bPAe81OYQ" name="t5">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpSt-YEeOo1bPAe81OYQ" name="t5" value="1500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpS9-YEeOo1bPAe81OYQ" name="t6">
+      <when xmi:id="_R3tpTN-YEeOo1bPAe81OYQ" name="t6">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpTd-YEeOo1bPAe81OYQ" name="t6" value="1500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpTt-YEeOo1bPAe81OYQ" name="t7">
+      <when xmi:id="_R3tpT9-YEeOo1bPAe81OYQ" name="t7">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpUN-YEeOo1bPAe81OYQ" name="t7" value="2000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpUd-YEeOo1bPAe81OYQ" name="t8">
+      <when xmi:id="_R3tpUt-YEeOo1bPAe81OYQ" name="t8">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpU9-YEeOo1bPAe81OYQ" name="t8" value="2000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpVN-YEeOo1bPAe81OYQ" name="t9">
+      <when xmi:id="_R3tpVd-YEeOo1bPAe81OYQ" name="t9">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpVt-YEeOo1bPAe81OYQ" name="t9" value="4000"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpV9-YEeOo1bPAe81OYQ" name="t10">
+      <when xmi:id="_R3tpWN-YEeOo1bPAe81OYQ" name="t10">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpWd-YEeOo1bPAe81OYQ" name="t10" value="500"/>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_R3tpWt-YEeOo1bPAe81OYQ" name="t3">
+      <when xmi:id="_R3tpW9-YEeOo1bPAe81OYQ" name="t3">
+        <expr xmi:type="uml:LiteralString" xmi:id="_R3tpXN-YEeOo1bPAe81OYQ" name="t3" value="4000"/>
+      </when>
+    </packagedElement>
+    <profileApplication xmi:id="_R3tpXd-YEeOo1bPAe81OYQ">
+      <eAnnotations xmi:id="_R3tpXt-YEeOo1bPAe81OYQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_WFTqUXjGEdyxtoUMycQn9Q"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCTIS_PROFILES/arctis.profile.uml#_rE77YK4iEduZSuTiwKs5Lw"/>
+    </profileApplication>
+    <profileApplication xmi:id="_R3tpX9-YEeOo1bPAe81OYQ">
+      <eAnnotations xmi:id="_R3tpYN-YEeOo1bPAe81OYQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_geG1wIuAEdytfOWtpACIqw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RAMSES_GRAPHIC_PROFILES/no.ntnu.item.ramses.graphicprofile.uml#_UEANMUVlEduH9aQE_pc66w"/>
+    </profileApplication>
+  </uml:Package>
+  <arctis:system xmi:id="_R3tpYd-YEeOo1bPAe81OYQ" base_Collaboration="_R3to4d-YEeOo1bPAe81OYQ"/>
+  <arctis:system xmi:id="_R3tpYt-YEeOo1bPAe81OYQ" base_Activity="_R3to49-YEeOo1bPAe81OYQ"/>
+  <graphics:Shape xmi:id="_R3tpY9-YEeOo1bPAe81OYQ" x="250" y="220" width="120" height="70" base_Element="_R3to4t-YEeOo1bPAe81OYQ"/>
+  <graphics:Shape xmi:id="_R3tpZN-YEeOo1bPAe81OYQ" x="180" y="55" width="1081" height="55" base_Element="_R3to49-YEeOo1bPAe81OYQ"/>
+  <graphics:Shape xmi:id="_R3tpZd-YEeOo1bPAe81OYQ" x="180" y="108" width="1081" height="883" base_Element="_R3to-N-YEeOo1bPAe81OYQ"/>
+</xmi:XMI>

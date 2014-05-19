@@ -41,4 +41,10 @@ public class Level5 extends GameLevel {
 		else return KeyColor.YELLOW;
 	}
 
+	@Override
+	public void leverPulled(GridPosition position, boolean isActive) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

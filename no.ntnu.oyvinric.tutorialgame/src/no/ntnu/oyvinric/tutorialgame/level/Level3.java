@@ -33,4 +33,10 @@ public class Level3 extends GameLevel {
 		return conditions;
 	}
 
+	@Override
+	public void leverPulled(GridPosition position, boolean isActive) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

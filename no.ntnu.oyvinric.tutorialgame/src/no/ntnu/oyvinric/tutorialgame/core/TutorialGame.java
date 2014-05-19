@@ -9,9 +9,10 @@ public class TutorialGame {
 	
 	private TutorialGameApplication game;
 	private CharacterTile malcolm;
+	private CharacterTile lisa;
 
 	public static void main(String[] args) {
-		TutorialGameApplication game = new TutorialGameApplication(3);
+		TutorialGameApplication game = new TutorialGameApplication(7);
 		new LwjglApplication(game, "Level 1", Constants.mainWindowWidth, Constants.mainWindowHeight, false);
 		try {
 			Thread.sleep(2000);
@@ -25,10 +26,10 @@ public class TutorialGame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		game.stopCharacterMovement(game.getMalcolm());
-		game.pickUp(game.getMalcolm());
-		game.pickUp(game.getMalcolm());
-		game.pickUp(game.getMalcolm());
+		//game.stopCharacterMovement(game.getMalcolm());
+		//game.pickUp(game.getMalcolm());
+		//game.pickUp(game.getMalcolm());
+		//game.pickUp(game.getMalcolm());
 		//game.characterSpeak(game.getMalcolm(), "Hello World!");
 	}
 	
@@ -41,11 +42,16 @@ public class TutorialGame {
 			e.printStackTrace();
 		}
 		malcolm = game.getMalcolm();
+		lisa = game.getLisa();
 		return game;
 	}
 	
 	public CharacterTile getMalcolm() {
 		return malcolm;
+	}
+	
+	public CharacterTile getLisa() {
+		return lisa;
 	}
 	
 	public void characterSpeak(CharacterTile character, String message) {
@@ -78,6 +84,10 @@ public class TutorialGame {
 	
 	public GameObject characterInteract(CharacterTile character) {
 		return game.characterInteract(character);
+	}
+	
+	public TutorialGameApplication getGameApp() {
+		return game;
 	}
 	
 }

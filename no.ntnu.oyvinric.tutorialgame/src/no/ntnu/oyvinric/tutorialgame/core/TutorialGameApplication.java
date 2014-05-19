@@ -20,6 +20,7 @@ import no.ntnu.oyvinric.tutorialgame.level.Level3;
 import no.ntnu.oyvinric.tutorialgame.level.Level4;
 import no.ntnu.oyvinric.tutorialgame.level.Level5;
 import no.ntnu.oyvinric.tutorialgame.level.Level6;
+import no.ntnu.oyvinric.tutorialgame.level.Level7;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 import com.badlogic.gdx.Application;
@@ -43,9 +44,6 @@ public class TutorialGameApplication implements ApplicationListener {
 	private TextureAtlas fullscreens;
 	private GrowingAnimation winScreen;
 	private SpriteBatch batch;
-	
-	//private Sound winSound;
-	//private Music gameTheme;
 	
 	private ArrayMap<WinCondition, Boolean> winConditions;
 	
@@ -83,6 +81,9 @@ public class TutorialGameApplication implements ApplicationListener {
 		case(6):
 			level = new Level6();
 			break;
+		case(7):
+			level = new Level7();
+			break;			
 		}
 		
 		winConditions = new ArrayMap<Constants.WinCondition, Boolean>();
@@ -111,10 +112,6 @@ public class TutorialGameApplication implements ApplicationListener {
 			}
 		}
 		
-		//winSound = Gdx.audio.newSound(Gdx.files.internal(Constants.SOUND_PATH+"drop.wav"));
-		//gameTheme = Gdx.audio.newMusic(Gdx.files.internal(Constants.SOUND_PATH+"rain.mp3"));
-		//gameTheme.setLooping(true);
-		//gameTheme.play();
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 	}
 
@@ -152,8 +149,6 @@ public class TutorialGameApplication implements ApplicationListener {
 
 	@Override
 	public void dispose() {
-		//gameTheme.dispose();
-		//winSound.dispose();
 		level.cleanUp();
 		board.cleanUp();
 		userInterface.cleanUp();
@@ -304,6 +299,10 @@ public class TutorialGameApplication implements ApplicationListener {
 		} catch (FileNotFoundException e) {
 			return TutorialGameApplication.class.getResourceAsStream("/"+filePath);
 		}
+	}
+	
+	public GameLevel getLevel() {
+		return level;
 	}
 
 }

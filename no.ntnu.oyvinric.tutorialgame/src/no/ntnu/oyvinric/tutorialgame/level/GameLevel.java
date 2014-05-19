@@ -5,11 +5,14 @@ import no.ntnu.oyvinric.tutorialgame.core.Constants.CharacterName;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.Direction;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.WinCondition;
 import no.ntnu.oyvinric.tutorialgame.hud.UserInterfaceConfiguration;
+import no.ntnu.oyvinric.tutorialgame.item.DoorToken;
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.KeyColor;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 import no.ntnu.oyvinric.tutorialgame.tile.ChestTile;
+import no.ntnu.oyvinric.tutorialgame.tile.DoorTile;
+import no.ntnu.oyvinric.tutorialgame.tile.LeverTile;
 import no.ntnu.oyvinric.tutorialgame.tile.LockTile;
 import no.ntnu.oyvinric.tutorialgame.tile.StarTile;
 import no.ntnu.oyvinric.tutorialgame.tile.TerrainTile;
@@ -35,6 +38,8 @@ public abstract class GameLevel {
 	protected Array<StarTile> starTiles;
 	protected Array<ChestTile> chestTiles;
 	protected Array<LockTile> lockTiles;
+	protected Array<LeverTile> leverTiles;
+	protected Array<DoorTile> doorTiles;
 	
 	public GameLevel() {
 		gameTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"game-tiles.atlas"));
@@ -55,6 +60,8 @@ public abstract class GameLevel {
 		starTiles = new Array<StarTile>();
 		chestTiles = new Array<ChestTile>();
 		lockTiles = new Array<LockTile>();
+		leverTiles = new Array<LeverTile>();
+		doorTiles = new Array<DoorTile>();
 		
 		MapLayers mapLayers = levelMap.getLayers();
 		levelLayers = mapLayers.getCount();
@@ -108,6 +115,15 @@ public abstract class GameLevel {
 								String color = (String)cell.getTile().getProperties().get("color");
 								tile = new LockTile(gridPosition, type, gameTextures.findRegion(type+"-"+color), gameTextures.findRegion(type+"-"+color+"-unlocked"), KeyColor.valueOf(color.toUpperCase()));
 								lockTiles.add((LockTile)tile);
+							}
+							else if (type.equals("lever")) {
+								tile = new LeverTile(gridPosition, type, gameTextures.findRegion(type+"-left"), gameTextures.findRegion(type+"-right"), new DoorToken(gameTextures.findRegion(type+"-right"), true));
+								leverTiles.add((LeverTile)tile);
+							}
+							else if (type.equals("door")) {
+								String state = (String)cell.getTile().getProperties().get("state");
+								tile = new DoorTile(gridPosition, type, gameTextures.findRegion(type+"-open"), gameTextures.findRegion(type+"-closed"), state);
+								doorTiles.add((DoorTile)tile);
 							}
 							else {
 								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
@@ -247,6 +263,8 @@ public abstract class GameLevel {
 			}
 		}
 	}
+	
+	public abstract void leverPulled(GridPosition position, boolean isActive);
 	
 	public void cleanUp() {
 		gameTextures.dispose();

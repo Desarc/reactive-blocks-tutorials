@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class ChestTile extends Tile {
 
-	private boolean open;
+	private boolean open, empty;
 	private GameObject content;
 	private TextureRegion openImage;
 	private TextureRegion closedImage;
@@ -18,6 +18,8 @@ public class ChestTile extends Tile {
 		this.openImage = openImage;
 		this.closedImage = closedImage;
 		obstacle = true;
+		open = false;
+		empty = false;
 	}
 
 	@Override
@@ -26,18 +28,26 @@ public class ChestTile extends Tile {
 			close();
 			return null;
 		}
-		else {	
-			return open();
+		else {
+			if (empty) {
+				return open();				
+			}
+			else {
+				open();
+				return null;
+			}
 		}
 	}
 	
 	private GameObject open() {
 		image = openImage;
+		open = true;
 		return content;
 	}
 	
 	private void close() {
 		image = closedImage;
+		open = false;
 	}
 
 }

@@ -51,7 +51,8 @@ public class Constants {
 	
 	public static enum ItemType {
 		STAR,
-		KEY;
+		KEY,
+		DOOR_TOKEN;
 	}
 
 	public static enum KeyColor {

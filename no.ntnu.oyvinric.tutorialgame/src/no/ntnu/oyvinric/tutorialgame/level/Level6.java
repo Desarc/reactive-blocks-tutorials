@@ -54,4 +54,10 @@ public class Level6 extends GameLevel {
 		}
 	}
 
+	@Override
+	public void leverPulled(GridPosition position, boolean isActive) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
