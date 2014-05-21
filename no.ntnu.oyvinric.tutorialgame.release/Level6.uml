@@ -33,7 +33,7 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_NlMQoOCREeOo1bPAe81OYQ" name="e4" inPartition="_R3to-N-YEeOo1bPAe81OYQ" source="_FTZZkeCREeOo1bPAe81OYQ" target="_HnIWwOCREeOo1bPAe81OYQ"/>
         <edge xmi:type="uml:ObjectFlow" xmi:id="_NtIEoOCREeOo1bPAe81OYQ" name="e5" inPartition="_R3to-N-YEeOo1bPAe81OYQ" source="_HnMBIOCREeOo1bPAe81OYQ" target="_KvDxAOCREeOo1bPAe81OYQ"/>
         <edge xmi:type="uml:ObjectFlow" xmi:id="_N2gDEOCREeOo1bPAe81OYQ" name="e6" inPartition="_R3to-N-YEeOo1bPAe81OYQ" source="_KvDxAOCREeOo1bPAe81OYQ" target="_MlqGQOCREeOo1bPAe81OYQ">
-          <guard xmi:type="uml:LiteralString" xmi:id="_1L9mgOCREeOo1bPAe81OYQ" name="green" value="green"/>
+          <guard xmi:type="uml:LiteralString" xmi:id="_1L9mgOCREeOo1bPAe81OYQ" name="yellow" value="yellow"/>
         </edge>
         <edge xmi:type="uml:ObjectFlow" xmi:id="_OBUL8OCREeOo1bPAe81OYQ" name="e7" inPartition="_R3to-N-YEeOo1bPAe81OYQ" source="_KvDxAOCREeOo1bPAe81OYQ" target="_LuMSwOCREeOo1bPAe81OYQ">
           <guard xmi:type="uml:LiteralString" xmi:id="_0ExU8OCREeOo1bPAe81OYQ" name="blue" value="blue"/>

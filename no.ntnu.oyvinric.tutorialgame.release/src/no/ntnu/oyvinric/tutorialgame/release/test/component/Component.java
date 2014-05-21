@@ -11,7 +11,8 @@ public class Component extends Block {
 		return "";
 	}
 
-	public void doSomething() {
+	public boolean doSomething() {
+		return true;
 	}
 
 	public void doSomethingElse() {

@@ -1,0 +1,12 @@
+
+intro-level-06.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+6-01
+  rotate: false
+  xy: 2, 2
+  size: 600, 300
+  orig: 600, 300
+  offset: 0, 0
+  index: -1
