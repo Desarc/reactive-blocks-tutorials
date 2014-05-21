@@ -29,7 +29,7 @@ public class ChestTile extends Tile {
 			return null;
 		}
 		else {
-			if (empty) {
+			if (!empty) {
 				return open();				
 			}
 			else {

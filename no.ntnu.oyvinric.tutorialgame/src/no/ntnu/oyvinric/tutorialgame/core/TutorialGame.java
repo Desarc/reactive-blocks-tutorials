@@ -1,6 +1,7 @@
 package no.ntnu.oyvinric.tutorialgame.core;
 
 import no.ntnu.oyvinric.tutorialgame.item.GameObject;
+import no.ntnu.oyvinric.tutorialgame.level.GridPosition;
 import no.ntnu.oyvinric.tutorialgame.tile.CharacterTile;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
@@ -86,8 +87,8 @@ public class TutorialGame {
 		return game.characterInteract(character);
 	}
 	
-	public TutorialGameApplication getGameApp() {
-		return game;
+	public void leverPulled(GridPosition position, boolean isActive) {
+		game.leverPulled(position, isActive);
 	}
-	
+
 }

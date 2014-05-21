@@ -7,8 +7,6 @@ import no.ntnu.oyvinric.tutorialgame.hud.UserInterfaceConfiguration;
 import com.badlogic.gdx.utils.Array;
 
 public class Level6 extends GameLevel {
-
-	private int keyCounter = 0;
 	
 	@Override
 	public int getLevelNumber() {
@@ -20,10 +18,6 @@ public class Level6 extends GameLevel {
 		UserInterfaceConfiguration configuration = new UserInterfaceConfiguration();
 		configuration.blueKeyActive = true;
 		configuration.yellowKeyActive = true;
-		configuration.redKeyActive = true;
-		configuration.greenKeyActive = true;
-		configuration.blackKeyActive = true;
-		configuration.whiteKeyActive = true;
 		configuration.starActive = true;
 		configuration.starCount = 1;
 		return configuration;
@@ -39,19 +33,8 @@ public class Level6 extends GameLevel {
 	@Override
 	protected KeyColor determineKeyColor(GridPosition position) {
 		int rand = (int)(Math.random()*2);
-		keyCounter++;
-		if (keyCounter == 1) {
-			if (rand == 0) return KeyColor.BLUE;
-			else return KeyColor.GREEN;
-		}
-		else if (keyCounter == 2) {
-			if (rand == 0) return KeyColor.RED;
-			else return KeyColor.YELLOW;
-		}
-		else {
-			if (rand == 0) return KeyColor.BLACK;
-			else return KeyColor.WHITE;
-		}
+		if (rand == 0) return KeyColor.BLUE;
+		else return KeyColor.YELLOW;
 	}
 
 	@Override

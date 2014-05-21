@@ -14,6 +14,7 @@ import no.ntnu.oyvinric.tutorialgame.tile.ChestTile;
 import no.ntnu.oyvinric.tutorialgame.tile.DoorTile;
 import no.ntnu.oyvinric.tutorialgame.tile.LeverTile;
 import no.ntnu.oyvinric.tutorialgame.tile.LockTile;
+import no.ntnu.oyvinric.tutorialgame.tile.SelectorTile;
 import no.ntnu.oyvinric.tutorialgame.tile.StarTile;
 import no.ntnu.oyvinric.tutorialgame.tile.TerrainTile;
 import no.ntnu.oyvinric.tutorialgame.tile.Tile;
@@ -40,6 +41,7 @@ public abstract class GameLevel {
 	protected Array<LockTile> lockTiles;
 	protected Array<LeverTile> leverTiles;
 	protected Array<DoorTile> doorTiles;
+	protected Array<SelectorTile> selectorTiles;
 	
 	public GameLevel() {
 		gameTextures = new TextureAtlas(Gdx.files.internal(Constants.GFX_PATH+"game-tiles.atlas"));
@@ -62,6 +64,7 @@ public abstract class GameLevel {
 		lockTiles = new Array<LockTile>();
 		leverTiles = new Array<LeverTile>();
 		doorTiles = new Array<DoorTile>();
+		selectorTiles = new Array<SelectorTile>();
 		
 		MapLayers mapLayers = levelMap.getLayers();
 		levelLayers = mapLayers.getCount();
@@ -124,6 +127,10 @@ public abstract class GameLevel {
 								String state = (String)cell.getTile().getProperties().get("state");
 								tile = new DoorTile(gridPosition, type, gameTextures.findRegion(type+"-open"), gameTextures.findRegion(type+"-closed"), state);
 								doorTiles.add((DoorTile)tile);
+							}
+							else if (type.equals("selector")) {
+								tile = new SelectorTile(gridPosition, type, gameTextures.findRegion(type));
+								selectorTiles.add((SelectorTile)tile);
 							}
 							else {
 								tile = new TerrainTile(gridPosition, type, cell.getTile().getTextureRegion());
@@ -264,12 +271,22 @@ public abstract class GameLevel {
 		}
 	}
 	
+	public void removeKey(Key key) {
+		for (LockTile lock : lockTiles) {
+			if (key.getColor() == lock.getColor()) {
+				lock.setKeyAvailable(false);
+			}
+		}
+	}
+	
+	
 	public abstract void leverPulled(GridPosition position, boolean isActive);
 	
 	public void cleanUp() {
 		gameTextures.dispose();
 		levelMap.dispose();
 	}
+
 	
 
 }

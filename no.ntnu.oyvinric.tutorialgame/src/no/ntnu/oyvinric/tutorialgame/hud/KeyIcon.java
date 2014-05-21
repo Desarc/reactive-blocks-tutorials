@@ -11,16 +11,23 @@ public class KeyIcon extends HUDElement {
 	private KeyColor color;
 	private TextureRegion image;
 	private TextureRegion foundImage;
+	private TextureRegion notFoundImage;
 	
 	public KeyIcon(UserInterfacePosition position, TextureRegion notFoundImage, TextureRegion foundImage, KeyColor color) {
 		super(position);
 		this.image = notFoundImage;
+		this.notFoundImage = notFoundImage;
 		this.foundImage = foundImage;
 		this.color = color;
 	}
 	
-	public void keyFound() {
-		image = foundImage;
+	public void keyFound(boolean found) {
+		if (found) {
+			image = foundImage;
+		}
+		else {
+			image = notFoundImage;
+		}
 	}
 	
 	public boolean matchColor(KeyColor color) {

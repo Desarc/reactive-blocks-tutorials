@@ -82,6 +82,15 @@ public class GameBoard {
 		miscObjects.add(object);
 	}
 	
+	public void itemRemoved(float coordsX, float coordsY, GameObject item) {
+		float startX = coordsX;
+		float startY = coordsY;
+		float endX = startX;
+		float endY = startY-Constants.tileHeight*3;
+		MovingGraphicsObject object = new MovingGraphicsObject(startX, startY, endX, endY, 0f, Constants.tileHeight*4, item.getImage(), true);
+		miscObjects.add(object);
+	}
+	
 	public void cleanUp() {
 		miscTextures.dispose();
 	}

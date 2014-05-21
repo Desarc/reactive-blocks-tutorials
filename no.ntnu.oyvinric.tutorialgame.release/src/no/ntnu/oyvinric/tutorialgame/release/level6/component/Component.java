@@ -11,11 +11,13 @@ public class Component extends Block {
 	
 	TutorialGame game;
 	CharacterTile malcolm;
+	int count;
 	
 	public Component() {
 		game = new TutorialGame();
 		game.start(6);
 		malcolm = game.getMalcolm();
+		count = 0;
 	}
 	
 	public void moveForward() {
@@ -50,6 +52,11 @@ public class Component extends Block {
 	
 	public void pickUp() {
 		game.characterPickUp(malcolm);
+	}
+	
+	public int count() {
+		count++;
+		return count;
 	}
 	
 }

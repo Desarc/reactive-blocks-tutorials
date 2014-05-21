@@ -38,6 +38,7 @@ public class Constants {
 	public static final float mapMaxHeight = 220;
 	
 	public static final String EMPTY_TILE = "empty";
+	public static final String SELECTOR = "selector";
 	public static final String DEFAULT = "default";
 	public static final String WHITE = "white";
 	public static final String LIST = "list";

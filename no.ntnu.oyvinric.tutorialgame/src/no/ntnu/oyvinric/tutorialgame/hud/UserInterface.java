@@ -91,16 +91,31 @@ public class UserInterface {
 	
 	public void keyFound(Key key) {
 		if (key.getColor() == KeyColor.BLUE) {
-			blueKey.keyFound();
+			blueKey.keyFound(true);
 		}
 		else if (key.getColor() == KeyColor.YELLOW) {
-			yellowKey.keyFound();
+			yellowKey.keyFound(true);
 		}
 		else if (key.getColor() == KeyColor.RED) {
-			redKey.keyFound();
+			redKey.keyFound(true);
 		}
 		else if (key.getColor() == KeyColor.GREEN) {
-			greenKey.keyFound();
+			greenKey.keyFound(true);
+		}
+	}
+	
+	public void removeKey(Key key) {
+		if (key.getColor() == KeyColor.BLUE) {
+			blueKey.keyFound(false);
+		}
+		else if (key.getColor() == KeyColor.YELLOW) {
+			yellowKey.keyFound(false);
+		}
+		else if (key.getColor() == KeyColor.RED) {
+			redKey.keyFound(false);
+		}
+		else if (key.getColor() == KeyColor.GREEN) {
+			greenKey.keyFound(false);
 		}
 	}
 	

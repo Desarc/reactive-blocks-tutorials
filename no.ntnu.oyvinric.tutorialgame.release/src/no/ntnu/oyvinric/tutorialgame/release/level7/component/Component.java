@@ -62,7 +62,7 @@ public class Component extends Block {
 	public String lisaInteract() {
 		DoorToken token = (DoorToken)game.characterInteract(lisa);
 		if (token != null) {
-			game.getGameApp().getLevel().leverPulled(new GridPosition(0, 0, 0), token.isActive());
+			game.leverPulled(new GridPosition(0, 0, 0), token.isActive());
 			if (token.isActive()) {
 				sendToBlock("DOOR_OPEN");
 			}

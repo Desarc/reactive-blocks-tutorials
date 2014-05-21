@@ -14,6 +14,7 @@ import no.ntnu.oyvinric.tutorialgame.item.GameObject;
 import no.ntnu.oyvinric.tutorialgame.core.Constants.ItemType;
 import no.ntnu.oyvinric.tutorialgame.item.Key;
 import no.ntnu.oyvinric.tutorialgame.level.GameLevel;
+import no.ntnu.oyvinric.tutorialgame.level.GridPosition;
 import no.ntnu.oyvinric.tutorialgame.level.Level1;
 import no.ntnu.oyvinric.tutorialgame.level.Level2;
 import no.ntnu.oyvinric.tutorialgame.level.Level3;
@@ -47,6 +48,7 @@ public class TutorialGameApplication implements ApplicationListener {
 	
 	private ArrayMap<WinCondition, Boolean> winConditions;
 	
+	private Array<Key> collectedKeys = new Array<Key>();
 	private int totalStars = 0;
 	private int collectedStars = 0;
 	
@@ -111,6 +113,9 @@ public class TutorialGameApplication implements ApplicationListener {
 				gameCharacters.add(andrew);
 			}
 		}
+		
+		PositionChecker checker = new PositionChecker(this, level);
+		checker.start();
 		
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 	}
@@ -266,6 +271,7 @@ public class TutorialGameApplication implements ApplicationListener {
 			}
 		}
 		else if (item.getType() == ItemType.KEY) {
+			collectedKeys.add((Key)item);
 			level.keyFound((Key)item);
 			userInterface.keyFound((Key)item);
 		}
@@ -301,8 +307,17 @@ public class TutorialGameApplication implements ApplicationListener {
 		}
 	}
 	
-	public GameLevel getLevel() {
-		return level;
+	public void leverPulled(GridPosition position, boolean isActive) {
+		level.leverPulled(position, isActive);
+	}
+
+	public void removeAllKeys(CharacterTile character) {
+		for (Key key : collectedKeys) {
+			level.removeKey(key);
+			userInterface.removeKey(key);
+			board.itemRemoved(character.getCoordsX(), character.getCoordsY(), key);
+		}
+		collectedKeys.truncate(0);
 	}
 
 }
